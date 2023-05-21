@@ -34,9 +34,9 @@ var DegreeType2Input = document.getElementById('DegreeType2-Input');
 var StartDate0Input0 = document.getElementById('StartDate0-Input0');
 var StartDate1Input0 = document.getElementById('StartDate1-Input0');
 var StartDate2Input0 = document.getElementById('StartDate2-Input0');
-var StartDate0Input1 = document.getElementById('StartDate0Input1');
-var StartDate1Input1 = document.getElementById('StartDate1Input1');
-var StartDate2Input1 = document.getElementById('StartDate2Input1');
+var StartDate0Input1 = document.getElementById('StartDate0-Input1');
+var StartDate1Input1 = document.getElementById('StartDate1-Input1');
+var StartDate2Input1 = document.getElementById('StartDate2-Input1');
 var EndDate0Input0 = document.getElementById('EndDate0-Input0');
 var EndDate1Input0 = document.getElementById('EndDate1-Input0');
 var EndDate2Input0 = document.getElementById('EndDate2-Input0');
@@ -216,37 +216,28 @@ if (AddEducation) {
 
 if(DeleteEducation1){
   DeleteEducation1.addEventListener('click', function () {
-    if (Education1.style.display === 'none') {
-      Education1.style.display = 'block';
-      return;
-    }
-  })
-}
-
-if(DeleteEducation1){
-  DeleteEducation1.addEventListener('click', function () {
-    DeleteEducation1.style.display = 'none';
+    Education1.style.display = 'none';
     SchoolName1Input.value = '';
     Major1Input.value = '';
     DegreeType1Input.value = '';
     StartDate1Input0.value = '';
     StartDate1Input1.value ='';
-    EndDate1Input0Value.value = '';
-    EndDate1Input1Value.value ='';
+    EndDate1Input1.value = '';
+    EndDate1Input1.value ='';
   })
 }
 
 
 if(DeleteEducation2){
   DeleteEducation2.addEventListener('click', function () {
-    DeleteEducation2.style.display = 'none';
+    Education2.style.display = 'none';
     SchoolName2Input.value = '';
     Major2Input.value = '';
     DegreeType2Input.value = '';
     StartDate2Input0.value = '';
     StartDate2Input1.value ='';
-    EndDate2Input0Value.value = '';
-    EndDate2Input1Value.value ='';
+    EndDate2Input0.value = '';
+    EndDate2Input1.value ='';
   })
 }
 
