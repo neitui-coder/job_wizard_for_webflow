@@ -21,6 +21,7 @@ var True2Selected = document.getElementById('True-2');
 var False2Selected = document.getElementById('False-2');
 var Education1 = document.getElementById('Education1');
 var Education2 = document.getElementById('Education2');
+var MaxAlertEducation = document.getElementById('MaxAlert-Education');
 var SchoolName0Input = document.getElementById('SchoolName0-Input');
 var SchoolName1Input = document.getElementById('SchoolName1-Input');
 var SchoolName2Input = document.getElementById('SchoolName2-Input');
@@ -47,6 +48,8 @@ var saveTab1Button = document.getElementById('Save-Tab1');
 var saveTab2Button = document.getElementById('Save-Tab2');
 var saveTab3Button = document.getElementById('Save-Tab3');
 var saveTab4Button = document.getElementById('Save-Tab4');
+var saveTab5Button = document.getElementById('Save-Tab5');
+var saveTab6Button = document.getElementById('Save-Tab6');
 var Tab1 = document.getElementById('Tab1');
 var Tab2 = document.getElementById('Tab2');
 var Tab3 = document.getElementById('Tab3');
@@ -59,14 +62,20 @@ var MenuTab3 = document.getElementById('Menu-Tab3');
 var MenuTab4 = document.getElementById('Menu-Tab4');
 var MenuTab5 = document.getElementById('Menu-Tab5');
 var MenuTab6 = document.getElementById('Menu-Tab6');
+
 var backTab1 = document.getElementById('BackButton-Tab1');
 var backTab2 = document.getElementById('BackButton-Tab2');
 var backTab3 = document.getElementById('BackButton-Tab3');
 var backTab4 = document.getElementById('BackButton-Tab4');
 var backTab5 = document.getElementById('BackButton-Tab5');
 var backTab6 = document.getElementById('BackButton-Tab6');
+
 var skipTab1 = document.getElementById('Skip-Tab1');
+var skipTab2 = document.getElementById('Skip-Tab2');
+var skipTab3 = document.getElementById('Skip-Tab3');
 var skipTab4 = document.getElementById('Skip-Tab4');
+var skipTab5 = document.getElementById('Skip-Tab5');
+var skipTab6 = document.getElementById('Skip-Tab6');
 var doItLater = document.getElementById('DoItLater');
 
 MenuTab2.style.pointerEvents = "none";
@@ -88,13 +97,6 @@ if (startButton) {
     AddInfoDiv.style.display = 'flex'
   })
 }
-if (backTab4) {
-  backTab4.addEventListener('click', function () {
-    MenuTab1.style.pointerEvents = "auto";
-    MenuTab4.style.pointerEvents = "none";
-    MenuTab1.click();
-  })
-}
 
 if (skipTab1) {
   skipTab1.addEventListener('click', function () {
@@ -103,8 +105,40 @@ if (skipTab1) {
     MenuTab2.click();
   })
 }
+if (skipTab2) {
+  skipTab2.addEventListener('click', function () {
+    MenuTab3.style.pointerEvents = "auto";
+    MenuTab2.style.pointerEvents = "none";
+    MenuTab3.click();
+  })
+}
+
+if (skipTab3) {
+  skipTab3.addEventListener('click', function () {
+    MenuTab4.style.pointerEvents = "auto";
+    MenuTab3.style.pointerEvents = "none";
+    MenuTab4.click();
+  })
+}
+
 if (skipTab4) {
   skipTab4.addEventListener('click', function () {
+    MenuTab5.style.pointerEvents = "auto";
+    MenuTab4.style.pointerEvents = "none";
+    MenuTab5.click();
+  })
+}
+
+if (skipTab5) {
+  skipTab5.addEventListener('click', function () {
+    MenuTab6.style.pointerEvents = "auto";
+    MenuTab5.style.pointerEvents = "none";
+    MenuTab6.click();
+  })
+}
+
+if (skipTab6) {
+  skipTab6.addEventListener('click', function () {
     window.location.href = "https://www.jobwizard.ai/onboarding/registration-complete"
   })
 }
@@ -119,8 +153,134 @@ if (backTab1) {
     AddInfoDiv.style.display = 'none'
   })
 }
+if (backTab2) {
+  backTab2.addEventListener('click', function () {
+    MenuTab1.style.pointerEvents = "auto";
+    MenuTab2.style.pointerEvents = "none";
+    MenuTab1.click();
+  })
+}
+
+if (backTab3) {
+  backTab3.addEventListener('click', function () {
+    MenuTab2.style.pointerEvents = "auto";
+    MenuTab3.style.pointerEvents = "none";
+    MenuTab2.click();
+  })
+}
+
+if (backTab4) {
+  backTab4.addEventListener('click', function () {
+    MenuTab3.style.pointerEvents = "auto";
+    MenuTab4.style.pointerEvents = "none";
+    MenuTab3.click();
+  })
+}
+
+if (backTab5) {
+  backTab5.addEventListener('click', function () {
+    MenuTab4.style.pointerEvents = "auto";
+    MenuTab5.style.pointerEvents = "none";
+    MenuTab4.click();
+  })
+}
+
+if (backTab6) {
+  backTab1.addEventListener('click', function () {
+    MenuTab5.style.pointerEvents = "auto";
+    MenuTab6.style.pointerEvents = "none";
+    MenuTab5.click();
+  })
+}
+
+if(AddEducation){
+  AddEducation.addEventListener('click', function () {
+    if(Education1.style.display === 'none'){
+      Education1.style.display = 'flex';
+      return;
+    }
+
+    if(Education2.style.display === 'none'){
+      Education2.style.display = 'flex';
+      return;
+    }
+
+    if(Education2.style.display === 'none'){
+      Education2.style.display = 'flex';
+      return;
+    }
+
+    if(MaxAlertEducation.style.display == 'none'){
+      MaxAlertEducation.style.display = 'flex';
+    }
+  })
+}
+
 if (saveTab1Button) {
   saveTab1Button.addEventListener('click', function () {
+    const Saving = document.getElementById('Saving-1');
+    const ToBeSaved = document.getElementById('ToBeSaved-1');
+    Saving.style.display = 'flex';
+    ToBeSaved.style.display = 'none';
+    var firstNameValue = firstNameInput.value;
+    var lastNameValue = lastNameInput.value;
+    var phoneNumberValue1 = phoneNumberInput1.value;
+    var phoneNumberValue2 = phoneNumberInput2.value;
+    var phoneNumber = phoneNumberValue1 + phoneNumberValue2;
+    var emailValue = emailInput.value;
+    var dateValue = dateInput.value;
+    var selectMonthValue = selectMonthSelect.options[selectMonthSelect.selectedIndex].value;
+    var yearValue = yearInput.value;
+    var locationValue = locationInput.value;
+    var birthday = yearValue + " " + selectMonthValue + " " + dateValue;
+
+    var url = `https://api.jobwizard.ai/api/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
+    var data = {
+      "basic_info": {
+        "first_name": firstNameValue,
+        "last_name": lastNameValue,
+        "email": emailValue,
+        "phone_number": phoneNumber,
+        "location": locationValue,
+        "birthday": birthday
+      }
+    };
+    var options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    };
+
+    console.log(cookie_ms_token, '====cookie_ms_token====');
+
+    if (!cookie_ms_token) {
+      return;
+    }
+
+
+    fetch(url, options)
+      .then(response => {
+        if (response.status == 200) {
+          console.log(response, '====response====');
+          let Saving = document.getElementById('Saving-1');
+          let ToBeSaved = document.getElementById('ToBeSaved-1');
+          Saving.style.display = 'none';
+          ToBeSaved.style.display = 'flex';
+          MenuTab2.click();
+          MenuTab1.style.pointerEvents = "none";
+          MenuTab2.style.pointerEvents = "auto";
+          //window.location.href = "https://www.jobwizard.ai/onboarding/registration-complete"
+        }
+        return response.json();
+      }).catch(error => {
+      });
+  });
+}
+
+if (saveTab2Button) {
+  saveTab2Button.addEventListener('click', function () {
     const Saving = document.getElementById('Saving-1');
     const ToBeSaved = document.getElementById('ToBeSaved-1');
     Saving.style.display = 'flex';
@@ -210,9 +370,6 @@ if (saveTab4Button) {
       },
       body: JSON.stringify(data)
     };
-
-    console.log(cookie_ms_token, '=====cookie_ms_token===');
-    console.log(options, '=====options===');
 
     if (!cookie_ms_token) {
       return;
