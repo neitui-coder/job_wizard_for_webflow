@@ -186,40 +186,40 @@ if (backTab5) {
 }
 
 if (backTab6) {
-  backTab1.addEventListener('click', function () {
+  backTab6.addEventListener('click', function () {
     MenuTab5.style.pointerEvents = "auto";
     MenuTab6.style.pointerEvents = "none";
     MenuTab5.click();
   })
 }
 
-if(AddEducation){
+if (AddEducation) {
   AddEducation.addEventListener('click', function () {
-    if(Education1.style.display === 'none'){
-      Education1.style.display = 'flex';
+    if (Education1.style.display === 'none') {
+      Education1.style.display = 'block';
       return;
     }
 
-    if(Education2.style.display === 'none'){
-      Education2.style.display = 'flex';
+    if (Education2.style.display === 'none') {
+      Education2.style.display = 'block';
       return;
     }
 
-    if(Education2.style.display === 'none'){
-      Education2.style.display = 'flex';
+    if (Education2.style.display === 'none') {
+      Education2.style.display = 'block';
       return;
     }
 
-    if(MaxAlertEducation.style.display == 'none'){
-      MaxAlertEducation.style.display = 'flex';
+    if (MaxAlertEducation.style.display == 'none') {
+      MaxAlertEducation.style.display = 'block';
     }
   })
 }
 
 if (saveTab1Button) {
   saveTab1Button.addEventListener('click', function () {
-    const Saving = document.getElementById('Saving-1');
-    const ToBeSaved = document.getElementById('ToBeSaved-1');
+    const Saving = document.getElementById('Saving-2');
+    const ToBeSaved = document.getElementById('ToBeSaved-2');
     Saving.style.display = 'flex';
     ToBeSaved.style.display = 'none';
     var firstNameValue = firstNameInput.value;
@@ -285,28 +285,65 @@ if (saveTab2Button) {
     const ToBeSaved = document.getElementById('ToBeSaved-1');
     Saving.style.display = 'flex';
     ToBeSaved.style.display = 'none';
-    var firstNameValue = firstNameInput.value;
-    var lastNameValue = lastNameInput.value;
-    var phoneNumberValue1 = phoneNumberInput1.value;
-    var phoneNumberValue2 = phoneNumberInput2.value;
-    var phoneNumber = phoneNumberValue1 + phoneNumberValue2;
-    var emailValue = emailInput.value;
-    var dateValue = dateInput.value;
-    var selectMonthValue = selectMonthSelect.options[selectMonthSelect.selectedIndex].value;
-    var yearValue = yearInput.value;
-    var locationValue = locationInput.value;
-    var birthday = yearValue + " " + selectMonthValue + " " + dateValue;
+    var SchoolName0InputValue = SchoolName0Input.value;
+    var SchoolName1InputValue = SchoolName1Input.value;
+    var SchoolName2InputValue = SchoolName2Input.value;
+    var Major0InputValue = Major0Input.value;
+    var Major1InputtValue = Major1Input.value;
+    var Major2InputValue = Major2Input.value;
+    var DegreeType0InputSelect = DegreeType0Input.value;
+    var DegreeType1InputSelect = DegreeType1Input.value;
+    var DegreeType2InputSelect = DegreeType2Input.value;
+    var StartDate0Input0Value = StartDate0Input0.value;
+    var StartDate1Input0Value = StartDate1Input0.value;
+    var StartDate2Input0Value = StartDate2Input0.value;
+    var StartDate0Input1Value = StartDate0Input1.value;
+    var StartDate1Input1Value = StartDate1Input1.value;
+    var StartDate2Input1Value = StartDate2Input1.value;
+    var EndDate0Input0Value = EndDate0Input0.value;
+    var EndDate1Input0Value = EndDate1Input0.value;
+    var EndDate2Input0Value = EndDate2Input0.value;
+    var EndDate0Input1Value = EndDate0Input1.value;
+    var EndDate1Input1Value = EndDate1Input1.value;
+    var EndDate2Input1Value = EndDate2Input1.value;
+
+
+    var DegreeType0InputValue = DegreeType0InputSelect.options[DegreeType0InputSelect.selectedIndex].value;
+    var DegreeType1InputValue = DegreeType1InputSelect.options[DegreeType1InputSelect.selectedIndex].value;
+    var DegreeType2InputValue = DegreeType2InputSelect.options[DegreeType2InputSelect.selectedIndex].value;
+    var StartDate0Input = StartDate0Input0Value + '-' + StartDate0Input1Value;
+    var StartDate1Input = StartDate1Input0Value + '-' + StartDate1Input1Value;
+    var StartDate2Input = StartDate2Input0Value + '-' + StartDate2Input1Value;
+    var EndDate0Input = EndDate0Input0Value + '-' + EndDate0Input1Value;
+    var EndDate1Input = EndDate1Input0Value + '-' + EndDate1Input1Value;
+    var EndDate2Input = EndDate2Input0Value + '-' + EndDate2Input1Value;
+
 
     var url = `https://api.jobwizard.ai/api/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
     var data = {
-      "basic_info": {
-        "first_name": firstNameValue,
-        "last_name": lastNameValue,
-        "email": emailValue,
-        "phone_number": phoneNumber,
-        "location": locationValue,
-        "birthday": birthday
-      }
+      "school_infos": [
+        {
+          "name": SchoolName0InputValue,
+          "major": Major0InputValue,
+          "degree": DegreeType0InputValue,
+          "start_date": StartDate0Input,
+          "end_date": EndDate0Input
+        },
+        {
+          "name": SchoolName1InputValue,
+          "major": Major1InputtValue,
+          "degree": DegreeType1InputValue,
+          "start_date": StartDate1Input,
+          "end_date": EndDate1Input
+        },
+        {
+          "name": SchoolName2InputValue,
+          "major": Major2InputValue,
+          "degree": DegreeType2InputValue,
+          "start_date": StartDate2Input,
+          "end_date": EndDate2Input
+        }
+      ],
     };
     var options = {
       method: 'POST',
@@ -326,14 +363,13 @@ if (saveTab2Button) {
     fetch(url, options)
       .then(response => {
         if (response.status == 200) {
-          console.log(response, '====response====');
-          let Saving = document.getElementById('Saving-1');
-          let ToBeSaved = document.getElementById('ToBeSaved-1');
+          const Saving = document.getElementById('Saving-2');
+          const ToBeSaved = document.getElementById('ToBeSaved-2');
           Saving.style.display = 'none';
           ToBeSaved.style.display = 'flex';
-          MenuTab2.click();
-          MenuTab1.style.pointerEvents = "none";
-          MenuTab2.style.pointerEvents = "auto";
+          MenuTab3.click();
+          MenuTab2.style.pointerEvents = "none";
+          MenuTab3.style.pointerEvents = "auto";
           //window.location.href = "https://www.jobwizard.ai/onboarding/registration-complete"
         }
         return response.json();
