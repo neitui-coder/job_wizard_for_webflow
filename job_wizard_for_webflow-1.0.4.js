@@ -254,8 +254,8 @@ if(DeleteEducation2){
 
 if (saveTab1Button) {
   saveTab1Button.addEventListener('click', function () {
-    const Saving = document.getElementById('Saving-2');
-    const ToBeSaved = document.getElementById('ToBeSaved-2');
+    const Saving = document.getElementById('Saving-1');
+    const ToBeSaved = document.getElementById('ToBeSaved-1');
     Saving.style.display = 'flex';
     ToBeSaved.style.display = 'none';
     var firstNameValue = firstNameInput.value;
@@ -315,8 +315,8 @@ if (saveTab1Button) {
 
 if (saveTab2Button) {
   saveTab2Button.addEventListener('click', function () {
-    const Saving = document.getElementById('Saving-1');
-    const ToBeSaved = document.getElementById('ToBeSaved-1');
+    const Saving = document.getElementById('Saving-2');
+    const ToBeSaved = document.getElementById('ToBeSaved-2');
     Saving.style.display = 'flex';
     ToBeSaved.style.display = 'none';
     var SchoolName0InputValue = SchoolName0Input.value;
