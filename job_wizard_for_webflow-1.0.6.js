@@ -288,14 +288,13 @@ if (saveTab1Button) {
     fetch(url, options)
       .then(response => {
         if (response.status == 200) {
-          console.log(response, '====response====');
           let Saving = document.getElementById('Saving-1');
           let ToBeSaved = document.getElementById('ToBeSaved-1');
           Saving.style.display = 'none';
           ToBeSaved.style.display = 'flex';
+          MenuTab2.style.pointerEvents = "auto";
           MenuTab2.click();
           MenuTab1.style.pointerEvents = "none";
-          MenuTab2.style.pointerEvents = "auto";
           //window.location.href = "https://www.jobwizard.ai/onboarding/registration-complete"
         }
         return response.json();
@@ -316,9 +315,6 @@ if (saveTab2Button) {
     var Major0InputValue = Major0Input.value;
     var Major1InputtValue = Major1Input.value;
     var Major2InputValue = Major2Input.value;
-    var DegreeType0InputSelect = DegreeType0Input.value;
-    var DegreeType1InputSelect = DegreeType1Input.value;
-    var DegreeType2InputSelect = DegreeType2Input.value;
     var StartDate0Input0Value = StartDate0Input0.value;
     var StartDate1Input0Value = StartDate1Input0.value;
     var StartDate2Input0Value = StartDate2Input0.value;
@@ -333,9 +329,9 @@ if (saveTab2Button) {
     var EndDate2Input1Value = EndDate2Input1.value;
 
 
-    var DegreeType0InputValue = DegreeType0InputSelect.options[DegreeType0InputSelect.selectedIndex].value;
-    var DegreeType1InputValue = DegreeType1InputSelect.options[DegreeType1InputSelect.selectedIndex].value;
-    var DegreeType2InputValue = DegreeType2InputSelect.options[DegreeType2InputSelect.selectedIndex].value;
+    var DegreeType0InputValue = DegreeType0Input.options[DegreeType0Input.selectedIndex].value;
+    var DegreeType1InputValue = DegreeType1Input.options[DegreeType1Input.selectedIndex].value;
+    var DegreeType2InputValue = DegreeType2Input.options[DegreeType2Input.selectedIndex].value;
     var StartDate0Input = StartDate0Input0Value + '-' + StartDate0Input1Value;
     var StartDate1Input = StartDate1Input0Value + '-' + StartDate1Input1Value;
     var StartDate2Input = StartDate2Input0Value + '-' + StartDate2Input1Value;
@@ -401,11 +397,12 @@ if (saveTab2Button) {
           const ToBeSaved = document.getElementById('ToBeSaved-2');
           Saving.style.display = 'none';
           ToBeSaved.style.display = 'flex';
+          MenuTab3.style.pointerEvents = "auto";
           MenuTab3.click();
           MenuTab2.style.pointerEvents = "none";
-          MenuTab3.style.pointerEvents = "auto";
           //window.location.href = "https://www.jobwizard.ai/onboarding/registration-complete"
         }
+        console.log(response.json(),'===response.json()====');
         return response.json();
       }).catch(error => {
       });
