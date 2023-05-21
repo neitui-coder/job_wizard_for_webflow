@@ -44,6 +44,8 @@ var EndDate0Input1 = document.getElementById('EndDate0-Input1');
 var EndDate1Input1 = document.getElementById('EndDate1-Input1');
 var EndDate2Input1 = document.getElementById('EndDate2-Input1');
 var AddEducation = document.getElementById('AddEducation');
+var DeleteEducation1 = document.getElementById('DeleteEducation1');
+var DeleteEducation2 = document.getElementById('DeleteEducation2');
 var saveTab1Button = document.getElementById('Save-Tab1');
 var saveTab2Button = document.getElementById('Save-Tab2');
 var saveTab3Button = document.getElementById('Save-Tab3');
@@ -77,6 +79,7 @@ var skipTab4 = document.getElementById('Skip-Tab4');
 var skipTab5 = document.getElementById('Skip-Tab5');
 var skipTab6 = document.getElementById('Skip-Tab6');
 var doItLater = document.getElementById('DoItLater');
+
 
 MenuTab2.style.pointerEvents = "none";
 MenuTab3.style.pointerEvents = "none";
@@ -205,16 +208,49 @@ if (AddEducation) {
       return;
     }
 
-    if (Education2.style.display === 'none') {
-      Education2.style.display = 'block';
-      return;
-    }
-
     if (MaxAlertEducation.style.display == 'none') {
       MaxAlertEducation.style.display = 'block';
     }
   })
 }
+
+if(DeleteEducation1){
+  DeleteEducation1.addEventListener('click', function () {
+    if (Education1.style.display === 'none') {
+      Education1.style.display = 'block';
+      return;
+    }
+  })
+}
+
+if(DeleteEducation1){
+  DeleteEducation1.addEventListener('click', function () {
+    DeleteEducation1.style.display = 'none';
+    SchoolName1Input.value = '';
+    Major1Input.value = '';
+    DegreeType1Input.value = '';
+    StartDate1Input0.value = '';
+    StartDate1Input1.value ='';
+    EndDate1Input0Value.value = '';
+    EndDate1Input1Value.value ='';
+  })
+}
+
+
+if(DeleteEducation2){
+  DeleteEducation2.addEventListener('click', function () {
+    DeleteEducation2.style.display = 'none';
+    SchoolName2Input.value = '';
+    Major2Input.value = '';
+    DegreeType2Input.value = '';
+    StartDate2Input0.value = '';
+    StartDate2Input1.value ='';
+    EndDate2Input0Value.value = '';
+    EndDate2Input1Value.value ='';
+  })
+}
+
+
 
 if (saveTab1Button) {
   saveTab1Button.addEventListener('click', function () {
@@ -252,8 +288,6 @@ if (saveTab1Button) {
       },
       body: JSON.stringify(data)
     };
-
-    console.log(cookie_ms_token, '====cookie_ms_token====');
 
     if (!cookie_ms_token) {
       return;
@@ -320,30 +354,39 @@ if (saveTab2Button) {
 
 
     var url = `https://api.jobwizard.ai/api/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
+    var school_infos=[];
+    var educationGroup0 = {
+      "name": SchoolName0InputValue,
+      "major": Major0InputValue,
+      "degree": DegreeType0InputValue,
+      "start_date": StartDate0Input,
+      "end_date": EndDate0Input
+    };
+    var educationGroup1 = {
+      "name": SchoolName1InputValue,
+      "major": Major1InputtValue,
+      "degree": DegreeType1InputValue,
+      "start_date": StartDate1Input,
+      "end_date": EndDate1Input
+    };
+    var educationGroup2 = {
+      "name": SchoolName2InputValue,
+      "major": Major2InputValue,
+      "degree": DegreeType2InputValue,
+      "start_date": StartDate2Input,
+      "end_date": EndDate2Input
+    };
+    school_infos.push(educationGroup0);
+    if(Education1.style.display === 'block'){
+      school_infos.push(educationGroup1);
+    }
+
+    if(Education2.style.display === 'block'){
+      school_infos.push(educationGroup2);
+    }
+
     var data = {
-      "school_infos": [
-        {
-          "name": SchoolName0InputValue,
-          "major": Major0InputValue,
-          "degree": DegreeType0InputValue,
-          "start_date": StartDate0Input,
-          "end_date": EndDate0Input
-        },
-        {
-          "name": SchoolName1InputValue,
-          "major": Major1InputtValue,
-          "degree": DegreeType1InputValue,
-          "start_date": StartDate1Input,
-          "end_date": EndDate1Input
-        },
-        {
-          "name": SchoolName2InputValue,
-          "major": Major2InputValue,
-          "degree": DegreeType2InputValue,
-          "start_date": StartDate2Input,
-          "end_date": EndDate2Input
-        }
-      ],
+      "school_infos": school_infos
     };
     var options = {
       method: 'POST',
