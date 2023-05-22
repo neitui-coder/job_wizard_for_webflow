@@ -293,8 +293,12 @@ if (backTab6) {
 
 if (AddEducation) {
   AddEducation.addEventListener('click', function () {
-    console.log(Education1.style.display,'Education1.style.display===============');
-    console.log(Education2.style.display,'Education1.style.display===============');
+    var Education1 = document.getElementById('Education1');
+    var Education2 = document.getElementById('Education2');
+    var MaxAlertEducation = document.getElementById('MaxAlert-Education');
+    console.log(Education1.style.display, 'Education1.style.display===============');
+    console.log(Education2.style.display, 'Education2.style.display===============');
+    console.log(MaxAlertEducation.style.display, 'MaxAlertEducation.style.display===============');
     if (Education1.style.display == 'none') {
       Education1.style.display = 'block';
       return;
@@ -340,8 +344,9 @@ if (DeleteEducation2) {
 
 if (AddWork) {
   AddWork.addEventListener('click', function () {
-    console.log(WorkExperience1.style.display,'WorkExperience1.style.display===============');
-    console.log(WorkExperience2.style.display,'WorkExperience2.style.display===============');
+    console.log(WorkExperience1.style.display, 'WorkExperience1.style.display===============');
+    console.log(WorkExperience2.style.display, 'WorkExperience2.style.display===============');
+    console.log(MaxAlertWork.style.display, 'MaxAlertEducation.style.display===============');
     if (WorkExperience1.style.display === 'none') {
       WorkExperience1.style.display = 'block';
       return;
@@ -391,8 +396,8 @@ if (DeleteWork2) {
 
 if (AddLanguage) {
   AddLanguage.addEventListener('click', function () {
-    console.log(languag1.style.display,'languag1.style.display===============');
-    console.log(languag2.style.display,'languag2.style.display===============');
+    console.log(languag1.style.display, 'languag1.style.display===============');
+    console.log(languag2.style.display, 'languag2.style.display===============');
     if (languag1.style.display == 'none') {
       languag1.style.display = 'flex';
       return;
@@ -808,11 +813,11 @@ if (saveTab5Button) {
     var url = `https://api.jobwizard.ai/api/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
     var data = {
       "citizenship": CitizenshipValue,
-			"work_visa_type": USVisaTypeOption,
-			"permanent_resident": True3Selected.checked,
-			"need_sponsorship": True4Selected.checked,
-			"has_criminal_record": True5Selected.checked,
-			"pending_criminal_case": True6Selected.checked
+      "work_visa_type": USVisaTypeOption,
+      "permanent_resident": True3Selected.checked,
+      "need_sponsorship": True4Selected.checked,
+      "has_criminal_record": True5Selected.checked,
+      "pending_criminal_case": True6Selected.checked
     };
     var options = {
       method: 'POST',
