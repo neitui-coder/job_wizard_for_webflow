@@ -293,12 +293,6 @@ if (backTab6) {
 
 if (AddEducation) {
   AddEducation.addEventListener('click', function () {
-    var Education1 = document.getElementById('Education1');
-    var Education2 = document.getElementById('Education2');
-    var MaxAlertEducation = document.getElementById('MaxAlert-Education');
-    console.log(Education1.style.display, 'Education1.style.display===============');
-    console.log(Education2.style.display, 'Education2.style.display===============');
-    console.log(MaxAlertEducation.style.display, 'MaxAlertEducation.style.display===============');
     if (Education1.style.display == 'none') {
       Education1.style.display = 'block';
       return;
@@ -344,9 +338,6 @@ if (DeleteEducation2) {
 
 if (AddWork) {
   AddWork.addEventListener('click', function () {
-    console.log(WorkExperience1.style.display, 'WorkExperience1.style.display===============');
-    console.log(WorkExperience2.style.display, 'WorkExperience2.style.display===============');
-    console.log(MaxAlertWork.style.display, 'MaxAlertEducation.style.display===============');
     if (WorkExperience1.style.display === 'none') {
       WorkExperience1.style.display = 'block';
       return;
@@ -622,7 +613,7 @@ if (saveTab2Button) {
           MenuTab3.click();
           MenuTab2.style.pointerEvents = "none";
         }
-        console.log(response.json(), '===response.json(2)====');
+
         return response.json();
       }).catch(error => {
       });
@@ -745,7 +736,7 @@ if (saveTab3Button) {
           MenuTab4.click();
           MenuTab3.style.pointerEvents = "none";
         }
-        console.log(response.json(), '===response.json(3)====');
+
         return response.json();
       }).catch(error => {
       });
@@ -793,8 +784,11 @@ if (saveTab4Button) {
           let ToBeSaved = document.getElementById('ToBeSaved-4');
           Saving.style.display = 'none';
           ToBeSaved.style.display = 'flex';
+          MenuTab5.style.pointerEvents = "auto";
+          MenuTab5.click();
+          MenuTab4.style.pointerEvents = "none";
         }
-        console.log(response.json(), '===response.json(4)====');
+
         return response.json();
       }).catch(error => {
       });
@@ -808,7 +802,7 @@ if (saveTab5Button) {
     Saving.style.display = 'flex';
     ToBeSaved.style.display = 'none';
     var CitizenshipValue = Citizenship.value;
-    var USVisaTypeOption = USVisaTyoeSelect.options[USVisaTyoeSelect.selectedIndex];
+    var USVisaTypeOption = USVisaTyoeSelect.options[USVisaTyoeSelect.selectedIndex].value;
 
     var url = `https://api.jobwizard.ai/api/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
     var data = {
@@ -839,8 +833,11 @@ if (saveTab5Button) {
           let ToBeSaved = document.getElementById('ToBeSaved-5');
           Saving.style.display = 'none';
           ToBeSaved.style.display = 'flex';
+          MenuTab6.style.pointerEvents = "auto";
+          MenuTab6.click();
+          MenuTab5.style.pointerEvents = "none";
         }
-        console.log(response.json(), '===response.json(5)====');
+
         return response.json();
       }).catch(error => {
       });
@@ -956,7 +953,7 @@ if (saveTab6Button) {
           ToBeSaved.style.display = 'flex';
           window.location.href = "https://www.jobwizard.ai/onboarding/registration-complete"
         }
-        console.log(response.json(), '===response.json(6)====');
+
         return response.json();
       }).catch(error => {
       });
