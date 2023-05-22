@@ -293,12 +293,12 @@ if (backTab6) {
 
 if (AddEducation) {
   AddEducation.addEventListener('click', function () {
-    if (Education1.style.display === 'none') {
+    if (Education1.style.display == 'none') {
       Education1.style.display = 'block';
       return;
     }
 
-    if (Education2.style.display === 'none') {
+    if (Education2.style.display == 'none') {
       Education2.style.display = 'block';
       return;
     }
@@ -387,12 +387,12 @@ if (DeleteWork2) {
 
 if (AddLanguage) {
   AddLanguage.addEventListener('click', function () {
-    if (languag1.style.display === 'none') {
+    if (languag1.style.display == 'none') {
       languag1.style.display = 'flex';
       return;
     }
 
-    if (languag2.style.display === 'none') {
+    if (languag2.style.display == 'none') {
       languag2.style.display = 'flex';
       return;
     }
@@ -423,12 +423,12 @@ if (DeleteLanguage2) {
 
 if (AddAward) {
   AddAward.addEventListener('click', function () {
-    if (Award1.style.display === 'none') {
+    if (Award1.style.display == 'none') {
       Award1.style.display = 'flex';
       return;
     }
 
-    if (Award2.style.display === 'none') {
+    if (Award2.style.display == 'none') {
       Award2.style.display = 'flex';
       return;
     }
