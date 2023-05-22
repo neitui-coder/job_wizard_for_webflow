@@ -293,6 +293,8 @@ if (backTab6) {
 
 if (AddEducation) {
   AddEducation.addEventListener('click', function () {
+    console.log(Education1.style.display,'Education1.style.display===============');
+    console.log(Education2.style.display,'Education1.style.display===============');
     if (Education1.style.display == 'none') {
       Education1.style.display = 'block';
       return;
@@ -338,6 +340,8 @@ if (DeleteEducation2) {
 
 if (AddWork) {
   AddWork.addEventListener('click', function () {
+    console.log(WorkExperience1.style.display,'WorkExperience1.style.display===============');
+    console.log(WorkExperience2.style.display,'WorkExperience2.style.display===============');
     if (WorkExperience1.style.display === 'none') {
       WorkExperience1.style.display = 'block';
       return;
@@ -387,6 +391,8 @@ if (DeleteWork2) {
 
 if (AddLanguage) {
   AddLanguage.addEventListener('click', function () {
+    console.log(languag1.style.display,'languag1.style.display===============');
+    console.log(languag2.style.display,'languag2.style.display===============');
     if (languag1.style.display == 'none') {
       languag1.style.display = 'flex';
       return;
