@@ -116,8 +116,8 @@ var WorkDescription1textarea = document.getElementById('WorkDescription1-textare
 var WorkDescription2textarea = document.getElementById('WorkDescription2-textarea');
 
 var AddWork = document.getElementById('AddWork');
-var DeleteEducation1 = document.getElementById('DeleteEducation1');
-var DeleteEducation2 = document.getElementById('DeleteEducation2');
+var DeleteWork1 = document.getElementById('DeleteWork1');
+var DeleteWork2 = document.getElementById('DeleteWork2');
 
 
 //tab4
@@ -667,7 +667,7 @@ if (saveTab3Button) {
 
     var url = `https://api.jobwizard.ai/api/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
     var job_infos = [];
-    var WorkExperience0 = {
+    var job_info0 = {
       "company_name": CompanyName0Value,
       "location": WorkLocation0Value,
       "position": Position0Value,
@@ -677,7 +677,7 @@ if (saveTab3Button) {
       "start_date": WorkStartDate0Value,
       "end_date": WorkEndDate0Value
     };
-    var WorkExperience1 = {
+    var job_info1 = {
       "company_name": CompanyName1Value,
       "location": WorkLocation1Value,
       "position": Position1Value,
@@ -687,7 +687,7 @@ if (saveTab3Button) {
       "start_date": WorkStartDate1Value,
       "end_date": WorkEndDate1Value
     };
-    var WorkExperience2 = {
+    var job_info2 = {
       "company_name": CompanyName2Value,
       "location": WorkLocation2Value,
       "position": Position2Value,
@@ -697,13 +697,13 @@ if (saveTab3Button) {
       "start_date": WorkStartDate2Value,
       "end_date": WorkEndDate2Value
     };
-    job_infos.push(WorkExperience0);
+    job_infos.push(job_info0);
     if (WorkExperience1.style.display === 'block') {
-      job_infos.push(WorkExperience1);
+      job_infos.push(job_info1);
     }
 
     if (WorkExperience2.style.display === 'block') {
-      job_infos.push(WorkExperience2);
+      job_infos.push(job_info2);
     }
 
     var data = {
