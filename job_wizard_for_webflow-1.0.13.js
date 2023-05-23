@@ -52,6 +52,8 @@ var locationInput = document.getElementById('Location-Input');
 // tab2
 var Education1 = document.getElementById('Education1');
 var Education2 = document.getElementById('Education2');
+Education1.style.display = 'none';
+Education2.style.display = 'none';
 var MaxAlertEducation = document.getElementById('MaxAlert-Education');
 var SchoolName0Input = document.getElementById('SchoolName0-Input');
 var SchoolName1Input = document.getElementById('SchoolName1-Input');
@@ -82,6 +84,8 @@ var DeleteEducation2 = document.getElementById('DeleteEducation2');
 // tab3
 var WorkExperience1 = document.getElementById('w-node-_4eed910d-1e1e-56af-1c38-33abb164bc53-0f45508c');
 var WorkExperience2 = document.getElementById('w-node-_7675749a-2c62-424f-641e-ad12fb4f9990-0f45508c');
+WorkExperience1.style.display = 'none';
+WorkExperience2.style.display = 'none';
 var MaxAlertWork = document.getElementById('MaxAlert-Work');
 var WorkEndDate0stillwork = document.getElementById('WorkEndDate0-stillwork');
 var CompanyName0 = document.getElementById('CompanyName0-Input');
@@ -147,8 +151,12 @@ var False6Selected = document.getElementById('False-6');
 // tab6
 var languag1 = document.getElementById('languag1');
 var languag2 = document.getElementById('languag2');
+languag1.style.display = 'none';
+languag2.style.display = 'none';
 var Award1 = document.getElementById('Award1');
 var Award2 = document.getElementById('Award2');
+Award1.style.display = 'none';
+Award2.style.display = 'none';
 var MaxAlertLanguage = document.getElementById('MaxAlert-Language');
 var MaxAlertAward = document.getElementById('MaxAlert-Award');
 var LinkedinURL = document.getElementById('Linkedin-URL');
