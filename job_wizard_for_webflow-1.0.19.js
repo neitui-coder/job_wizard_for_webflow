@@ -414,7 +414,7 @@ if (AddLanguage) {
 
 if (DeleteLanguage1) {
   DeleteLanguage1.addEventListener('click', function () {
-    WorkExperience1.style.display = 'none';
+    languag1.style.display = 'none';
     language1name.value = '';
     language1level.value = '';
   })
@@ -422,7 +422,7 @@ if (DeleteLanguage1) {
 
 if (DeleteLanguage2) {
   DeleteLanguage2.addEventListener('click', function () {
-    WorkExperience2.style.display = 'none';
+    language2.style.display = 'none';
     language2name.value = '';
     language2level.value = '';
   })
