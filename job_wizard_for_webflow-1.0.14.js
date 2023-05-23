@@ -3,6 +3,8 @@ let cookie_ms_token = null;
 cookie_ms_token = window.$memberstackDom.getMemberCookie();
 
 // all
+var AddInfoDiv = document.getElementById('Add-Info');
+AddInfoDiv.style.display = 'none';
 var saveTab1Button = document.getElementById('Save-Tab1');
 var saveTab2Button = document.getElementById('Save-Tab2');
 var saveTab3Button = document.getElementById('Save-Tab3');
@@ -194,8 +196,6 @@ MenuTab6.style.pointerEvents = "none";
 
 var startButton = document.getElementById('Start-Add-Info');
 var step2Div = document.getElementById('step2');
-var AddInfoDiv = document.getElementById('Add-Info');
-// AddInfoDiv.style.display = 'none';
 
 if (startButton) {
   startButton.addEventListener('click', function () {
