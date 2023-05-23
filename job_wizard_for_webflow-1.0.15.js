@@ -152,9 +152,9 @@ var False6Selected = document.getElementById('False-6');
 
 // tab6
 var languag1 = document.getElementById('languag1');
-var languag2 = document.getElementById('languag2');
+var language2 = document.getElementById('language2');
 languag1.style.display = 'none';
-languag2.style.display = 'none';
+language2.style.display = 'none';
 var Award1 = document.getElementById('Award1');
 var Award2 = document.getElementById('Award2');
 Award1.style.display = 'none';
