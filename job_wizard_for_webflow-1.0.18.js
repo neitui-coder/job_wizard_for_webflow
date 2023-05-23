@@ -908,7 +908,7 @@ if (saveTab6Button) {
       language_infos.push(language_info1);
     }
 
-    if (languag2.style.display === 'flex') {
+    if (language2.style.display === 'flex') {
       language_infos.push(language_info2);
     }
 
