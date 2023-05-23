@@ -179,7 +179,7 @@ var Award1year = document.getElementById('Award1-year');
 var Award2year = document.getElementById('Award2-year');
 var Award0name = document.getElementById('Award0-name');
 var Award1name = document.getElementById('Award1-name');
-var Award2name = document.getElementById('Award2-name');
+var Award2name = document.getElementById('Award2-level');
 
 var AddLanguage = document.getElementById('AddLanguage');
 var AddAward = document.getElementById('AddAward');
@@ -395,15 +395,13 @@ if (DeleteWork2) {
 
 if (AddLanguage) {
   AddLanguage.addEventListener('click', function () {
-    console.log(languag1.style.display, 'languag1.style.display===============');
-    console.log(languag2.style.display, 'languag2.style.display===============');
     if (languag1.style.display == 'none') {
       languag1.style.display = 'flex';
       return;
     }
 
-    if (languag2.style.display == 'none') {
-      languag2.style.display = 'flex';
+    if (language2.style.display == 'none') {
+      language2.style.display = 'flex';
       return;
     }
 
