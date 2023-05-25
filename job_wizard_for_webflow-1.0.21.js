@@ -200,7 +200,7 @@ var startButton = document.getElementById('Start-Add-Info');
 
 if (startButton) {
   startButton.addEventListener('click', function () {
-    if (cookie_ms_token) {
+    if (!cookie_ms_token) {
       window.location.href = "https://www.jobwizard.ai/login"
       return;
     }
@@ -468,6 +468,7 @@ if (DeleteAward2) {
     Award2name.value = '';
   })
 }
+fetchData();
 
 
 function dofillUserInfo() {
