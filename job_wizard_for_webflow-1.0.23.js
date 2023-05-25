@@ -492,7 +492,7 @@ async function fetchData() {
     if (response.ok) {
       const data = await response.json();
       // 在这里处理响应数据
-      userInfo = data;
+      userInfo = data.data;
       // 执行其他步骤
       dofillUserInfo(userInfo);
       doSomethingElse();
