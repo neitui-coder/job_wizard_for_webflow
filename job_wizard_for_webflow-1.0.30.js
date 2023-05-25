@@ -489,6 +489,7 @@ function dofillUserInfo(userInfo) {
   const dateArr = userInfo.basic_info.birthday.split(" ");
   dateInput.value = dateArr[2];
   selectMonthSelect.value = dateArr[1];
+  selectMonthSelect.style.color = "black";
   yearInput.value = dateArr[0];
   locationInput.value = userInfo.basic_info.location;
 }
