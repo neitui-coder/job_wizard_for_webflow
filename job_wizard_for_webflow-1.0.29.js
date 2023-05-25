@@ -488,7 +488,7 @@ function dofillUserInfo(userInfo) {
   emailInput.value = userInfo.basic_info.email;
   const dateArr = userInfo.basic_info.birthday.split(" ");
   dateInput.value = dateArr[2];
-  selectMonthSelect.options[selectMonthSelect.selectedIndex].value = dateArr[1];
+  selectMonthSelect.value = dateArr[1];
   yearInput.value = dateArr[0];
   locationInput.value = userInfo.basic_info.location;
 }
