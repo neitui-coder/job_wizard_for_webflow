@@ -475,15 +475,19 @@ function dofillUserInfo(userInfo) {
   // tab1
   firstNameInput.value = userInfo.basic_info.first_name;
   lastNameInput.value = userInfo.basic_info.last_name;
-  phoneNumberInput2.value = userInfo.basic_info.phone;
+  if (userInfo.basic_info.phone.charAt(0) === '+') {
+    phoneNumberInput1.value = userInfo.basic_info.phone.substring(0, 3);
+    phoneNumberInput2.value = userInfo.basic_info.phone.substring(3);
+  } else {
+    phoneNumberInput2.value = userInfo.basic_info.phone;
+  }
+
   emailInput.value = userInfo.basic_info.email;
   const dateArr = userInfo.basic_info.birthday.split(" ");
   dateInput.value = dateArr[2];
   selectMonthSelect.options[selectMonthSelect.selectedIndex].value = dateArr[1];
   yearInput.value = dateArr[0];
   locationInput.value = userInfo.basic_info.location;
-
-
 }
 
 async function fetchData() {
@@ -502,6 +506,14 @@ async function fetchData() {
   } catch (error) {
     // 处理请求失败的情况
     console.error(error);
+  }
+}
+
+function extractString(str) {
+  if (str.charAt(0) === '+') {
+    return str.substring(0, 3);
+  } else {
+    return str;
   }
 }
 
