@@ -471,7 +471,18 @@ if (DeleteAward2) {
 fetchData();
 
 
-function dofillUserInfo() {
+function dofillUserInfo(userInfo) {
+  // tab1
+  firstNameInput.value = userInfo.basic_info.first_name;
+  lastNameInput.value = userInfo.basic_info.last_name;
+  phoneNumberInput2.value = userInfo.basic_info.phone;
+  emailInput.value = userInfo.basic_info.email;
+  const dateArr = userInfo.basic_info.birthday.split(" ");
+  dateInput.value = dateArr[2];
+  selectMonthSelect.options[selectMonthSelect.selectedIndex].value = dateArr[1];
+  yearInput.value = dateArr[0];
+  locationInput.value = userInfo.basic_info.location;
+
 
 }
 
@@ -482,9 +493,8 @@ async function fetchData() {
       const data = await response.json();
       // 在这里处理响应数据
       userInfo = data;
-      console.log(userInfo,'===userInfo===');
       // 执行其他步骤
-      dofillUserInfo();
+      dofillUserInfo(userInfo);
       doSomethingElse();
     } else {
       throw new Error('请求失败');
