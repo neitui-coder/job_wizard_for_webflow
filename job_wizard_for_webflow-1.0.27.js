@@ -477,7 +477,6 @@ function dofillUserInfo(userInfo) {
   lastNameInput.value = userInfo.basic_info.last_name;
 
   if (userInfo.basic_info.phone.charAt(0) == '+') {
-    console.log('suceede')
     console.log(userInfo.basic_info.phone.substring(0, 3),'====userInfo.basic_info.phone.substring(0, 3)===');
     phoneNumberInput1.value = userInfo.basic_info.phone.substring(0, 3);
     phoneNumberInput2.value = userInfo.basic_info.phone.substring(3);
