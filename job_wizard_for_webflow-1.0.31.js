@@ -5,7 +5,7 @@ cookie_ms_token = window.$memberstackDom.getMemberCookie();
 
 // all
 var AddInfoDiv = document.getElementById('Add-Info');
-var step2Div = document.getElementById('step2');
+var step2Div = document.getElementById('HintCard');
 AddInfoDiv.style.display = 'none';
 var saveTab1Button = document.getElementById('Save-Tab1');
 var saveTab2Button = document.getElementById('Save-Tab2');
