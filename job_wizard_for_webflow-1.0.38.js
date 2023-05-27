@@ -474,6 +474,8 @@ if (WorkEndDate0stillwork) {
     if (WorkEndDate0stillwork.checked) {
       WorkEndDate0Month.disabled = true;
       WorkEndDate0Year.disabled = true;
+      WorkEndDate0Month.value = '';
+      WorkEndDate0Year.value = '';
     } else {
       WorkEndDate0Month.disabled = false;
       WorkEndDate0Year.disabled = false;
