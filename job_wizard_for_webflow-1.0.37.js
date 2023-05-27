@@ -573,7 +573,7 @@ function dofillUserInfo(userInfo) {
   Position0.value = userInfo.job_infos[0].position;
   WorkType0.value = userInfo.job_infos[0].work_type;
   WorkType0.style.color = "black";
-  WorkDescription0textareaValue.value = userInfo.job_infos[0].description;
+  WorkDescription0textarea.value = userInfo.job_infos[0].description;
   const StartDateInput0JobArr = userInfo.job_infos[0].start_date.split("-");
   WorkStartDate0Month.value = StartDateInput0JobArr[0];
   WorkStartDate0Year.value = StartDateInput0JobArr[1];
@@ -591,7 +591,7 @@ function dofillUserInfo(userInfo) {
     Position1.value = userInfo.job_infos[1].position;
     WorkType1.value = userInfo.job_infos[1].work_type;
     WorkType1.style.color = "black";
-    WorkDescription1textareaValue.value = userInfo.job_infos[1].description;
+    WorkDescription1textarea.value = userInfo.job_infos[1].description;
     const StartDateInput1JobArr = userInfo.job_infos[1].start_date.split("-");
     WorkStartDate1Month.value = StartDateInput1JobArr[0];
     WorkStartDate1Year.value = StartDateInput1JobArr[1];
@@ -615,7 +615,7 @@ function dofillUserInfo(userInfo) {
     Position2.value = userInfo.job_infos[2].position;
     WorkType2.value = userInfo.job_infos[2].work_type;
     WorkType2.style.color = "black";
-    WorkDescription2textareaValue.value = userInfo.job_infos[2].description;
+    WorkDescription2textarea.value = userInfo.job_infos[2].description;
     const StartDateInput2JobArr = userInfo.job_infos[0].start_date.split("-");
     WorkStartDate2Month.value = StartDateInput2JobArr[0];
     WorkStartDate2Year.value = StartDateInput2JobArr[1];
