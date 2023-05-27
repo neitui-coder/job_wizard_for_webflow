@@ -497,6 +497,7 @@ function dofillUserInfo(userInfo) {
   SchoolName0Input.value = userInfo.school_infos[0].name;
   Major0Input.value = userInfo.school_infos[0].major;
   DegreeType0Input.value = userInfo.school_infos[0].degree;
+  DegreeType0Input.style.color = "black";
   const StartDateInput0Arr = userInfo.school_infos[0].start_date.split("-");
   StartDate0Input0.value = StartDateInput0Arr[0];
   StartDate0Input1.value = StartDateInput0Arr[1];
@@ -514,6 +515,7 @@ function dofillUserInfo(userInfo) {
     SchoolName1Input.value = userInfo.school_infos[1].name;
     Major1Input.value = userInfo.school_infos[1].major;
     DegreeType1Input.value = userInfo.school_infos[1].degree;
+    DegreeType1Input.style.color = "black";
     const StartDateInput1Arr = userInfo.school_infos[1].start_date.split("-");
     StartDate1Input0.value = StartDateInput1Arr[0];
     StartDate1Input1.value = StartDateInput1Arr[1];
@@ -532,6 +534,7 @@ function dofillUserInfo(userInfo) {
     SchoolName2Input.value = userInfo.school_infos[2].name;
     Major2Input.value = userInfo.school_infos[2].name;
     DegreeType2Input.value = userInfo.school_infos[2].degree;
+    DegreeType2Input.style.color = "black";
     const StartDateInput2Arr = userInfo.school_infos[2].start_date.split("-");
     StartDate2Input0.value = StartDateInput2Arr[0];
     StartDate2Input1.value = StartDateInput2Arr[1];
