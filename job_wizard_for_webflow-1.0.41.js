@@ -479,6 +479,9 @@ if (WorkEndDate0stillwork) {
     } else {
       WorkEndDate0Month.disabled = false;
       WorkEndDate0Year.disabled = false;
+      let WorkEndDate0stillworkPrev = WorkEndDate0stillwork.previousElementSibling;
+      WorkEndDate0stillworkPrev.style.backgroundColor = "";
+      WorkEndDate0stillworkPrev.style.backgroundImage =  "";
     }
   })
 }
