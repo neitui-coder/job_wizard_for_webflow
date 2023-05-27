@@ -562,6 +562,7 @@ function dofillUserInfo(userInfo) {
 
   //tab3
   WorkEndDate0stillwork.checked = userInfo.job_infos[0].now_working;
+  console.log(WorkEndDate0stillwork.checked,'===WorkEndDate0stillwork.checked ====');
   if (WorkEndDate0stillwork.checked) {
     WorkEndDate0Month.disabled = true;
     WorkEndDate0Year.disabled = true;
