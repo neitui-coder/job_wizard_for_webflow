@@ -504,11 +504,11 @@ function dofillUserInfo(userInfo) {
   EndDate0Input0.value = EndDateInput0Arr[0];
   EndDate0Input1.value = EndDateInput0Arr[1];
 
-  const isExistSchoolInfo1 = userInfo.school_infos[1].name ||
-    userInfo.school_infos[1].major ||
-    userInfo.school_infos[1].degree ||
-    userInfo.school_infos[1].start_date ||
-    userInfo.school_infos[1].end_date;
+  const isExistSchoolInfo1 = userInfo.school_infos[1]?.name ||
+    userInfo.school_infos[1]?.major ||
+    userInfo.school_infos[1]?.degree ||
+    userInfo.school_infos[1]?.start_date ||
+    userInfo.school_infos[1]?.end_date;
 
   if (isExistSchoolInfo1) {
     SchoolName1Input.value = userInfo.school_infos[1].name;
@@ -524,10 +524,10 @@ function dofillUserInfo(userInfo) {
   }
 
   const isExistSchoolInfo2 = userInfo.school_infos[2].name ||
-    userInfo.school_infos[2].major ||
-    userInfo.school_infos[2].degree ||
-    userInfo.school_infos[2].start_date ||
-    userInfo.school_infos[2].end_date;
+    userInfo.school_infos[2]?.major ||
+    userInfo.school_infos[2]?.degree ||
+    userInfo.school_infos[2]?.start_date ||
+    userInfo.school_infos[2]?.end_date;
   if (isExistSchoolInfo2) {
     SchoolName2Input.value = userInfo.school_infos[2].name;
     Major2Input.value = userInfo.school_infos[2].name;
