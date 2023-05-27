@@ -475,12 +475,11 @@ function dofillUserInfo(userInfo) {
   // tab1
   firstNameInput.value = userInfo.basic_info.first_name;
   lastNameInput.value = userInfo.basic_info.last_name;
-  console.log(userInfo.basic_info.phone[0],'====userInfo.basic_info.phone[0]=====');
+  let phoneGroup = userInfo.basic_info.phone.split(" ")
 
-  if (userInfo.basic_info.phone[0] == '+') {
-    console.log(userInfo.basic_info.phone.substring(0, 3),'====userInfo.basic_info.phone.substring(0, 3)===');
-    phoneNumberInput1.value = userInfo.basic_info.phone.substring(0, 3);
-    phoneNumberInput2.value = userInfo.basic_info.phone.substring(3);
+  if (phoneGroup.length > 1) {
+    phoneNumberInput1.value = phoneGroup[0];
+    phoneNumberInput2.value = phoneGroup[1];
   } else {
     phoneNumberInput2.value = userInfo.basic_info.phone;
   }
@@ -492,6 +491,55 @@ function dofillUserInfo(userInfo) {
   selectMonthSelect.style.color = "black";
   yearInput.value = dateArr[0];
   locationInput.value = userInfo.basic_info.location;
+
+
+  //tab2
+  SchoolName0Input.value = userInfo.school_infos[0].name;
+  Major0Input.value = userInfo.school_infos[0].major;
+  DegreeType0Input.value = userInfo.school_infos[0].degree;
+  const StartDateInput0Arr = userInfo.school_infos[0].start_date.split("-");
+  StartDate0Input0.value = StartDateInput0Arr[0];
+  StartDate0Input1.value = StartDateInput0Arr[1];
+  const EndDateInput0Arr = userInfo.school_infos[0].end_date.split("-");
+  EndDate0Input0.value = EndDateInput0Arr[0];
+  EndDate0Input1.value = EndDateInput0Arr[1];
+
+  const isExistSchoolInfo1 = userInfo.school_infos[1].name ||
+    userInfo.school_infos[1].major ||
+    userInfo.school_infos[1].degree ||
+    userInfo.school_infos[1].start_date ||
+    userInfo.school_infos[1].end_date;
+
+  if (isExistSchoolInfo1) {
+    SchoolName1Input.value = userInfo.school_infos[1].name;
+    Major1Input.value = userInfo.school_infos[1].major;
+    DegreeType1Input.value = userInfo.school_infos[1].degree;
+    const StartDateInput1Arr = userInfo.school_infos[1].start_date.split("-");
+    StartDate1Input0.value = StartDateInput1Arr[0];
+    StartDate1Input1.value = StartDateInput1Arr[1];
+    const EndDateInput1Arr = userInfo.school_infos[1].end_date.split("-");
+    EndDate1Input0.value = EndDateInput1Arr[0];
+    EndDate1Input1.value = EndDateInput1Arr[1];
+    Education1.style.display = 'block';
+  }
+
+  const isExistSchoolInfo2 = userInfo.school_infos[2].name ||
+    userInfo.school_infos[2].major ||
+    userInfo.school_infos[2].degree ||
+    userInfo.school_infos[2].start_date ||
+    userInfo.school_infos[2].end_date;
+  if (isExistSchoolInfo2) {
+    SchoolName2Input.value = userInfo.school_infos[2].name;
+    Major2Input.value = userInfo.school_infos[2].name;
+    DegreeType2Input.value = userInfo.school_infos[2].degree;
+    const StartDateInput2Arr = userInfo.school_infos[2].start_date.split("-");
+    StartDate2Input0.value = StartDateInput2Arr[0];
+    StartDate2Input1.value = StartDateInput2Arr[1];
+    const EndDateInput2Arr = userInfo.school_infos[2].end_date.split("-");
+    EndDate2Input0.value = EndDateInput2Arr[0];
+    EndDate2Input1.value = EndDateInput2Arr[1];
+    Education2.style.display = 'block';
+  }
 }
 
 async function fetchData() {
@@ -521,11 +569,6 @@ function extractString(str) {
   }
 }
 
-
-
-
-
-
 function doSomethingElse() {
   if (saveTab1Button) {
     saveTab1Button.addEventListener('click', function () {
@@ -537,7 +580,7 @@ function doSomethingElse() {
       var lastNameValue = lastNameInput.value;
       var phoneNumberValue1 = phoneNumberInput1.value;
       var phoneNumberValue2 = phoneNumberInput2.value;
-      var phoneNumber = phoneNumberValue1 + phoneNumberValue2;
+      var phoneNumber = phoneNumberValue1 + " " + phoneNumberValue2;
       var emailValue = emailInput.value;
       var dateValue = dateInput.value;
       var selectMonthValue = selectMonthSelect.options[selectMonthSelect.selectedIndex].value;
