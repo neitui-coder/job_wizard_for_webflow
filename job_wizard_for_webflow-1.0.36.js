@@ -468,6 +468,20 @@ if (DeleteAward2) {
     Award2name.value = '';
   })
 }
+
+if (WorkEndDate0stillwork) {
+  WorkEndDate0stillwork.addEventListener('click', function () {
+    if (WorkEndDate0stillwork.checked) {
+      WorkEndDate0Month.disabled = true;
+      WorkEndDate0Year.disabled = true;
+    } else {
+      WorkEndDate0Month.disabled = false;
+      WorkEndDate0Year.disabled = false;
+    }
+  })
+}
+
+
 fetchData();
 
 
@@ -532,7 +546,7 @@ function dofillUserInfo(userInfo) {
     userInfo.school_infos[2]?.end_date;
   if (isExistSchoolInfo2) {
     SchoolName2Input.value = userInfo.school_infos[2].name;
-    Major2Input.value = userInfo.school_infos[2].name;
+    Major2Input.value = userInfo.school_infos[2].major;
     DegreeType2Input.value = userInfo.school_infos[2].degree;
     DegreeType2Input.style.color = "black";
     const StartDateInput2Arr = userInfo.school_infos[2].start_date.split("-");
@@ -542,6 +556,73 @@ function dofillUserInfo(userInfo) {
     EndDate2Input0.value = EndDateInput2Arr[0];
     EndDate2Input1.value = EndDateInput2Arr[1];
     Education2.style.display = 'block';
+  }
+
+  //tab3
+  WorkEndDate0stillwork.checked = userInfo.job_infos[0].now_working;
+  if (WorkEndDate0stillwork.checked) {
+    WorkEndDate0Month.disabled = true;
+    WorkEndDate0Year.disabled = true;
+  } else {
+    const EndDateInput0JobArr = userInfo.job_infos[0].end_date.split("-");
+    WorkEndDate0Month.value = EndDateInput0JobArr[0];
+    WorkEndDate0Year.value = EndDateInput0JobArr[1];
+  }
+  CompanyName0.value = userInfo.job_infos[0].company_name;
+  WorkLocation0.value = userInfo.job_infos[0].location;
+  Position0.value = userInfo.job_infos[0].position;
+  WorkType0.value = userInfo.job_infos[0].work_type;
+  WorkType0.style.color = "black";
+  WorkDescription0textareaValue.value = userInfo.job_infos[0].description;
+  const StartDateInput0JobArr = userInfo.job_infos[0].start_date.split("-");
+  WorkStartDate0Month.value = StartDateInput0JobArr[0];
+  WorkStartDate0Year.value = StartDateInput0JobArr[1];
+
+  const isExistJobInfo1 = userInfo.job_infos[1]?.company_name ||
+    userInfo.job_infos[1]?.location ||
+    userInfo.job_infos[1]?.position ||
+    userInfo.job_infos[1]?.work_type ||
+    userInfo.job_infos[1]?.description ||
+    userInfo.job_infos[1]?.start_date ||
+    userInfo.job_infos[1]?.end_date;
+  if (isExistJobInfo1) {
+    CompanyName1.value = userInfo.job_infos[1].company_name;
+    WorkLocation1.value = userInfo.job_infos[1].location;
+    Position1.value = userInfo.job_infos[1].position;
+    WorkType1.value = userInfo.job_infos[1].work_type;
+    WorkType1.style.color = "black";
+    WorkDescription1textareaValue.value = userInfo.job_infos[1].description;
+    const StartDateInput1JobArr = userInfo.job_infos[1].start_date.split("-");
+    WorkStartDate1Month.value = StartDateInput1JobArr[0];
+    WorkStartDate1Year.value = StartDateInput1JobArr[1];
+    const EndDateInput1JobArr = userInfo.job_infos[1].end_date.split("-");
+    WorkEndDate1Month.value = EndDateInput1JobArr[0];
+    WorkEndDate1Year.value = EndDateInput1JobArr[1];
+    WorkExperience1.style.display = 'block';
+  }
+
+
+  const isExistJobInfo2 = userInfo.job_infos[2]?.company_name ||
+    userInfo.job_infos[2]?.location ||
+    userInfo.job_infos[2]?.position ||
+    userInfo.job_infos[2]?.work_type ||
+    userInfo.job_infos[2]?.description ||
+    userInfo.job_infos[2]?.start_date ||
+    userInfo.job_infos[2]?.end_date
+  if (isExistJobInfo2) {
+    CompanyName2.value = userInfo.job_infos[2].company_name;
+    WorkLocation2.value = userInfo.job_infos[2].location;
+    Position2.value = userInfo.job_infos[2].position;
+    WorkType2.value = userInfo.job_infos[2].work_type;
+    WorkType2.style.color = "black";
+    WorkDescription2textareaValue.value = userInfo.job_infos[2].description;
+    const StartDateInput2JobArr = userInfo.job_infos[0].start_date.split("-");
+    WorkStartDate2Month.value = StartDateInput2JobArr[0];
+    WorkStartDate2Year.value = StartDateInput2JobArr[1];
+    const EndDateInput2JobArr = userInfo.job_infos[2].end_date.split("-");
+    WorkEndDate2Month.value = EndDateInput2JobArr[0];
+    WorkEndDate2Year.value = EndDateInput2JobArr[1];
+    WorkExperience2.style.display = 'block';
   }
 }
 
