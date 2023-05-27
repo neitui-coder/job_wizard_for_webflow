@@ -523,7 +523,7 @@ function dofillUserInfo(userInfo) {
     Education1.style.display = 'block';
   }
 
-  const isExistSchoolInfo2 = userInfo.school_infos[2].name ||
+  const isExistSchoolInfo2 = userInfo.school_infos[2]?.name ||
     userInfo.school_infos[2]?.major ||
     userInfo.school_infos[2]?.degree ||
     userInfo.school_infos[2]?.start_date ||
