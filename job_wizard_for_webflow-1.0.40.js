@@ -562,10 +562,12 @@ function dofillUserInfo(userInfo) {
 
   //tab3
   WorkEndDate0stillwork.checked = userInfo.job_infos[0].now_working;
-  console.log(WorkEndDate0stillwork.checked,'===WorkEndDate0stillwork.checked ====');
   if (WorkEndDate0stillwork.checked) {
     WorkEndDate0Month.disabled = true;
     WorkEndDate0Year.disabled = true;
+    let WorkEndDate0stillworkPrev = WorkEndDate0stillwork.previousElementSibling;
+    WorkEndDate0stillworkPrev.style.backgroundColor = "#3898ec";
+    WorkEndDate0stillworkPrev.style.backgroundImage =  "url(https://d3e54v103j8qbb.cloudfront.net/static/custom-checkbox-checkmark.589d534424.svg)";
   } else {
     const EndDateInput0JobArr = userInfo.job_infos[0].end_date.split("-");
     WorkEndDate0Month.value = EndDateInput0JobArr[0];
