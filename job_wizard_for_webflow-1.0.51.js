@@ -479,8 +479,8 @@ if (WorkEndDate0stillwork) {
     } else {
       WorkEndDate0Month.disabled = false;
       WorkEndDate0Year.disabled = false;
-      WorkEndDate0Month.style.transition = '';
-      WorkEndDate0Year.style.transition = '';
+      WorkEndDate0Month.style.transition = 'box-shadow .3s, background-color 10000s, border .3s';
+      WorkEndDate0Year.style.transition = 'box-shadow .3s, background-color 10000s, border .3s';
     }
   })
 }
