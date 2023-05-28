@@ -666,11 +666,11 @@ function dofillUserInfo(userInfo) {
 
 
   // tab5
-  Citizenship.value = userInfo.legal_info.citizenship;
-  USVisaTyoeSelect.value = userInfo.legal_info.work_visa_type;
+  Citizenship.value = userInfo.legal_info?.citizenship;
+  USVisaTyoeSelect.value = userInfo.legal_info?.work_visa_type;
   USVisaTyoeSelect.style.color = "black";
 
-  if (userInfo.legal_info.permanent_resident) {
+  if (userInfo.legal_info?.permanent_resident) {
     True3Selected.value = true;
     let True3SelectedPrev = True3Selected.previousElementSibling;
     True3SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
@@ -680,7 +680,7 @@ function dofillUserInfo(userInfo) {
     False3SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
   }
 
-  if (userInfo.legal_info.need_sponsorship) {
+  if (userInfo.legal_info?.need_sponsorship) {
     True4Selected.value = true;
     let True4SelectedPrev = True4Selected.previousElementSibling;
     True4SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
@@ -691,7 +691,7 @@ function dofillUserInfo(userInfo) {
   }
 
 
-  if (userInfo.legal_info.has_criminal_record) {
+  if (userInfo.legal_info?.has_criminal_record) {
     True5Selected.value = true;
     let True5SelectedPrev = True5Selected.previousElementSibling;
     True5SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
@@ -715,22 +715,24 @@ function dofillUserInfo(userInfo) {
 
 
   // tab6
-  LinkedinURL.value = userInfo.additional_info.linkedin;
-  GitHubURL.value = userInfo.additional_info.github;
-  PortfolioURL.value = userInfo.additional_info.portfolio;
-  PersonalWebsiteURL.value = userInfo.additional_info.website;
-  language0name.value = userInfo.additional_info.language_infos[0].language;
-  language0level.value = userInfo.additional_info.language_infos[0].level;
-  const isExistLanguageInfos1 = userInfo.additional_info.language_infos[1]?.language || userInfo.additional_info.language_infos[1]?.level
+  LinkedinURL.value = userInfo.additional_info.linkedin || '';
+  GitHubURL.value = userInfo.additional_info?.github;
+  PortfolioURL.value = userInfo.additional_info?.portfolio;
+  PersonalWebsiteURL.value = userInfo.additional_info?.website;
+  language0name.value = userInfo.additional_info?.language_infos[0]?.language;
+  language0level.value = userInfo.additional_info?.language_infos[0]?.level;
+  const isExistLanguageInfos1 = userInfo.additional_info?.language_infos[1]?.language || userInfo.additional_info?.language_infos[1]?.level
   if (isExistLanguageInfos1) {
     language1name.value = userInfo.additional_info?.language_infos[1]?.language;
     language1level.value = userInfo.additional_info?.language_infos[1]?.level;
+    language1level.style.color = "black";
     languag1.style.display = 'flex';
   }
   const isExistLanguageInfos2 = userInfo.additional_info.language_infos[2]?.language || userInfo.additional_info.language_infos[2]?.level
   if (isExistLanguageInfos2) {
     language2name.value = userInfo.additional_info?.language_infos[2]?.language;
     language2level.value = userInfo.additional_info?.language_infos[2]?.level;
+    language2level.style.color = "black";
     language2.style.display = 'flex';
   }
 
@@ -750,7 +752,6 @@ function dofillUserInfo(userInfo) {
     Award2name.value = userInfo.additional_info?.award_infos[2]?.name;
     Award2.style.display = 'flex';
   }
-
 
   SelfDescriptionTextArea.value = userInfo.additional_info.description;
 }
@@ -1240,9 +1241,6 @@ function doSomethingElse() {
         award_infos.push(award_info2);
       }
 
-
-
-
       var data = {
         "additional_info": {
           "linkin": LinkedinURLValue,
@@ -1272,11 +1270,11 @@ function doSomethingElse() {
       fetch(url, options)
         .then(response => {
           if (response.status == 200) {
+            window.location.href = "https://www.jobwizard.ai/onboarding/registration-complete"
             const Saving = document.getElementById('Saving-6');
             const ToBeSaved = document.getElementById('ToBeSaved-6');
             Saving.style.display = 'none';
             ToBeSaved.style.display = 'flex';
-            window.location.href = "https://www.jobwizard.ai/onboarding/registration-complete"
           }
 
           return response.json();
