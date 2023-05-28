@@ -721,13 +721,13 @@ function dofillUserInfo(userInfo) {
   PersonalWebsiteURL.value = userInfo.additional_info.website;
   language0name.value = userInfo.additional_info.language_infos[0].language;
   language0level.value = userInfo.additional_info.language_infos[0].level;
-  const isExistLanguageInfos1 = userInfo.language_infos[1]?.language || userInfo.language_infos[1]?.level
+  const isExistLanguageInfos1 = userInfo.additional_info.language_infos[1]?.language || userInfo.additional_info.language_infos[1]?.level
   if (isExistLanguageInfos1) {
     language1name.value = userInfo.additional_info?.language_infos[1]?.language;
     language1level.value = userInfo.additional_info?.language_infos[1]?.level;
     languag1.style.display = 'flex';
   }
-  const isExistLanguageInfos2 = userInfo.language_infos[2]?.language || userInfo.language_infos[2]?.level
+  const isExistLanguageInfos2 = userInfo.additional_info.language_infos[2]?.language || userInfo.additional_info.language_infos[2]?.level
   if (isExistLanguageInfos2) {
     language2name.value = userInfo.additional_info?.language_infos[2]?.language;
     language2level.value = userInfo.additional_info?.language_infos[2]?.level;
@@ -737,14 +737,14 @@ function dofillUserInfo(userInfo) {
   Award0year.value = userInfo.additional_info.award_infos[0].time;
   Award0name.value = userInfo.additional_info.award_infos[0].name;
 
-  const isExistAwardInfos1 = userInfo.award_infos[1]?.time || userInfo.award_infos[1]?.name
+  const isExistAwardInfos1 = userInfo.additional_info.award_infos[1]?.time || userInfo.additional_info.award_infos[1]?.name
   if (isExistAwardInfos1) {
     Award1year.value = userInfo.additional_info?.award_infos[0]?.time;
     Award1name.value = userInfo.additional_info?.award_infos[0]?.name;
     Award1.style.display = 'flex';
   }
 
-  const isExistAwardInfos2 = userInfo.award_infos[2]?.time || userInfo.award_infos[2]?.name
+  const isExistAwardInfos2 = userInfo.additional_info.award_infos[2]?.time || userInfo.additional_info.award_infos[2]?.name
   if (isExistAwardInfos2) {
     Award2year.value = userInfo.additional_info?.award_infos[2]?.time;
     Award2name.value = userInfo.additional_info?.award_infos[2]?.name;
@@ -752,7 +752,7 @@ function dofillUserInfo(userInfo) {
   }
 
 
-  SelfDescriptionTextArea.value = userInfo.legal_info.description;
+  SelfDescriptionTextArea.value = userInfo.additional_info.description;
 }
 
 async function fetchData() {
