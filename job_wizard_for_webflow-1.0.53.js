@@ -644,7 +644,6 @@ function dofillUserInfo(userInfo) {
   ReligionSelect.value = userInfo.dei_info.religion;
   ReligionSelect.style.color = "black";
 
-  ReligionSelect.value = userInfo.dei_info.disability;
   if (userInfo.dei_info.disability) {
     True1Selected.value = true;
     let True1SelectedPrev = True1Selected.previousElementSibling;
