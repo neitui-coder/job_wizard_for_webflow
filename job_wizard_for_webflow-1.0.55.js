@@ -715,39 +715,39 @@ function dofillUserInfo(userInfo) {
 
 
   // tab6
-  LinkedinURL.value = userInfo.legal_info.linkedin;
-  GitHubURL.value = userInfo.legal_info.github;
-  PortfolioURL.value = userInfo.legal_info.portfolio;
-  PersonalWebsiteURL.value = userInfo.legal_info.website;
-  language0name.value = userInfo.legal_info.language_infos[0].language;
-  language0level.value = userInfo.legal_info.language_infos[0].level;
+  LinkedinURL.value = userInfo.additional_info.linkedin;
+  GitHubURL.value = userInfo.additional_info.github;
+  PortfolioURL.value = userInfo.additional_info.portfolio;
+  PersonalWebsiteURL.value = userInfo.additional_info.website;
+  language0name.value = userInfo.additional_info.language_infos[0].language;
+  language0level.value = userInfo.additional_info.language_infos[0].level;
   const isExistLanguageInfos1 = userInfo.language_infos[1]?.language || userInfo.language_infos[1]?.level
   if (isExistLanguageInfos1) {
-    language1name.value = userInfo.legal_info?.language_infos[1]?.language;
-    language1level.value = userInfo.legal_info?.language_infos[1]?.level;
+    language1name.value = userInfo.additional_info?.language_infos[1]?.language;
+    language1level.value = userInfo.additional_info?.language_infos[1]?.level;
     languag1.style.display = 'flex';
   }
   const isExistLanguageInfos2 = userInfo.language_infos[2]?.language || userInfo.language_infos[2]?.level
   if (isExistLanguageInfos2) {
-    language2name.value = userInfo.legal_info?.language_infos[2]?.language;
-    language2level.value = userInfo.legal_info?.language_infos[2]?.level;
+    language2name.value = userInfo.additional_info?.language_infos[2]?.language;
+    language2level.value = userInfo.additional_info?.language_infos[2]?.level;
     language2.style.display = 'flex';
   }
 
-  Award0year.value = userInfo.legal_info.award_infos[0].time;
-  Award0name.value = userInfo.legal_info.award_infos[0].name;
+  Award0year.value = userInfo.additional_info.award_infos[0].time;
+  Award0name.value = userInfo.additional_info.award_infos[0].name;
 
   const isExistAwardInfos1 = userInfo.award_infos[1]?.time || userInfo.award_infos[1]?.name
   if (isExistAwardInfos1) {
-    Award1year.value = userInfo.legal_info?.award_infos[0]?.time;
-    Award1name.value = userInfo.legal_info?.award_infos[0]?.name;
+    Award1year.value = userInfo.additional_info?.award_infos[0]?.time;
+    Award1name.value = userInfo.additional_info?.award_infos[0]?.name;
     Award1.style.display = 'flex';
   }
 
   const isExistAwardInfos2 = userInfo.award_infos[2]?.time || userInfo.award_infos[2]?.name
   if (isExistAwardInfos2) {
-    Award2year.value = userInfo.legal_info?.award_infos[2]?.time;
-    Award2name.value = userInfo.legal_info?.award_infos[2]?.name;
+    Award2year.value = userInfo.additional_info?.award_infos[2]?.time;
+    Award2name.value = userInfo.additional_info?.award_infos[2]?.name;
     Award2.style.display = 'flex';
   }
 
