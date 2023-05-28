@@ -630,6 +630,40 @@ function dofillUserInfo(userInfo) {
     WorkEndDate2Year.value = EndDateInput2JobArr[1];
     WorkExperience2.style.display = 'block';
   }
+
+  // tab4
+  identificationInput.checked = userInfo.dei_info.agree_to_provide_dei;
+  let identificationInputPrev = identificationInput.previousElementSibling;
+  if (userInfo.dei_info.agree_to_provide_dei) {
+    identificationInputPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent w--redirected-checked';
+  }
+  raceSelect.value = userInfo.dei_info.race;
+  raceSelect.style.color = "black";
+  genderSelect.value = userInfo.dei_info.gender;
+  genderSelect.style.color = "black";
+  ReligionSelect.value = userInfo.dei_info.religion;
+  ReligionSelect.style.color = "black";
+
+  ReligionSelect.value = userInfo.dei_info.disability;
+  if (userInfo.dei_info.disability) {
+    True1Selected.value = true;
+    let True1SelectedPrev = True1Selected.previousElementSibling;
+    True1SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
+  } else {
+    False1Selected.value = true;
+    let False1SelectedPrev = False1Selected.previousElementSibling;
+    False1SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
+  }
+
+  if (userInfo.dei_info.veteran) {
+    True2Selected.value = true;
+    let True2SelectedPrev = True2Selected.previousElementSibling;
+    True2SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
+  } else {
+    False2Selected.value = true;
+    let False2SelectedPrev = False2Selected.previousElementSibling;
+    False2SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
+  }
 }
 
 async function fetchData() {
