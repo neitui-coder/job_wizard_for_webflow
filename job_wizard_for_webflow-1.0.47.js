@@ -566,7 +566,7 @@ function dofillUserInfo(userInfo) {
   if (userInfo.job_infos[0].now_working) {
     WorkEndDate0Month.disabled = true;
     WorkEndDate0Year.disabled = true;
-    WorkEndDate0stillworkPrev.classList.add('w-checkbox-input w-checkbox-input--inputType-custom checkbox w--redirected-checked');
+    WorkEndDate0stillworkPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox w--redirected-checked';
   } else {
     const EndDateInput0JobArr = userInfo.job_infos[0].end_date.split("-");
     WorkEndDate0Month.value = EndDateInput0JobArr[0];
