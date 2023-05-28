@@ -491,35 +491,35 @@ fetchData();
 
 function dofillUserInfo(userInfo) {
   // tab1
-  firstNameInput.value = userInfo.basic_info.first_name;
-  lastNameInput.value = userInfo.basic_info.last_name;
-  let phoneGroup = userInfo.basic_info.phone.split(" ")
+  firstNameInput.value = userInfo.basic_info?.first_name;
+  lastNameInput.value = userInfo.basic_info?.last_name;
+  let phoneGroup = userInfo.basic_info?.phone?.split(" ")
 
   if (phoneGroup.length > 1) {
     phoneNumberInput1.value = phoneGroup[0];
     phoneNumberInput2.value = phoneGroup[1];
   } else {
-    phoneNumberInput2.value = userInfo.basic_info.phone;
+    phoneNumberInput2.value = userInfo.basic_info?.phone;
   }
 
-  emailInput.value = userInfo.basic_info.email;
-  const dateArr = userInfo.basic_info.birthday.split(" ");
+  emailInput.value = userInfo.basic_info?.email;
+  const dateArr = userInfo.basic_info?.birthday?.split(" ");
   dateInput.value = dateArr[2];
   selectMonthSelect.value = dateArr[1];
   selectMonthSelect.style.color = "black";
   yearInput.value = dateArr[0];
-  locationInput.value = userInfo.basic_info.location;
+  locationInput.value = userInfo.basic_info?.location;
 
 
   //tab2
-  SchoolName0Input.value = userInfo.school_infos[0].name;
-  Major0Input.value = userInfo.school_infos[0].major;
-  DegreeType0Input.value = userInfo.school_infos[0].degree;
+  SchoolName0Input.value = userInfo.school_infos[0]?.name;
+  Major0Input.value = userInfo.school_infos[0]?.major;
+  DegreeType0Input.value = userInfo.school_infos[0]?.degree;
   DegreeType0Input.style.color = "black";
-  const StartDateInput0Arr = userInfo.school_infos[0].start_date.split("-");
+  const StartDateInput0Arr = userInfo.school_infos[0]?.start_date?.split("-");
   StartDate0Input0.value = StartDateInput0Arr[0];
   StartDate0Input1.value = StartDateInput0Arr[1];
-  const EndDateInput0Arr = userInfo.school_infos[0].end_date.split("-");
+  const EndDateInput0Arr = userInfo.school_infos[0]?.end_date?.split("-");
   EndDate0Input0.value = EndDateInput0Arr[0];
   EndDate0Input1.value = EndDateInput0Arr[1];
 
@@ -530,14 +530,14 @@ function dofillUserInfo(userInfo) {
     userInfo.school_infos[1]?.end_date;
 
   if (isExistSchoolInfo1) {
-    SchoolName1Input.value = userInfo.school_infos[1].name;
-    Major1Input.value = userInfo.school_infos[1].major;
-    DegreeType1Input.value = userInfo.school_infos[1].degree;
+    SchoolName1Input.value = userInfo.school_infos[1]?.name;
+    Major1Input.value = userInfo.school_infos[1]?.major;
+    DegreeType1Input.value = userInfo.school_infos[1]?.degree;
     DegreeType1Input.style.color = "black";
-    const StartDateInput1Arr = userInfo.school_infos[1].start_date.split("-");
+    const StartDateInput1Arr = userInfo.school_infos[1]?.start_date?.split("-");
     StartDate1Input0.value = StartDateInput1Arr[0];
     StartDate1Input1.value = StartDateInput1Arr[1];
-    const EndDateInput1Arr = userInfo.school_infos[1].end_date.split("-");
+    const EndDateInput1Arr = userInfo.school_infos[1]?.end_date?.split("-");
     EndDate1Input0.value = EndDateInput1Arr[0];
     EndDate1Input1.value = EndDateInput1Arr[1];
     Education1.style.display = 'block';
@@ -549,38 +549,38 @@ function dofillUserInfo(userInfo) {
     userInfo.school_infos[2]?.start_date ||
     userInfo.school_infos[2]?.end_date;
   if (isExistSchoolInfo2) {
-    SchoolName2Input.value = userInfo.school_infos[2].name;
-    Major2Input.value = userInfo.school_infos[2].major;
-    DegreeType2Input.value = userInfo.school_infos[2].degree;
+    SchoolName2Input.value = userInfo.school_infos[2]?.name;
+    Major2Input.value = userInfo.school_infos[2]?.major;
+    DegreeType2Input.value = userInfo.school_infos[2]?.degree;
     DegreeType2Input.style.color = "black";
-    const StartDateInput2Arr = userInfo.school_infos[2].start_date.split("-");
+    const StartDateInput2Arr = userInfo.school_infos[2]?.start_date?.split("-");
     StartDate2Input0.value = StartDateInput2Arr[0];
     StartDate2Input1.value = StartDateInput2Arr[1];
-    const EndDateInput2Arr = userInfo.school_infos[2].end_date.split("-");
+    const EndDateInput2Arr = userInfo.school_infos[2]?.end_date?.split("-");
     EndDate2Input0.value = EndDateInput2Arr[0];
     EndDate2Input1.value = EndDateInput2Arr[1];
     Education2.style.display = 'block';
   }
 
   //tab3
-  WorkEndDate0stillwork.checked = userInfo.job_infos[0].now_working;
+  WorkEndDate0stillwork.checked = userInfo.job_infos[0]?.now_working;
   let WorkEndDate0stillworkPrev = WorkEndDate0stillwork.previousElementSibling;
-  if (userInfo.job_infos[0].now_working) {
+  if (userInfo.job_infos[0]?.now_working) {
     WorkEndDate0Month.disabled = true;
     WorkEndDate0Year.disabled = true;
     WorkEndDate0stillworkPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox w--redirected-checked';
   } else {
-    const EndDateInput0JobArr = userInfo.job_infos[0].end_date.split("-");
+    const EndDateInput0JobArr = userInfo.job_infos[0]?.end_date?.split("-");
     WorkEndDate0Month.value = EndDateInput0JobArr[0];
     WorkEndDate0Year.value = EndDateInput0JobArr[1];
   }
-  CompanyName0.value = userInfo.job_infos[0].company_name;
-  WorkLocation0.value = userInfo.job_infos[0].location;
-  Position0.value = userInfo.job_infos[0].position;
-  WorkType0.value = userInfo.job_infos[0].work_type;
+  CompanyName0.value = userInfo.job_infos[0]?.company_name;
+  WorkLocation0.value = userInfo.job_infos[0]?.location;
+  Position0.value = userInfo.job_infos[0]?.position;
+  WorkType0.value = userInfo.job_infos[0]?.work_type;
   WorkType0.style.color = "black";
-  WorkDescription0textarea.value = userInfo.job_infos[0].description;
-  const StartDateInput0JobArr = userInfo.job_infos[0].start_date.split("-");
+  WorkDescription0textarea.value = userInfo.job_infos[0]?.description;
+  const StartDateInput0JobArr = userInfo.job_infos[0]?.start_date?.split("-");
   WorkStartDate0Month.value = StartDateInput0JobArr[0];
   WorkStartDate0Year.value = StartDateInput0JobArr[1];
 
@@ -592,16 +592,16 @@ function dofillUserInfo(userInfo) {
     userInfo.job_infos[1]?.start_date ||
     userInfo.job_infos[1]?.end_date;
   if (isExistJobInfo1) {
-    CompanyName1.value = userInfo.job_infos[1].company_name;
-    WorkLocation1.value = userInfo.job_infos[1].location;
-    Position1.value = userInfo.job_infos[1].position;
-    WorkType1.value = userInfo.job_infos[1].work_type;
+    CompanyName1.value = userInfo.job_infos[1]?.company_name;
+    WorkLocation1.value = userInfo.job_infos[1]?.location;
+    Position1.value = userInfo.job_infos[1]?.position;
+    WorkType1.value = userInfo.job_infos[1]?.work_type;
     WorkType1.style.color = "black";
-    WorkDescription1textarea.value = userInfo.job_infos[1].description;
-    const StartDateInput1JobArr = userInfo.job_infos[1].start_date.split("-");
+    WorkDescription1textarea.value = userInfo.job_infos[1]?.description;
+    const StartDateInput1JobArr = userInfo.job_infos[1]?.start_date?.split("-");
     WorkStartDate1Month.value = StartDateInput1JobArr[0];
     WorkStartDate1Year.value = StartDateInput1JobArr[1];
-    const EndDateInput1JobArr = userInfo.job_infos[1].end_date.split("-");
+    const EndDateInput1JobArr = userInfo.job_infos[1]?.end_date?.split("-");
     WorkEndDate1Month.value = EndDateInput1JobArr[0];
     WorkEndDate1Year.value = EndDateInput1JobArr[1];
     WorkExperience1.style.display = 'block';
@@ -616,35 +616,35 @@ function dofillUserInfo(userInfo) {
     userInfo.job_infos[2]?.start_date ||
     userInfo.job_infos[2]?.end_date
   if (isExistJobInfo2) {
-    CompanyName2.value = userInfo.job_infos[2].company_name;
-    WorkLocation2.value = userInfo.job_infos[2].location;
-    Position2.value = userInfo.job_infos[2].position;
-    WorkType2.value = userInfo.job_infos[2].work_type;
+    CompanyName2.value = userInfo.job_infos[2]?.company_name;
+    WorkLocation2.value = userInfo.job_infos[2]?.location;
+    Position2.value = userInfo.job_infos[2]?.position;
+    WorkType2.value = userInfo.job_infos[2]?.work_type;
     WorkType2.style.color = "black";
-    WorkDescription2textarea.value = userInfo.job_infos[2].description;
-    const StartDateInput2JobArr = userInfo.job_infos[0].start_date.split("-");
+    WorkDescription2textarea.value = userInfo.job_infos[2]?.description;
+    const StartDateInput2JobArr = userInfo.job_infos[0].start_date?.split("-");
     WorkStartDate2Month.value = StartDateInput2JobArr[0];
     WorkStartDate2Year.value = StartDateInput2JobArr[1];
-    const EndDateInput2JobArr = userInfo.job_infos[2].end_date.split("-");
+    const EndDateInput2JobArr = userInfo.job_infos[2]?.end_date?.split("-");
     WorkEndDate2Month.value = EndDateInput2JobArr[0];
     WorkEndDate2Year.value = EndDateInput2JobArr[1];
     WorkExperience2.style.display = 'block';
   }
 
   // tab4
-  identificationInput.checked = userInfo.dei_info.agree_to_provide_dei;
+  identificationInput.checked = userInfo.dei_info?.agree_to_provide_dei;
   let identificationInputPrev = identificationInput.previousElementSibling;
   if (userInfo.dei_info.agree_to_provide_dei) {
     identificationInputPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent w--redirected-checked';
   }
-  raceSelect.value = userInfo.dei_info.race;
+  raceSelect.value = userInfo.dei_info?.race;
   raceSelect.style.color = "black";
-  genderSelect.value = userInfo.dei_info.gender;
+  genderSelect.value = userInfo.dei_info?.gender;
   genderSelect.style.color = "black";
-  ReligionSelect.value = userInfo.dei_info.religion;
+  ReligionSelect.value = userInfo.dei_info?.religion;
   ReligionSelect.style.color = "black";
 
-  if (userInfo.dei_info.disability) {
+  if (userInfo.dei_info?.disability) {
     True1Selected.value = true;
     let True1SelectedPrev = True1Selected.previousElementSibling;
     True1SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
@@ -654,7 +654,7 @@ function dofillUserInfo(userInfo) {
     False1SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
   }
 
-  if (userInfo.dei_info.veteran) {
+  if (userInfo.dei_info?.veteran) {
     True2Selected.value = true;
     let True2SelectedPrev = True2Selected.previousElementSibling;
     True2SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
@@ -663,6 +663,96 @@ function dofillUserInfo(userInfo) {
     let False2SelectedPrev = False2Selected.previousElementSibling;
     False2SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
   }
+
+
+  // tab5
+  Citizenship.value = userInfo.legal_info.citizenship;
+  USVisaTyoeSelect.value = userInfo.legal_info.work_visa_type;
+  USVisaTyoeSelect.style.color = "black";
+
+  if (userInfo.legal_info.permanent_resident) {
+    True3Selected.value = true;
+    let True3SelectedPrev = True3Selected.previousElementSibling;
+    True3SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
+  } else {
+    False3Selected.value = true;
+    let False3SelectedPrev = False3Selected.previousElementSibling;
+    False3SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
+  }
+
+  if (userInfo.legal_info.need_sponsorship) {
+    True4Selected.value = true;
+    let True4SelectedPrev = True4Selected.previousElementSibling;
+    True4SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
+  } else {
+    False4Selected.value = true;
+    let False4SelectedPrev = False4Selected.previousElementSibling;
+    False4SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
+  }
+
+
+  if (userInfo.legal_info.has_criminal_record) {
+    True5Selected.value = true;
+    let True5SelectedPrev = True5Selected.previousElementSibling;
+    True5SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
+  } else {
+    False5Selected.value = true;
+    let False5SelectedPrev = False5Selected.previousElementSibling;
+    False5SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
+  }
+
+
+  if (userInfo.legal_info.pending_criminal_case) {
+    True6Selected.value = true;
+    let True6SelectedPrev = True6Selected.previousElementSibling;
+    True6SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
+  } else {
+    False6Selected.value = true;
+    let False6SelectedPrev = False6Selected.previousElementSibling;
+    False6SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
+  }
+
+
+
+  // tab6
+  LinkedinURL.value = userInfo.legal_info.linkedin;
+  GitHubURL.value = userInfo.legal_info.github;
+  PortfolioURL.value = userInfo.legal_info.portfolio;
+  PersonalWebsiteURL.value = userInfo.legal_info.website;
+  language0name.value = userInfo.legal_info.language_infos[0].language;
+  language0level.value = userInfo.legal_info.language_infos[0].level;
+  const isExistLanguageInfos1 = userInfo.language_infos[1]?.language || userInfo.language_infos[1]?.level
+  if (isExistLanguageInfos1) {
+    language1name.value = userInfo.legal_info?.language_infos[1]?.language;
+    language1level.value = userInfo.legal_info?.language_infos[1]?.level;
+    languag1.style.display = 'flex';
+  }
+  const isExistLanguageInfos2 = userInfo.language_infos[2]?.language || userInfo.language_infos[2]?.level
+  if (isExistLanguageInfos2) {
+    language2name.value = userInfo.legal_info?.language_infos[2]?.language;
+    language2level.value = userInfo.legal_info?.language_infos[2]?.level;
+    language2.style.display = 'flex';
+  }
+
+  Award0year.value = userInfo.legal_info.award_infos[0].time;
+  Award0name.value = userInfo.legal_info.award_infos[0].name;
+
+  const isExistAwardInfos1 = userInfo.award_infos[1]?.time || userInfo.award_infos[1]?.name
+  if (isExistAwardInfos1) {
+    Award1year.value = userInfo.legal_info?.award_infos[0]?.time;
+    Award1name.value = userInfo.legal_info?.award_infos[0]?.name;
+    Award1.style.display = 'flex';
+  }
+
+  const isExistAwardInfos2 = userInfo.award_infos[2]?.time || userInfo.award_infos[2]?.name
+  if (isExistAwardInfos2) {
+    Award2year.value = userInfo.legal_info?.award_infos[2]?.time;
+    Award2name.value = userInfo.legal_info?.award_infos[2]?.name;
+    Award2.style.display = 'flex';
+  }
+
+
+  SelfDescriptionTextArea.value = userInfo.legal_info.description;
 }
 
 async function fetchData() {
