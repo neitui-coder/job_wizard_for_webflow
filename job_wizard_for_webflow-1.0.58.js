@@ -721,6 +721,7 @@ function dofillUserInfo(userInfo) {
   PersonalWebsiteURL.value = userInfo.additional_info?.website;
   language0name.value = userInfo.additional_info?.language_infos[0]?.language;
   language0level.value = userInfo.additional_info?.language_infos[0]?.level;
+  language0level.style.color = "black";
   const isExistLanguageInfos1 = userInfo.additional_info?.language_infos[1]?.language || userInfo.additional_info?.language_infos[1]?.level
   if (isExistLanguageInfos1) {
     language1name.value = userInfo.additional_info?.language_infos[1]?.language;
@@ -1212,15 +1213,15 @@ function doSomethingElse() {
 
       var award_infos = [];
       var award_info0 = {
-        "year": Award0yearValue,
+        "time": Award0yearValue,
         "name": Award0nameValue
       };
       var award_info1 = {
-        "year": Award1yearValue,
+        "time": Award1yearValue,
         "name": Award1nameValue
       };
       var award_info2 = {
-        "year": Award2yearValue,
+        "time": Award2yearValue,
         "name": Award2nameValue
       };
       language_infos.push(language_info0);
