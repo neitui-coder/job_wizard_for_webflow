@@ -479,6 +479,8 @@ if (WorkEndDate0stillwork) {
     } else {
       WorkEndDate0Month.disabled = false;
       WorkEndDate0Year.disabled = false;
+      WorkEndDate0Month.backgroundColor = '#fcfcfc';
+      WorkEndDate0Year.backgroundColor = '#fcfcfc';
     }
   })
 }
