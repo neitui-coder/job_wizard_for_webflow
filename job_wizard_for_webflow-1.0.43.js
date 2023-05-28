@@ -565,6 +565,8 @@ function dofillUserInfo(userInfo) {
 
   //tab3
   WorkEndDate0stillwork.checked = userInfo.job_infos[0].now_working;
+  WorkEndDate0stillworkPrev.style.backgroundColor = "";
+  WorkEndDate0stillworkPrev.style.backgroundImage =  "";
   if (userInfo.job_infos[0].now_working) {
     WorkEndDate0Month.disabled = true;
     WorkEndDate0Year.disabled = true;
