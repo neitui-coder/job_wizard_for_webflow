@@ -715,7 +715,7 @@ function dofillUserInfo(userInfo) {
 
 
   // tab6
-  LinkedinURL.value = userInfo.additional_info.linkedin || '';
+  LinkedinURL.value = userInfo.additional_info.linkedIn || '';
   GitHubURL.value = userInfo.additional_info?.github;
   PortfolioURL.value = userInfo.additional_info?.portfolio;
   PersonalWebsiteURL.value = userInfo.additional_info?.website;
@@ -1244,7 +1244,7 @@ function doSomethingElse() {
 
       var data = {
         "additional_info": {
-          "linkin": LinkedinURLValue,
+          "linkedIn": LinkedinURLValue,
           "github": GitHubURLValue,
           "website": PersonalWebsiteURLValue,
           "portfolio": PortfolioURLValue,
