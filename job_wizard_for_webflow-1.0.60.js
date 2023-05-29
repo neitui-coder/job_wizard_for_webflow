@@ -740,10 +740,10 @@ function dofillUserInfo(userInfo) {
   Award0year.value = userInfo.additional_info.award_infos[0].time;
   Award0name.value = userInfo.additional_info.award_infos[0].name;
 
-  const isExistAwardInfos1 = userInfo.additional_info.award_infos[1]?.time || userInfo.additional_info.award_infos[1]?.name
+  const isExistAwardInfos1 = userInfo.additional_info?.award_infos[1]?.time || userInfo.additional_info?.award_infos[1]?.name
   if (isExistAwardInfos1) {
-    Award1year.value = userInfo.additional_info?.award_infos[0]?.time;
-    Award1name.value = userInfo.additional_info?.award_infos[0]?.name;
+    Award1year.value = userInfo.additional_info?.award_infos[1]?.time;
+    Award1name.value = userInfo.additional_info?.award_infos[1]?.name;
     Award1.style.display = 'flex';
   }
 
