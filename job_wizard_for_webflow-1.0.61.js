@@ -737,8 +737,8 @@ function dofillUserInfo(userInfo) {
     language2.style.display = 'flex';
   }
 
-  Award0year.value = userInfo.additional_info.award_infos[0].time;
-  Award0name.value = userInfo.additional_info.award_infos[0].name;
+  Award0year.value = userInfo.additional_info?.award_infos[0]?.time;
+  Award0name.value = userInfo.additional_info?.award_infos[0]?.name;
 
   const isExistAwardInfos1 = userInfo.additional_info?.award_infos[1]?.time || userInfo.additional_info?.award_infos[1]?.name
   if (isExistAwardInfos1) {
@@ -754,7 +754,7 @@ function dofillUserInfo(userInfo) {
     Award2.style.display = 'flex';
   }
 
-  SelfDescriptionTextArea.value = userInfo.additional_info.description;
+  SelfDescriptionTextArea.value = userInfo.additional_info?.description;
 }
 
 async function fetchData() {
