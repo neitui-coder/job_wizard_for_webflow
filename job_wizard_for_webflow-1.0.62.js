@@ -791,6 +791,7 @@ function doSomethingElse() {
       const ToBeSaved = document.getElementById('ToBeSaved-1');
       Saving.style.display = 'flex';
       ToBeSaved.style.display = 'none';
+      backTab1.style.pointerEvents = "none";
       var firstNameValue = firstNameInput.value;
       var lastNameValue = lastNameInput.value;
       var phoneNumberValue1 = phoneNumberInput1.value;
@@ -798,7 +799,7 @@ function doSomethingElse() {
       var phoneNumber = phoneNumberValue1 + " " + phoneNumberValue2;
       var emailValue = emailInput.value;
       var dateValue = dateInput.value;
-      var selectMonthValue = selectMonthSelect.options[selectMonthSelect.selectedIndex].value;
+      var selectMonthValue = selectMonthSelect.options[selectMonthSelect.selectedIndex]?.value;
       var yearValue = yearInput.value;
       var locationValue = locationInput.value;
       var birthday = yearValue + " " + selectMonthValue + " " + dateValue;
@@ -832,6 +833,7 @@ function doSomethingElse() {
           if (response.status == 200) {
             let Saving = document.getElementById('Saving-1');
             let ToBeSaved = document.getElementById('ToBeSaved-1');
+            backTab1.style.pointerEvents = "auto";
             Saving.style.display = 'none';
             ToBeSaved.style.display = 'flex';
             MenuTab2.style.pointerEvents = "auto";
@@ -848,6 +850,7 @@ function doSomethingElse() {
     saveTab2Button.addEventListener('click', function () {
       const Saving = document.getElementById('Saving-2');
       const ToBeSaved = document.getElementById('ToBeSaved-2');
+      backTab2.style.pointerEvents = "none";
       Saving.style.display = 'flex';
       ToBeSaved.style.display = 'none';
       var SchoolName0InputValue = SchoolName0Input.value;
@@ -870,9 +873,9 @@ function doSomethingElse() {
       var EndDate2Input1Value = EndDate2Input1.value;
 
 
-      var DegreeType0InputValue = DegreeType0Input.options[DegreeType0Input.selectedIndex].value;
-      var DegreeType1InputValue = DegreeType1Input.options[DegreeType1Input.selectedIndex].value;
-      var DegreeType2InputValue = DegreeType2Input.options[DegreeType2Input.selectedIndex].value;
+      var DegreeType0InputValue = DegreeType0Input.options[DegreeType0Input.selectedIndex]?.value;
+      var DegreeType1InputValue = DegreeType1Input.options[DegreeType1Input.selectedIndex]?.value;
+      var DegreeType2InputValue = DegreeType2Input.options[DegreeType2Input.selectedIndex]?.value;
       var StartDate0Input = StartDate0Input0Value + '-' + StartDate0Input1Value;
       var StartDate1Input = StartDate1Input0Value + '-' + StartDate1Input1Value;
       var StartDate2Input = StartDate2Input0Value + '-' + StartDate2Input1Value;
@@ -934,6 +937,7 @@ function doSomethingElse() {
           if (response.status == 200) {
             const Saving = document.getElementById('Saving-2');
             const ToBeSaved = document.getElementById('ToBeSaved-2');
+            backTab2.style.pointerEvents = "auto";
             Saving.style.display = 'none';
             ToBeSaved.style.display = 'flex';
             MenuTab3.style.pointerEvents = "auto";
@@ -951,6 +955,7 @@ function doSomethingElse() {
     saveTab3Button.addEventListener('click', function () {
       const Saving = document.getElementById('Saving-3');
       const ToBeSaved = document.getElementById('ToBeSaved-3');
+      backTab3.style.pointerEvents = "none";
       Saving.style.display = 'flex';
       ToBeSaved.style.display = 'none';
       var WorkEndDate0stillworValue = WorkEndDate0stillwork.checked;
@@ -981,9 +986,9 @@ function doSomethingElse() {
       var WorkEndDate2MonthValue = WorkEndDate2Month.value;
       var WorkEndDate2YearValue = WorkEndDate2Year.value;
       var WorkDescription2textareaValue = WorkDescription2textarea.value;
-      var WorkType0Value = WorkType0.options[WorkType0.selectedIndex].value;
-      var WorkType1Value = WorkType1.options[WorkType1.selectedIndex].value;
-      var WorkType2Value = WorkType2.options[WorkType2.selectedIndex].value;
+      var WorkType0Value = WorkType0.options[WorkType0.selectedIndex]?.value;
+      var WorkType1Value = WorkType1.options[WorkType1.selectedIndex]?.value;
+      var WorkType2Value = WorkType2.options[WorkType2.selectedIndex]?.value;
 
 
       var WorkStartDate0Value = WorkStartDate0MonthValue + '-' + WorkStartDate0YearValue;
@@ -1057,6 +1062,7 @@ function doSomethingElse() {
           if (response.status == 200) {
             const Saving = document.getElementById('Saving-3');
             const ToBeSaved = document.getElementById('ToBeSaved-3');
+            backTab3.style.pointerEvents = "auto";
             Saving.style.display = 'none';
             ToBeSaved.style.display = 'flex';
             MenuTab4.style.pointerEvents = "auto";
@@ -1074,19 +1080,20 @@ function doSomethingElse() {
     saveTab4Button.addEventListener('click', function () {
       let Saving = document.getElementById('Saving-4');
       let ToBeSaved = document.getElementById('ToBeSaved-4');
+      backTab4.style.pointerEvents = "none";
       Saving.style.display = 'flex';
       ToBeSaved.style.display = 'none';
       var identificationValue = identificationInput.checked;
-      var raceOption = raceSelect.options[raceSelect.selectedIndex];
-      var genderOption = genderSelect.options[genderSelect.selectedIndex]
-      var ReligionOption = ReligionSelect.options[ReligionSelect.selectedIndex]
+      var raceOption = raceSelect.options[raceSelect.selectedIndex]?.value;
+      var genderOption = genderSelect.options[genderSelect.selectedIndex]?.value;
+      var ReligionOption = ReligionSelect.options[ReligionSelect.selectedIndex]?.value;
       var url = `https://api.jobwizard.ai/api/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
       var data = {
         "dei_info": {
           "agree_to_provide_dei": identificationValue,
-          "race": raceOption.value,
-          "gender": genderOption.value,
-          "religion": ReligionOption.value,
+          "race": raceOption,
+          "gender": genderOption,
+          "religion": ReligionOption,
           "disability": True1Selected.checked,
           "veteran": True2Selected.checked
         }
@@ -1109,6 +1116,7 @@ function doSomethingElse() {
           if (response.status == 200) {
             let Saving = document.getElementById('Saving-4');
             let ToBeSaved = document.getElementById('ToBeSaved-4');
+            backTab4.style.pointerEvents = "auto";
             Saving.style.display = 'none';
             ToBeSaved.style.display = 'flex';
             MenuTab5.style.pointerEvents = "auto";
@@ -1126,19 +1134,22 @@ function doSomethingElse() {
     saveTab5Button.addEventListener('click', function () {
       let Saving = document.getElementById('Saving-5');
       let ToBeSaved = document.getElementById('ToBeSaved-5');
+      backTab5.style.pointerEvents = "none";
       Saving.style.display = 'flex';
       ToBeSaved.style.display = 'none';
       var CitizenshipValue = Citizenship.value;
-      var USVisaTypeOption = USVisaTyoeSelect.options[USVisaTyoeSelect.selectedIndex].value;
+      var USVisaTypeOption = USVisaTyoeSelect.options[USVisaTyoeSelect.selectedIndex]?.value;
 
       var url = `https://api.jobwizard.ai/api/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
       var data = {
-        "citizenship": CitizenshipValue,
-        "work_visa_type": USVisaTypeOption,
-        "permanent_resident": True3Selected.checked,
-        "need_sponsorship": True4Selected.checked,
-        "has_criminal_record": True5Selected.checked,
-        "pending_criminal_case": True6Selected.checked
+        "legal_info": {
+          "citizenship": CitizenshipValue,
+          "work_visa_type": USVisaTypeOption,
+          "permanent_resident": True3Selected.checked,
+          "need_sponsorship": True4Selected.checked,
+          "has_criminal_record": True5Selected.checked,
+          "pending_criminal_case": True6Selected.checked
+        }
       };
       var options = {
         method: 'POST',
@@ -1156,6 +1167,7 @@ function doSomethingElse() {
       fetch(url, options)
         .then(response => {
           if (response.status == 200) {
+            backTab5.style.pointerEvents = "auto";
             let Saving = document.getElementById('Saving-5');
             let ToBeSaved = document.getElementById('ToBeSaved-5');
             Saving.style.display = 'none';
@@ -1175,6 +1187,7 @@ function doSomethingElse() {
     saveTab6Button.addEventListener('click', function () {
       const Saving = document.getElementById('Saving-6');
       const ToBeSaved = document.getElementById('ToBeSaved-6');
+      backTab6.style.pointerEvents = "none";
       Saving.style.display = 'flex';
       ToBeSaved.style.display = 'none';
       var LinkedinURLValue = LinkedinURL.value;
@@ -1184,9 +1197,9 @@ function doSomethingElse() {
       var language0nameValue = language0name.value;
       var language1nameValue = language1name.value;
       var language2nameValue = language2name.value;
-      var language0levelValue = language0level.options[language0level.selectedIndex].value;
-      var language1levelValue = language1level.options[language1level.selectedIndex].value;
-      var language2levelValue = language2level.options[language2level.selectedIndex].value;
+      var language0levelValue = language0level.options[language0level.selectedIndex]?.value;
+      var language1levelValue = language1level.options[language1level.selectedIndex]?.value;
+      var language2levelValue = language2level.options[language2level.selectedIndex]?.value;
       var SelfDescriptionTextAreaValue = SelfDescriptionTextArea.value;
       var Award0yearValue = Award0year.value;
       var Award1yearValue = Award1year.value;
@@ -1272,10 +1285,11 @@ function doSomethingElse() {
         .then(response => {
           if (response.status == 200) {
             window.location.href = "https://www.jobwizard.ai/onboarding/registration-complete"
-            const Saving = document.getElementById('Saving-6');
-            const ToBeSaved = document.getElementById('ToBeSaved-6');
-            Saving.style.display = 'none';
-            ToBeSaved.style.display = 'flex';
+            backTab6.style.pointerEvents = "auto";
+            // const Saving = document.getElementById('Saving-6');
+            // const ToBeSaved = document.getElementById('ToBeSaved-6');
+            // Saving.style.display = 'none';
+            // ToBeSaved.style.display = 'flex';
           }
 
           return response.json();
