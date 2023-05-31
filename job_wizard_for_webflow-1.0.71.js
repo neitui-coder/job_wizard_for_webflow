@@ -813,6 +813,14 @@ function isRequired(value, element, textId) {
   }
 }
 
+function cleanErrorText(textIdGroup) {
+  for (i = 0; textIdGroup.length > 0; i++) {
+    const ErrorInput = document.getElementById(textIdGroup[i]);
+    ErrorInput.style.display = 'none';
+    ErrorInput.innerHTML('');
+  }
+}
+
 function doSomethingElse() {
   if (saveTab1Button) {
     saveTab1Button.addEventListener('click', function () {
@@ -831,9 +839,11 @@ function doSomethingElse() {
       // var selectMonthValue = selectMonthSelect.options[selectMonthSelect.selectedIndex]?.value;
       // var yearValue = yearInput.value;
       var locationValue = locationInput.value;
-      var birthday = yearValue + " " + selectMonthValue + " " + dateValue;
+      // var birthday = yearValue + " " + selectMonthValue + " " + dateValue;
 
       const boolean = !firstNameValue || !lastNameValue || !phoneNumberValue1 || !phoneNumberValue2 || !emailValue || !locationValue
+
+      cleanErrorText(['FirstName-AlertText', 'LastName-AlertText', 'Phone-AlertText', 'Email-AlertText', 'Location-AlertText']);
 
       if (boolean) {
         isRequired(firstNameValue, firstNameInput, 'FirstName-AlertText');
@@ -842,6 +852,8 @@ function doSomethingElse() {
         isRequired(phoneNumberValue2, phoneNumberInput2, 'Phone-AlertText');
         isRequired(emailValue, 'Email-AlertText');
         isRequired(locationValue, 'Location-AlertText');
+        Saving.style.display = 'none';
+        ToBeSaved.style.display = 'flex';
         return;
       }
 
