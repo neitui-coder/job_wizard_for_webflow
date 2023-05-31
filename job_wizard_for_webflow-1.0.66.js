@@ -398,76 +398,76 @@ if (DeleteWork2) {
   })
 }
 
-if (AddLanguage) {
-  AddLanguage.addEventListener('click', function () {
-    if (languag1.style.display == 'none') {
-      languag1.style.display = 'flex';
-      return;
-    }
+// if (AddLanguage) {
+//   AddLanguage.addEventListener('click', function () {
+//     if (languag1.style.display == 'none') {
+//       languag1.style.display = 'flex';
+//       return;
+//     }
 
-    if (language2.style.display == 'none') {
-      language2.style.display = 'flex';
-      return;
-    }
+//     if (language2.style.display == 'none') {
+//       language2.style.display = 'flex';
+//       return;
+//     }
 
-    if (MaxAlertLanguage.style.display == 'none') {
-      MaxAlertLanguage.style.display = 'block';
-    }
-  })
-}
-
-
-if (DeleteLanguage1) {
-  DeleteLanguage1.addEventListener('click', function () {
-    languag1.style.display = 'none';
-    language1name.value = '';
-    language1level.value = '';
-  })
-}
-
-if (DeleteLanguage2) {
-  DeleteLanguage2.addEventListener('click', function () {
-    language2.style.display = 'none';
-    language2name.value = '';
-    language2level.value = '';
-  })
-}
+//     if (MaxAlertLanguage.style.display == 'none') {
+//       MaxAlertLanguage.style.display = 'block';
+//     }
+//   })
+// }
 
 
-if (AddAward) {
-  AddAward.addEventListener('click', function () {
-    if (Award1.style.display == 'none') {
-      Award1.style.display = 'flex';
-      return;
-    }
+// if (DeleteLanguage1) {
+//   DeleteLanguage1.addEventListener('click', function () {
+//     languag1.style.display = 'none';
+//     language1name.value = '';
+//     language1level.value = '';
+//   })
+// }
 
-    if (Award2.style.display == 'none') {
-      Award2.style.display = 'flex';
-      return;
-    }
-
-    if (MaxAlertAward.style.display == 'none') {
-      MaxAlertAward.style.display = 'block';
-    }
-  })
-}
+// if (DeleteLanguage2) {
+//   DeleteLanguage2.addEventListener('click', function () {
+//     language2.style.display = 'none';
+//     language2name.value = '';
+//     language2level.value = '';
+//   })
+// }
 
 
-if (DeleteAward1) {
-  DeleteAward1.addEventListener('click', function () {
-    Award1.style.display = 'none';
-    Award1year.value = '';
-    Award1name.value = '';
-  })
-}
+// if (AddAward) {
+//   AddAward.addEventListener('click', function () {
+//     if (Award1.style.display == 'none') {
+//       Award1.style.display = 'flex';
+//       return;
+//     }
 
-if (DeleteAward2) {
-  DeleteAward2.addEventListener('click', function () {
-    Award2.style.display = 'none';
-    Award2year.value = '';
-    Award2name.value = '';
-  })
-}
+//     if (Award2.style.display == 'none') {
+//       Award2.style.display = 'flex';
+//       return;
+//     }
+
+//     if (MaxAlertAward.style.display == 'none') {
+//       MaxAlertAward.style.display = 'block';
+//     }
+//   })
+// }
+
+
+// if (DeleteAward1) {
+//   DeleteAward1.addEventListener('click', function () {
+//     Award1.style.display = 'none';
+//     Award1year.value = '';
+//     Award1name.value = '';
+//   })
+// }
+
+// if (DeleteAward2) {
+//   DeleteAward2.addEventListener('click', function () {
+//     Award2.style.display = 'none';
+//     Award2year.value = '';
+//     Award2name.value = '';
+//   })
+// }
 
 if (WorkEndDate0stillwork) {
   WorkEndDate0stillwork.addEventListener('click', function () {
@@ -1242,66 +1242,66 @@ function doSomethingElse() {
       var GitHubURLValue = GitHubURL.value;
       var PortfolioURLValue = PortfolioURL.value;
       var PersonalWebsiteURLValue = PersonalWebsiteURL.value
-      var language0nameValue = language0name.value;
-      var language1nameValue = language1name.value;
-      var language2nameValue = language2name.value;
+      // var language0nameValue = language0name.value;
+      // var language1nameValue = language1name.value;
+      // var language2nameValue = language2name.value;
       var language0levelValue = language0level.options[language0level.selectedIndex]?.value;
       var language1levelValue = language1level.options[language1level.selectedIndex]?.value;
       var language2levelValue = language2level.options[language2level.selectedIndex]?.value;
       var SelfDescriptionTextAreaValue = SelfDescriptionTextArea.value;
-      var Award0yearValue = Award0year.value;
-      var Award1yearValue = Award1year.value;
-      var Award2yearValue = Award2year.value;
-      var Award0nameValue = Award0name.value;
-      var Award1nameValue = Award1name.value;
-      var Award2nameValue = Award2name.value;
+      // var Award0yearValue = Award0year.value;
+      // var Award1yearValue = Award1year.value;
+      // var Award2yearValue = Award2year.value;
+      // var Award0nameValue = Award0name.value;
+      // var Award1nameValue = Award1name.value;
+      // var Award2nameValue = Award2name.value;
 
 
       var url = `https://api.jobwizard.ai/api/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
       var language_infos = [];
-      var language_info0 = {
-        "language": language0nameValue,
-        "level": language0levelValue
-      };
-      var language_info1 = {
-        "language": language1nameValue,
-        "level": language1levelValue
-      };
-      var language_info2 = {
-        "language": language2nameValue,
-        "level": language2levelValue
-      };
+      // var language_info0 = {
+      //   "language": language0nameValue,
+      //   "level": language0levelValue
+      // };
+      // var language_info1 = {
+      //   "language": language1nameValue,
+      //   "level": language1levelValue
+      // };
+      // var language_info2 = {
+      //   "language": language2nameValue,
+      //   "level": language2levelValue
+      // };
 
       var award_infos = [];
-      var award_info0 = {
-        "time": Award0yearValue,
-        "name": Award0nameValue
-      };
-      var award_info1 = {
-        "time": Award1yearValue,
-        "name": Award1nameValue
-      };
-      var award_info2 = {
-        "time": Award2yearValue,
-        "name": Award2nameValue
-      };
-      language_infos.push(language_info0);
-      if (languag1.style.display === 'flex') {
-        language_infos.push(language_info1);
-      }
+      // var award_info0 = {
+      //   "time": Award0yearValue,
+      //   "name": Award0nameValue
+      // };
+      // var award_info1 = {
+      //   "time": Award1yearValue,
+      //   "name": Award1nameValue
+      // };
+      // var award_info2 = {
+      //   "time": Award2yearValue,
+      //   "name": Award2nameValue
+      // };
+      // language_infos.push(language_info0);
+      // if (languag1.style.display === 'flex') {
+      //   language_infos.push(language_info1);
+      // }
 
-      if (language2.style.display === 'flex') {
-        language_infos.push(language_info2);
-      }
+      // if (language2.style.display === 'flex') {
+      //   language_infos.push(language_info2);
+      // }
 
-      award_infos.push(award_info0);
-      if (Award1.style.display === 'flex') {
-        award_infos.push(award_info1);
-      }
+      // award_infos.push(award_info0);
+      // if (Award1.style.display === 'flex') {
+      //   award_infos.push(award_info1);
+      // }
 
-      if (Award2.style.display === 'flex') {
-        award_infos.push(award_info2);
-      }
+      // if (Award2.style.display === 'flex') {
+      //   award_infos.push(award_info2);
+      // }
 
       var data = {
         "additional_info": {
