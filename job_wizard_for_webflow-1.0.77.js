@@ -801,13 +801,26 @@ function extractString(str) {
     return str;
   }
 }
+function isTrueEmail(value, element, textId) {
+  const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+
+  // 验证文本内容是否为邮箱
+  const isEmail = emailRegex.test(value);
+  if (!isEmail) {
+    const ErrorInput = document.getElementById(textId);
+    ErrorInput.innerText = 'Invalid email format.';
+    ErrorInput.style.display = 'flex';
+    element.style.borderColor = "#c70000";
+  }
+}
+
 
 function isRequired(value, element, textId) {
   if (!value) {
     const ErrorInput = document.getElementById(textId);
     ErrorInput.innerText = 'Required.';
     ErrorInput.style.display = 'flex';
-    if (element.tagName === 'INPUT' && (element.type === 'text' || element.type === 'number')) {
+    if (element.tagName === 'INPUT' && (element.type === 'text' || element.type === 'number' || element.type === 'email')) {
       element.style.borderColor = "#c70000";
     }
   }
@@ -884,7 +897,10 @@ function doSomethingElse() {
         return;
       }
 
-
+      if (emailValue) {
+        isTrueEmail(emailValue, emailInput, 'Email-AlertText');
+        return;
+      }
 
       var url = `https://api.jobwizard.ai/api/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
       var data = {
