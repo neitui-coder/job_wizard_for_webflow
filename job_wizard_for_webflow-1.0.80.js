@@ -811,7 +811,11 @@ function isTrueEmail(value, element, textId) {
     ErrorInput.innerText = 'Invalid email format.';
     ErrorInput.style.display = 'flex';
     element.style.borderColor = "#c70000";
+
+    return true;
   }
+
+  return false;
 }
 
 
@@ -897,8 +901,7 @@ function doSomethingElse() {
         return;
       }
 
-      if (emailValue) {
-        isTrueEmail(emailValue, emailInput, 'Email-AlertText');
+      if (emailValue && isTrueEmail(emailValue, emailInput, 'Email-AlertText')) {
         Saving.style.display = 'none';
         ToBeSaved.style.display = 'flex';
         return;
