@@ -815,8 +815,10 @@ function isRequired(value, element, textId) {
 
 function cleanErrorText(textIdGroup) {
   for (i = 0; i < textIdGroup.length; i++) {
-    console.log()
-    const ErrorInput = document.getElementById(textIdGroup[i]);
+    const ErrorInput = document.getElementById(textIdGroup[i].textId);
+    if (textIdGroup[i].element.tagName === 'INPUT' && (textIdGroup[i].element.type === 'text' || textIdGroup[i].element.type === 'number')) {
+      textIdGroup[i].element.style.borderColor = "";
+    }
     ErrorInput.style.display = 'none';
     ErrorInput.innerText = '';
   }
@@ -844,15 +846,39 @@ function doSomethingElse() {
 
       const boolean = !firstNameValue || !lastNameValue || !phoneNumberValue1 || !phoneNumberValue2 || !emailValue || !locationValue
 
-      cleanErrorText(['FirstName-AlertText', 'LastName-AlertText', 'Phone-AlertText', 'Email-AlertText', 'Location-AlertText']);
+      cleanErrorText([
+        {
+          textId: 'FirstName-AlertText',
+          element: firstNameInput,
+        },
+        {
+          textId: 'LastName-AlertText',
+          element: lastNameInput,
+        },
+        {
+          textId: 'Phone-AlertText',
+          element: phoneNumberInput1,
+        },
+        {
+          textId: 'Phone-AlertText',
+          element: phoneNumberInput2,
+        },
+        {
+          textId: 'Email-AlertText',
+          element: emailInput,
+        },
+        {
+          textId: 'Location-AlertText',
+          element: locationInput,
+        }])
 
       if (boolean) {
         isRequired(firstNameValue, firstNameInput, 'FirstName-AlertText');
         isRequired(lastNameValue, lastNameInput, 'LastName-AlertText');
         isRequired(phoneNumberValue1, phoneNumberInput1, 'Phone-AlertText');
         isRequired(phoneNumberValue2, phoneNumberInput2, 'Phone-AlertText');
-        isRequired(emailValue, 'Email-AlertText');
-        isRequired(locationValue, 'Location-AlertText');
+        isRequired(emailValue, emailInput, 'Email-AlertText');
+        isRequired(locationValue, locationInput, 'Location-AlertText');
         Saving.style.display = 'none';
         ToBeSaved.style.display = 'flex';
         return;
