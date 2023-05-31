@@ -805,7 +805,7 @@ function extractString(str) {
 function isRequired(value, element, textId) {
   if (!value) {
     const ErrorInput = document.getElementById(textId);
-    ErrorInput.innerHTML('Required.');
+    ErrorInput.innerText('Required.');
     ErrorInput.style.display = 'flex';
     if (element.tagName === 'INPUT' && (element.type === 'text' || element.type === 'number')) {
       element.style.borderColor = "#c70000";
@@ -817,7 +817,7 @@ function cleanErrorText(textIdGroup) {
   for (i = 0; textIdGroup.length > 0; i++) {
     const ErrorInput = document.getElementById(textIdGroup[i]);
     ErrorInput.style.display = 'none';
-    ErrorInput.innerHTML('');
+    ErrorInput.innerText('');
   }
 }
 
