@@ -682,27 +682,27 @@ function dofillUserInfo(userInfo) {
   USVisaTyoeSelect.value = userInfo.legal_info?.work_visa_type;
   USVisaTyoeSelect.style.color = "black";
 
-  permanentResident.checked = userInfo.dei_info?.permanent_resident;
+  permanentResident.checked = userInfo.legal_info?.permanent_resident;
   let permanentResidentPrev = permanentResident.previousElementSibling;
-  if (userInfo.dei_info.permanent_resident) {
+  if (userInfo.legal_info.permanent_resident) {
     permanentResidentPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent w--redirected-checked';
   }
 
-  needSponsorship.checked = userInfo.dei_info?.need_sponsorship;
+  needSponsorship.checked = userInfo.legal_info?.need_sponsorship;
   let needSponsorshipPrev = needSponsorship.previousElementSibling;
-  if (userInfo.dei_info.need_sponsorship) {
+  if (userInfo.legal_info.need_sponsorship) {
     needSponsorshipPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent w--redirected-checked';
   }
 
-  hasCriminalRecord.checked = userInfo.dei_info?.has_criminal_record;
+  hasCriminalRecord.checked = userInfo.legal_info?.has_criminal_record;
   let hasCriminalRecordPrev = hasCriminalRecord.previousElementSibling;
-  if (userInfo.dei_info.has_criminal_record) {
+  if (userInfo.legal_info.has_criminal_record) {
     hasCriminalRecordPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent w--redirected-checked';
   }
 
-  pendingCriminalCase.checked = userInfo.dei_info?.pending_criminal_case;
+  pendingCriminalCase.checked = userInfo.legal_info?.pending_criminal_case;
   let pendingCriminalCasePrev = pendingCriminalCase.previousElementSibling;
-  if (userInfo.dei_info.pending_criminal_case) {
+  if (userInfo.legal_info.pending_criminal_case) {
     pendingCriminalCasePrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent w--redirected-checked';
   }
 
