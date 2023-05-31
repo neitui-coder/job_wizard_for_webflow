@@ -816,6 +816,7 @@ function isRequired(value, element, textId) {
 function cleanErrorText(textIdGroup) {
   for (i = 0; textIdGroup.length > 0; i++) {
     const ErrorInput = document.getElementById(textIdGroup[i]);
+    console.log(ErrorInput,'=====ErrorInput===');
     ErrorInput.style.display = 'none';
     ErrorInput.innerText = '';
   }
