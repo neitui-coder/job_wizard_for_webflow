@@ -899,6 +899,8 @@ function doSomethingElse() {
 
       if (emailValue) {
         isTrueEmail(emailValue, emailInput, 'Email-AlertText');
+        Saving.style.display = 'none';
+        ToBeSaved.style.display = 'flex';
         return;
       }
 
