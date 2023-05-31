@@ -60,7 +60,7 @@ Education1.style.display = 'none';
 Education2.style.display = 'none';
 var MaxAlertEducation = document.getElementById('MaxAlert-Education');
 var SchoolName0Input = document.getElementById('SchoolName0-Input');
-var SchoolName1Input = document.getElementById('SchoolName1-Input');
+var SchoolName1Input = document.getElementById('School-Name');
 var SchoolName2Input = document.getElementById('SchoolName2-Input');
 var Major0Input = document.getElementById('Computer-Science');
 var Major1Input = document.getElementById('Major-3');
@@ -153,41 +153,41 @@ var False6Selected = document.getElementById('False-6');
 
 
 // tab6
-var languag1 = document.getElementById('languag1');
-var language2 = document.getElementById('language2');
-languag1.style.display = 'none';
-language2.style.display = 'none';
-var Award1 = document.getElementById('Award1');
-var Award2 = document.getElementById('Award2');
-Award1.style.display = 'none';
-Award2.style.display = 'none';
+// var languag1 = document.getElementById('languag1');
+// var language2 = document.getElementById('language2');
+// languag1.style.display = 'none';
+// language2.style.display = 'none';
+// var Award1 = document.getElementById('Award1');
+// var Award2 = document.getElementById('Award2');
+// Award1.style.display = 'none';
+// Award2.style.display = 'none';
 var MaxAlertLanguage = document.getElementById('MaxAlert-Language');
 var MaxAlertAward = document.getElementById('MaxAlert-Award');
 var LinkedinURL = document.getElementById('Linkedin-URL');
 var GitHubURL = document.getElementById('GitHub-URL');
 var PortfolioURL = document.getElementById('Portfolio-URL');
 var PersonalWebsiteURL = document.getElementById('PersonalWebsite-URL');
-var language0name = document.getElementById('language0-name');
-var language1name = document.getElementById('language1-name');
-var language2name = document.getElementById('language2-name');
-var language0level = document.getElementById('language0-level');
-var language1level = document.getElementById('language1-level');
-var language2level = document.getElementById('language2-level');
+// var language0name = document.getElementById('language0-name');
+// var language1name = document.getElementById('language1-name');
+// var language2name = document.getElementById('language2-name');
+// var language0level = document.getElementById('language0-level');
+// var language1level = document.getElementById('language1-level');
+// var language2level = document.getElementById('language2-level');
 var SelfDescriptionTextArea = document.getElementById('SelfDescription-TextArea');
 
-var Award0year = document.getElementById('Award0-year');
-var Award1year = document.getElementById('Award1-year');
-var Award2year = document.getElementById('Award2-year');
-var Award0name = document.getElementById('Award0-name');
-var Award1name = document.getElementById('Award1-name');
-var Award2name = document.getElementById('Award2-level');
+// var Award0year = document.getElementById('Award0-year');
+// var Award1year = document.getElementById('Award1-year');
+// var Award2year = document.getElementById('Award2-year');
+// var Award0name = document.getElementById('Award0-name');
+// var Award1name = document.getElementById('Award1-name');
+// var Award2name = document.getElementById('Award2-level');
 
-var AddLanguage = document.getElementById('AddLanguage');
-var AddAward = document.getElementById('AddAward');
-var DeleteLanguage1 = document.getElementById('DeleteLanguage1');
-var DeleteLanguage2 = document.getElementById('DeleteLanguage2');
-var DeleteAward1 = document.getElementById('DeleteAward1');
-var DeleteAward2 = document.getElementById('DeleteAward2');
+// var AddLanguage = document.getElementById('AddLanguage');
+// var AddAward = document.getElementById('AddAward');
+// var DeleteLanguage1 = document.getElementById('DeleteLanguage1');
+// var DeleteLanguage2 = document.getElementById('DeleteLanguage2');
+// var DeleteAward1 = document.getElementById('DeleteAward1');
+// var DeleteAward2 = document.getElementById('DeleteAward2');
 
 
 MenuTab2.style.pointerEvents = "none";
