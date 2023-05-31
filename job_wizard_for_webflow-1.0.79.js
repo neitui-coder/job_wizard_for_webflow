@@ -912,7 +912,6 @@ function doSomethingElse() {
           "email": emailValue,
           "phone_number": phoneNumber,
           "location": locationValue,
-          "birthday": birthday
         }
       };
       var options = {
