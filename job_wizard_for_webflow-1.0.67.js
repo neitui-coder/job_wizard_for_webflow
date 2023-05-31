@@ -48,9 +48,9 @@ var phoneNumberInput = document.getElementById('PhoneNumber-Input');
 var emailInput = document.getElementById('Email-Input');
 var phoneNumberInput1 = document.getElementById('PhoneNumber-Input1');
 var phoneNumberInput2 = document.getElementById('PhoneNumber-Input2');
-var dateInput = document.getElementById('Birth-Date');
-var selectMonthSelect = document.getElementById('Birth-Month');
-var yearInput = document.getElementById('Birth-Year');
+// var dateInput = document.getElementById('Birth-Date');
+// var selectMonthSelect = document.getElementById('Birth-Month');
+// var yearInput = document.getElementById('Birth-Year');
 var locationInput = document.getElementById('Location-Input');
 
 // tab2
@@ -503,11 +503,11 @@ function dofillUserInfo(userInfo) {
   }
 
   emailInput.value = userInfo.basic_info?.email;
-  const dateArr = userInfo.basic_info?.birthday?.split(" ");
-  dateInput.value = dateArr[2];
-  selectMonthSelect.value = dateArr[1];
-  selectMonthSelect.style.color = "black";
-  yearInput.value = dateArr[0];
+  // const dateArr = userInfo.basic_info?.birthday?.split(" ");
+  // dateInput.value = dateArr[2];
+  // selectMonthSelect.value = dateArr[1];
+  // selectMonthSelect.style.color = "black";
+  // yearInput.value = dateArr[0];
   locationInput.value = userInfo.basic_info?.location;
 
 
