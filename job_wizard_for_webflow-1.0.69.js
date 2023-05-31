@@ -129,27 +129,25 @@ var DeleteWork2 = document.getElementById('DeleteWork2');
 
 
 //tab4
+var Citizenship = document.getElementById('Citizenship');
+var USVisaTyoeSelect = document.getElementById('USVisaTyoe');
+var permanentResident = document.getElementById('self-identification-6');
+var needSponsorship = document.getElementById('self-identification-4');
+var hasCriminalRecord = document.getElementById('self-identification-7');
+var pendingCriminalCase = document.getElementById('self-identification-5');
+
+//tab5
 var identificationInput = document.getElementById('self-identification');
+var disabilityInput = document.getElementById('self-identification-2');
+var veteranInput = document.getElementById('self-identification-3');
+
 var raceSelect = document.getElementById('Race');
 var genderSelect = document.getElementById('Gender');
 var ReligionSelect = document.getElementById('Religion');
-var True1Selected = document.getElementById('True');
-var False1Selected = document.getElementById('False');
-var True2Selected = document.getElementById('True-2');
-var False2Selected = document.getElementById('False-2');
-
-
-//tab5
-var Citizenship = document.getElementById('Citizenship');
-var USVisaTyoeSelect = document.getElementById('USVisaTyoe');
-var True3Selected = document.getElementById('True-3');
-var False3Selected = document.getElementById('False-3');
-var True4Selected = document.getElementById('True-4');
-var False4Selected = document.getElementById('False-4');
-var True5Selected = document.getElementById('True-5');
-var False5Selected = document.getElementById('False-5');
-var True6Selected = document.getElementById('True-6');
-var False6Selected = document.getElementById('False-6');
+// var True1Selected = document.getElementById('True');
+// var False1Selected = document.getElementById('False');
+// var True2Selected = document.getElementById('True-2');
+// var False2Selected = document.getElementById('False-2');
 
 
 // tab6
@@ -680,11 +678,53 @@ function dofillUserInfo(userInfo) {
   }
 
   // tab4
+  Citizenship.value = userInfo.legal_info?.citizenship;
+  USVisaTyoeSelect.value = userInfo.legal_info?.work_visa_type;
+  USVisaTyoeSelect.style.color = "black";
+
+  permanentResident.checked = userInfo.dei_info?.permanent_resident;
+  let permanentResidentPrev = permanentResident.previousElementSibling;
+  if (userInfo.dei_info.permanent_resident) {
+    permanentResidentPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent w--redirected-checked';
+  }
+
+  needSponsorship.checked = userInfo.dei_info?.need_sponsorship;
+  let needSponsorshipPrev = needSponsorship.previousElementSibling;
+  if (userInfo.dei_info.need_sponsorship) {
+    needSponsorshipPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent w--redirected-checked';
+  }
+
+  hasCriminalRecord.checked = userInfo.dei_info?.has_criminal_record;
+  let hasCriminalRecordPrev = hasCriminalRecord.previousElementSibling;
+  if (userInfo.dei_info.has_criminal_record) {
+    hasCriminalRecordPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent w--redirected-checked';
+  }
+
+  pendingCriminalCase.checked = userInfo.dei_info?.pending_criminal_case;
+  let pendingCriminalCasePrev = pendingCriminalCase.previousElementSibling;
+  if (userInfo.dei_info.pending_criminal_case) {
+    pendingCriminalCasePrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent w--redirected-checked';
+  }
+
+  // tab5
   identificationInput.checked = userInfo.dei_info?.agree_to_provide_dei;
   let identificationInputPrev = identificationInput.previousElementSibling;
   if (userInfo.dei_info.agree_to_provide_dei) {
     identificationInputPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent w--redirected-checked';
   }
+
+  disabilityInput.checked = userInfo.dei_info?.disability;
+  let disabilityInputPrev = disabilityInput.previousElementSibling;
+  if (userInfo.dei_info?.disability) {
+    disabilityInputPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent w--redirected-checked';
+  }
+
+  veteranInput.checked = userInfo.dei_info?.veteran;
+  let veteranInputPrev = veteranInput.previousElementSibling;
+  if (userInfo.dei_info?.veteran) {
+    veteranInputPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent w--redirected-checked';
+  }
+
   raceSelect.value = userInfo.dei_info?.race;
   raceSelect.style.color = "black";
   genderSelect.value = userInfo.dei_info?.gender;
@@ -692,115 +732,45 @@ function dofillUserInfo(userInfo) {
   ReligionSelect.value = userInfo.dei_info?.religion;
   ReligionSelect.style.color = "black";
 
-  if (userInfo.dei_info?.disability) {
-    True1Selected.value = true;
-    let True1SelectedPrev = True1Selected.previousElementSibling;
-    True1SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
-  } else {
-    False1Selected.value = true;
-    let False1SelectedPrev = False1Selected.previousElementSibling;
-    False1SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
-  }
-
-  if (userInfo.dei_info?.veteran) {
-    True2Selected.value = true;
-    let True2SelectedPrev = True2Selected.previousElementSibling;
-    True2SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
-  } else {
-    False2Selected.value = true;
-    let False2SelectedPrev = False2Selected.previousElementSibling;
-    False2SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
-  }
-
-
-  // tab5
-  Citizenship.value = userInfo.legal_info?.citizenship;
-  USVisaTyoeSelect.value = userInfo.legal_info?.work_visa_type;
-  USVisaTyoeSelect.style.color = "black";
-
-  if (userInfo.legal_info?.permanent_resident) {
-    True3Selected.value = true;
-    let True3SelectedPrev = True3Selected.previousElementSibling;
-    True3SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
-  } else {
-    False3Selected.value = true;
-    let False3SelectedPrev = False3Selected.previousElementSibling;
-    False3SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
-  }
-
-  if (userInfo.legal_info?.need_sponsorship) {
-    True4Selected.value = true;
-    let True4SelectedPrev = True4Selected.previousElementSibling;
-    True4SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
-  } else {
-    False4Selected.value = true;
-    let False4SelectedPrev = False4Selected.previousElementSibling;
-    False4SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
-  }
-
-
-  if (userInfo.legal_info?.has_criminal_record) {
-    True5Selected.value = true;
-    let True5SelectedPrev = True5Selected.previousElementSibling;
-    True5SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
-  } else {
-    False5Selected.value = true;
-    let False5SelectedPrev = False5Selected.previousElementSibling;
-    False5SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
-  }
-
-
-  if (userInfo.legal_info.pending_criminal_case) {
-    True6Selected.value = true;
-    let True6SelectedPrev = True6Selected.previousElementSibling;
-    True6SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
-  } else {
-    False6Selected.value = true;
-    let False6SelectedPrev = False6Selected.previousElementSibling;
-    False6SelectedPrev.className = 'w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input w--redirected-checked';
-  }
-
-
-
   // tab6
   LinkedinURL.value = userInfo.additional_info.linkedIn || '';
   GitHubURL.value = userInfo.additional_info?.github;
   PortfolioURL.value = userInfo.additional_info?.portfolio;
   PersonalWebsiteURL.value = userInfo.additional_info?.website;
-  language0name.value = userInfo.additional_info?.language_infos[0]?.language;
-  language0level.value = userInfo.additional_info?.language_infos[0]?.level;
-  language0level.style.color = "black";
-  const isExistLanguageInfos1 = userInfo.additional_info?.language_infos[1]?.language || userInfo.additional_info?.language_infos[1]?.level
-  if (isExistLanguageInfos1) {
-    language1name.value = userInfo.additional_info?.language_infos[1]?.language;
-    language1level.value = userInfo.additional_info?.language_infos[1]?.level;
-    language1level.style.color = "black";
-    languag1.style.display = 'flex';
-  }
-  const isExistLanguageInfos2 = userInfo.additional_info.language_infos[2]?.language || userInfo.additional_info.language_infos[2]?.level
-  if (isExistLanguageInfos2) {
-    language2name.value = userInfo.additional_info?.language_infos[2]?.language;
-    language2level.value = userInfo.additional_info?.language_infos[2]?.level;
-    language2level.style.color = "black";
-    language2.style.display = 'flex';
-  }
+  // language0name.value = userInfo.additional_info?.language_infos[0]?.language;
+  // language0level.value = userInfo.additional_info?.language_infos[0]?.level;
+  // language0level.style.color = "black";
+  // const isExistLanguageInfos1 = userInfo.additional_info?.language_infos[1]?.language || userInfo.additional_info?.language_infos[1]?.level
+  // if (isExistLanguageInfos1) {
+  //   language1name.value = userInfo.additional_info?.language_infos[1]?.language;
+  //   language1level.value = userInfo.additional_info?.language_infos[1]?.level;
+  //   language1level.style.color = "black";
+  //   languag1.style.display = 'flex';
+  // }
+  // const isExistLanguageInfos2 = userInfo.additional_info.language_infos[2]?.language || userInfo.additional_info.language_infos[2]?.level
+  // if (isExistLanguageInfos2) {
+  //   language2name.value = userInfo.additional_info?.language_infos[2]?.language;
+  //   language2level.value = userInfo.additional_info?.language_infos[2]?.level;
+  //   language2level.style.color = "black";
+  //   language2.style.display = 'flex';
+  // }
 
-  Award0year.value = userInfo.additional_info?.award_infos[0]?.time;
-  Award0name.value = userInfo.additional_info?.award_infos[0]?.name;
+  // Award0year.value = userInfo.additional_info?.award_infos[0]?.time;
+  // Award0name.value = userInfo.additional_info?.award_infos[0]?.name;
 
-  const isExistAwardInfos1 = userInfo.additional_info?.award_infos[1]?.time || userInfo.additional_info?.award_infos[1]?.name
-  if (isExistAwardInfos1) {
-    Award1year.value = userInfo.additional_info?.award_infos[1]?.time;
-    Award1name.value = userInfo.additional_info?.award_infos[1]?.name;
-    Award1.style.display = 'flex';
-  }
+  // const isExistAwardInfos1 = userInfo.additional_info?.award_infos[1]?.time || userInfo.additional_info?.award_infos[1]?.name
+  // if (isExistAwardInfos1) {
+  //   Award1year.value = userInfo.additional_info?.award_infos[1]?.time;
+  //   Award1name.value = userInfo.additional_info?.award_infos[1]?.name;
+  //   Award1.style.display = 'flex';
+  // }
 
-  const isExistAwardInfos2 = userInfo.additional_info.award_infos[2]?.time || userInfo.additional_info.award_infos[2]?.name
-  if (isExistAwardInfos2) {
-    Award2year.value = userInfo.additional_info?.award_infos[2]?.time;
-    Award2name.value = userInfo.additional_info?.award_infos[2]?.name;
-    Award2.style.display = 'flex';
-  }
+  // const isExistAwardInfos2 = userInfo.additional_info.award_infos[2]?.time || userInfo.additional_info.award_infos[2]?.name
+  // if (isExistAwardInfos2) {
+  //   Award2year.value = userInfo.additional_info?.award_infos[2]?.time;
+  //   Award2name.value = userInfo.additional_info?.award_infos[2]?.name;
+  //   Award2.style.display = 'flex';
+  // }
 
   SelfDescriptionTextArea.value = userInfo.additional_info?.description;
 }
@@ -1123,63 +1093,8 @@ function doSomethingElse() {
         });
     });
   }
-
   if (saveTab4Button) {
     saveTab4Button.addEventListener('click', function () {
-      let Saving = document.getElementById('Saving-4');
-      let ToBeSaved = document.getElementById('ToBeSaved-4');
-      backTab4.style.pointerEvents = "none";
-      Saving.style.display = 'flex';
-      ToBeSaved.style.display = 'none';
-      var identificationValue = identificationInput.checked;
-      var raceOption = raceSelect.options[raceSelect.selectedIndex]?.value;
-      var genderOption = genderSelect.options[genderSelect.selectedIndex]?.value;
-      var ReligionOption = ReligionSelect.options[ReligionSelect.selectedIndex]?.value;
-      var url = `https://api.jobwizard.ai/api/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
-      var data = {
-        "dei_info": {
-          "agree_to_provide_dei": identificationValue,
-          "race": raceOption,
-          "gender": genderOption,
-          "religion": ReligionOption,
-          "disability": True1Selected.checked,
-          "veteran": True2Selected.checked
-        }
-      };
-      var options = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      };
-
-      if (!cookie_ms_token) {
-        return;
-      }
-
-
-      fetch(url, options)
-        .then(response => {
-          if (response.status == 200) {
-            let Saving = document.getElementById('Saving-4');
-            let ToBeSaved = document.getElementById('ToBeSaved-4');
-            backTab4.style.pointerEvents = "auto";
-            Saving.style.display = 'none';
-            ToBeSaved.style.display = 'flex';
-            MenuTab5.style.pointerEvents = "auto";
-            MenuTab5.click();
-            MenuTab4.style.pointerEvents = "none";
-          }
-
-          return response.json();
-        }).catch(error => {
-        });
-    });
-  }
-
-  if (saveTab5Button) {
-    saveTab5Button.addEventListener('click', function () {
       let Saving = document.getElementById('Saving-5');
       let ToBeSaved = document.getElementById('ToBeSaved-5');
       backTab5.style.pointerEvents = "none";
@@ -1193,10 +1108,10 @@ function doSomethingElse() {
         "legal_info": {
           "citizenship": CitizenshipValue,
           "work_visa_type": USVisaTypeOption,
-          "permanent_resident": True3Selected.checked,
-          "need_sponsorship": True4Selected.checked,
-          "has_criminal_record": True5Selected.checked,
-          "pending_criminal_case": True6Selected.checked
+          "permanent_resident": permanentResident.checked,
+          "need_sponsorship": needSponsorship.checked,
+          "has_criminal_record": hasCriminalRecord.checked,
+          "pending_criminal_case": pendingCriminalCase.checked
         }
       };
       var options = {
@@ -1231,6 +1146,60 @@ function doSomethingElse() {
     });
   }
 
+  if (saveTab5Button) {
+    saveTab5Button.addEventListener('click', function () {
+      let Saving = document.getElementById('Saving-4');
+      let ToBeSaved = document.getElementById('ToBeSaved-4');
+      backTab4.style.pointerEvents = "none";
+      Saving.style.display = 'flex';
+      ToBeSaved.style.display = 'none';
+      var raceOption = raceSelect.options[raceSelect.selectedIndex]?.value;
+      var genderOption = genderSelect.options[genderSelect.selectedIndex]?.value;
+      var ReligionOption = ReligionSelect.options[ReligionSelect.selectedIndex]?.value;
+      var url = `https://api.jobwizard.ai/api/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
+      var data = {
+        "dei_info": {
+          "agree_to_provide_dei": identificationInput.checked,
+          "race": raceOption,
+          "gender": genderOption,
+          "religion": ReligionOption,
+          "disability": disabilityInput.checked,
+          "veteran": veteranInput.checked
+        }
+      };
+      var options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      };
+
+      if (!cookie_ms_token) {
+        return;
+      }
+
+
+      fetch(url, options)
+        .then(response => {
+          if (response.status == 200) {
+            let Saving = document.getElementById('Saving-4');
+            let ToBeSaved = document.getElementById('ToBeSaved-4');
+            backTab4.style.pointerEvents = "auto";
+            Saving.style.display = 'none';
+            ToBeSaved.style.display = 'flex';
+            MenuTab5.style.pointerEvents = "auto";
+            MenuTab5.click();
+            MenuTab4.style.pointerEvents = "none";
+          }
+
+          return response.json();
+        }).catch(error => {
+        });
+    });
+  }
+
+
   if (saveTab6Button) {
     saveTab6Button.addEventListener('click', function () {
       const Saving = document.getElementById('Saving-6');
@@ -1245,9 +1214,9 @@ function doSomethingElse() {
       // var language0nameValue = language0name.value;
       // var language1nameValue = language1name.value;
       // var language2nameValue = language2name.value;
-      var language0levelValue = language0level.options[language0level.selectedIndex]?.value;
-      var language1levelValue = language1level.options[language1level.selectedIndex]?.value;
-      var language2levelValue = language2level.options[language2level.selectedIndex]?.value;
+      // var language0levelValue = language0level.options[language0level.selectedIndex]?.value;
+      // var language1levelValue = language1level.options[language1level.selectedIndex]?.value;
+      // var language2levelValue = language2level.options[language2level.selectedIndex]?.value;
       var SelfDescriptionTextAreaValue = SelfDescriptionTextArea.value;
       // var Award0yearValue = Award0year.value;
       // var Award1yearValue = Award1year.value;
