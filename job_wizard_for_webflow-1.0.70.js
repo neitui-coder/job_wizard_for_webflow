@@ -802,6 +802,17 @@ function extractString(str) {
   }
 }
 
+function isRequired(value, element, textId) {
+  if (!value) {
+    const ErrorInput = document.getElementById(textId);
+    ErrorInput.innerHTML('Required.');
+    ErrorInput.style.display = 'flex';
+    if (element.tagName === 'INPUT' && (element.type === 'text' || element.type === 'number')) {
+      element.style.borderColor = "#c70000";
+    }
+  }
+}
+
 function doSomethingElse() {
   if (saveTab1Button) {
     saveTab1Button.addEventListener('click', function () {
@@ -816,11 +827,25 @@ function doSomethingElse() {
       var phoneNumberValue2 = phoneNumberInput2.value;
       var phoneNumber = phoneNumberValue1 + " " + phoneNumberValue2;
       var emailValue = emailInput.value;
-      var dateValue = dateInput.value;
-      var selectMonthValue = selectMonthSelect.options[selectMonthSelect.selectedIndex]?.value;
-      var yearValue = yearInput.value;
+      // var dateValue = dateInput.value;
+      // var selectMonthValue = selectMonthSelect.options[selectMonthSelect.selectedIndex]?.value;
+      // var yearValue = yearInput.value;
       var locationValue = locationInput.value;
       var birthday = yearValue + " " + selectMonthValue + " " + dateValue;
+
+      const boolean = !firstNameValue || !lastNameValue || !phoneNumberValue1 || !phoneNumberValue2 || !emailValue || !locationValue
+
+      if (boolean) {
+        isRequired(firstNameValue, firstNameInput, 'FirstName-AlertText');
+        isRequired(lastNameValue, lastNameInput, 'LastName-AlertText');
+        isRequired(phoneNumberValue1, phoneNumberInput1, 'Phone-AlertText');
+        isRequired(phoneNumberValue2, phoneNumberInput2, 'Phone-AlertText');
+        isRequired(emailValue, 'Email-AlertText');
+        isRequired(locationValue, 'Location-AlertText');
+        return;
+      }
+
+
 
       var url = `https://api.jobwizard.ai/api/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
       var data = {
@@ -1274,7 +1299,7 @@ function doSomethingElse() {
 
       var data = {
         "additional_info": {
-          "linkedIn": LinkedinURLValue,
+          "linkedin_url": LinkedinURLValue,
           "github": GitHubURLValue,
           "website": PersonalWebsiteURLValue,
           "portfolio": PortfolioURLValue,
