@@ -1206,7 +1206,7 @@ function doSomethingElse() {
       }
 
       if (Education1.style.display === 'block' && Education2.style.display === 'block') {
-        const count = 0;
+        let Education1count = 0;
         if (StartDate0Input1Value) {
           const isInRange = isYearInRange(StartDate0Input1Value);
           if (!isInRange) {
@@ -1214,7 +1214,7 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             StartDate0Input1.style.borderColor = "#c70000";
-            count++;
+            Education1count++;
           }
         }
 
@@ -1225,7 +1225,7 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             EndDate0Input1.style.borderColor = "#c70000";
-            count++;
+            Education1count++;
           }
         }
 
@@ -1236,7 +1236,7 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             StartDate1Input1.style.borderColor = "#c70000";
-            count++;
+            Education1count++;
           }
         }
 
@@ -1247,7 +1247,7 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             EndDate1Input1.style.borderColor = "#c70000";
-            count++;
+            Education1count++;
           }
         }
 
@@ -1259,7 +1259,7 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             StartDate2Input1.style.borderColor = "#c70000";
-            count++;
+            Education1count++;
           }
         }
 
@@ -1270,17 +1270,17 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             EndDate2Input1.style.borderColor = "#c70000";
-            count++;
+            Education1count++;
           }
         }
-        if (count > 0) {
+        if (Education1count > 0) {
           backTab2.style.pointerEvents = "auto";
           Saving.style.display = 'none';
           ToBeSaved.style.display = 'flex';
           return;
         }
       } else if (Education1.style.display === 'block' && Education2.style.display === 'none') {
-        const count = 0;
+        let Education2count = 0;
         if (StartDate0Input1Value) {
           const isInRange = isYearInRange(StartDate0Input1Value);
           if (!isInRange) {
@@ -1288,7 +1288,7 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             StartDate0Input1.style.borderColor = "#c70000";
-            count++;
+            Education2count++;
           }
         }
 
@@ -1299,7 +1299,7 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             EndDate0Input1.style.borderColor = "#c70000";
-            count++;
+            Education2count++;
           }
         }
 
@@ -1310,7 +1310,7 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             StartDate1Input1.style.borderColor = "#c70000";
-            count++;
+            Education2count++;
           }
         }
 
@@ -1321,10 +1321,10 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             EndDate1Input1.style.borderColor = "#c70000";
-            count++;
+            Education2count++;
           }
         }
-        if (count > 0) {
+        if (Education2count > 0) {
           backTab2.style.pointerEvents = "auto";
           Saving.style.display = 'none';
           ToBeSaved.style.display = 'flex';
@@ -1332,7 +1332,7 @@ function doSomethingElse() {
         }
 
       } else if (Education1.style.display === 'none' && Education2.style.display === 'block') {
-        const count = 0;
+        let Education3count = 0;
         if (StartDate0Input1Value) {
           const isInRange = isYearInRange(StartDate0Input1Value);
           if (!isInRange) {
@@ -1340,7 +1340,7 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             StartDate0Input1.style.borderColor = "#c70000";
-            count++;
+            Education3count++;
           }
         }
 
@@ -1351,7 +1351,7 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             EndDate0Input1.style.borderColor = "#c70000";
-            count++;
+            Education3count++;
           }
         }
 
@@ -1362,7 +1362,7 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             StartDate2Input1.style.borderColor = "#c70000";
-            count++;
+            Education3count++;
           }
         }
 
@@ -1373,17 +1373,17 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             EndDate2Input1.style.borderColor = "#c70000";
-            count++;
+            Education3count++;
           }
         }
-        if (count > 0) {
+        if (Education3count > 0) {
           backTab2.style.pointerEvents = "auto";
           Saving.style.display = 'none';
           ToBeSaved.style.display = 'flex';
           return;
         }
       } else if (Education1.style.display === 'none' && Education2.style.display === 'none') {
-        const count = 0;
+        let Education4count = 0;
         if (StartDate0Input1Value) {
           const isInRange = isYearInRange(StartDate0Input1Value);
           if (!isInRange) {
@@ -1391,7 +1391,7 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             StartDate0Input1.style.borderColor = "#c70000";
-            count++;
+            Education4count++;
           }
         }
 
@@ -1402,10 +1402,10 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             EndDate0Input1.style.borderColor = "#c70000";
-            count++;
+            Education4count++;
           }
         }
-        if (count > 0) {
+        if (Education4count > 0) {
           backTab2.style.pointerEvents = "auto";
           Saving.style.display = 'none';
           ToBeSaved.style.display = 'flex';
@@ -1779,7 +1779,7 @@ function doSomethingElse() {
       }
 
       if (WorkExperience1.style.display === 'block' && WorkExperience2.style.display === 'block') {
-        const count = 0;
+        let work1count = 0;
         if (WorkStartDate0YearValue) {
           const isInRange = isYearInRange(WorkStartDate0YearValue);
           if (!isInRange) {
@@ -1787,7 +1787,7 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             WorkStartDate0Year.style.borderColor = "#c70000";
-            count++;
+            work1count++;
           }
         }
 
@@ -1798,7 +1798,7 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             WorkEndDate0Year.style.borderColor = "#c70000";
-            count++;
+            work1count++;
           }
         }
 
@@ -1809,7 +1809,7 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             WorkStartDate1Year.style.borderColor = "#c70000";
-            count++;
+            work1count++;
           }
         }
 
@@ -1820,7 +1820,7 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             WorkEndDate1Year.style.borderColor = "#c70000";
-            count++;
+            work1count++;
           }
         }
 
@@ -1832,7 +1832,7 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             WorkStartDate2Year.style.borderColor = "#c70000";
-            count++;
+            work1count++;
           }
         }
 
@@ -1843,17 +1843,17 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             WorkEndDate2Year.style.borderColor = "#c70000";
-            count++;
+            work1count++;
           }
         }
-        if(count > 0){
+        if(work1count > 0){
           backTab3.style.pointerEvents = "auto";
           Saving.style.display = 'none';
           ToBeSaved.style.display = 'flex';
           return;
         }
       } else if (WorkExperience1.style.display === 'block' && WorkExperience2.style.display === 'none') {
-        const count = 0;
+        let work2count = 0;
         if (WorkStartDate0YearValue) {
           const isInRange = isYearInRange(WorkStartDate0YearValue);
           if (!isInRange) {
@@ -1861,7 +1861,7 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             WorkStartDate0Year.style.borderColor = "#c70000";
-            count++;
+            work2count++;
           }
         }
 
@@ -1872,7 +1872,7 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             WorkEndDate0Year.style.borderColor = "#c70000";
-            count++;
+            work2count++;
           }
         }
 
@@ -1883,7 +1883,7 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             WorkStartDate1Year.style.borderColor = "#c70000";
-            count++;
+            work2count++;
           }
         }
 
@@ -1894,18 +1894,18 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             WorkEndDate1Year.style.borderColor = "#c70000";
-            count++;
+            work2count++;
           }
         }
 
-        if(count > 0){
+        if(work2count > 0){
           backTab3.style.pointerEvents = "auto";
           Saving.style.display = 'none';
           ToBeSaved.style.display = 'flex';
           return;
         }
       } else if (WorkExperience1.style.display === 'none' && WorkExperience2.style.display === 'block') {
-        const count = 0;
+        let work3count = 0;
         if (WorkStartDate0YearValue) {
           const isInRange = isYearInRange(WorkStartDate0YearValue);
           if (!isInRange) {
@@ -1913,7 +1913,7 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             WorkStartDate0Year.style.borderColor = "#c70000";
-            count++;
+            work3count++;
           }
         }
 
@@ -1924,7 +1924,7 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             WorkEndDate0Year.style.borderColor = "#c70000";
-            count++;
+            work3count++;
           }
         }
 
@@ -1935,7 +1935,7 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             WorkStartDate2Year.style.borderColor = "#c70000";
-            count++;
+            work3count++;
           }
         }
 
@@ -1946,18 +1946,18 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             WorkEndDate2Year.style.borderColor = "#c70000";
-            count++;
+            work3count++;
           }
         }
 
-        if(count > 0){
+        if(work3count > 0){
           backTab3.style.pointerEvents = "auto";
           Saving.style.display = 'none';
           ToBeSaved.style.display = 'flex';
           return;
         }
       } else if (WorkExperience1.style.display === 'none' && WorkExperience2.style.display === 'none') {
-        const count = 0;
+        let work4count = 0;
         if (WorkStartDate0YearValue) {
           const isInRange = isYearInRange(WorkStartDate0YearValue);
           if (!isInRange) {
@@ -1965,7 +1965,7 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             WorkStartDate0Year.style.borderColor = "#c70000";
-            count++;
+            work4count++;
           }
         }
 
@@ -1976,11 +1976,11 @@ function doSomethingElse() {
             ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
             ErrorInput.style.display = 'flex';
             WorkEndDate0Year.style.borderColor = "#c70000";
-            count++;
+            work4count++;
           }
         }
 
-        if(count > 0){
+        if(work4count > 0){
           backTab3.style.pointerEvents = "auto";
           Saving.style.display = 'none';
           ToBeSaved.style.display = 'flex';
