@@ -816,6 +816,11 @@ function isTrueEmail(value) {
   return isEmail;
 }
 
+function isYearInRange(yearString) {
+  const year = parseInt(yearString, 10); // 将字符串转换为整数
+  return year >= 1900 && year <= 2100; // 判断数字是否在范围内
+}
+
 
 function isRequired(value, element, textId) {
   if (!value) {
@@ -1198,11 +1203,6 @@ function doSomethingElse() {
         Saving.style.display = 'none';
         ToBeSaved.style.display = 'flex';
         return;
-      }
-
-      function isYearInRange(yearString) {
-        const year = parseInt(yearString, 10); // 将字符串转换为整数
-        return year >= 1900 && year <= 2100; // 判断数字是否在范围内
       }
 
       if (Education1.style.display === 'block' && Education2.style.display === 'block') {
@@ -1846,7 +1846,7 @@ function doSomethingElse() {
             work1count++;
           }
         }
-        if(work1count > 0){
+        if (work1count > 0) {
           backTab3.style.pointerEvents = "auto";
           Saving.style.display = 'none';
           ToBeSaved.style.display = 'flex';
@@ -1898,7 +1898,7 @@ function doSomethingElse() {
           }
         }
 
-        if(work2count > 0){
+        if (work2count > 0) {
           backTab3.style.pointerEvents = "auto";
           Saving.style.display = 'none';
           ToBeSaved.style.display = 'flex';
@@ -1950,7 +1950,7 @@ function doSomethingElse() {
           }
         }
 
-        if(work3count > 0){
+        if (work3count > 0) {
           backTab3.style.pointerEvents = "auto";
           Saving.style.display = 'none';
           ToBeSaved.style.display = 'flex';
@@ -1980,7 +1980,7 @@ function doSomethingElse() {
           }
         }
 
-        if(work4count > 0){
+        if (work4count > 0) {
           backTab3.style.pointerEvents = "auto";
           Saving.style.display = 'none';
           ToBeSaved.style.display = 'flex';
