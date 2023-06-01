@@ -306,6 +306,9 @@ if (AddEducation) {
   AddEducation.addEventListener('click', function () {
     if (Education1.style.display == 'block' && Education2.style.display == 'block') {
       MaxAlertEducation.style.display = 'block'
+      setTimeout(function () {
+        MaxAlertEducation.style.display = 'none'
+      }, 3000);
       return;
     }
     if (Education1.style.display == 'none') {
@@ -351,6 +354,9 @@ if (AddWork) {
   AddWork.addEventListener('click', function () {
     if (WorkExperience1.style.display == 'block' && WorkExperience2.style.display == 'block') {
       MaxAlertWork.style.display = 'block'
+      setTimeout(function () {
+        MaxAlertWork.style.display = 'none'
+      }, 3000);
       return;
     }
     if (WorkExperience1.style.display === 'none') {
@@ -824,7 +830,7 @@ function isRequired(value, element, textId) {
     const ErrorInput = document.getElementById(textId);
     ErrorInput.innerText = 'Required.';
     ErrorInput.style.display = 'flex';
-    if (element.tagName === 'INPUT' && (element.type === 'text' || element.type === 'number' || element.type === 'email')) {
+    if ((element.tagName === 'INPUT' && (element.type === 'text' || element.type === 'number' || element.type === 'email')) || (element.tagName === 'SELECT') || (element.tagName === 'TEXTAREA')) {
       element.style.borderColor = "#c70000";
     }
   }
@@ -1187,6 +1193,7 @@ function doSomethingElse() {
           isRequired(EndDate0Input0Value, EndDate0Input0, 'EduEndDate0-AlertText');
           isRequired(EndDate0Input1Value, EndDate0Input1, 'EduEndDate0-AlertText');
         }
+        backTab2.style.pointerEvents = "auto";
         Saving.style.display = 'none';
         ToBeSaved.style.display = 'flex';
         return;
@@ -1550,6 +1557,7 @@ function doSomethingElse() {
           isRequired(WorkStartDate0YearValue, WorkStartDate0Year, 'WorkStartDate0-AlertText');
           isRequired(WorkDescription0textareaValue, WorkDescription0textarea, 'WorkDescription0-AlertText');
         }
+        backTab3.style.pointerEvents = "auto";
         Saving.style.display = 'none';
         ToBeSaved.style.display = 'flex';
         return;
