@@ -304,6 +304,10 @@ if (backTab6) {
 
 if (AddEducation) {
   AddEducation.addEventListener('click', function () {
+    if (Education1.style.display == 'block' && Education2.style.display == 'block') {
+      MaxAlertEducation.style.display = 'block'
+      return;
+    }
     if (Education1.style.display == 'none') {
       Education1.style.display = 'block';
       return;
@@ -312,10 +316,6 @@ if (AddEducation) {
     if (Education2.style.display == 'none') {
       Education2.style.display = 'block';
       return;
-    }
-
-    if (MaxAlertEducation.style.display == 'none') {
-      MaxAlertEducation.style.display = 'block';
     }
   })
 }
