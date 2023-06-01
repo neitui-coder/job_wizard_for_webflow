@@ -839,7 +839,7 @@ function isRequired(value, element, textId) {
 function cleanErrorText(textIdGroup) {
   for (i = 0; i < textIdGroup.length; i++) {
     const ErrorInput = document.getElementById(textIdGroup[i].textId);
-    if ((element.tagName === 'INPUT' && (element.type === 'text' || element.type === 'number' || element.type === 'email')) || (element.tagName === 'SELECT') || (element.tagName === 'TEXTAREA')) {
+    if ((textIdGroup[i].element.tagName === 'INPUT' && (textIdGroup[i].element.type === 'text' || textIdGroup[i].element.type === 'number' || textIdGroup[i].element.type === 'email')) || (textIdGroup[i].element.tagName === 'SELECT') || (textIdGroup[i].element.tagName === 'TEXTAREA')) {
       textIdGroup[i].element.style.borderColor = "";
     }
     ErrorInput.style.display = 'none';
