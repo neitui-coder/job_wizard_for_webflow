@@ -902,12 +902,14 @@ function doSomethingElse() {
         isRequired(phoneNumberValue2, phoneNumberInput2, 'Phone-AlertText');
         isRequired(emailValue, emailInput, 'Email-AlertText');
         isRequired(locationValue, locationInput, 'Location-AlertText');
+        backTab1.style.pointerEvents = "auto";
         Saving.style.display = 'none';
         ToBeSaved.style.display = 'flex';
         return;
       }
 
       if (emailValue && isTrueEmail(emailValue, emailInput, 'Email-AlertText')) {
+        backTab1.style.pointerEvents = "auto";
         Saving.style.display = 'none';
         ToBeSaved.style.display = 'flex';
         return;
@@ -1600,13 +1602,36 @@ function doSomethingElse() {
   }
   if (saveTab4Button) {
     saveTab4Button.addEventListener('click', function () {
-      let Saving = document.getElementById('Saving-5');
-      let ToBeSaved = document.getElementById('ToBeSaved-5');
-      backTab5.style.pointerEvents = "none";
+      let Saving = document.getElementById('Saving-4');
+      let ToBeSaved = document.getElementById('ToBeSaved-4');
+      backTab4.style.pointerEvents = "none";
       Saving.style.display = 'flex';
       ToBeSaved.style.display = 'none';
       var CitizenshipValue = Citizenship.value;
       var USVisaTypeOption = USVisaTyoeSelect.options[USVisaTyoeSelect.selectedIndex]?.value;
+
+      const boolean = !CitizenshipValue || !USVisaTypeOption
+
+      cleanErrorText([
+        {
+          textId: 'Citizenship-AlertText',
+          element: Citizenship,
+        },
+        {
+          textId: 'USVisaType-AlertText',
+          element: USVisaTyoeSelect,
+        }
+      ])
+
+      if (boolean) {
+        isRequired(CitizenshipValue, Citizenship, 'Citizenship-AlertText');
+        isRequired(USVisaTypeOption, USVisaTyoeSelect, 'USVisaType-AlertText');
+
+        backTab4.style.pointerEvents = "auto";
+        Saving.style.display = 'none';
+        ToBeSaved.style.display = 'flex';
+        return;
+      }
 
       var url = `https://api.jobwizard.ai/api/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
       var data = {
@@ -1635,14 +1660,14 @@ function doSomethingElse() {
       fetch(url, options)
         .then(response => {
           if (response.status == 200) {
-            backTab5.style.pointerEvents = "auto";
+            backTab4.style.pointerEvents = "auto";
             let Saving = document.getElementById('Saving-5');
             let ToBeSaved = document.getElementById('ToBeSaved-5');
             Saving.style.display = 'none';
             ToBeSaved.style.display = 'flex';
-            MenuTab6.style.pointerEvents = "auto";
-            MenuTab6.click();
-            MenuTab5.style.pointerEvents = "none";
+            MenuTab5.style.pointerEvents = "auto";
+            MenuTab5.click();
+            MenuTab4.style.pointerEvents = "none";
           }
 
           return response.json();
@@ -1653,14 +1678,43 @@ function doSomethingElse() {
 
   if (saveTab5Button) {
     saveTab5Button.addEventListener('click', function () {
-      let Saving = document.getElementById('Saving-4');
-      let ToBeSaved = document.getElementById('ToBeSaved-4');
+      let Saving = document.getElementById('Saving-5');
+      let ToBeSaved = document.getElementById('ToBeSaved-5');
       backTab4.style.pointerEvents = "none";
       Saving.style.display = 'flex';
       ToBeSaved.style.display = 'none';
       var raceOption = raceSelect.options[raceSelect.selectedIndex]?.value;
       var genderOption = genderSelect.options[genderSelect.selectedIndex]?.value;
       var ReligionOption = ReligionSelect.options[ReligionSelect.selectedIndex]?.value;
+
+      const boolean = !raceOption || !genderOption || !ReligionOption
+
+      cleanErrorText([
+        {
+          textId: 'Race-AlertText',
+          element: raceSelect,
+        },
+        {
+          textId: 'Gender-AlertText',
+          element: genderSelect,
+        },
+        {
+          textId: 'Religion-AlertText',
+          element: ReligionSelect,
+        }
+      ])
+
+      if (boolean) {
+        isRequired(raceOption, raceSelect, 'Race-AlertText');
+        isRequired(genderOption, genderSelect, 'Gender-AlertText');
+        isRequired(ReligionOption, ReligionSelect, 'Religion-AlertText');
+
+        backTab5.style.pointerEvents = "auto";
+        Saving.style.display = 'none';
+        ToBeSaved.style.display = 'flex';
+        return;
+      }
+
       var url = `https://api.jobwizard.ai/api/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
       var data = {
         "dei_info": {
@@ -1690,12 +1744,12 @@ function doSomethingElse() {
           if (response.status == 200) {
             let Saving = document.getElementById('Saving-4');
             let ToBeSaved = document.getElementById('ToBeSaved-4');
-            backTab4.style.pointerEvents = "auto";
+            backTab5.style.pointerEvents = "auto";
             Saving.style.display = 'none';
             ToBeSaved.style.display = 'flex';
-            MenuTab5.style.pointerEvents = "auto";
-            MenuTab5.click();
-            MenuTab4.style.pointerEvents = "none";
+            MenuTab6.style.pointerEvents = "auto";
+            MenuTab6.click();
+            MenuTab5.style.pointerEvents = "none";
           }
 
           return response.json();
