@@ -1129,7 +1129,7 @@ function doSomethingElse() {
           isRequired(SchoolName1InputValue, SchoolName1Input, 'SchoolName1-AlertText');
           isRequired(SchoolName2InputValue, SchoolName2Input, 'SchoolName2-AlertText');
           isRequired(Major0InputValue, Major0Input, 'Major0-AlertText');
-          isRequired(Major1InputValue, Major1Input, 'Major1-AlertText');
+          isRequired(Major1InputtValue, Major1Input, 'Major1-AlertText');
           isRequired(Major2InputValue, Major2Input, 'Major2-AlertText');
           isRequired(DegreeType0InputValue, DegreeType0Input, 'DegreeType0-AlertText');
           isRequired(DegreeType1InputValue, DegreeType1Input, 'DegreeType1-AlertText');
@@ -1150,7 +1150,7 @@ function doSomethingElse() {
           isRequired(SchoolName0InputValue, SchoolName0Input, 'SchoolName0-AlertText');
           isRequired(SchoolName1InputValue, SchoolName1Input, 'SchoolName1-AlertText');
           isRequired(Major0InputValue, Major0Input, 'Major0-AlertText');
-          isRequired(Major1InputValue, Major1Input, 'Major1-AlertText');
+          isRequired(Major1InputtValue, Major1Input, 'Major1-AlertText');
           isRequired(DegreeType0InputValue, DegreeType0Input, 'DegreeType0-AlertText');
           isRequired(DegreeType1InputValue, DegreeType1Input, 'DegreeType1-AlertText');
           isRequired(StartDate0Input0Value, StartDate0Input0, 'EduStartDate0-AlertText');
