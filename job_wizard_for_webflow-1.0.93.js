@@ -1152,6 +1152,7 @@ function doSomethingElse() {
           isRequired(EndDate0Input1Value, EndDate0Input1, 'EduEndDate0-AlertText');
           isRequired(EndDate1Input1Value, EndDate1Input1, 'EduEndDate1-AlertText');
           isRequired(EndDate2Input1Value, EndDate2Input1, 'EduEndDate2-AlertText');
+
         } else if (Education1.style.display === 'block' && Education2.style.display === 'none') {
           isRequired(SchoolName0InputValue, SchoolName0Input, 'SchoolName0-AlertText');
           isRequired(SchoolName1InputValue, SchoolName1Input, 'SchoolName1-AlertText');
@@ -1204,96 +1205,188 @@ function doSomethingElse() {
         return year >= 1900 && year <= 2100; // 判断数字是否在范围内
       }
 
-      if (StartDate0Input1Value) {
-        const isInRange = isYearInRange(StartDate0Input1Value);
-        if (!isInRange) {
-          const ErrorInput = document.getElementById('EduStartDate0-AlertText');
-          ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
-          ErrorInput.style.display = 'flex';
-          StartDate0Input1.style.borderColor = "#c70000";
-
-          backTab2.style.pointerEvents = "auto";
-          Saving.style.display = 'none';
-          ToBeSaved.style.display = 'flex';
-          return;
+      if (Education1.style.display === 'block' && Education2.style.display === 'block') {
+        if (StartDate0Input1Value) {
+          const isInRange = isYearInRange(StartDate0Input1Value);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('EduStartDate0-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            StartDate0Input1.style.borderColor = "#c70000";
+          }
         }
+
+        if (EndDate0Input1Value) {
+          const isInRange = isYearInRange(EndDate0Input1Value);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('EduEndDate0-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            EndDate0Input1.style.borderColor = "#c70000";
+          }
+        }
+
+        if (StartDate1Input1Value) {
+          const isInRange = isYearInRange(StartDate1Input1Value);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('EduStartDate1-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            StartDate1Input1.style.borderColor = "#c70000";
+          }
+        }
+
+        if (EndDate1Input1Value) {
+          const isInRange = isYearInRange(EndDate1Input1Value);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('EduEndDate1-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            EndDate1Input1.style.borderColor = "#c70000";
+          }
+        }
+
+
+        if (StartDate2Input1Value) {
+          const isInRange = isYearInRange(StartDate2Input1Value);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('EduStartDate2-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            StartDate2Input1.style.borderColor = "#c70000";
+          }
+        }
+
+        if (EndDate2Input1Value) {
+          const isInRange = isYearInRange(EndDate2Input1Value);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('EduEndDate2-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            EndDate2Input1.style.borderColor = "#c70000";
+          }
+        }
+        backTab2.style.pointerEvents = "auto";
+        Saving.style.display = 'none';
+        ToBeSaved.style.display = 'flex';
+        return;
+      } else if (Education1.style.display === 'block' && Education2.style.display === 'none') {
+        if (StartDate0Input1Value) {
+          const isInRange = isYearInRange(StartDate0Input1Value);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('EduStartDate0-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            StartDate0Input1.style.borderColor = "#c70000";
+          }
+        }
+
+        if (EndDate0Input1Value) {
+          const isInRange = isYearInRange(EndDate0Input1Value);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('EduEndDate0-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            EndDate0Input1.style.borderColor = "#c70000";
+          }
+        }
+
+        if (StartDate1Input1Value) {
+          const isInRange = isYearInRange(StartDate1Input1Value);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('EduStartDate1-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            StartDate1Input1.style.borderColor = "#c70000";
+          }
+        }
+
+        if (EndDate1Input1Value) {
+          const isInRange = isYearInRange(EndDate1Input1Value);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('EduEndDate1-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            EndDate1Input1.style.borderColor = "#c70000";
+          }
+        }
+
+        backTab2.style.pointerEvents = "auto";
+        Saving.style.display = 'none';
+        ToBeSaved.style.display = 'flex';
+        return;
+
+      } else if (Education1.style.display === 'none' && Education2.style.display === 'block') {
+        if (StartDate0Input1Value) {
+          const isInRange = isYearInRange(StartDate0Input1Value);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('EduStartDate0-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            StartDate0Input1.style.borderColor = "#c70000";
+          }
+        }
+
+        if (EndDate0Input1Value) {
+          const isInRange = isYearInRange(EndDate0Input1Value);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('EduEndDate0-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            EndDate0Input1.style.borderColor = "#c70000";
+          }
+        }
+
+        if (StartDate2Input1Value) {
+          const isInRange = isYearInRange(StartDate2Input1Value);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('EduStartDate2-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            StartDate2Input1.style.borderColor = "#c70000";
+          }
+        }
+
+        if (EndDate2Input1Value) {
+          const isInRange = isYearInRange(EndDate2Input1Value);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('EduEndDate2-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            EndDate2Input1.style.borderColor = "#c70000";
+          }
+        }
+        backTab2.style.pointerEvents = "auto";
+        Saving.style.display = 'none';
+        ToBeSaved.style.display = 'flex';
+        return;
+      } else if (Education1.style.display === 'none' && Education2.style.display === 'none') {
+        if (StartDate0Input1Value) {
+          const isInRange = isYearInRange(StartDate0Input1Value);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('EduStartDate0-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            StartDate0Input1.style.borderColor = "#c70000";
+          }
+        }
+
+        if (EndDate0Input1Value) {
+          const isInRange = isYearInRange(EndDate0Input1Value);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('EduEndDate0-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            EndDate0Input1.style.borderColor = "#c70000";
+          }
+        }
+
+        backTab2.style.pointerEvents = "auto";
+        Saving.style.display = 'none';
+        ToBeSaved.style.display = 'flex';
+        return;
       }
 
-      if (EndDate0Input1Value) {
-        const isInRange = isYearInRange(EndDate0Input1Value);
-        if (!isInRange) {
-          const ErrorInput = document.getElementById('EduEndDate0-AlertText');
-          ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
-          ErrorInput.style.display = 'flex';
-          EndDate0Input1.style.borderColor = "#c70000";
-
-          backTab2.style.pointerEvents = "auto";
-          Saving.style.display = 'none';
-          ToBeSaved.style.display = 'flex';
-          return;
-        }
-      }
-
-      if (StartDate1Input1Value) {
-        const isInRange = isYearInRange(StartDate0Input1Value);
-        if (!isInRange) {
-          const ErrorInput = document.getElementById('EduStartDate1-AlertText');
-          ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
-          ErrorInput.style.display = 'flex';
-          StartDate1Input1.style.borderColor = "#c70000";
-
-          backTab2.style.pointerEvents = "auto";
-          Saving.style.display = 'none';
-          ToBeSaved.style.display = 'flex';
-          return;
-        }
-      }
-
-      if (EndDate1Input1Value) {
-        const isInRange = isYearInRange(EndDate0Input1Value);
-        if (!isInRange) {
-          const ErrorInput = document.getElementById('EduEndDate1-AlertText');
-          ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
-          ErrorInput.style.display = 'flex';
-          EndDate1Input1.style.borderColor = "#c70000";
-
-          backTab2.style.pointerEvents = "auto";
-          Saving.style.display = 'none';
-          ToBeSaved.style.display = 'flex';
-          return;
-        }
-      }
-
-
-      if (StartDate2Input1Value) {
-        const isInRange = isYearInRange(StartDate2Input1Value);
-        if (!isInRange) {
-          const ErrorInput = document.getElementById('EduStartDate2-AlertText');
-          ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
-          ErrorInput.style.display = 'flex';
-          StartDate2Input1.style.borderColor = "#c70000";
-
-          backTab2.style.pointerEvents = "auto";
-          Saving.style.display = 'none';
-          ToBeSaved.style.display = 'flex';
-          return;
-        }
-      }
-
-      if (EndDate2Input1Value) {
-        const isInRange = isYearInRange(EndDate2Input1Value);
-        if (!isInRange) {
-          const ErrorInput = document.getElementById('EduEndDate2-AlertText');
-          ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
-          ErrorInput.style.display = 'flex';
-          EndDate2Input1.style.borderColor = "#c70000";
-
-          backTab2.style.pointerEvents = "auto";
-          Saving.style.display = 'none';
-          ToBeSaved.style.display = 'flex';
-          return;
-        }
-      }
 
       var data = {
         "school_infos": school_infos
@@ -1659,96 +1752,189 @@ function doSomethingElse() {
         return;
       }
 
-      if (WorkStartDate0YearValue) {
-        const isInRange = isYearInRange(WorkStartDate0YearValue);
-        if (!isInRange) {
-          const ErrorInput = document.getElementById('WorkStartDate0-AlertText');
-          ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
-          ErrorInput.style.display = 'flex';
-          WorkStartDate0Year.style.borderColor = "#c70000";
-
-          backTab2.style.pointerEvents = "auto";
-          Saving.style.display = 'none';
-          ToBeSaved.style.display = 'flex';
-          return;
+      if (WorkExperience1.style.display === 'block' && WorkExperience2.style.display === 'block') {
+        if (WorkStartDate0YearValue) {
+          const isInRange = isYearInRange(WorkStartDate0YearValue);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('WorkStartDate0-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            WorkStartDate0Year.style.borderColor = "#c70000";
+          }
         }
+
+        if (WorkEndDate0YearValue) {
+          const isInRange = isYearInRange(WorkEndDate0YearValue);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('WorkEndDate0-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            WorkEndDate0Year.style.borderColor = "#c70000";
+          }
+        }
+
+        if (WorkStartDate1YearValue) {
+          const isInRange = isYearInRange(WorkStartDate1YearValue);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('WorkStartDate1-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            WorkStartDate1Year.style.borderColor = "#c70000";
+          }
+        }
+
+        if (WorkEndDate1YearValue) {
+          const isInRange = isYearInRange(WorkEndDate1YearValue);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('WorkEndDate1-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            WorkEndDate1Year.style.borderColor = "#c70000";
+          }
+        }
+
+
+        if (WorkStartDate2YearValue) {
+          const isInRange = isYearInRange(WorkStartDate2YearValue);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('WorkStartDate2-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            WorkStartDate2Year.style.borderColor = "#c70000";
+          }
+        }
+
+        if (WorkEndDate2YearValue) {
+          const isInRange = isYearInRange(WorkEndDate2YearValue);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('WorkEndDate2-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            WorkEndDate2Year.style.borderColor = "#c70000";
+          }
+        }
+
+        backTab3.style.pointerEvents = "auto";
+        Saving.style.display = 'none';
+        ToBeSaved.style.display = 'flex';
+        return;
+      } else if (WorkExperience1.style.display === 'block' && WorkExperience2.style.display === 'none') {
+        if (WorkStartDate0YearValue) {
+          const isInRange = isYearInRange(WorkStartDate0YearValue);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('WorkStartDate0-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            WorkStartDate0Year.style.borderColor = "#c70000";
+          }
+        }
+  
+        if (WorkEndDate0YearValue) {
+          const isInRange = isYearInRange(WorkEndDate0YearValue);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('WorkEndDate0-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            WorkEndDate0Year.style.borderColor = "#c70000";
+          }
+        }
+  
+        if (WorkStartDate1YearValue) {
+          const isInRange = isYearInRange(WorkStartDate1YearValue);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('WorkStartDate1-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            WorkStartDate1Year.style.borderColor = "#c70000";
+          }
+        }
+  
+        if (WorkEndDate1YearValue) {
+          const isInRange = isYearInRange(WorkEndDate1YearValue);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('WorkEndDate1-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            WorkEndDate1Year.style.borderColor = "#c70000";
+          }
+        }
+
+        backTab3.style.pointerEvents = "auto";
+        Saving.style.display = 'none';
+        ToBeSaved.style.display = 'flex';
+        return;
+      } else if (WorkExperience1.style.display === 'none' && WorkExperience2.style.display === 'block') {
+        if (WorkStartDate0YearValue) {
+          const isInRange = isYearInRange(WorkStartDate0YearValue);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('WorkStartDate0-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            WorkStartDate0Year.style.borderColor = "#c70000";
+          }
+        }
+  
+        if (WorkEndDate0YearValue) {
+          const isInRange = isYearInRange(WorkEndDate0YearValue);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('WorkEndDate0-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            WorkEndDate0Year.style.borderColor = "#c70000";
+          }
+        }
+  
+        if (WorkStartDate2YearValue) {
+          const isInRange = isYearInRange(WorkStartDate2YearValue);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('WorkStartDate2-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            WorkStartDate2Year.style.borderColor = "#c70000";
+          }
+        }
+  
+        if (WorkEndDate2YearValue) {
+          const isInRange = isYearInRange(WorkEndDate2YearValue);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('WorkEndDate2-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            WorkEndDate2Year.style.borderColor = "#c70000";
+          }
+        }
+
+        backTab3.style.pointerEvents = "auto";
+        Saving.style.display = 'none';
+        ToBeSaved.style.display = 'flex';
+        return;
+      } else if (WorkExperience1.style.display === 'none' && WorkExperience2.style.display === 'none') {
+        if (WorkStartDate0YearValue) {
+          const isInRange = isYearInRange(WorkStartDate0YearValue);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('WorkStartDate0-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            WorkStartDate0Year.style.borderColor = "#c70000";
+          }
+        }
+  
+        if (WorkEndDate0YearValue) {
+          const isInRange = isYearInRange(WorkEndDate0YearValue);
+          if (!isInRange) {
+            const ErrorInput = document.getElementById('WorkEndDate0-AlertText');
+            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+            ErrorInput.style.display = 'flex';
+            WorkEndDate0Year.style.borderColor = "#c70000";
+          }
+        }
+
+        backTab3.style.pointerEvents = "auto";
+        Saving.style.display = 'none';
+        ToBeSaved.style.display = 'flex';
+        return;
       }
 
-      if (WorkEndDate0YearValue) {
-        const isInRange = isYearInRange(WorkEndDate0YearValue);
-        if (!isInRange) {
-          const ErrorInput = document.getElementById('WorkEndDate0-AlertText');
-          ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
-          ErrorInput.style.display = 'flex';
-          WorkEndDate0Year.style.borderColor = "#c70000";
-
-          backTab2.style.pointerEvents = "auto";
-          Saving.style.display = 'none';
-          ToBeSaved.style.display = 'flex';
-          return;
-        }
-      }
-
-      if (WorkStartDate1YearValue) {
-        const isInRange = isYearInRange(WorkStartDate1YearValue);
-        if (!isInRange) {
-          const ErrorInput = document.getElementById('WorkStartDate1-AlertText');
-          ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
-          ErrorInput.style.display = 'flex';
-          WorkStartDate1Year.style.borderColor = "#c70000";
-
-          backTab2.style.pointerEvents = "auto";
-          Saving.style.display = 'none';
-          ToBeSaved.style.display = 'flex';
-          return;
-        }
-      }
-
-      if (WorkEndDate1YearValue) {
-        const isInRange = isYearInRange(WorkEndDate1YearValue);
-        if (!isInRange) {
-          const ErrorInput = document.getElementById('WorkEndDate1-AlertText');
-          ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
-          ErrorInput.style.display = 'flex';
-          WorkEndDate1Year.style.borderColor = "#c70000";
-
-          backTab2.style.pointerEvents = "auto";
-          Saving.style.display = 'none';
-          ToBeSaved.style.display = 'flex';
-          return;
-        }
-      }
-
-
-      if (WorkStartDate2YearValue) {
-        const isInRange = isYearInRange(WorkStartDate2YearValue);
-        if (!isInRange) {
-          const ErrorInput = document.getElementById('WorkStartDate2-AlertText');
-          ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
-          ErrorInput.style.display = 'flex';
-          WorkStartDate2Year.style.borderColor = "#c70000";
-
-          backTab2.style.pointerEvents = "auto";
-          Saving.style.display = 'none';
-          ToBeSaved.style.display = 'flex';
-          return;
-        }
-      }
-
-      if (WorkEndDate2YearValue) {
-        const isInRange = isYearInRange(WorkEndDate2YearValue);
-        if (!isInRange) {
-          const ErrorInput = document.getElementById('WorkEndDate2-AlertText');
-          ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
-          ErrorInput.style.display = 'flex';
-          WorkEndDate2Year.style.borderColor = "#c70000";
-
-          backTab2.style.pointerEvents = "auto";
-          Saving.style.display = 'none';
-          ToBeSaved.style.display = 'flex';
-          return;
-        }
-      }
       var data = {
         "job_infos": job_infos
       };
