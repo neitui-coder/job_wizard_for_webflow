@@ -349,6 +349,10 @@ if (DeleteEducation2) {
 
 if (AddWork) {
   AddWork.addEventListener('click', function () {
+    if (WorkExperience1.style.display == 'block' && WorkExperience2.style.display == 'block') {
+      MaxAlertWork.style.display = 'block'
+      return;
+    }
     if (WorkExperience1.style.display === 'none') {
       WorkExperience1.style.display = 'block';
       return;
@@ -357,10 +361,6 @@ if (AddWork) {
     if (WorkExperience2.style.display === 'none') {
       WorkExperience2.style.display = 'block';
       return;
-    }
-
-    if (MaxAlertWork.style.display == 'none') {
-      MaxAlertWork.style.display = 'block';
     }
   })
 }
@@ -1314,6 +1314,245 @@ function doSomethingElse() {
 
       if (WorkExperience2.style.display === 'block') {
         job_infos.push(job_info2);
+      }
+
+
+
+      function checkTab3Boolean() {
+        if (WorkExperience1.style.display === 'block' && WorkExperience2.style.display === 'block') {
+          const boolean = !CompanyName0Value || !WorkLocation0Value || !Position0Value || !WorkType0Value || !WorkDescription0textareaValue || !WorkStartDate0MonthValue || !WorkStartDate0YearValue || !CompanyName1Value || !WorkLocation1Value || !Position1Value || !WorkType1Value || !WorkDescription1textareaValue || !WorkStartDate1MonthValue || !WorkStartDate1YearValue || !WorkEndDate1MonthValue || !WorkEndDate1YearValue || !CompanyName2Value || !WorkLocation2Value || !Position2Value || !WorkType2Value || !WorkDescription2textareaValue || !WorkStartDate2MonthValue || !WorkStartDate2YearValue || !WorkEndDate2MonthValue || !WorkEndDate2YearValue
+          return boolean;
+        } else if (WorkExperience1.style.display === 'block' && WorkExperience2.style.display === 'none') {
+          const boolean = !CompanyName0Value || !WorkLocation0Value || !Position0Value || !WorkType0Value || !WorkDescription0textareaValue || !WorkStartDate0MonthValue || !WorkStartDate0YearValue || !CompanyName1Value || !WorkLocation1Value || !Position1Value || !WorkType1Value || !WorkDescription1textareaValue || !WorkStartDate1MonthValue || !WorkStartDate1YearValue || !WorkEndDate1MonthValue || !WorkEndDate1YearValue
+          return boolean;
+        } else if (WorkExperience1.style.display === 'none' && WorkExperience2.style.display === 'block') {
+          const boolean = !CompanyName0Value || !WorkLocation0Value || !Position0Value || !WorkType0Value || !WorkDescription0textareaValue || !WorkStartDate0MonthValue || !WorkStartDate0YearValue || !CompanyName2Value || !WorkLocation2Value || !Position2Value || !WorkType2Value || !WorkDescription2textareaValue || !WorkStartDate2MonthValue || !WorkStartDate2YearValue || !WorkEndDate2MonthValue || !WorkEndDate2YearValue
+
+          return boolean;
+        } else if (WorkExperience1.style.display === 'none' && WorkExperience2.style.display === 'none') {
+          const boolean = !CompanyName0Value || !WorkLocation0Value || !Position0Value || !WorkType0Value || !WorkDescription0textareaValue || !WorkStartDate0MonthValue || !WorkStartDate0YearValue
+
+          return boolean;
+        }
+      }
+      const boolean = checkTab3Boolean();
+
+      var WorkEndDate0stillworValue = WorkEndDate0stillwork.checked;
+      var CompanyName0Value = CompanyName0.value;
+      var WorkLocation0Value = WorkLocation0.value;
+      var Position0Value = Position0.value;
+      var WorkType0Value = WorkType0.value
+      var WorkStartDate0MonthValue = WorkStartDate0Month.value;
+      var WorkStartDate0YearValue = WorkStartDate0Year.value;
+      var WorkEndDate0MonthValue = WorkEndDate0Month.value;
+      var WorkEndDate0YearValue = WorkEndDate0Year.value;
+      var WorkDescription0textareaValue = WorkDescription0textarea.value;
+      var CompanyName1Value = CompanyName1.value;
+      var WorkLocation1Value = WorkLocation1.value;
+      var Position1Value = Position1.value;
+      var WorkType1Value = WorkType1.value;
+      var WorkStartDate1MonthValue = WorkStartDate1Month.value;
+      var WorkStartDate1YearValue = WorkStartDate1Year.value;
+      var WorkEndDate1MonthValue = WorkEndDate1Month.value;
+      var WorkEndDate1YearValue = WorkEndDate1Year.value;
+      var WorkDescription1textareaValue = WorkDescription1textarea.value;
+      var CompanyName2Value = CompanyName2.value;
+      var WorkLocation2Value = WorkLocation2.value;
+      var Position2Value = Position2.value;
+      var WorkType2Value = WorkType2.value;
+      var WorkStartDate2MonthValue = WorkStartDate2Month.value;
+      var WorkStartDate2YearValue = WorkStartDate2Year.value;
+      var WorkEndDate2MonthValue = WorkEndDate2Month.value;
+      var WorkEndDate2YearValue = WorkEndDate2Year.value;
+      var WorkDescription2textareaValue = WorkDescription2textarea.value;
+      var WorkType0Value = WorkType0.options[WorkType0.selectedIndex]?.value;
+      var WorkType1Value = WorkType1.options[WorkType1.selectedIndex]?.value;
+      var WorkType2Value = WorkType2.options[WorkType2.selectedIndex]?.value;
+
+      cleanErrorText([
+        {
+          textId: "CompanyName0-AlertText",
+          element: CompanyName0,
+        },
+        {
+          textId: 'WorkLocation0-AlertText',
+          element: WorkLocation0,
+        },
+        {
+          textId: 'Position0-AlertText',
+          element: Position0,
+        },
+        {
+          textId: 'WorkType0-AlertText',
+          element: WorkType0,
+        },
+        {
+          textId: 'WorkStartDate0-AlertText',
+          element: WorkStartDate0Month,
+        },
+        {
+          textId: 'WorkStartDate0-AlertText',
+          element: WorkStartDate0Year,
+        }, {
+          textId: 'WorkEndDate0-AlertText',
+          element: WorkEndDate0Month,
+        },
+        {
+          textId: 'WorkEndDate0-AlertText',
+          element: WorkStartDate0Year,
+        },
+        {
+          textId: 'WorkDescription0-AlertText',
+          element: WorkDescription0textarea,
+        },
+        {
+          textId: 'CompanyName1-AlertText',
+          element: CompanyName1,
+        },
+        {
+          textId: 'WorkLocation1-AlertText',
+          element: WorkLocation1,
+        },
+        {
+          textId: 'Position1-AlertText',
+          element: Position1,
+        },
+        {
+          textId: 'WorkType1-AlertText',
+          element: WorkType1,
+        },
+        {
+          textId: 'WorkStartDate1-AlertText',
+          element: WorkStartDate1Month,
+        },
+        {
+          textId: 'WorkStartDate1-AlertText',
+          element: WorkStartDate1Year,
+        },
+        {
+          textId: 'WorkEndDate1-AlertText',
+          element: WorkEndDate1Month,
+        },
+        {
+          textId: 'WorkEndDate1-AlertText',
+          element: WorkEndDate1Year,
+        },
+        {
+          textId: 'WorkDescription1-AlertText',
+          element: WorkDescription1textarea,
+        },
+        {
+          textId: 'CompanyName2-AlertText',
+          element: CompanyName2,
+        },
+        {
+          textId: 'WorkLocation2-AlertText',
+          element: WorkLocation2,
+        },
+        {
+          textId: 'Position2-AlertText',
+          element: Position2,
+        },
+        {
+          textId: 'WorkType2-AlertText',
+          element: WorkType2,
+        },
+        {
+          textId: 'WorkStartDate2-AlertText',
+          element: WorkStartDate2Month,
+        },
+        {
+          textId: 'WorkStartDate2-AlertText',
+          element: WorkStartDate2Year,
+        },
+        {
+          textId: 'WorkEndDate2-AlertText',
+          element: WorkEndDate2Month,
+        }, {
+          textId: 'WorkEndDate2-AlertText',
+          element: WorkEndDate2Year,
+        },
+        {
+          textId: 'WorkDescription2-AlertText',
+          element: WorkDescription2textarea,
+        },
+      ]);
+
+
+      if (boolean) {
+        if (WorkExperience1.style.display === 'block' && WorkExperience2.style.display === 'block') {
+          isRequired(CompanyName0Value, CompanyName0, 'CompanyName0-AlertText');
+          isRequired(CompanyName1Value, CompanyName1, 'CompanyName1-AlertText');
+          isRequired(CompanyName2Value, CompanyName2, 'CompanyName2-AlertText');
+          isRequired(WorkLocation0Value, WorkLocation0, 'WorkLocation0-AlertText');
+          isRequired(WorkLocation1Value, WorkLocation1, 'WorkLocation1-AlertText');
+          isRequired(WorkLocation2Value, WorkLocation2, 'WorkLocation2-AlertText');
+          isRequired(Position0Value, Position0, 'Position0-AlertText');
+          isRequired(Position1Value, Position1, 'Position1-AlertText');
+          isRequired(Position2Value, Position2, 'Position2-AlertText');
+          isRequired(WorkType0Value, WorkType0, 'WorkType0-AlertText');
+          isRequired(WorkType1Value, WorkType1, 'WorkType1-AlertText');
+          isRequired(WorkType2Value, WorkType2, 'WorkType2-AlertText');
+          isRequired(WorkStartDate0MonthValue, WorkStartDate0Month, 'WorkStartDate0-AlertText');
+          isRequired(WorkStartDate1MonthValue, WorkStartDate1Month, 'WorkStartDate1-AlertText');
+          isRequired(WorkStartDate2MonthValue, WorkStartDate2Month, 'WorkStartDate2-AlertText');
+          isRequired(WorkStartDate0YearValue, WorkStartDate0Year, 'WorkStartDate0-AlertText');
+          isRequired(WorkStartDate1YearValue, WorkStartDate1Year, 'WorkStartDate1-AlertText');
+          isRequired(WorkStartDate2YearValue, WorkStartDate2Year, 'WorkStartDate2-AlertText');
+          isRequired(WorkEndDate1MonthValue, WorkEndDate1Month, 'WorkEndDate1-AlertText');
+          isRequired(WorkEndDate2MonthValue, WorkEndDate2Month, 'WorkEndDate2-AlertText');
+          isRequired(WorkEndDate1YearValue, WorkEndDate1Year, 'WorkEndDate1-AlertText');
+          isRequired(WorkEndDate2YearValue, WorkEndDate2Year, 'WorkEndDate2-AlertText');
+          isRequired(WorkDescription0textareaValue, WorkDescription0textarea, 'WorkDescription0-AlertText');
+          isRequired(WorkDescription1textareaValue, WorkDescription1textarea, 'WorkDescription1-AlertText');
+          isRequired(WorkDescription2textareaValue, WorkDescription2textarea, 'WorkDescription2-AlertText');
+        } else if (WorkExperience1.style.display === 'block' && WorkExperience2.style.display === 'none') {
+          isRequired(CompanyName0Value, CompanyName0, 'CompanyName0-AlertText');
+          isRequired(CompanyName1Value, CompanyName1, 'CompanyName1-AlertText');
+          isRequired(WorkLocation0Value, WorkLocation0, 'WorkLocation0-AlertText');
+          isRequired(WorkLocation1Value, WorkLocation1, 'WorkLocation1-AlertText');
+          isRequired(Position0Value, Position0, 'Position0-AlertText');
+          isRequired(Position1Value, Position1, 'Position1-AlertText');
+          isRequired(WorkType0Value, WorkType0, 'WorkType0-AlertText');
+          isRequired(WorkType1Value, WorkType1, 'WorkType1-AlertText');
+          isRequired(WorkStartDate0MonthValue, WorkStartDate0Month, 'WorkStartDate0-AlertText');
+          isRequired(WorkStartDate1MonthValue, WorkStartDate1Month, 'WorkStartDate1-AlertText');
+          isRequired(WorkStartDate0YearValue, WorkStartDate0Year, 'WorkStartDate0-AlertText');
+          isRequired(WorkStartDate1YearValue, WorkStartDate1Year, 'WorkStartDate1-AlertText');
+          isRequired(WorkEndDate1MonthValue, WorkEndDate1Month, 'WorkEndDate1-AlertText');
+          isRequired(WorkEndDate1YearValue, WorkEndDate1Year, 'WorkEndDate1-AlertText');
+          isRequired(WorkDescription0textareaValue, WorkDescription0textarea, 'WorkDescription0-AlertText');
+          isRequired(WorkDescription1textareaValue, WorkDescription1textarea, 'WorkDescription1-AlertText');
+        } else if (WorkExperience1.style.display === 'none' && WorkExperience2.style.display === 'block') {
+          isRequired(CompanyName0Value, CompanyName0, 'CompanyName0-AlertText');
+          isRequired(CompanyName2Value, CompanyName2, 'CompanyName2-AlertText');
+          isRequired(WorkLocation0Value, WorkLocation0, 'WorkLocation0-AlertText');
+          isRequired(WorkLocation2Value, WorkLocation2, 'WorkLocation2-AlertText');
+          isRequired(Position0Value, Position0, 'Position0-AlertText');
+          isRequired(Position2Value, Position2, 'Position2-AlertText');
+          isRequired(WorkType0Value, WorkType0, 'WorkType0-AlertText');
+          isRequired(WorkType2Value, WorkType2, 'WorkType2-AlertText');
+          isRequired(WorkStartDate0MonthValue, WorkStartDate0Month, 'WorkStartDate0-AlertText');
+          isRequired(WorkStartDate2MonthValue, WorkStartDate2Month, 'WorkStartDate2-AlertText');
+          isRequired(WorkStartDate0YearValue, WorkStartDate0Year, 'WorkStartDate0-AlertText');
+          isRequired(WorkStartDate2YearValue, WorkStartDate2Year, 'WorkStartDate2-AlertText');
+          isRequired(WorkEndDate2MonthValue, WorkEndDate2Month, 'WorkEndDate2-AlertText');
+          isRequired(WorkEndDate2YearValue, WorkEndDate2Year, 'WorkEndDate2-AlertText');
+          isRequired(WorkDescription0textareaValue, WorkDescription0textarea, 'WorkDescription0-AlertText');
+          isRequired(WorkDescription2textareaValue, WorkDescription2textarea, 'WorkDescription2-AlertText');
+
+        } else if (WorkExperience1.style.display === 'none' && WorkExperience2.style.display === 'none') {
+          isRequired(CompanyName0Value, CompanyName0, 'CompanyName0-AlertText');
+          isRequired(WorkLocation0Value, WorkLocation0, 'WorkLocation0-AlertText');
+          isRequired(Position0Value, Position0, 'Position0-AlertText');
+          isRequired(WorkType0Value, WorkType0, 'WorkType0-AlertText');
+          isRequired(WorkStartDate0MonthValue, WorkStartDate0Month, 'WorkStartDate0-AlertText');
+          isRequired(WorkStartDate0YearValue, WorkStartDate0Year, 'WorkStartDate0-AlertText');
+          isRequired(WorkDescription0textareaValue, WorkDescription0textarea, 'WorkDescription0-AlertText');
+        }
+        Saving.style.display = 'none';
+        ToBeSaved.style.display = 'flex';
+        return;
       }
 
       var data = {
