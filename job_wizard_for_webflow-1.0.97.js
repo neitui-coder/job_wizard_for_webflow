@@ -1541,55 +1541,41 @@ function doSomethingElse() {
 
 
       function checkTab3Boolean() {
-        if (WorkExperience1.style.display === 'block' && WorkExperience2.style.display === 'block') {
-          const boolean = !CompanyName0Value || !WorkLocation0Value || !Position0Value || !WorkType0Value || !WorkDescription0textareaValue || !WorkStartDate0MonthValue || !WorkStartDate0YearValue || !CompanyName1Value || !WorkLocation1Value || !Position1Value || !WorkType1Value || !WorkDescription1textareaValue || !WorkStartDate1MonthValue || !WorkStartDate1YearValue || !WorkEndDate1MonthValue || !WorkEndDate1YearValue || !CompanyName2Value || !WorkLocation2Value || !Position2Value || !WorkType2Value || !WorkDescription2textareaValue || !WorkStartDate2MonthValue || !WorkStartDate2YearValue || !WorkEndDate2MonthValue || !WorkEndDate2YearValue
-          return boolean;
-        } else if (WorkExperience1.style.display === 'block' && WorkExperience2.style.display === 'none') {
-          const boolean = !CompanyName0Value || !WorkLocation0Value || !Position0Value || !WorkType0Value || !WorkDescription0textareaValue || !WorkStartDate0MonthValue || !WorkStartDate0YearValue || !CompanyName1Value || !WorkLocation1Value || !Position1Value || !WorkType1Value || !WorkDescription1textareaValue || !WorkStartDate1MonthValue || !WorkStartDate1YearValue || !WorkEndDate1MonthValue || !WorkEndDate1YearValue
-          return boolean;
-        } else if (WorkExperience1.style.display === 'none' && WorkExperience2.style.display === 'block') {
-          const boolean = !CompanyName0Value || !WorkLocation0Value || !Position0Value || !WorkType0Value || !WorkDescription0textareaValue || !WorkStartDate0MonthValue || !WorkStartDate0YearValue || !CompanyName2Value || !WorkLocation2Value || !Position2Value || !WorkType2Value || !WorkDescription2textareaValue || !WorkStartDate2MonthValue || !WorkStartDate2YearValue || !WorkEndDate2MonthValue || !WorkEndDate2YearValue
+        if (WorkEndDate0stillworValue) {
+          if (WorkExperience1.style.display === 'block' && WorkExperience2.style.display === 'block') {
+            const boolean = !CompanyName0Value || !WorkLocation0Value || !Position0Value || !WorkType0Value || !WorkDescription0textareaValue || !WorkStartDate0MonthValue || !WorkStartDate0YearValue || !CompanyName1Value || !WorkLocation1Value || !Position1Value || !WorkType1Value || !WorkDescription1textareaValue || !WorkStartDate1MonthValue || !WorkStartDate1YearValue || !WorkEndDate1MonthValue || !WorkEndDate1YearValue || !CompanyName2Value || !WorkLocation2Value || !Position2Value || !WorkType2Value || !WorkDescription2textareaValue || !WorkStartDate2MonthValue || !WorkStartDate2YearValue || !WorkEndDate2MonthValue || !WorkEndDate2YearValue
+            return boolean;
+          } else if (WorkExperience1.style.display === 'block' && WorkExperience2.style.display === 'none') {
+            const boolean = !CompanyName0Value || !WorkLocation0Value || !Position0Value || !WorkType0Value || !WorkDescription0textareaValue || !WorkStartDate0MonthValue || !WorkStartDate0YearValue || !CompanyName1Value || !WorkLocation1Value || !Position1Value || !WorkType1Value || !WorkDescription1textareaValue || !WorkStartDate1MonthValue || !WorkStartDate1YearValue || !WorkEndDate1MonthValue || !WorkEndDate1YearValue
+            return boolean;
+          } else if (WorkExperience1.style.display === 'none' && WorkExperience2.style.display === 'block') {
+            const boolean = !CompanyName0Value || !WorkLocation0Value || !Position0Value || !WorkType0Value || !WorkDescription0textareaValue || !WorkStartDate0MonthValue || !WorkStartDate0YearValue || !CompanyName2Value || !WorkLocation2Value || !Position2Value || !WorkType2Value || !WorkDescription2textareaValue || !WorkStartDate2MonthValue || !WorkStartDate2YearValue || !WorkEndDate2MonthValue || !WorkEndDate2YearValue
 
-          return boolean;
-        } else if (WorkExperience1.style.display === 'none' && WorkExperience2.style.display === 'none') {
-          const boolean = !CompanyName0Value || !WorkLocation0Value || !Position0Value || !WorkType0Value || !WorkDescription0textareaValue || !WorkStartDate0MonthValue || !WorkStartDate0YearValue
+            return boolean;
+          } else if (WorkExperience1.style.display === 'none' && WorkExperience2.style.display === 'none') {
+            const boolean = !CompanyName0Value || !WorkLocation0Value || !Position0Value || !WorkType0Value || !WorkDescription0textareaValue || !WorkStartDate0MonthValue || !WorkStartDate0YearValue
 
-          return boolean;
+            return boolean;
+          }
+        } else {
+          if (WorkExperience1.style.display === 'block' && WorkExperience2.style.display === 'block') {
+            const boolean = !CompanyName0Value || !WorkLocation0Value || !Position0Value || !WorkType0Value || !WorkDescription0textareaValue || !WorkStartDate0MonthValue || !WorkStartDate0YearValue || !WorkEndDate0MonthValue || !WorkEndDate0YearValue || !CompanyName1Value || !WorkLocation1Value || !Position1Value || !WorkType1Value || !WorkDescription1textareaValue || !WorkStartDate1MonthValue || !WorkStartDate1YearValue || !WorkEndDate1MonthValue || !WorkEndDate1YearValue || !CompanyName2Value || !WorkLocation2Value || !Position2Value || !WorkType2Value || !WorkDescription2textareaValue || !WorkStartDate2MonthValue || !WorkStartDate2YearValue || !WorkEndDate2MonthValue || !WorkEndDate2YearValue
+            return boolean;
+          } else if (WorkExperience1.style.display === 'block' && WorkExperience2.style.display === 'none') {
+            const boolean = !CompanyName0Value || !WorkLocation0Value || !Position0Value || !WorkType0Value || !WorkDescription0textareaValue || !WorkStartDate0MonthValue || !WorkStartDate0YearValue || !WorkEndDate0MonthValue || !WorkEndDate0YearValue || !CompanyName1Value || !WorkLocation1Value || !Position1Value || !WorkType1Value || !WorkDescription1textareaValue || !WorkStartDate1MonthValue || !WorkStartDate1YearValue || !WorkEndDate1MonthValue || !WorkEndDate1YearValue
+            return boolean;
+          } else if (WorkExperience1.style.display === 'none' && WorkExperience2.style.display === 'block') {
+            const boolean = !CompanyName0Value || !WorkLocation0Value || !Position0Value || !WorkType0Value || !WorkDescription0textareaValue || !WorkStartDate0MonthValue || !WorkStartDate0YearValue || !WorkEndDate0MonthValue || !WorkEndDate0YearValue || !CompanyName2Value || !WorkLocation2Value || !Position2Value || !WorkType2Value || !WorkDescription2textareaValue || !WorkStartDate2MonthValue || !WorkStartDate2YearValue || !WorkEndDate2MonthValue || !WorkEndDate2YearValue
+
+            return boolean;
+          } else if (WorkExperience1.style.display === 'none' && WorkExperience2.style.display === 'none') {
+            const boolean = !CompanyName0Value || !WorkLocation0Value || !Position0Value || !WorkType0Value || !WorkDescription0textareaValue || !WorkStartDate0MonthValue || !WorkStartDate0YearValue || !WorkEndDate0MonthValue || !WorkEndDate0YearValue
+
+            return boolean;
+          }
         }
       }
       const boolean = checkTab3Boolean();
-
-      var WorkEndDate0stillworValue = WorkEndDate0stillwork.checked;
-      var CompanyName0Value = CompanyName0.value;
-      var WorkLocation0Value = WorkLocation0.value;
-      var Position0Value = Position0.value;
-      var WorkType0Value = WorkType0.value
-      var WorkStartDate0MonthValue = WorkStartDate0Month.value;
-      var WorkStartDate0YearValue = WorkStartDate0Year.value;
-      var WorkEndDate0MonthValue = WorkEndDate0Month.value;
-      var WorkEndDate0YearValue = WorkEndDate0Year.value;
-      var WorkDescription0textareaValue = WorkDescription0textarea.value;
-      var CompanyName1Value = CompanyName1.value;
-      var WorkLocation1Value = WorkLocation1.value;
-      var Position1Value = Position1.value;
-      var WorkType1Value = WorkType1.value;
-      var WorkStartDate1MonthValue = WorkStartDate1Month.value;
-      var WorkStartDate1YearValue = WorkStartDate1Year.value;
-      var WorkEndDate1MonthValue = WorkEndDate1Month.value;
-      var WorkEndDate1YearValue = WorkEndDate1Year.value;
-      var WorkDescription1textareaValue = WorkDescription1textarea.value;
-      var CompanyName2Value = CompanyName2.value;
-      var WorkLocation2Value = WorkLocation2.value;
-      var Position2Value = Position2.value;
-      var WorkType2Value = WorkType2.value;
-      var WorkStartDate2MonthValue = WorkStartDate2Month.value;
-      var WorkStartDate2YearValue = WorkStartDate2Year.value;
-      var WorkEndDate2MonthValue = WorkEndDate2Month.value;
-      var WorkEndDate2YearValue = WorkEndDate2Year.value;
-      var WorkDescription2textareaValue = WorkDescription2textarea.value;
-      var WorkType0Value = WorkType0.options[WorkType0.selectedIndex]?.value;
-      var WorkType1Value = WorkType1.options[WorkType1.selectedIndex]?.value;
-      var WorkType2Value = WorkType2.options[WorkType2.selectedIndex]?.value;
 
       cleanErrorText([
         {
@@ -1621,7 +1607,7 @@ function doSomethingElse() {
         },
         {
           textId: 'WorkEndDate0-AlertText',
-          element: WorkStartDate0Year,
+          element: WorkEndDate0Year,
         },
         {
           textId: 'WorkDescription0-AlertText',
@@ -1728,6 +1714,11 @@ function doSomethingElse() {
           isRequired(WorkDescription0textareaValue, WorkDescription0textarea, 'WorkDescription0-AlertText');
           isRequired(WorkDescription1textareaValue, WorkDescription1textarea, 'WorkDescription1-AlertText');
           isRequired(WorkDescription2textareaValue, WorkDescription2textarea, 'WorkDescription2-AlertText');
+          if (!WorkEndDate0stillworValue) {
+            isRequired(WorkEndDate0MonthValue, WorkEndDate0Month, 'WorkEndDate0-AlertText');
+            isRequired(WorkEndDate0YearValue, WorkEndDate0Year, 'WorkEndDate0-AlertText');
+          }
+
         } else if (WorkExperience1.style.display === 'block' && WorkExperience2.style.display === 'none') {
           isRequired(CompanyName0Value, CompanyName0, 'CompanyName0-AlertText');
           isRequired(CompanyName1Value, CompanyName1, 'CompanyName1-AlertText');
@@ -1745,6 +1736,10 @@ function doSomethingElse() {
           isRequired(WorkEndDate1YearValue, WorkEndDate1Year, 'WorkEndDate1-AlertText');
           isRequired(WorkDescription0textareaValue, WorkDescription0textarea, 'WorkDescription0-AlertText');
           isRequired(WorkDescription1textareaValue, WorkDescription1textarea, 'WorkDescription1-AlertText');
+          if (!WorkEndDate0stillworValue) {
+            isRequired(WorkEndDate0MonthValue, WorkEndDate0Month, 'WorkEndDate0-AlertText');
+            isRequired(WorkEndDate0YearValue, WorkEndDate0Year, 'WorkEndDate0-AlertText');
+          }
         } else if (WorkExperience1.style.display === 'none' && WorkExperience2.style.display === 'block') {
           isRequired(CompanyName0Value, CompanyName0, 'CompanyName0-AlertText');
           isRequired(CompanyName2Value, CompanyName2, 'CompanyName2-AlertText');
@@ -1762,7 +1757,10 @@ function doSomethingElse() {
           isRequired(WorkEndDate2YearValue, WorkEndDate2Year, 'WorkEndDate2-AlertText');
           isRequired(WorkDescription0textareaValue, WorkDescription0textarea, 'WorkDescription0-AlertText');
           isRequired(WorkDescription2textareaValue, WorkDescription2textarea, 'WorkDescription2-AlertText');
-
+          if (!WorkEndDate0stillworValue) {
+            isRequired(WorkEndDate0MonthValue, WorkEndDate0Month, 'WorkEndDate0-AlertText');
+            isRequired(WorkEndDate0YearValue, WorkEndDate0Year, 'WorkEndDate0-AlertText');
+          }
         } else if (WorkExperience1.style.display === 'none' && WorkExperience2.style.display === 'none') {
           isRequired(CompanyName0Value, CompanyName0, 'CompanyName0-AlertText');
           isRequired(WorkLocation0Value, WorkLocation0, 'WorkLocation0-AlertText');
@@ -1771,6 +1769,10 @@ function doSomethingElse() {
           isRequired(WorkStartDate0MonthValue, WorkStartDate0Month, 'WorkStartDate0-AlertText');
           isRequired(WorkStartDate0YearValue, WorkStartDate0Year, 'WorkStartDate0-AlertText');
           isRequired(WorkDescription0textareaValue, WorkDescription0textarea, 'WorkDescription0-AlertText');
+          if (!WorkEndDate0stillworValue) {
+            isRequired(WorkEndDate0MonthValue, WorkEndDate0Month, 'WorkEndDate0-AlertText');
+            isRequired(WorkEndDate0YearValue, WorkEndDate0Year, 'WorkEndDate0-AlertText');
+          }
         }
         backTab3.style.pointerEvents = "auto";
         Saving.style.display = 'none';
