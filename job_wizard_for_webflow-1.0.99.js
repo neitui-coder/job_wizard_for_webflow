@@ -878,7 +878,7 @@ function doSomethingElse() {
         },
         {
           textId: 'Phone-AlertText',
-          element: phoneNumberInput1,
+          element: phoneNumberInput11,
         },
         {
           textId: 'Phone-AlertText',
@@ -896,7 +896,7 @@ function doSomethingElse() {
       if (boolean) {
         isRequired(firstNameValue, firstNameInput, 'FirstName-AlertText');
         isRequired(lastNameValue, lastNameInput, 'LastName-AlertText');
-        isRequired(phoneNumberValue1, phoneNumberInput1, 'Phone-AlertText');
+        isRequired(phoneNumberValue1, phoneNumberInput11, 'Phone-AlertText');
         isRequired(phoneNumberValue2, phoneNumberInput2, 'Phone-AlertText');
         isRequired(emailValue, emailInput, 'Email-AlertText');
         isRequired(locationValue, locationInput, 'Location-AlertText');
