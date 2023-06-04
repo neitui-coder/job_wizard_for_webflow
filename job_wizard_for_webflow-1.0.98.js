@@ -40,6 +40,7 @@ var skipTab4 = document.getElementById('Skip-Tab4');
 var skipTab5 = document.getElementById('Skip-Tab5');
 var skipTab6 = document.getElementById('Skip-Tab6');
 var doItLater = document.getElementById('DoItLater');
+var phoneNumberInput11 = document.querySelector('.iti__selected-dial-code');
 
 // tab1
 var firstNameInput = document.getElementById('First-Name');
@@ -500,7 +501,7 @@ function dofillUserInfo(userInfo) {
   let phoneGroup = userInfo.basic_info?.phone?.split(" ")
 
   if (phoneGroup.length > 1) {
-    phoneNumberInput1.value = phoneGroup[0];
+    phoneNumberInput11.innerText = phoneGroup[0];
     phoneNumberInput2.value = phoneGroup[1];
   } else {
     phoneNumberInput2.value = userInfo.basic_info?.phone;
@@ -854,7 +855,7 @@ function doSomethingElse() {
       backTab1.style.pointerEvents = "none";
       var firstNameValue = firstNameInput.value;
       var lastNameValue = lastNameInput.value;
-      var phoneNumberValue1 = phoneNumberInput1.value;
+      var phoneNumberValue1 = phoneNumberInput11.innerText;
       var phoneNumberValue2 = phoneNumberInput2.value;
       var phoneNumber = phoneNumberValue1 + " " + phoneNumberValue2;
       var emailValue = emailInput.value;
