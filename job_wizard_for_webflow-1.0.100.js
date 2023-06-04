@@ -41,6 +41,7 @@ var skipTab5 = document.getElementById('Skip-Tab5');
 var skipTab6 = document.getElementById('Skip-Tab6');
 var doItLater = document.getElementById('DoItLater');
 var phoneNumberInput11 = document.querySelector('.iti__selected-dial-code');
+console.log(phoneNumberInput11,'====phoneNumberInput11==');
 
 // tab1
 var firstNameInput = document.getElementById('First-Name');
