@@ -57,6 +57,7 @@ var iti = window.intlTelInput(phoneNumberInput1, {
     return selectedCountryPlaceholder + " " + selectedCountryData.dialCode;
   }
 });
+phoneNumberInput1.style.paddingRight = '0px';
 
 // 设置默认值
 iti.setNumber('+1');
