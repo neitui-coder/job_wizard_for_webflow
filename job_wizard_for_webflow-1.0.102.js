@@ -40,7 +40,7 @@ var skipTab4 = document.getElementById('Skip-Tab4');
 var skipTab5 = document.getElementById('Skip-Tab5');
 var skipTab6 = document.getElementById('Skip-Tab6');
 var doItLater = document.getElementById('DoItLater');
-var phoneNumberInput11 = document.querySelector('.iti--separate-dial-code .iti__selected-dial-code');
+var phoneNumberInput11 = document.querySelector('.iti__selected-dial-code');
 console.log(phoneNumberInput11,'====phoneNumberInput11==');
 
 // tab1
@@ -502,7 +502,7 @@ function dofillUserInfo(userInfo) {
   let phoneGroup = userInfo.basic_info?.phone?.split(" ")
 
   if (phoneGroup.length > 1) {
-    phoneNumberInput11.innerText = phoneGroup[0];
+    phoneNumberInput1.value = phoneGroup[0];
     phoneNumberInput2.value = phoneGroup[1];
   } else {
     phoneNumberInput2.value = userInfo.basic_info?.phone;
@@ -856,7 +856,7 @@ function doSomethingElse() {
       backTab1.style.pointerEvents = "none";
       var firstNameValue = firstNameInput.value;
       var lastNameValue = lastNameInput.value;
-      var phoneNumberValue1 = phoneNumberInput11.innerText;
+      var phoneNumberValue1 = phoneNumberInput1.value;
       var phoneNumberValue2 = phoneNumberInput2.value;
       var phoneNumber = phoneNumberValue1 + " " + phoneNumberValue2;
       var emailValue = emailInput.value;
@@ -879,7 +879,7 @@ function doSomethingElse() {
         },
         {
           textId: 'Phone-AlertText',
-          element: phoneNumberInput11,
+          element: phoneNumberInput1,
         },
         {
           textId: 'Phone-AlertText',
@@ -897,7 +897,7 @@ function doSomethingElse() {
       if (boolean) {
         isRequired(firstNameValue, firstNameInput, 'FirstName-AlertText');
         isRequired(lastNameValue, lastNameInput, 'LastName-AlertText');
-        isRequired(phoneNumberValue1, phoneNumberInput11, 'Phone-AlertText');
+        isRequired(phoneNumberValue1, phoneNumberInput1, 'Phone-AlertText');
         isRequired(phoneNumberValue2, phoneNumberInput2, 'Phone-AlertText');
         isRequired(emailValue, emailInput, 'Email-AlertText');
         isRequired(locationValue, locationInput, 'Location-AlertText');
