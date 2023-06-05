@@ -48,6 +48,18 @@ var phoneNumberInput = document.getElementById('PhoneNumber-Input');
 var emailInput = document.getElementById('Email-Input');
 var phoneNumberInput1 = document.getElementById('PhoneNumber-Input1');
 var phoneNumberInput2 = document.getElementById('PhoneNumber-Input2');
+var phonegrid = document.querySelector('.phonegrid');
+phonegrid.style.alignItems = 'center';
+var iti = window.intlTelInput(phoneNumberInput1, {
+  initialCountry: "auto",
+  separateDialCode: true,
+  customPlaceholder: function (selectedCountryPlaceholder, selectedCountryData) {
+    return selectedCountryPlaceholder + " " + selectedCountryData.dialCode;
+  }
+});
+
+// 设置默认值
+iti.setNumber('+1');
 // var dateInput = document.getElementById('Birth-Date');
 // var selectMonthSelect = document.getElementById('Birth-Month');
 // var yearInput = document.getElementById('Birth-Year');
@@ -501,16 +513,16 @@ function dofillUserInfo(userInfo) {
 
   if (phoneGroup.length > 1) {
     // 设置默认值
-    var phonegrid = document.querySelector('.phonegrid');
-    phonegrid.style.alignItems = 'center';
-    var iti = window.intlTelInput(phoneNumberInput1, {
-      initialCountry: "auto",
-      separateDialCode: true,
-      customPlaceholder: function(selectedCountryPlaceholder, selectedCountryData) {
-        return selectedCountryPlaceholder + " " + selectedCountryData.dialCode;
-      }
-    });
-    
+    // var phonegrid = document.querySelector('.phonegrid');
+    // phonegrid.style.alignItems = 'center';
+    // var iti = window.intlTelInput(phoneNumberInput1, {
+    //   initialCountry: "auto",
+    //   separateDialCode: true,
+    //   customPlaceholder: function (selectedCountryPlaceholder, selectedCountryData) {
+    //     return selectedCountryPlaceholder + " " + selectedCountryData.dialCode;
+    //   }
+    // });
+
     // 设置默认值
     iti.setNumber(phoneGroup[0]);
     phoneNumberInput1.value = phoneGroup[0];
