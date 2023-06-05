@@ -501,7 +501,7 @@ function dofillUserInfo(userInfo) {
 
   if (phoneGroup.length > 1) {
     // 设置默认值
-    var phonegrid = document.querySelector('phonegrid');
+    var phonegrid = document.querySelector('.phonegrid');
     phonegrid.style.alignItems = 'center';
     var iti = window.intlTelInput(phoneNumberInput1, {
       initialCountry: "auto",
