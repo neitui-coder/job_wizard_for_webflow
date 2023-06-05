@@ -502,8 +502,15 @@ function dofillUserInfo(userInfo) {
   let phoneGroup = userInfo.basic_info?.phone?.split(" ")
 
   if (phoneGroup.length > 1) {
-    var iti = window.intlTelInput(phoneNumberInput1);
-
+    // 设置默认值
+    var iti = window.intlTelInput(phoneNumberInput1, {
+      initialCountry: "auto",
+      separateDialCode: true,
+      customPlaceholder: function(selectedCountryPlaceholder, selectedCountryData) {
+        return selectedCountryPlaceholder + " " + selectedCountryData.dialCode;
+      }
+    });
+    
     // 设置默认值
     iti.setNumber(phoneGroup[0]);
     // phoneNumberInput1.value = phoneGroup[0];
