@@ -215,6 +215,8 @@ if (startButton) {
       window.location.href = "https://www.jobwizard.ai/login"
       return;
     }
+    step2Div.style.transition =  'opacity 300ms ease-in-out 0s';
+    step2Div.style.opacity = '0';
     step2Div.style.display = 'none';
     AddInfoDiv.style.display = 'flex'
   })
