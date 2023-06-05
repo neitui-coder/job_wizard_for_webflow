@@ -41,7 +41,7 @@ var skipTab5 = document.getElementById('Skip-Tab5');
 var skipTab6 = document.getElementById('Skip-Tab6');
 var doItLater = document.getElementById('DoItLater');
 var phoneNumberInput11 = document.querySelector('.iti__selected-dial-code');
-console.log(phoneNumberInput11,'====phoneNumberInput11==');
+console.log(phoneNumberInput11, '====phoneNumberInput11==');
 
 // tab1
 var firstNameInput = document.getElementById('First-Name');
@@ -502,7 +502,11 @@ function dofillUserInfo(userInfo) {
   let phoneGroup = userInfo.basic_info?.phone?.split(" ")
 
   if (phoneGroup.length > 1) {
-    phoneNumberInput1.value = phoneGroup[0];
+    var iti = window.intlTelInput(phoneNumberInput1);
+
+    // 设置默认值
+    iti.setNumber(phoneGroup[0]);
+    // phoneNumberInput1.value = phoneGroup[0];
     phoneNumberInput2.value = phoneGroup[1];
   } else {
     phoneNumberInput2.value = userInfo.basic_info?.phone;
