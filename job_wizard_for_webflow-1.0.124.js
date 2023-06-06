@@ -61,9 +61,9 @@ phoneNumberInput1.style.paddingRight = '0px';
 
 // 设置默认值
 iti.setNumber('+1');
-console.log(phoneNumberInput1.value ,'===phoneNumberInput1.value111111 ===');
+console.log(phoneNumberInput1.value, '===phoneNumberInput1.value111111 ===');
 phoneNumberInput1.value = '+1';
-console.log(phoneNumberInput1.value ,'===phoneNumberInput1.value2222222 ===');
+console.log(phoneNumberInput1.value, '===phoneNumberInput1.value2222222 ===');
 // var dateInput = document.getElementById('Birth-Date');
 // var selectMonthSelect = document.getElementById('Birth-Month');
 // var yearInput = document.getElementById('Birth-Year');
@@ -554,7 +554,7 @@ function dofillUserInfo(userInfo) {
     // });
 
     // 设置默认值
-    if(phoneGroup[0]){
+    if (phoneGroup[0]) {
       iti.setNumber(phoneGroup[0]);
       phoneNumberInput1.value = phoneGroup[0];
     }
@@ -577,14 +577,14 @@ function dofillUserInfo(userInfo) {
   Major0Input.value = userInfo.school_infos[0]?.major;
   DegreeType0Input.value = userInfo.school_infos[0]?.degree;
   DegreeType0Input.style.color = "black";
-  const StartDateInput0Arr = userInfo.school_infos[0]?.start_date?.replace(/ /g, "-").split("-");
+  const StartDateInput0Arr = userInfo.school_infos[0]?.start_date?.replace(/ /g, "-")?.split("-");
   if (userInfo.school_infos[0]?.start_date?.length == 4) {
     StartDate0Input1.value = userInfo.school_infos[0]?.start_date;
   } else {
     StartDate0Input0.value = StartDateInput0Arr[0];
     StartDate0Input1.value = StartDateInput0Arr[1];
   }
-  const EndDateInput0Arr = userInfo.school_infos[0]?.end_date?.replace(/ /g, "-").split("-");
+  const EndDateInput0Arr = userInfo.school_infos[0]?.end_date?.replace(/ /g, "-")?.split("-");
   if (userInfo.school_infos[0]?.end_date?.length == 4) {
     EndDate0Input1.value = userInfo.school_infos[0]?.end_date;
   } else {
@@ -603,14 +603,14 @@ function dofillUserInfo(userInfo) {
     Major1Input.value = userInfo.school_infos[1]?.major;
     DegreeType1Input.value = userInfo.school_infos[1]?.degree;
     DegreeType1Input.style.color = "black";
-    const StartDateInput1Arr = userInfo.school_infos[1]?.start_date?.replace(/ /g, "-").split("-");
+    const StartDateInput1Arr = userInfo.school_infos[1]?.start_date?.replace(/ /g, "-")?.split("-");
     if (userInfo.school_infos[1]?.start_date?.length == 4) {
       StartDate1Input1.value = userInfo.school_infos[1]?.start_date;
     } else {
       StartDate1Input0.value = StartDateInput1Arr[0];
       StartDate1Input1.value = StartDateInput1Arr[1];
     }
-    const EndDateInput1Arr = userInfo.school_infos[1]?.end_date?.replace(/ /g, "-").split("-");
+    const EndDateInput1Arr = userInfo.school_infos[1]?.end_date?.replace(/ /g, "-")?.split("-");
     if (userInfo.school_infos[1]?.end_date?.length == 4) {
       EndDate1Input1.value = userInfo.school_infos[1]?.end_date;
     } else {
@@ -630,14 +630,14 @@ function dofillUserInfo(userInfo) {
     Major2Input.value = userInfo.school_infos[2]?.major;
     DegreeType2Input.value = userInfo.school_infos[2]?.degree;
     DegreeType2Input.style.color = "black";
-    const StartDateInput2Arr = userInfo.school_infos[2]?.start_date?.replace(/ /g, "-").split("-");
+    const StartDateInput2Arr = userInfo.school_infos[2]?.start_date?.replace(/ /g, "-")?.split("-");
     if (userInfo.school_infos[2]?.start_date?.length == 4) {
       StartDate2Input1.value = userInfo.school_infos[2]?.start_date;
     } else {
       StartDate2Input0.value = StartDateInput2Arr[0];
       StartDate2Input1.value = StartDateInput2Arr[1];
     }
-    const EndDateInput2Arr = userInfo.school_infos[2]?.end_date?.replace(/ /g, "-").split("-");
+    const EndDateInput2Arr = userInfo.school_infos[2]?.end_date?.replace(/ /g, "-")?.split("-");
     if (userInfo.school_infos[2]?.end_date?.length == 4) {
       EndDate2Input1.value = userInfo.school_infos[2]?.end_date;
     } else {
@@ -655,12 +655,14 @@ function dofillUserInfo(userInfo) {
     WorkEndDate0Year.disabled = true;
     WorkEndDate0stillworkPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox w--redirected-checked';
   } else {
-    const EndDateInput0JobArr = userInfo.job_infos[0]?.end_date?.replace(/ /g, "-").split("-");
+    const EndDateInput0JobArr = userInfo.job_infos[0]?.end_date?.replace(/ /g, "-")?.split("-");
     if (userInfo.job_infos[0]?.end_date?.length == 4) {
       WorkEndDate0Year.value = userInfo.job_infos[0]?.end_date || '';
     } else {
-      WorkEndDate0Month.value = EndDateInput0JobArr[0] || '';
-      WorkEndDate0Year.value = EndDateInput0JobArr[1] || '';
+      if (EndDateInput0JobArr) {
+        WorkEndDate0Month.value = EndDateInput0JobArr[0] || '';
+        WorkEndDate0Year.value = EndDateInput0JobArr[1] || '';
+      }
     }
   }
   CompanyName0.value = userInfo.job_infos[0]?.company_name;
@@ -669,11 +671,11 @@ function dofillUserInfo(userInfo) {
   WorkType0.value = userInfo.job_infos[0]?.work_type;
   WorkType0.style.color = "black";
   WorkDescription0textarea.value = userInfo.job_infos[0]?.description;
-  const StartDateInput0JobArr = userInfo.job_infos[0]?.start_date?.replace(/ /g, "-").split("-");
+  const StartDateInput0JobArr = userInfo.job_infos[0]?.start_date?.replace(/ /g, "-")?.split("-");
   if (userInfo.job_infos[0]?.start_date?.length == 4) {
-    WorkStartDate0Year.value = userInfo.job_infos[0]?.start_date  || '';
+    WorkStartDate0Year.value = userInfo.job_infos[0]?.start_date || '';
   } else {
-    WorkStartDate0Month.value = StartDateInput0JobArr[0]  || '';
+    WorkStartDate0Month.value = StartDateInput0JobArr[0] || '';
     WorkStartDate0Year.value = StartDateInput0JobArr[1] || '';
   }
 
@@ -691,14 +693,14 @@ function dofillUserInfo(userInfo) {
     WorkType1.value = userInfo.job_infos[1]?.work_type;
     WorkType1.style.color = "black";
     WorkDescription1textarea.value = userInfo.job_infos[1]?.description;
-    const StartDateInput1JobArr = userInfo.job_infos[1]?.start_date?.replace(/ /g, "-").split("-");
+    const StartDateInput1JobArr = userInfo.job_infos[1]?.start_date?.replace(/ /g, "-")?.split("-");
     if (userInfo.job_infos[1]?.start_date?.length == 4) {
       WorkStartDate1Year.value = userInfo.job_infos[1]?.start_date || '';
     } else {
       WorkStartDate1Month.value = StartDateInput1JobArr[0] || '';
       WorkStartDate1Year.value = StartDateInput1JobArr[1] || '';
     }
-    const EndDateInput1JobArr = userInfo.job_infos[1]?.end_date?.replace(/ /g, "-").split("-");
+    const EndDateInput1JobArr = userInfo.job_infos[1]?.end_date?.replace(/ /g, "-")?.split("-");
     if (userInfo.job_infos[1]?.end_date?.length == 4) {
       WorkEndDate1Year.value = userInfo.job_infos[1]?.end_date;
     } else {
@@ -723,14 +725,14 @@ function dofillUserInfo(userInfo) {
     WorkType2.value = userInfo.job_infos[2]?.work_type;
     WorkType2.style.color = "black";
     WorkDescription2textarea.value = userInfo.job_infos[2]?.description;
-    const StartDateInput2JobArr = userInfo.job_infos[0].start_date?.replace(/ /g, "-").split("-");
+    const StartDateInput2JobArr = userInfo.job_infos[0].start_date?.replace(/ /g, "-")?.split("-");
     if (userInfo.job_infos[2]?.start_date?.length == 4) {
       WorkStartDate2Year.value = userInfo.job_infos[2]?.start_date || '';
     } else {
       WorkStartDate2Month.value = StartDateInput2JobArr[0] || '';
       WorkStartDate2Year.value = StartDateInput2JobArr[1] || '';
     }
-    const EndDateInput2JobArr = userInfo.job_infos[2]?.end_date?.replace(/ /g, "-").split("-");
+    const EndDateInput2JobArr = userInfo.job_infos[2]?.end_date?.replace(/ /g, "-")?.split("-");
     if (userInfo.job_infos[2]?.end_date?.length == 4) {
       WorkEndDate2Year.value = userInfo.job_infos[2]?.end_date || '';
     } else {
@@ -913,9 +915,9 @@ function doSomethingElse() {
       var lastNameValue = lastNameInput.value;
       var phoneNumberValue1 = phoneNumberInput1.value;
       var phoneNumberValue2 = phoneNumberInput2.value;
-      console.log(phoneNumberInput1.value ,'===phoneNumberInput1.value333333333333===');
+      console.log(phoneNumberInput1.value, '===phoneNumberInput1.value333333333333===');
       var phoneNumber = phoneNumberValue1 + " " + phoneNumberValue2;
-      console.log(phoneNumber ,'===phoneNumber99999999===');
+      console.log(phoneNumber, '===phoneNumber99999999===');
       var emailValue = emailInput.value;
       // var dateValue = dateInput.value;
       // var selectMonthValue = selectMonthSelect.options[selectMonthSelect.selectedIndex]?.value;
