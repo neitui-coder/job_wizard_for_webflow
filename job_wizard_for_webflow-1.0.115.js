@@ -508,7 +508,7 @@ if (WorkEndDate0stillwork) {
 if (identificationInput) {
   identificationInput.addEventListener('click', function () {
     if (identificationInput.checked) {
-      InfoofDEI.style.display = 'flex'
+      InfoofDEI.style.display = 'block'
     } else {
       InfoofDEI.style.display = 'none'
       let disabilityInputPrev = disabilityInput.previousElementSibling;
