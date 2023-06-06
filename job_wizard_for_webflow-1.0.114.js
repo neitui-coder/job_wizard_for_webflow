@@ -150,7 +150,7 @@ var hasCriminalRecord = document.getElementById('self-identification-7');
 var pendingCriminalCase = document.getElementById('self-identification-5');
 
 //tab5
-var identificationInput = document.getElementById('self-identification');
+var identificationInput = document.getElementById('self-identification-11');
 var disabilityInput = document.getElementById('self-identification-2');
 var veteranInput = document.getElementById('self-identification-3');
 
@@ -506,8 +506,7 @@ if (WorkEndDate0stillwork) {
 }
 
 if (identificationInput) {
-  identificationInput.addEventListener('change', function () {
-    console.log(identificationInput.checked,'=====identificationInput====');
+  identificationInput.addEventListener('click', function () {
     if (identificationInput.checked) {
       InfoofDEI.style.display = 'flex'
     } else {
