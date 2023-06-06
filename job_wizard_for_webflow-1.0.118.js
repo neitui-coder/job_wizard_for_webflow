@@ -276,6 +276,8 @@ if (doItLater) {
 if (backTab1) {
   backTab1.addEventListener('click', function () {
     step2Div.style.display = 'flex';
+    step2Div.style.transition = 'opacity 300ms ease-in-out 0s';
+    step2Div.style.opacity = '1';
     AddInfoDiv.style.display = 'none'
   })
 }
