@@ -553,6 +553,7 @@ function dofillUserInfo(userInfo) {
     phoneNumberInput1.value = phoneGroup[0];
     phoneNumberInput2.value = phoneGroup[1];
   } else {
+    iti.setNumber('+1');
     phoneNumberInput2.value = userInfo.basic_info?.phone;
   }
 
