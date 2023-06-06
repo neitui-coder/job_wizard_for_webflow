@@ -46,8 +46,8 @@ var firstNameInput = document.getElementById('First-Name');
 var lastNameInput = document.getElementById('Last-Name');
 var phoneNumberInput = document.getElementById('PhoneNumber-Input');
 var emailInput = document.getElementById('Email-Input');
-var phoneNumberInput1 = document.getElementById('PhoneNumber-Input1');
 var phoneNumberInput2 = document.getElementById('PhoneNumber-Input2');
+var phoneNumberInput1 = document.getElementById('PhoneNumber-Input1');
 var phonegrid = document.querySelector('.phonegrid');
 phonegrid.style.alignItems = 'center';
 var iti = window.intlTelInput(phoneNumberInput1, {
@@ -61,7 +61,9 @@ phoneNumberInput1.style.paddingRight = '0px';
 
 // 设置默认值
 iti.setNumber('+1');
+console.log(phoneNumberInput1.value ,'===phoneNumberInput1.value111111 ===');
 phoneNumberInput1.value = '+1';
+console.log(phoneNumberInput1.value ,'===phoneNumberInput1.value2222222 ===');
 // var dateInput = document.getElementById('Birth-Date');
 // var selectMonthSelect = document.getElementById('Birth-Month');
 // var yearInput = document.getElementById('Birth-Year');
@@ -556,8 +558,6 @@ function dofillUserInfo(userInfo) {
     phoneNumberInput1.value = phoneGroup[0];
     phoneNumberInput2.value = phoneGroup[1];
   } else {
-    phoneNumberInput1.value = '+1';
-    iti.setNumber('+1');
     phoneNumberInput2.value = userInfo.basic_info?.phone;
   }
 
@@ -911,7 +911,9 @@ function doSomethingElse() {
       var lastNameValue = lastNameInput.value;
       var phoneNumberValue1 = phoneNumberInput1.value;
       var phoneNumberValue2 = phoneNumberInput2.value;
+      console.log(phoneNumberInput1.value ,'===phoneNumberInput1.value333333333333===');
       var phoneNumber = phoneNumberValue1 + " " + phoneNumberValue2;
+      console.log(phoneNumber ,'===phoneNumber99999999===');
       var emailValue = emailInput.value;
       // var dateValue = dateInput.value;
       // var selectMonthValue = selectMonthSelect.options[selectMonthSelect.selectedIndex]?.value;
