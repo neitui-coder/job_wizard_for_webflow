@@ -554,7 +554,6 @@ function dofillUserInfo(userInfo) {
     // });
 
     // 设置默认值
-    console.log(phoneGroup[0],'====phoneGroup[0]====');
     if(phoneGroup[0]){
       iti.setNumber(phoneGroup[0]);
       phoneNumberInput1.value = phoneGroup[0];
@@ -658,10 +657,10 @@ function dofillUserInfo(userInfo) {
   } else {
     const EndDateInput0JobArr = userInfo.job_infos[0]?.end_date?.replace(/ /g, "-").split("-");
     if (userInfo.job_infos[0]?.end_date?.length == 4) {
-      WorkEndDate0Year.value = userInfo.job_infos[0]?.end_date;
+      WorkEndDate0Year.value = userInfo.job_infos[0]?.end_date || '';
     } else {
-      WorkEndDate0Month.value = EndDateInput0JobArr[0];
-      WorkEndDate0Year.value = EndDateInput0JobArr[1];
+      WorkEndDate0Month.value = EndDateInput0JobArr[0] || '';
+      WorkEndDate0Year.value = EndDateInput0JobArr[1] || '';
     }
   }
   CompanyName0.value = userInfo.job_infos[0]?.company_name;
@@ -672,10 +671,10 @@ function dofillUserInfo(userInfo) {
   WorkDescription0textarea.value = userInfo.job_infos[0]?.description;
   const StartDateInput0JobArr = userInfo.job_infos[0]?.start_date?.replace(/ /g, "-").split("-");
   if (userInfo.job_infos[0]?.start_date?.length == 4) {
-    WorkStartDate0Year.value = userInfo.job_infos[0]?.start_date;
+    WorkStartDate0Year.value = userInfo.job_infos[0]?.start_date  || '';
   } else {
-    WorkStartDate0Month.value = StartDateInput0JobArr[0];
-    WorkStartDate0Year.value = StartDateInput0JobArr[1];
+    WorkStartDate0Month.value = StartDateInput0JobArr[0]  || '';
+    WorkStartDate0Year.value = StartDateInput0JobArr[1] || '';
   }
 
   const isExistJobInfo1 = userInfo.job_infos[1]?.company_name ||
@@ -694,17 +693,17 @@ function dofillUserInfo(userInfo) {
     WorkDescription1textarea.value = userInfo.job_infos[1]?.description;
     const StartDateInput1JobArr = userInfo.job_infos[1]?.start_date?.replace(/ /g, "-").split("-");
     if (userInfo.job_infos[1]?.start_date?.length == 4) {
-      WorkStartDate1Year.value = userInfo.job_infos[1]?.start_date;
+      WorkStartDate1Year.value = userInfo.job_infos[1]?.start_date || '';
     } else {
-      WorkStartDate1Month.value = StartDateInput1JobArr[0];
-      WorkStartDate1Year.value = StartDateInput1JobArr[1];
+      WorkStartDate1Month.value = StartDateInput1JobArr[0] || '';
+      WorkStartDate1Year.value = StartDateInput1JobArr[1] || '';
     }
     const EndDateInput1JobArr = userInfo.job_infos[1]?.end_date?.replace(/ /g, "-").split("-");
     if (userInfo.job_infos[1]?.end_date?.length == 4) {
       WorkEndDate1Year.value = userInfo.job_infos[1]?.end_date;
     } else {
-      WorkEndDate1Month.value = EndDateInput1JobArr[0];
-      WorkEndDate1Year.value = EndDateInput1JobArr[1];
+      WorkEndDate1Month.value = EndDateInput1JobArr[0] || '';
+      WorkEndDate1Year.value = EndDateInput1JobArr[1] || '';
     }
     WorkExperience1.style.display = 'block';
   }
@@ -726,17 +725,17 @@ function dofillUserInfo(userInfo) {
     WorkDescription2textarea.value = userInfo.job_infos[2]?.description;
     const StartDateInput2JobArr = userInfo.job_infos[0].start_date?.replace(/ /g, "-").split("-");
     if (userInfo.job_infos[2]?.start_date?.length == 4) {
-      WorkStartDate2Year.value = userInfo.job_infos[2]?.start_date;
+      WorkStartDate2Year.value = userInfo.job_infos[2]?.start_date || '';
     } else {
-      WorkStartDate2Month.value = StartDateInput2JobArr[0];
-      WorkStartDate2Year.value = StartDateInput2JobArr[1];
+      WorkStartDate2Month.value = StartDateInput2JobArr[0] || '';
+      WorkStartDate2Year.value = StartDateInput2JobArr[1] || '';
     }
     const EndDateInput2JobArr = userInfo.job_infos[2]?.end_date?.replace(/ /g, "-").split("-");
     if (userInfo.job_infos[2]?.end_date?.length == 4) {
-      WorkEndDate2Year.value = userInfo.job_infos[2]?.end_date;
+      WorkEndDate2Year.value = userInfo.job_infos[2]?.end_date || '';
     } else {
-      WorkEndDate2Month.value = EndDateInput2JobArr[0];
-      WorkEndDate2Year.value = EndDateInput2JobArr[1];
+      WorkEndDate2Month.value = EndDateInput2JobArr[0] || '';
+      WorkEndDate2Year.value = EndDateInput2JobArr[1] || '';
     }
     WorkExperience2.style.display = 'block';
   }
