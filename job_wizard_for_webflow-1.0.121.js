@@ -554,8 +554,11 @@ function dofillUserInfo(userInfo) {
     // });
 
     // 设置默认值
-    iti.setNumber(phoneGroup[0]);
-    phoneNumberInput1.value = phoneGroup[0];
+    console.log(phoneGroup[0],'====phoneGroup[0]====');
+    if(phoneGroup[0]){
+      iti.setNumber(phoneGroup[0]);
+      phoneNumberInput1.value = phoneGroup[0];
+    }
     phoneNumberInput2.value = phoneGroup[1];
   } else {
     phoneNumberInput2.value = userInfo.basic_info?.phone;
