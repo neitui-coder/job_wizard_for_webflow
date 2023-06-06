@@ -6,6 +6,7 @@ cookie_ms_token = window.$memberstackDom.getMemberCookie();
 // all
 var AddInfoDiv = document.getElementById('Add-Info');
 var step2Div = document.getElementById('HintCard');
+var bodyDiv = document.querySelector('.div-block-45');
 AddInfoDiv.style.display = 'none';
 var saveTab1Button = document.getElementById('Save-Tab1');
 var saveTab2Button = document.getElementById('Save-Tab2');
@@ -147,7 +148,7 @@ var DeleteWork2 = document.getElementById('DeleteWork2');
 //tab4
 var Citizenship = document.getElementById('Citizenship');
 var USVisaTyoeSelect = document.getElementById('USVisaTyoe');
-var permanentResident = document.getElementById('self-identification-6');
+// var permanentResident = document.getElementById('self-identification-6');
 var needSponsorship = document.getElementById('self-identification-4');
 var hasCriminalRecord = document.getElementById('self-identification-7');
 var pendingCriminalCase = document.getElementById('self-identification-5');
@@ -772,11 +773,11 @@ function dofillUserInfo(userInfo) {
   USVisaTyoeSelect.value = userInfo.legal_info?.work_visa_type;
   USVisaTyoeSelect.style.color = "black";
 
-  permanentResident.checked = userInfo.legal_info?.permanent_resident;
-  let permanentResidentPrev = permanentResident.previousElementSibling;
-  if (userInfo.legal_info.permanent_resident) {
-    permanentResidentPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent w--redirected-checked';
-  }
+  // permanentResident.checked = userInfo.legal_info?.permanent_resident;
+  // let permanentResidentPrev = permanentResident.previousElementSibling;
+  // if (userInfo.legal_info.permanent_resident) {
+  //   permanentResidentPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent w--redirected-checked';
+  // }
 
   needSponsorship.checked = userInfo.legal_info?.need_sponsorship;
   let needSponsorshipPrev = needSponsorship.previousElementSibling;
@@ -2145,7 +2146,6 @@ function doSomethingElse() {
         "legal_info": {
           "citizenship": CitizenshipValue,
           "work_visa_type": USVisaTypeOption,
-          "permanent_resident": permanentResident.checked,
           "need_sponsorship": needSponsorship.checked,
           "has_criminal_record": hasCriminalRecord.checked,
           "pending_criminal_case": pendingCriminalCase.checked
