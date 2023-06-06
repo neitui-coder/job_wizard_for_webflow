@@ -673,8 +673,10 @@ function dofillUserInfo(userInfo) {
       WorkEndDate0Year.value = userInfo.job_infos[0]?.end_date || '';
     } else {
       const EndDateInput0JobArr = userInfo.job_infos[0]?.end_date?.replace(/ /g, "-")?.split("-");
-      WorkEndDate0Month.value = EndDateInput0JobArr[0] || '';
-      WorkEndDate0Year.value = EndDateInput0JobArr[1] || '';
+      if (EndDateInput0JobArr) {
+        WorkEndDate0Month.value = EndDateInput0JobArr[0] || '';
+        WorkEndDate0Year.value = EndDateInput0JobArr[1] || '';
+      }
     }
   }
   CompanyName0.value = userInfo.job_infos[0]?.company_name;
