@@ -919,7 +919,7 @@ function doSomethingElse() {
       var locationValue = locationInput.value;
       // var birthday = yearValue + " " + selectMonthValue + " " + dateValue;
 
-      const boolean = !firstNameValue || !lastNameValue || !phoneNumberValue1 || !phoneNumberValue2 || !emailValue || !locationValue
+      const boolean = !firstNameValue || !lastNameValue || !phoneNumberValue2 || !emailValue || !locationValue
 
       cleanErrorText([
         {
@@ -929,10 +929,6 @@ function doSomethingElse() {
         {
           textId: 'LastName-AlertText',
           element: lastNameInput,
-        },
-        {
-          textId: 'Phone-AlertText',
-          element: phoneNumberInput1,
         },
         {
           textId: 'Phone-AlertText',
@@ -950,7 +946,7 @@ function doSomethingElse() {
       if (boolean) {
         isRequired(firstNameValue, firstNameInput, 'FirstName-AlertText');
         isRequired(lastNameValue, lastNameInput, 'LastName-AlertText');
-        isRequired(phoneNumberValue1, phoneNumberInput1, 'Phone-AlertText');
+        // isRequired(phoneNumberValue1, phoneNumberInput1, 'Phone-AlertText');
         isRequired(phoneNumberValue2, phoneNumberInput2, 'Phone-AlertText');
         isRequired(emailValue, emailInput, 'Email-AlertText');
         isRequired(locationValue, locationInput, 'Location-AlertText');
