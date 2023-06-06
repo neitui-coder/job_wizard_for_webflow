@@ -507,6 +507,7 @@ if (WorkEndDate0stillwork) {
 
 if (identificationInput) {
   identificationInput.addEventListener('click', function () {
+    console.log(identificationInput.checked,'=====identificationInput====');
     if (identificationInput.checked) {
       InfoofDEI.style.display = 'flex'
     } else {
