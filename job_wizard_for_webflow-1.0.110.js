@@ -157,6 +157,7 @@ var veteranInput = document.getElementById('self-identification-3');
 var raceSelect = document.getElementById('Race');
 var genderSelect = document.getElementById('Gender');
 var ReligionSelect = document.getElementById('Religion');
+var InfoofDEI = document.getElementById('Info-of-DEI');
 // var True1Selected = document.getElementById('True');
 // var False1Selected = document.getElementById('False');
 // var True2Selected = document.getElementById('True-2');
@@ -215,7 +216,7 @@ if (startButton) {
       window.location.href = "https://www.jobwizard.ai/login"
       return;
     }
-    step2Div.style.transition =  'opacity 300ms ease-in-out 0s';
+    step2Div.style.transition = 'opacity 300ms ease-in-out 0s';
     step2Div.style.opacity = '0';
     step2Div.style.display = 'none';
     AddInfoDiv.style.display = 'flex'
@@ -504,6 +505,27 @@ if (WorkEndDate0stillwork) {
   })
 }
 
+if (identificationInput) {
+  identificationInput.addEventListener('click', function () {
+    if (identificationInput.checked) {
+      InfoofDEI.style.display = 'flex'
+    } else {
+      InfoofDEI.style.display = 'none'
+      let disabilityInputPrev = disabilityInput.previousElementSibling;
+      disabilityInput.checked = 'false';
+      disabilityInputPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent';
+
+      let veteranInputPrev = veteranInput.previousElementSibling;
+      veteranInput.checked = 'false';
+      veteranInputPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent';
+
+      raceSelect.value = 'I prefer not to say';
+      genderSelect.value = '';
+      ReligionSelect.value = 'I prefer not to say';
+    }
+  })
+}
+
 
 fetchData();
 
@@ -767,7 +789,7 @@ function dofillUserInfo(userInfo) {
   ReligionSelect.style.color = "black";
 
   // tab6
-  LinkedinURL.value = userInfo.additional_info.linkedIn || '';
+  LinkedinURL.value = userInfo.additional_info.linkedin_url || '';
   GitHubURL.value = userInfo.additional_info?.github;
   PortfolioURL.value = userInfo.additional_info?.portfolio;
   PersonalWebsiteURL.value = userInfo.additional_info?.website;
