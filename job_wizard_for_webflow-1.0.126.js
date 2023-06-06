@@ -581,15 +581,19 @@ function dofillUserInfo(userInfo) {
   if (userInfo.school_infos[0]?.start_date?.length == 4) {
     StartDate0Input1.value = userInfo.school_infos[0]?.start_date;
   } else {
-    StartDate0Input0.value = StartDateInput0Arr[0];
-    StartDate0Input1.value = StartDateInput0Arr[1];
+    if (StartDateInput0Arr) {
+      StartDate0Input0.value = StartDateInput0Arr[0];
+      StartDate0Input1.value = StartDateInput0Arr[1];
+    }
   }
   const EndDateInput0Arr = userInfo.school_infos[0]?.end_date?.replace(/ /g, "-")?.split("-");
   if (userInfo.school_infos[0]?.end_date?.length == 4) {
     EndDate0Input1.value = userInfo.school_infos[0]?.end_date;
   } else {
-    EndDate0Input0.value = EndDateInput0Arr[0];
-    EndDate0Input1.value = EndDateInput0Arr[1];
+    if (EndDateInput0Arr) {
+      EndDate0Input0.value = EndDateInput0Arr[0];
+      EndDate0Input1.value = EndDateInput0Arr[1];
+    }
   }
 
   const isExistSchoolInfo1 = userInfo.school_infos[1]?.name ||
@@ -608,16 +612,20 @@ function dofillUserInfo(userInfo) {
       StartDate1Input1.value = userInfo.school_infos[1]?.start_date;
     } else {
       const StartDateInput1Arr = userInfo.school_infos[1]?.start_date?.replace(/ /g, "-")?.split("-");
-      StartDate1Input0.value = StartDateInput1Arr[0];
-      StartDate1Input1.value = StartDateInput1Arr[1];
+      if (StartDateInput1Arr) {
+        StartDate1Input0.value = StartDateInput1Arr[0];
+        StartDate1Input1.value = StartDateInput1Arr[1];
+      }
     }
 
     if (userInfo.school_infos[1]?.end_date?.length == 4) {
       EndDate1Input1.value = userInfo.school_infos[1]?.end_date;
     } else {
       const EndDateInput1Arr = userInfo.school_infos[1]?.end_date?.replace(/ /g, "-")?.split("-");
-      EndDate1Input0.value = EndDateInput1Arr[0];
-      EndDate1Input1.value = EndDateInput1Arr[1];
+      if (EndDateInput1Arr) {
+        EndDate1Input0.value = EndDateInput1Arr[0];
+        EndDate1Input1.value = EndDateInput1Arr[1];
+      }
     }
     Education1.style.display = 'block';
   }
@@ -636,15 +644,19 @@ function dofillUserInfo(userInfo) {
       StartDate2Input1.value = userInfo.school_infos[2]?.start_date;
     } else {
       const StartDateInput2Arr = userInfo.school_infos[2]?.start_date?.replace(/ /g, "-")?.split("-");
-      StartDate2Input0.value = StartDateInput2Arr[0];
-      StartDate2Input1.value = StartDateInput2Arr[1];
+      if (StartDateInput2Arr) {
+        StartDate2Input0.value = StartDateInput2Arr[0];
+        StartDate2Input1.value = StartDateInput2Arr[1];
+      }
     }
     if (userInfo.school_infos[2]?.end_date?.length == 4) {
       EndDate2Input1.value = userInfo.school_infos[2]?.end_date;
     } else {
       const EndDateInput2Arr = userInfo.school_infos[2]?.end_date?.replace(/ /g, "-")?.split("-");
-      EndDate2Input0.value = EndDateInput2Arr[0];
-      EndDate2Input1.value = EndDateInput2Arr[1];
+      if (EndDateInput2Arr) {
+        EndDate2Input0.value = EndDateInput2Arr[0];
+        EndDate2Input1.value = EndDateInput2Arr[1];
+      }
     }
     Education2.style.display = 'block';
   }
@@ -675,8 +687,10 @@ function dofillUserInfo(userInfo) {
     WorkStartDate0Year.value = userInfo.job_infos[0]?.start_date || '';
   } else {
     const StartDateInput0JobArr = userInfo.job_infos[0]?.start_date?.replace(/ /g, "-")?.split("-");
-    WorkStartDate0Month.value = StartDateInput0JobArr[0] || '';
-    WorkStartDate0Year.value = StartDateInput0JobArr[1] || '';
+    if (StartDateInput0JobArr) {
+      WorkStartDate0Month.value = StartDateInput0JobArr[0] || '';
+      WorkStartDate0Year.value = StartDateInput0JobArr[1] || '';
+    }
   }
 
   const isExistJobInfo1 = userInfo.job_infos[1]?.company_name ||
@@ -697,15 +711,19 @@ function dofillUserInfo(userInfo) {
       WorkStartDate1Year.value = userInfo.job_infos[1]?.start_date || '';
     } else {
       const StartDateInput1JobArr = userInfo.job_infos[1]?.start_date?.replace(/ /g, "-")?.split("-");
-      WorkStartDate1Month.value = StartDateInput1JobArr[0] || '';
-      WorkStartDate1Year.value = StartDateInput1JobArr[1] || '';
+      if (StartDateInput1JobArr) {
+        WorkStartDate1Month.value = StartDateInput1JobArr[0] || '';
+        WorkStartDate1Year.value = StartDateInput1JobArr[1] || '';
+      }
     }
     if (userInfo.job_infos[1]?.end_date?.length == 4) {
       WorkEndDate1Year.value = userInfo.job_infos[1]?.end_date;
     } else {
       const EndDateInput1JobArr = userInfo.job_infos[1]?.end_date?.replace(/ /g, "-")?.split("-");
-      WorkEndDate1Month.value = EndDateInput1JobArr[0] || '';
-      WorkEndDate1Year.value = EndDateInput1JobArr[1] || '';
+      if (EndDateInput1JobArr) {
+        WorkEndDate1Month.value = EndDateInput1JobArr[0] || '';
+        WorkEndDate1Year.value = EndDateInput1JobArr[1] || '';
+      }
     }
     WorkExperience1.style.display = 'block';
   }
@@ -729,16 +747,20 @@ function dofillUserInfo(userInfo) {
       WorkStartDate2Year.value = userInfo.job_infos[2]?.start_date || '';
     } else {
       const StartDateInput2JobArr = userInfo.job_infos[0].start_date?.replace(/ /g, "-")?.split("-");
-      WorkStartDate2Month.value = StartDateInput2JobArr[0] || '';
-      WorkStartDate2Year.value = StartDateInput2JobArr[1] || '';
+      if (StartDateInput2JobArr) {
+        WorkStartDate2Month.value = StartDateInput2JobArr[0] || '';
+        WorkStartDate2Year.value = StartDateInput2JobArr[1] || '';
+      }
     }
 
     if (userInfo.job_infos[2]?.end_date?.length == 4) {
       WorkEndDate2Year.value = userInfo.job_infos[2]?.end_date || '';
     } else {
       const EndDateInput2JobArr = userInfo.job_infos[2]?.end_date?.replace(/ /g, "-")?.split("-");
-      WorkEndDate2Month.value = EndDateInput2JobArr[0] || '';
-      WorkEndDate2Year.value = EndDateInput2JobArr[1] || '';
+      if (EndDateInput2JobArr) {
+        WorkEndDate2Month.value = EndDateInput2JobArr[0] || '';
+        WorkEndDate2Year.value = EndDateInput2JobArr[1] || '';
+      }
     }
     WorkExperience2.style.display = 'block';
   }
