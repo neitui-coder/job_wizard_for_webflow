@@ -61,6 +61,7 @@ phoneNumberInput1.style.paddingRight = '0px';
 
 // 设置默认值
 iti.setNumber('+1');
+phoneNumberInput1.value = '+1';
 // var dateInput = document.getElementById('Birth-Date');
 // var selectMonthSelect = document.getElementById('Birth-Month');
 // var yearInput = document.getElementById('Birth-Year');
@@ -553,6 +554,7 @@ function dofillUserInfo(userInfo) {
     phoneNumberInput1.value = phoneGroup[0];
     phoneNumberInput2.value = phoneGroup[1];
   } else {
+    phoneNumberInput1.value = '+1';
     iti.setNumber('+1');
     phoneNumberInput2.value = userInfo.basic_info?.phone;
   }
