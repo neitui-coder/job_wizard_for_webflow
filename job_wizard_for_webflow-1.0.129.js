@@ -918,6 +918,14 @@ function isRequired(value, element, textId) {
   }
 }
 
+function optMonth(month) {
+  const Month = month;
+  if (month.length == 1) {
+    Month = '0' + month;
+  }
+  return Month;
+}
+
 function cleanErrorText(textIdGroup) {
   for (i = 0; i < textIdGroup.length; i++) {
     const ErrorInput = document.getElementById(textIdGroup[i].textId);
@@ -1072,12 +1080,12 @@ function doSomethingElse() {
       var DegreeType0InputValue = DegreeType0Input.options[DegreeType0Input.selectedIndex]?.value;
       var DegreeType1InputValue = DegreeType1Input.options[DegreeType1Input.selectedIndex]?.value;
       var DegreeType2InputValue = DegreeType2Input.options[DegreeType2Input.selectedIndex]?.value;
-      var StartDate0Input = StartDate0Input0Value + '-' + StartDate0Input1Value;
-      var StartDate1Input = StartDate1Input0Value + '-' + StartDate1Input1Value;
-      var StartDate2Input = StartDate2Input0Value + '-' + StartDate2Input1Value;
-      var EndDate0Input = EndDate0Input0Value + '-' + EndDate0Input1Value;
-      var EndDate1Input = EndDate1Input0Value + '-' + EndDate1Input1Value;
-      var EndDate2Input = EndDate2Input0Value + '-' + EndDate2Input1Value;
+      var StartDate0Input = optMonth(StartDate0Input0Value) + '-' + StartDate0Input1Value;
+      var StartDate1Input = optMonth(StartDate1Input0Value) + '-' + StartDate1Input1Value;
+      var StartDate2Input = optMonth(StartDate2Input0Value) + '-' + StartDate2Input1Value;
+      var EndDate0Input = optMonth(EndDate0Input0Value) + '-' + EndDate0Input1Value;
+      var EndDate1Input = optMonth(EndDate1Input0Value) + '-' + EndDate1Input1Value;
+      var EndDate2Input = optMonth(EndDate2Input0Value) + '-' + EndDate2Input1Value;
 
 
       var url = `https://api.jobwizard.ai/api/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
@@ -1572,12 +1580,12 @@ function doSomethingElse() {
       var WorkType2Value = WorkType2.options[WorkType2.selectedIndex]?.value;
 
 
-      var WorkStartDate0Value = WorkStartDate0MonthValue + '-' + WorkStartDate0YearValue;
-      var WorkStartDate1Value = WorkStartDate1MonthValue + '-' + WorkStartDate1YearValue;
-      var WorkStartDate2Value = WorkStartDate2MonthValue + '-' + WorkStartDate2YearValue;
-      var WorkEndDate0Value = WorkEndDate0MonthValue + '-' + WorkEndDate0YearValue;
-      var WorkEndDate1Value = WorkEndDate1MonthValue + '-' + WorkEndDate1YearValue;
-      var WorkEndDate2Value = WorkEndDate2MonthValue + '-' + WorkEndDate2YearValue;
+      var WorkStartDate0Value = optMonth(WorkStartDate0MonthValue) + '-' + WorkStartDate0YearValue;
+      var WorkStartDate1Value = optMonth(WorkStartDate1MonthValue) + '-' + WorkStartDate1YearValue;
+      var WorkStartDate2Value = optMonth(WorkStartDate2MonthValue) + '-' + WorkStartDate2YearValue;
+      var WorkEndDate0Value = optMonth(WorkEndDate0MonthValue) + '-' + WorkEndDate0YearValue;
+      var WorkEndDate1Value = optMonth(WorkEndDate1MonthValue) + '-' + WorkEndDate1YearValue;
+      var WorkEndDate2Value = optMonth(WorkEndDate2MonthValue) + '-' + WorkEndDate2YearValue;
 
 
       var url = `https://api.jobwizard.ai/api/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
