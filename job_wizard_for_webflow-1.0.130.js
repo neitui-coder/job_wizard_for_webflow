@@ -919,7 +919,7 @@ function isRequired(value, element, textId) {
 }
 
 function optMonth(month) {
-  const Month = month;
+  let Month = month;
   if (month.length == 1) {
     Month = '0' + month;
   }
