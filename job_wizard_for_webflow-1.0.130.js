@@ -268,11 +268,15 @@ if (skipTab5) {
 
 if (skipTab6) {
   skipTab6.addEventListener('click', function () {
+    // 打开一个特定岗位页面来给用户测试
+    window.open('https://boards.greenhouse.io/remotecom/jobs/5600086003', '_blank');
     window.location.href = "https://www.jobwizard.ai/onboarding/registration-complete"
   })
 }
 if (doItLater) {
   doItLater.addEventListener('click', function () {
+    // 打开一个特定岗位页面来给用户测试
+    window.open('https://boards.greenhouse.io/remotecom/jobs/5600086003', '_blank');
     window.location.href = "https://www.jobwizard.ai/onboarding/registration-complete"
   })
 }
@@ -2375,6 +2379,8 @@ function doSomethingElse() {
       fetch(url, options)
         .then(response => {
           if (response.status == 200) {
+            // 打开一个特定岗位页面来给用户测试
+            window.open('https://boards.greenhouse.io/remotecom/jobs/5600086003', '_blank');
             window.location.href = "https://www.jobwizard.ai/onboarding/registration-complete"
             backTab6.style.pointerEvents = "auto";
             // const Saving = document.getElementById('Saving-6');
