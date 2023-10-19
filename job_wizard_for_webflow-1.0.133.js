@@ -97,9 +97,13 @@ var EndDate2Input0 = document.getElementById('EndDate2-Input0');
 var EndDate0Input1 = document.getElementById('EndDate0-Input1');
 var EndDate1Input1 = document.getElementById('EndDate1-Input1');
 var EndDate2Input1 = document.getElementById('EndDate2-Input1');
+var GPA0Input = document.getElementById('GPA0-Input');
+var GPA1Input = document.getElementById('GPA1-Input');
+var GPA2Input = document.getElementById('GPA2-Input');
 var AddEducation = document.getElementById('AddEducation');
 var DeleteEducation1 = document.getElementById('DeleteEducation1');
 var DeleteEducation2 = document.getElementById('DeleteEducation2');
+
 
 
 // tab3
@@ -359,6 +363,7 @@ if (DeleteEducation1) {
     StartDate1Input1.value = '';
     EndDate1Input0.value = '';
     EndDate1Input1.value = '';
+    GPAInput1.value = '';
   })
 }
 
@@ -373,6 +378,7 @@ if (DeleteEducation2) {
     StartDate2Input1.value = '';
     EndDate2Input0.value = '';
     EndDate2Input1.value = '';
+    GPAInput2.value = '';
   })
 }
 
@@ -581,6 +587,7 @@ function dofillUserInfo(userInfo) {
   SchoolName0Input.value = userInfo.school_infos[0]?.name;
   Major0Input.value = userInfo.school_infos[0]?.major;
   DegreeType0Input.value = userInfo.school_infos[0]?.degree;
+  GPA0Input.value = userInfo.school_infos[0]?.school_gpa;
   DegreeType0Input.style.color = "black";
   const StartDateInput0Arr = userInfo.school_infos[0]?.start_date?.replace(/ /g, "-")?.split("-");
   if (userInfo.school_infos[0]?.start_date?.length == 4) {
@@ -605,12 +612,14 @@ function dofillUserInfo(userInfo) {
     userInfo.school_infos[1]?.major ||
     userInfo.school_infos[1]?.degree ||
     userInfo.school_infos[1]?.start_date ||
-    userInfo.school_infos[1]?.end_date;
+    userInfo.school_infos[1]?.end_date ||
+    userInfo.school_infos[1]?.school_gpa;
 
   if (isExistSchoolInfo1) {
     SchoolName1Input.value = userInfo.school_infos[1]?.name;
     Major1Input.value = userInfo.school_infos[1]?.major;
     DegreeType1Input.value = userInfo.school_infos[1]?.degree;
+    GPA1Input.value = userInfo.school_infos[1]?.school_gpa;
     DegreeType1Input.style.color = "black";
 
     if (userInfo.school_infos[1]?.start_date?.length == 4) {
@@ -639,11 +648,13 @@ function dofillUserInfo(userInfo) {
     userInfo.school_infos[2]?.major ||
     userInfo.school_infos[2]?.degree ||
     userInfo.school_infos[2]?.start_date ||
-    userInfo.school_infos[2]?.end_date;
+    userInfo.school_infos[2]?.end_date ||
+    userInfo.school_infos[2]?.school_gpa;
   if (isExistSchoolInfo2) {
     SchoolName2Input.value = userInfo.school_infos[2]?.name;
     Major2Input.value = userInfo.school_infos[2]?.major;
     DegreeType2Input.value = userInfo.school_infos[2]?.degree;
+    GPA2Input.value = userInfo.school_infos[2]?.school_gpa;
     DegreeType2Input.style.color = "black";
     if (userInfo.school_infos[2]?.start_date?.length == 4) {
       StartDate2Input1.value = userInfo.school_infos[2]?.start_date;
@@ -1079,6 +1090,9 @@ function doSomethingElse() {
       var EndDate0Input1Value = EndDate0Input1.value;
       var EndDate1Input1Value = EndDate1Input1.value;
       var EndDate2Input1Value = EndDate2Input1.value;
+      var GPA0InputValue = GPA0Input.value;
+      var GPA1InputValue = GPA1Input.value;
+      var GPA2InputValue = GPA2Input.value;
 
 
       var DegreeType0InputValue = DegreeType0Input.options[DegreeType0Input.selectedIndex]?.value;
@@ -1099,21 +1113,24 @@ function doSomethingElse() {
         "major": Major0InputValue,
         "degree": DegreeType0InputValue,
         "start_date": StartDate0Input,
-        "end_date": EndDate0Input
+        "end_date": EndDate0Input,
+        "school_gpa": GPA0InputValue
       };
       var educationGroup1 = {
         "name": SchoolName1InputValue,
         "major": Major1InputtValue,
         "degree": DegreeType1InputValue,
         "start_date": StartDate1Input,
-        "end_date": EndDate1Input
+        "end_date": EndDate1Input,
+        "school_gpa": GPA1InputValue
       };
       var educationGroup2 = {
         "name": SchoolName2InputValue,
         "major": Major2InputValue,
         "degree": DegreeType2InputValue,
         "start_date": StartDate2Input,
-        "end_date": EndDate2Input
+        "end_date": EndDate2Input,
+        "school_gpa": GPA2InputValue
       };
       school_infos.push(educationGroup0);
       if (Education1.style.display === 'block') {
