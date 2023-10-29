@@ -883,7 +883,7 @@ function dofillUserInfo(userInfo) {
 
 async function fetchData() {
   try {
-    const response = await fetch(`https://api.jobwizard.ai/api/profile/get_profile?ms_token=${cookie_ms_token}`);
+    const response = await fetch(`https://api.jobwizard.ai/profile/get_profile?ms_token=${cookie_ms_token}`);
     if (response.ok) {
       const data = await response.json();
       // 在这里处理响应数据
@@ -1024,7 +1024,7 @@ function doSomethingElse() {
         }
       }
 
-      var url = `https://api.jobwizard.ai/api/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
+      var url = `https://api.jobwizard.ai/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
       var data = {
         "basic_info": {
           "first_name": firstNameValue,
@@ -1106,7 +1106,7 @@ function doSomethingElse() {
       var EndDate2Input = optMonth(EndDate2Input0Value) + '-' + EndDate2Input1Value;
 
 
-      var url = `https://api.jobwizard.ai/api/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
+      var url = `https://api.jobwizard.ai/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
       var school_infos = [];
       var educationGroup0 = {
         "name": SchoolName0InputValue,
@@ -1609,7 +1609,7 @@ function doSomethingElse() {
       var WorkEndDate2Value = optMonth(WorkEndDate2MonthValue) + '-' + WorkEndDate2YearValue;
 
 
-      var url = `https://api.jobwizard.ai/api/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
+      var url = `https://api.jobwizard.ai/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
       var job_infos = [];
       var job_info0 = {
         "company_name": CompanyName0Value,
@@ -2170,7 +2170,7 @@ function doSomethingElse() {
         return;
       }
 
-      var url = `https://api.jobwizard.ai/api/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
+      var url = `https://api.jobwizard.ai/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
       var data = {
         "legal_info": {
           "citizenship": CitizenshipValue,
@@ -2251,7 +2251,7 @@ function doSomethingElse() {
         return;
       }
 
-      var url = `https://api.jobwizard.ai/api/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
+      var url = `https://api.jobwizard.ai/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
       var data = {
         "dei_info": {
           "agree_to_provide_dei": identificationInput.checked,
@@ -2321,7 +2321,7 @@ function doSomethingElse() {
       // var Award2nameValue = Award2name.value;
 
 
-      var url = `https://api.jobwizard.ai/api/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
+      var url = `https://api.jobwizard.ai/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
       var language_infos = [];
       // var language_info0 = {
       //   "language": language0nameValue,
