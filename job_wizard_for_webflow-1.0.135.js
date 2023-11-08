@@ -363,7 +363,7 @@ if (DeleteEducation1) {
     StartDate1Input1.value = '';
     EndDate1Input0.value = '';
     EndDate1Input1.value = '';
-    GPAInput1.value = '';
+    GPA1Input.value = '';
   })
 }
 
@@ -378,7 +378,7 @@ if (DeleteEducation2) {
     StartDate2Input1.value = '';
     EndDate2Input0.value = '';
     EndDate2Input1.value = '';
-    GPAInput2.value = '';
+    GPA2Input.value = '';
   })
 }
 
