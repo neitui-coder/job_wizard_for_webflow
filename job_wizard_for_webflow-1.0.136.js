@@ -45,11 +45,13 @@ var doItLater = document.getElementById('DoItLater');
 // tab1
 var firstNameInput = document.getElementById('First-Name');
 var lastNameInput = document.getElementById('Last-Name');
+var fullNameInput = document.getElementById('FullName-Input');
 var phoneNumberInput = document.getElementById('PhoneNumber-Input');
 var emailInput = document.getElementById('Email-Input');
 var phoneNumberInput2 = document.getElementById('PhoneNumber-Input2');
 var phoneNumberInput1 = document.getElementById('PhoneNumber-Input1');
 var phonegrid = document.querySelector('.phonegrid');
+var AddressInput = document.getElementById('Address-Input');
 phonegrid.style.alignItems = 'center';
 var iti = window.intlTelInput(phoneNumberInput1, {
   initialCountry: "auto",
@@ -109,22 +111,34 @@ var DeleteEducation2 = document.getElementById('DeleteEducation2');
 // tab3
 var WorkExperience1 = document.getElementById('w-node-_4eed910d-1e1e-56af-1c38-33abb164bc53-0f45508c');
 var WorkExperience2 = document.getElementById('w-node-_7675749a-2c62-424f-641e-ad12fb4f9990-0f45508c');
+var WorkExperience3 = document.getElementById('Work3');
+var WorkExperience4 = document.getElementById('Work4');
 WorkExperience1.style.display = 'none';
 WorkExperience2.style.display = 'none';
+WorkExperience3.style.display = 'none';
+WorkExperience4.style.display = 'none';
 var MaxAlertWork = document.getElementById('MaxAlert-Work');
 var WorkEndDate0stillwork = document.getElementById('WorkEndDate0-stillwork');
 var CompanyName0 = document.getElementById('CompanyName0-Input');
 var CompanyName1 = document.getElementById('CompanyName1-Input');
 var CompanyName2 = document.getElementById('CompanyName2-Input');
+var CompanyName3 = document.getElementById('CompanyName3-Input');
+var CompanyName4 = document.getElementById('CompanyName4-Input');
 var WorkLocation0 = document.getElementById('WorkLocation0-Input');
 var WorkLocation1 = document.getElementById('WorkLocation1-Input');
 var WorkLocation2 = document.getElementById('WorkLocation2-Input');
+var WorkLocation3 = document.getElementById('WorkLocation3-Input');
+var WorkLocation4 = document.getElementById('WorkLocation4-Input');
 var Position0 = document.getElementById('Position0-Input');
 var Position1 = document.getElementById('Position1-Input');
 var Position2 = document.getElementById('Position2-Input');
+var Position3 = document.getElementById('Position3-Input');
+var Position4 = document.getElementById('Position4-Input');
 var WorkType0 = document.getElementById('WorkType0-Input');
 var WorkType1 = document.getElementById('WorkType1-Input');
 var WorkType2 = document.getElementById('WorkType2-Input');
+var WorkType3 = document.getElementById('WorkType3-Input');
+var WorkType4 = document.getElementById('WorkType4-Input');
 var WorkStartDate0Month = document.getElementById('WorkStartDate0-Month');
 var WorkStartDate0Year = document.getElementById('WorkStartDate0-Year');
 var WorkEndDate0Month = document.getElementById('WorkEndDate0-Month');
@@ -140,13 +154,27 @@ var WorkStartDate2Year = document.getElementById('WorkStartDate2-Year');
 var WorkEndDate2Month = document.getElementById('WorkEndDate2-Month');
 var WorkEndDate2Year = document.getElementById('WorkEndDate2-Year');
 
+var WorkStartDate3Month = document.getElementById('WorkStartDate3-Month');
+var WorkStartDate3Year = document.getElementById('WorkStartDate3-Year');
+var WorkEndDate3Month = document.getElementById('WorkEndDate3-Month');
+var WorkEndDate3Year = document.getElementById('WorkEndDate3-Year');
+
+var WorkStartDate4Month = document.getElementById('WorkStartDate4-Month');
+var WorkStartDate4Year = document.getElementById('WorkStartDate4-Year');
+var WorkEndDate4Month = document.getElementById('WorkEndDate4-Month');
+var WorkEndDate4Year = document.getElementById('WorkEndDate4-Year');
+
 var WorkDescription0textarea = document.getElementById('WorkDescription0-textarea');
 var WorkDescription1textarea = document.getElementById('WorkDescription1-textarea');
 var WorkDescription2textarea = document.getElementById('WorkDescription2-textarea');
+var WorkDescription3textarea = document.getElementById('WorkDescription3-textarea');
+var WorkDescription4textarea = document.getElementById('WorkDescription4-textarea');
 
 var AddWork = document.getElementById('AddWork');
 var DeleteWork1 = document.getElementById('DeleteWork1');
 var DeleteWork2 = document.getElementById('DeleteWork2');
+var DeleteWork3 = document.getElementById('DeleteWork3');
+var DeleteWork4 = document.getElementById('DeleteWork4');
 
 
 //tab4
@@ -384,7 +412,7 @@ if (DeleteEducation2) {
 
 if (AddWork) {
   AddWork.addEventListener('click', function () {
-    if (WorkExperience1.style.display == 'block' && WorkExperience2.style.display == 'block') {
+    if (WorkExperience1.style.display == 'block' && WorkExperience2.style.display == 'block' && WorkExperience3.style.display == 'block' && WorkExperience4.style.display == 'block') {
       MaxAlertWork.style.display = 'block'
       setTimeout(function () {
         MaxAlertWork.style.display = 'none'
@@ -398,6 +426,16 @@ if (AddWork) {
 
     if (WorkExperience2.style.display === 'none') {
       WorkExperience2.style.display = 'block';
+      return;
+    }
+
+    if (WorkExperience3.style.display === 'none') {
+      WorkExperience3.style.display = 'block';
+      return;
+    }
+
+    if (WorkExperience4.style.display === 'none') {
+      WorkExperience4.style.display = 'block';
       return;
     }
   })
@@ -431,6 +469,36 @@ if (DeleteWork2) {
     WorkEndDate2Month.value = '';
     WorkEndDate2Year.value = '';
     WorkDescription2textarea.value = '';
+  })
+}
+
+if (DeleteWork3) {
+  DeleteWork3.addEventListener('click', function () {
+    WorkExperience3.style.display = 'none';
+    CompanyName3.value = '';
+    WorkLocation3.value = '';
+    Position3.value = '';
+    WorkType3.value = '';
+    WorkStartDate3Month.value = '';
+    WorkStartDate3Year.value = '';
+    WorkEndDate3Month.value = '';
+    WorkEndDate3Year.value = '';
+    WorkDescription3textarea.value = '';
+  })
+}
+
+if (DeleteWork4) {
+  DeleteWork4.addEventListener('click', function () {
+    WorkExperience4.style.display = 'none';
+    CompanyName4.value = '';
+    WorkLocation4.value = '';
+    Position4.value = '';
+    WorkType4.value = '';
+    WorkStartDate4Month.value = '';
+    WorkStartDate4Year.value = '';
+    WorkEndDate4Month.value = '';
+    WorkEndDate4Year.value = '';
+    WorkDescription4textarea.value = '';
   })
 }
 
@@ -783,6 +851,79 @@ function dofillUserInfo(userInfo) {
     WorkExperience2.style.display = 'block';
   }
 
+  const isExistJobInfo3 = userInfo.job_infos[3]?.company_name ||
+  userInfo.job_infos[3]?.location ||
+  userInfo.job_infos[3]?.position ||
+  userInfo.job_infos[3]?.work_type ||
+  userInfo.job_infos[3]?.description ||
+  userInfo.job_infos[3]?.start_date ||
+  userInfo.job_infos[3]?.end_date
+if (isExistJobInfo3) {
+  CompanyName3.value = userInfo.job_infos[3]?.company_name;
+  WorkLocation3.value = userInfo.job_infos[3]?.location;
+  Position3.value = userInfo.job_infos[3]?.position;
+  WorkType3.value = userInfo.job_infos[3]?.work_type;
+  WorkType3.style.color = "black";
+  WorkDescription3textarea.value = userInfo.job_infos[3]?.description;
+  if (userInfo.job_infos[3]?.start_date?.length == 4) {
+    WorkStartDate3Year.value = userInfo.job_infos[3]?.start_date || '';
+  } else {
+    const StartDateInput3JobArr = userInfo.job_infos[0].start_date?.replace(/ /g, "-")?.split("-");
+    if (StartDateInput3JobArr) {
+      WorkStartDate3Month.value = StartDateInput3JobArr[0] || '';
+      WorkStartDate3Year.value = StartDateInput3JobArr[1] || '';
+    }
+  }
+
+  if (userInfo.job_infos[3]?.end_date?.length == 4) {
+    WorkEndDate3Year.value = userInfo.job_infos[3]?.end_date || '';
+  } else {
+    const EndDateInput3JobArr = userInfo.job_infos[3]?.end_date?.replace(/ /g, "-")?.split("-");
+    if (EndDateInput3JobArr) {
+      WorkEndDate3Month.value = EndDateInput3JobArr[0] || '';
+      WorkEndDate3Year.value = EndDateInput3JobArr[1] || '';
+    }
+  }
+  WorkExperience3.style.display = 'block';
+}
+
+  const isExistJobInfo4 = userInfo.job_infos[4]?.company_name ||
+    userInfo.job_infos[4]?.location ||
+    userInfo.job_infos[4]?.position ||
+    userInfo.job_infos[4]?.work_type ||
+    userInfo.job_infos[4]?.description ||
+    userInfo.job_infos[4]?.start_date ||
+    userInfo.job_infos[4]?.end_date
+  if (isExistJobInfo4) {
+    CompanyName4.value = userInfo.job_infos[4]?.company_name;
+    WorkLocation4.value = userInfo.job_infos[4]?.location;
+    Position4.value = userInfo.job_infos[4]?.position;
+    WorkType4.value = userInfo.job_infos[4]?.work_type;
+    WorkType4.style.color = "black";
+    WorkDescription4textarea.value = userInfo.job_infos[4]?.description;
+    if (userInfo.job_infos[4]?.start_date?.length == 4) {
+      WorkStartDate4Year.value = userInfo.job_infos[4]?.start_date || '';
+    } else {
+      const StartDateInput4JobArr = userInfo.job_infos[0].start_date?.replace(/ /g, "-")?.split("-");
+      if (StartDateInput4JobArr) {
+        WorkStartDate4Month.value = StartDateInput4JobArr[0] || '';
+        WorkStartDate4Year.value = StartDateInput4JobArr[1] || '';
+      }
+    }
+
+    if (userInfo.job_infos[4]?.end_date?.length == 4) {
+      WorkEndDate4Year.value = userInfo.job_infos[4]?.end_date || '';
+    } else {
+      const EndDateInput4JobArr = userInfo.job_infos[4]?.end_date?.replace(/ /g, "-")?.split("-");
+      if (EndDateInput4JobArr) {
+        WorkEndDate4Month.value = EndDateInput4JobArr[0] || '';
+        WorkEndDate4Year.value = EndDateInput4JobArr[1] || '';
+      }
+    }
+    WorkExperience4.style.display = 'block';
+  }
+  
+
   // tab4
   Citizenship.value = userInfo.legal_info?.citizenship;
   USVisaTyoeSelect.value = userInfo.legal_info?.work_visa_type;
@@ -972,6 +1113,8 @@ function doSomethingElse() {
       // var selectMonthValue = selectMonthSelect.options[selectMonthSelect.selectedIndex]?.value;
       // var yearValue = yearInput.value;
       var locationValue = locationInput.value;
+      var fullNameValue = fullNameInput.value;
+      var addressValue = AddressInput.value;
       // var birthday = yearValue + " " + selectMonthValue + " " + dateValue;
 
       const boolean = !firstNameValue || !lastNameValue || !phoneNumberValue2 || !emailValue || !locationValue
@@ -1032,6 +1175,8 @@ function doSomethingElse() {
           "email": emailValue,
           "phone_number": phoneNumber,
           "location": locationValue,
+          "full_name": fullNameValue,
+          "address": addressValue
         }
       };
       var options = {
@@ -1596,17 +1741,45 @@ function doSomethingElse() {
       var WorkEndDate2MonthValue = WorkEndDate2Month.value;
       var WorkEndDate2YearValue = WorkEndDate2Year.value;
       var WorkDescription2textareaValue = WorkDescription2textarea.value;
+
+      var CompanyName3Value = CompanyName3.value;
+      var WorkLocation3Value = WorkLocation3.value;
+      var Position3Value = Position3.value;
+      var WorkType3Value = WorkType3.value;
+      var WorkStartDate3MonthValue = WorkStartDate3Month.value;
+      var WorkStartDate3YearValue = WorkStartDate3Year.value;
+      var WorkEndDate3MonthValue = WorkEndDate3Month.value;
+      var WorkEndDate3YearValue = WorkEndDate3Year.value;
+      var WorkDescription3textareaValue = WorkDescription3textarea.value;
+
+      var CompanyName4Value = CompanyName4.value;
+      var WorkLocation4Value = WorkLocation4.value;
+      var Position4Value = Position4.value;
+      var WorkType4Value = WorkType4.value;
+      var WorkStartDate4MonthValue = WorkStartDate4Month.value;
+      var WorkStartDate4YearValue = WorkStartDate4Year.value;
+      var WorkEndDate4MonthValue = WorkEndDate4Month.value;
+      var WorkEndDate4YearValue = WorkEndDate4Year.value;
+      var WorkDescription4textareaValue = WorkDescription4textarea.value;
+
       var WorkType0Value = WorkType0.options[WorkType0.selectedIndex]?.value;
       var WorkType1Value = WorkType1.options[WorkType1.selectedIndex]?.value;
       var WorkType2Value = WorkType2.options[WorkType2.selectedIndex]?.value;
+      var WorkType3Value = WorkType3.options[WorkType3.selectedIndex]?.value;
+      var WorkType4Value = WorkType4.options[WorkType4.selectedIndex]?.value;
 
 
       var WorkStartDate0Value = optMonth(WorkStartDate0MonthValue) + '-' + WorkStartDate0YearValue;
       var WorkStartDate1Value = optMonth(WorkStartDate1MonthValue) + '-' + WorkStartDate1YearValue;
       var WorkStartDate2Value = optMonth(WorkStartDate2MonthValue) + '-' + WorkStartDate2YearValue;
+      var WorkStartDate3Value = optMonth(WorkStartDate3MonthValue) + '-' + WorkStartDate3YearValue;
+      var WorkStartDate4Value = optMonth(WorkStartDate4MonthValue) + '-' + WorkStartDate4YearValue;
+
       var WorkEndDate0Value = optMonth(WorkEndDate0MonthValue) + '-' + WorkEndDate0YearValue;
       var WorkEndDate1Value = optMonth(WorkEndDate1MonthValue) + '-' + WorkEndDate1YearValue;
       var WorkEndDate2Value = optMonth(WorkEndDate2MonthValue) + '-' + WorkEndDate2YearValue;
+      var WorkEndDate3Value = optMonth(WorkEndDate3MonthValue) + '-' + WorkEndDate3YearValue;
+      var WorkEndDate4Value = optMonth(WorkEndDate4MonthValue) + '-' + WorkEndDate4YearValue;
 
 
       var url = `https://api.jobwizard.ai/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
@@ -1641,6 +1814,26 @@ function doSomethingElse() {
         "start_date": WorkStartDate2Value,
         "end_date": WorkEndDate2Value
       };
+      var job_info3 = {
+        "company_name": CompanyName3Value,
+        "location": WorkLocation3Value,
+        "position": Position3Value,
+        "work_type": WorkType3Value,
+        "now_working": false,
+        "description": WorkDescription3textareaValue,
+        "start_date": WorkStartDate3Value,
+        "end_date": WorkEndDate3Value
+      };
+      var job_info4 = {
+        "company_name": CompanyName4Value,
+        "location": WorkLocation4Value,
+        "position": Position4Value,
+        "work_type": WorkType4Value,
+        "now_working": false,
+        "description": WorkDescription4textareaValue,
+        "start_date": WorkStartDate4Value,
+        "end_date": WorkEndDate4Value
+      };
       job_infos.push(job_info0);
       if (WorkExperience1.style.display === 'block') {
         job_infos.push(job_info1);
@@ -1648,6 +1841,14 @@ function doSomethingElse() {
 
       if (WorkExperience2.style.display === 'block') {
         job_infos.push(job_info2);
+      }
+
+      if (WorkExperience3.style.display === 'block') {
+        job_infos.push(job_info3);
+      }
+
+      if (WorkExperience4.style.display === 'block') {
+        job_infos.push(job_info4);
       }
 
 
@@ -1799,308 +2000,308 @@ function doSomethingElse() {
       ]);
 
 
-      if (boolean) {
-        if (WorkExperience1.style.display === 'block' && WorkExperience2.style.display === 'block') {
-          isRequired(CompanyName0Value, CompanyName0, 'CompanyName0-AlertText');
-          isRequired(CompanyName1Value, CompanyName1, 'CompanyName1-AlertText');
-          isRequired(CompanyName2Value, CompanyName2, 'CompanyName2-AlertText');
-          isRequired(WorkLocation0Value, WorkLocation0, 'WorkLocation0-AlertText');
-          isRequired(WorkLocation1Value, WorkLocation1, 'WorkLocation1-AlertText');
-          isRequired(WorkLocation2Value, WorkLocation2, 'WorkLocation2-AlertText');
-          isRequired(Position0Value, Position0, 'Position0-AlertText');
-          isRequired(Position1Value, Position1, 'Position1-AlertText');
-          isRequired(Position2Value, Position2, 'Position2-AlertText');
-          isRequired(WorkType0Value, WorkType0, 'WorkType0-AlertText');
-          isRequired(WorkType1Value, WorkType1, 'WorkType1-AlertText');
-          isRequired(WorkType2Value, WorkType2, 'WorkType2-AlertText');
-          isRequired(WorkStartDate0MonthValue, WorkStartDate0Month, 'WorkStartDate0-AlertText');
-          isRequired(WorkStartDate1MonthValue, WorkStartDate1Month, 'WorkStartDate1-AlertText');
-          isRequired(WorkStartDate2MonthValue, WorkStartDate2Month, 'WorkStartDate2-AlertText');
-          isRequired(WorkStartDate0YearValue, WorkStartDate0Year, 'WorkStartDate0-AlertText');
-          isRequired(WorkStartDate1YearValue, WorkStartDate1Year, 'WorkStartDate1-AlertText');
-          isRequired(WorkStartDate2YearValue, WorkStartDate2Year, 'WorkStartDate2-AlertText');
-          isRequired(WorkEndDate1MonthValue, WorkEndDate1Month, 'WorkEndDate1-AlertText');
-          isRequired(WorkEndDate2MonthValue, WorkEndDate2Month, 'WorkEndDate2-AlertText');
-          isRequired(WorkEndDate1YearValue, WorkEndDate1Year, 'WorkEndDate1-AlertText');
-          isRequired(WorkEndDate2YearValue, WorkEndDate2Year, 'WorkEndDate2-AlertText');
-          isRequired(WorkDescription0textareaValue, WorkDescription0textarea, 'WorkDescription0-AlertText');
-          isRequired(WorkDescription1textareaValue, WorkDescription1textarea, 'WorkDescription1-AlertText');
-          isRequired(WorkDescription2textareaValue, WorkDescription2textarea, 'WorkDescription2-AlertText');
-          if (!WorkEndDate0stillworValue) {
-            isRequired(WorkEndDate0MonthValue, WorkEndDate0Month, 'WorkEndDate0-AlertText');
-            isRequired(WorkEndDate0YearValue, WorkEndDate0Year, 'WorkEndDate0-AlertText');
-          }
+      // if (boolean) {
+      //   if (WorkExperience1.style.display === 'block' && WorkExperience2.style.display === 'block') {
+      //     isRequired(CompanyName0Value, CompanyName0, 'CompanyName0-AlertText');
+      //     isRequired(CompanyName1Value, CompanyName1, 'CompanyName1-AlertText');
+      //     isRequired(CompanyName2Value, CompanyName2, 'CompanyName2-AlertText');
+      //     isRequired(WorkLocation0Value, WorkLocation0, 'WorkLocation0-AlertText');
+      //     isRequired(WorkLocation1Value, WorkLocation1, 'WorkLocation1-AlertText');
+      //     isRequired(WorkLocation2Value, WorkLocation2, 'WorkLocation2-AlertText');
+      //     isRequired(Position0Value, Position0, 'Position0-AlertText');
+      //     isRequired(Position1Value, Position1, 'Position1-AlertText');
+      //     isRequired(Position2Value, Position2, 'Position2-AlertText');
+      //     isRequired(WorkType0Value, WorkType0, 'WorkType0-AlertText');
+      //     isRequired(WorkType1Value, WorkType1, 'WorkType1-AlertText');
+      //     isRequired(WorkType2Value, WorkType2, 'WorkType2-AlertText');
+      //     isRequired(WorkStartDate0MonthValue, WorkStartDate0Month, 'WorkStartDate0-AlertText');
+      //     isRequired(WorkStartDate1MonthValue, WorkStartDate1Month, 'WorkStartDate1-AlertText');
+      //     isRequired(WorkStartDate2MonthValue, WorkStartDate2Month, 'WorkStartDate2-AlertText');
+      //     isRequired(WorkStartDate0YearValue, WorkStartDate0Year, 'WorkStartDate0-AlertText');
+      //     isRequired(WorkStartDate1YearValue, WorkStartDate1Year, 'WorkStartDate1-AlertText');
+      //     isRequired(WorkStartDate2YearValue, WorkStartDate2Year, 'WorkStartDate2-AlertText');
+      //     isRequired(WorkEndDate1MonthValue, WorkEndDate1Month, 'WorkEndDate1-AlertText');
+      //     isRequired(WorkEndDate2MonthValue, WorkEndDate2Month, 'WorkEndDate2-AlertText');
+      //     isRequired(WorkEndDate1YearValue, WorkEndDate1Year, 'WorkEndDate1-AlertText');
+      //     isRequired(WorkEndDate2YearValue, WorkEndDate2Year, 'WorkEndDate2-AlertText');
+      //     isRequired(WorkDescription0textareaValue, WorkDescription0textarea, 'WorkDescription0-AlertText');
+      //     isRequired(WorkDescription1textareaValue, WorkDescription1textarea, 'WorkDescription1-AlertText');
+      //     isRequired(WorkDescription2textareaValue, WorkDescription2textarea, 'WorkDescription2-AlertText');
+      //     if (!WorkEndDate0stillworValue) {
+      //       isRequired(WorkEndDate0MonthValue, WorkEndDate0Month, 'WorkEndDate0-AlertText');
+      //       isRequired(WorkEndDate0YearValue, WorkEndDate0Year, 'WorkEndDate0-AlertText');
+      //     }
 
-        } else if (WorkExperience1.style.display === 'block' && WorkExperience2.style.display === 'none') {
-          isRequired(CompanyName0Value, CompanyName0, 'CompanyName0-AlertText');
-          isRequired(CompanyName1Value, CompanyName1, 'CompanyName1-AlertText');
-          isRequired(WorkLocation0Value, WorkLocation0, 'WorkLocation0-AlertText');
-          isRequired(WorkLocation1Value, WorkLocation1, 'WorkLocation1-AlertText');
-          isRequired(Position0Value, Position0, 'Position0-AlertText');
-          isRequired(Position1Value, Position1, 'Position1-AlertText');
-          isRequired(WorkType0Value, WorkType0, 'WorkType0-AlertText');
-          isRequired(WorkType1Value, WorkType1, 'WorkType1-AlertText');
-          isRequired(WorkStartDate0MonthValue, WorkStartDate0Month, 'WorkStartDate0-AlertText');
-          isRequired(WorkStartDate1MonthValue, WorkStartDate1Month, 'WorkStartDate1-AlertText');
-          isRequired(WorkStartDate0YearValue, WorkStartDate0Year, 'WorkStartDate0-AlertText');
-          isRequired(WorkStartDate1YearValue, WorkStartDate1Year, 'WorkStartDate1-AlertText');
-          isRequired(WorkEndDate1MonthValue, WorkEndDate1Month, 'WorkEndDate1-AlertText');
-          isRequired(WorkEndDate1YearValue, WorkEndDate1Year, 'WorkEndDate1-AlertText');
-          isRequired(WorkDescription0textareaValue, WorkDescription0textarea, 'WorkDescription0-AlertText');
-          isRequired(WorkDescription1textareaValue, WorkDescription1textarea, 'WorkDescription1-AlertText');
-          if (!WorkEndDate0stillworValue) {
-            isRequired(WorkEndDate0MonthValue, WorkEndDate0Month, 'WorkEndDate0-AlertText');
-            isRequired(WorkEndDate0YearValue, WorkEndDate0Year, 'WorkEndDate0-AlertText');
-          }
-        } else if (WorkExperience1.style.display === 'none' && WorkExperience2.style.display === 'block') {
-          isRequired(CompanyName0Value, CompanyName0, 'CompanyName0-AlertText');
-          isRequired(CompanyName2Value, CompanyName2, 'CompanyName2-AlertText');
-          isRequired(WorkLocation0Value, WorkLocation0, 'WorkLocation0-AlertText');
-          isRequired(WorkLocation2Value, WorkLocation2, 'WorkLocation2-AlertText');
-          isRequired(Position0Value, Position0, 'Position0-AlertText');
-          isRequired(Position2Value, Position2, 'Position2-AlertText');
-          isRequired(WorkType0Value, WorkType0, 'WorkType0-AlertText');
-          isRequired(WorkType2Value, WorkType2, 'WorkType2-AlertText');
-          isRequired(WorkStartDate0MonthValue, WorkStartDate0Month, 'WorkStartDate0-AlertText');
-          isRequired(WorkStartDate2MonthValue, WorkStartDate2Month, 'WorkStartDate2-AlertText');
-          isRequired(WorkStartDate0YearValue, WorkStartDate0Year, 'WorkStartDate0-AlertText');
-          isRequired(WorkStartDate2YearValue, WorkStartDate2Year, 'WorkStartDate2-AlertText');
-          isRequired(WorkEndDate2MonthValue, WorkEndDate2Month, 'WorkEndDate2-AlertText');
-          isRequired(WorkEndDate2YearValue, WorkEndDate2Year, 'WorkEndDate2-AlertText');
-          isRequired(WorkDescription0textareaValue, WorkDescription0textarea, 'WorkDescription0-AlertText');
-          isRequired(WorkDescription2textareaValue, WorkDescription2textarea, 'WorkDescription2-AlertText');
-          if (!WorkEndDate0stillworValue) {
-            isRequired(WorkEndDate0MonthValue, WorkEndDate0Month, 'WorkEndDate0-AlertText');
-            isRequired(WorkEndDate0YearValue, WorkEndDate0Year, 'WorkEndDate0-AlertText');
-          }
-        } else if (WorkExperience1.style.display === 'none' && WorkExperience2.style.display === 'none') {
-          isRequired(CompanyName0Value, CompanyName0, 'CompanyName0-AlertText');
-          isRequired(WorkLocation0Value, WorkLocation0, 'WorkLocation0-AlertText');
-          isRequired(Position0Value, Position0, 'Position0-AlertText');
-          isRequired(WorkType0Value, WorkType0, 'WorkType0-AlertText');
-          isRequired(WorkStartDate0MonthValue, WorkStartDate0Month, 'WorkStartDate0-AlertText');
-          isRequired(WorkStartDate0YearValue, WorkStartDate0Year, 'WorkStartDate0-AlertText');
-          isRequired(WorkDescription0textareaValue, WorkDescription0textarea, 'WorkDescription0-AlertText');
-          if (!WorkEndDate0stillworValue) {
-            isRequired(WorkEndDate0MonthValue, WorkEndDate0Month, 'WorkEndDate0-AlertText');
-            isRequired(WorkEndDate0YearValue, WorkEndDate0Year, 'WorkEndDate0-AlertText');
-          }
-        }
-        backTab3.style.pointerEvents = "auto";
-        Saving.style.display = 'none';
-        ToBeSaved.style.display = 'flex';
-        return;
-      }
+      //   } else if (WorkExperience1.style.display === 'block' && WorkExperience2.style.display === 'none') {
+      //     isRequired(CompanyName0Value, CompanyName0, 'CompanyName0-AlertText');
+      //     isRequired(CompanyName1Value, CompanyName1, 'CompanyName1-AlertText');
+      //     isRequired(WorkLocation0Value, WorkLocation0, 'WorkLocation0-AlertText');
+      //     isRequired(WorkLocation1Value, WorkLocation1, 'WorkLocation1-AlertText');
+      //     isRequired(Position0Value, Position0, 'Position0-AlertText');
+      //     isRequired(Position1Value, Position1, 'Position1-AlertText');
+      //     isRequired(WorkType0Value, WorkType0, 'WorkType0-AlertText');
+      //     isRequired(WorkType1Value, WorkType1, 'WorkType1-AlertText');
+      //     isRequired(WorkStartDate0MonthValue, WorkStartDate0Month, 'WorkStartDate0-AlertText');
+      //     isRequired(WorkStartDate1MonthValue, WorkStartDate1Month, 'WorkStartDate1-AlertText');
+      //     isRequired(WorkStartDate0YearValue, WorkStartDate0Year, 'WorkStartDate0-AlertText');
+      //     isRequired(WorkStartDate1YearValue, WorkStartDate1Year, 'WorkStartDate1-AlertText');
+      //     isRequired(WorkEndDate1MonthValue, WorkEndDate1Month, 'WorkEndDate1-AlertText');
+      //     isRequired(WorkEndDate1YearValue, WorkEndDate1Year, 'WorkEndDate1-AlertText');
+      //     isRequired(WorkDescription0textareaValue, WorkDescription0textarea, 'WorkDescription0-AlertText');
+      //     isRequired(WorkDescription1textareaValue, WorkDescription1textarea, 'WorkDescription1-AlertText');
+      //     if (!WorkEndDate0stillworValue) {
+      //       isRequired(WorkEndDate0MonthValue, WorkEndDate0Month, 'WorkEndDate0-AlertText');
+      //       isRequired(WorkEndDate0YearValue, WorkEndDate0Year, 'WorkEndDate0-AlertText');
+      //     }
+      //   } else if (WorkExperience1.style.display === 'none' && WorkExperience2.style.display === 'block') {
+      //     isRequired(CompanyName0Value, CompanyName0, 'CompanyName0-AlertText');
+      //     isRequired(CompanyName2Value, CompanyName2, 'CompanyName2-AlertText');
+      //     isRequired(WorkLocation0Value, WorkLocation0, 'WorkLocation0-AlertText');
+      //     isRequired(WorkLocation2Value, WorkLocation2, 'WorkLocation2-AlertText');
+      //     isRequired(Position0Value, Position0, 'Position0-AlertText');
+      //     isRequired(Position2Value, Position2, 'Position2-AlertText');
+      //     isRequired(WorkType0Value, WorkType0, 'WorkType0-AlertText');
+      //     isRequired(WorkType2Value, WorkType2, 'WorkType2-AlertText');
+      //     isRequired(WorkStartDate0MonthValue, WorkStartDate0Month, 'WorkStartDate0-AlertText');
+      //     isRequired(WorkStartDate2MonthValue, WorkStartDate2Month, 'WorkStartDate2-AlertText');
+      //     isRequired(WorkStartDate0YearValue, WorkStartDate0Year, 'WorkStartDate0-AlertText');
+      //     isRequired(WorkStartDate2YearValue, WorkStartDate2Year, 'WorkStartDate2-AlertText');
+      //     isRequired(WorkEndDate2MonthValue, WorkEndDate2Month, 'WorkEndDate2-AlertText');
+      //     isRequired(WorkEndDate2YearValue, WorkEndDate2Year, 'WorkEndDate2-AlertText');
+      //     isRequired(WorkDescription0textareaValue, WorkDescription0textarea, 'WorkDescription0-AlertText');
+      //     isRequired(WorkDescription2textareaValue, WorkDescription2textarea, 'WorkDescription2-AlertText');
+      //     if (!WorkEndDate0stillworValue) {
+      //       isRequired(WorkEndDate0MonthValue, WorkEndDate0Month, 'WorkEndDate0-AlertText');
+      //       isRequired(WorkEndDate0YearValue, WorkEndDate0Year, 'WorkEndDate0-AlertText');
+      //     }
+      //   } else if (WorkExperience1.style.display === 'none' && WorkExperience2.style.display === 'none') {
+      //     isRequired(CompanyName0Value, CompanyName0, 'CompanyName0-AlertText');
+      //     isRequired(WorkLocation0Value, WorkLocation0, 'WorkLocation0-AlertText');
+      //     isRequired(Position0Value, Position0, 'Position0-AlertText');
+      //     isRequired(WorkType0Value, WorkType0, 'WorkType0-AlertText');
+      //     isRequired(WorkStartDate0MonthValue, WorkStartDate0Month, 'WorkStartDate0-AlertText');
+      //     isRequired(WorkStartDate0YearValue, WorkStartDate0Year, 'WorkStartDate0-AlertText');
+      //     isRequired(WorkDescription0textareaValue, WorkDescription0textarea, 'WorkDescription0-AlertText');
+      //     if (!WorkEndDate0stillworValue) {
+      //       isRequired(WorkEndDate0MonthValue, WorkEndDate0Month, 'WorkEndDate0-AlertText');
+      //       isRequired(WorkEndDate0YearValue, WorkEndDate0Year, 'WorkEndDate0-AlertText');
+      //     }
+      //   }
+      //   backTab3.style.pointerEvents = "auto";
+      //   Saving.style.display = 'none';
+      //   ToBeSaved.style.display = 'flex';
+      //   return;
+      // }
 
-      if (WorkExperience1.style.display === 'block' && WorkExperience2.style.display === 'block') {
-        let work1count = 0;
-        if (WorkStartDate0YearValue) {
-          const isInRange = isYearInRange(WorkStartDate0YearValue);
-          if (!isInRange) {
-            const ErrorInput = document.getElementById('WorkStartDate0-AlertText');
-            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
-            ErrorInput.style.display = 'flex';
-            WorkStartDate0Year.style.borderColor = "#c70000";
-            work1count++;
-          }
-        }
+      // if (WorkExperience1.style.display === 'block' && WorkExperience2.style.display === 'block') {
+      //   let work1count = 0;
+      //   if (WorkStartDate0YearValue) {
+      //     const isInRange = isYearInRange(WorkStartDate0YearValue);
+      //     if (!isInRange) {
+      //       const ErrorInput = document.getElementById('WorkStartDate0-AlertText');
+      //       ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+      //       ErrorInput.style.display = 'flex';
+      //       WorkStartDate0Year.style.borderColor = "#c70000";
+      //       work1count++;
+      //     }
+      //   }
 
-        if (WorkEndDate0YearValue) {
-          const isInRange = isYearInRange(WorkEndDate0YearValue);
-          if (!isInRange) {
-            const ErrorInput = document.getElementById('WorkEndDate0-AlertText');
-            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
-            ErrorInput.style.display = 'flex';
-            WorkEndDate0Year.style.borderColor = "#c70000";
-            work1count++;
-          }
-        }
+      //   if (WorkEndDate0YearValue) {
+      //     const isInRange = isYearInRange(WorkEndDate0YearValue);
+      //     if (!isInRange) {
+      //       const ErrorInput = document.getElementById('WorkEndDate0-AlertText');
+      //       ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+      //       ErrorInput.style.display = 'flex';
+      //       WorkEndDate0Year.style.borderColor = "#c70000";
+      //       work1count++;
+      //     }
+      //   }
 
-        if (WorkStartDate1YearValue) {
-          const isInRange = isYearInRange(WorkStartDate1YearValue);
-          if (!isInRange) {
-            const ErrorInput = document.getElementById('WorkStartDate1-AlertText');
-            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
-            ErrorInput.style.display = 'flex';
-            WorkStartDate1Year.style.borderColor = "#c70000";
-            work1count++;
-          }
-        }
+      //   if (WorkStartDate1YearValue) {
+      //     const isInRange = isYearInRange(WorkStartDate1YearValue);
+      //     if (!isInRange) {
+      //       const ErrorInput = document.getElementById('WorkStartDate1-AlertText');
+      //       ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+      //       ErrorInput.style.display = 'flex';
+      //       WorkStartDate1Year.style.borderColor = "#c70000";
+      //       work1count++;
+      //     }
+      //   }
 
-        if (WorkEndDate1YearValue) {
-          const isInRange = isYearInRange(WorkEndDate1YearValue);
-          if (!isInRange) {
-            const ErrorInput = document.getElementById('WorkEndDate1-AlertText');
-            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
-            ErrorInput.style.display = 'flex';
-            WorkEndDate1Year.style.borderColor = "#c70000";
-            work1count++;
-          }
-        }
+      //   if (WorkEndDate1YearValue) {
+      //     const isInRange = isYearInRange(WorkEndDate1YearValue);
+      //     if (!isInRange) {
+      //       const ErrorInput = document.getElementById('WorkEndDate1-AlertText');
+      //       ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+      //       ErrorInput.style.display = 'flex';
+      //       WorkEndDate1Year.style.borderColor = "#c70000";
+      //       work1count++;
+      //     }
+      //   }
 
 
-        if (WorkStartDate2YearValue) {
-          const isInRange = isYearInRange(WorkStartDate2YearValue);
-          if (!isInRange) {
-            const ErrorInput = document.getElementById('WorkStartDate2-AlertText');
-            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
-            ErrorInput.style.display = 'flex';
-            WorkStartDate2Year.style.borderColor = "#c70000";
-            work1count++;
-          }
-        }
+      //   if (WorkStartDate2YearValue) {
+      //     const isInRange = isYearInRange(WorkStartDate2YearValue);
+      //     if (!isInRange) {
+      //       const ErrorInput = document.getElementById('WorkStartDate2-AlertText');
+      //       ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+      //       ErrorInput.style.display = 'flex';
+      //       WorkStartDate2Year.style.borderColor = "#c70000";
+      //       work1count++;
+      //     }
+      //   }
 
-        if (WorkEndDate2YearValue) {
-          const isInRange = isYearInRange(WorkEndDate2YearValue);
-          if (!isInRange) {
-            const ErrorInput = document.getElementById('WorkEndDate2-AlertText');
-            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
-            ErrorInput.style.display = 'flex';
-            WorkEndDate2Year.style.borderColor = "#c70000";
-            work1count++;
-          }
-        }
-        if (work1count > 0) {
-          backTab3.style.pointerEvents = "auto";
-          Saving.style.display = 'none';
-          ToBeSaved.style.display = 'flex';
-          return;
-        }
-      } else if (WorkExperience1.style.display === 'block' && WorkExperience2.style.display === 'none') {
-        let work2count = 0;
-        if (WorkStartDate0YearValue) {
-          const isInRange = isYearInRange(WorkStartDate0YearValue);
-          if (!isInRange) {
-            const ErrorInput = document.getElementById('WorkStartDate0-AlertText');
-            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
-            ErrorInput.style.display = 'flex';
-            WorkStartDate0Year.style.borderColor = "#c70000";
-            work2count++;
-          }
-        }
+      //   if (WorkEndDate2YearValue) {
+      //     const isInRange = isYearInRange(WorkEndDate2YearValue);
+      //     if (!isInRange) {
+      //       const ErrorInput = document.getElementById('WorkEndDate2-AlertText');
+      //       ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+      //       ErrorInput.style.display = 'flex';
+      //       WorkEndDate2Year.style.borderColor = "#c70000";
+      //       work1count++;
+      //     }
+      //   }
+      //   if (work1count > 0) {
+      //     backTab3.style.pointerEvents = "auto";
+      //     Saving.style.display = 'none';
+      //     ToBeSaved.style.display = 'flex';
+      //     return;
+      //   }
+      // } else if (WorkExperience1.style.display === 'block' && WorkExperience2.style.display === 'none') {
+      //   let work2count = 0;
+      //   if (WorkStartDate0YearValue) {
+      //     const isInRange = isYearInRange(WorkStartDate0YearValue);
+      //     if (!isInRange) {
+      //       const ErrorInput = document.getElementById('WorkStartDate0-AlertText');
+      //       ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+      //       ErrorInput.style.display = 'flex';
+      //       WorkStartDate0Year.style.borderColor = "#c70000";
+      //       work2count++;
+      //     }
+      //   }
 
-        if (WorkEndDate0YearValue) {
-          const isInRange = isYearInRange(WorkEndDate0YearValue);
-          if (!isInRange) {
-            const ErrorInput = document.getElementById('WorkEndDate0-AlertText');
-            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
-            ErrorInput.style.display = 'flex';
-            WorkEndDate0Year.style.borderColor = "#c70000";
-            work2count++;
-          }
-        }
+      //   if (WorkEndDate0YearValue) {
+      //     const isInRange = isYearInRange(WorkEndDate0YearValue);
+      //     if (!isInRange) {
+      //       const ErrorInput = document.getElementById('WorkEndDate0-AlertText');
+      //       ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+      //       ErrorInput.style.display = 'flex';
+      //       WorkEndDate0Year.style.borderColor = "#c70000";
+      //       work2count++;
+      //     }
+      //   }
 
-        if (WorkStartDate1YearValue) {
-          const isInRange = isYearInRange(WorkStartDate1YearValue);
-          if (!isInRange) {
-            const ErrorInput = document.getElementById('WorkStartDate1-AlertText');
-            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
-            ErrorInput.style.display = 'flex';
-            WorkStartDate1Year.style.borderColor = "#c70000";
-            work2count++;
-          }
-        }
+      //   if (WorkStartDate1YearValue) {
+      //     const isInRange = isYearInRange(WorkStartDate1YearValue);
+      //     if (!isInRange) {
+      //       const ErrorInput = document.getElementById('WorkStartDate1-AlertText');
+      //       ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+      //       ErrorInput.style.display = 'flex';
+      //       WorkStartDate1Year.style.borderColor = "#c70000";
+      //       work2count++;
+      //     }
+      //   }
 
-        if (WorkEndDate1YearValue) {
-          const isInRange = isYearInRange(WorkEndDate1YearValue);
-          if (!isInRange) {
-            const ErrorInput = document.getElementById('WorkEndDate1-AlertText');
-            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
-            ErrorInput.style.display = 'flex';
-            WorkEndDate1Year.style.borderColor = "#c70000";
-            work2count++;
-          }
-        }
+      //   if (WorkEndDate1YearValue) {
+      //     const isInRange = isYearInRange(WorkEndDate1YearValue);
+      //     if (!isInRange) {
+      //       const ErrorInput = document.getElementById('WorkEndDate1-AlertText');
+      //       ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+      //       ErrorInput.style.display = 'flex';
+      //       WorkEndDate1Year.style.borderColor = "#c70000";
+      //       work2count++;
+      //     }
+      //   }
 
-        if (work2count > 0) {
-          backTab3.style.pointerEvents = "auto";
-          Saving.style.display = 'none';
-          ToBeSaved.style.display = 'flex';
-          return;
-        }
-      } else if (WorkExperience1.style.display === 'none' && WorkExperience2.style.display === 'block') {
-        let work3count = 0;
-        if (WorkStartDate0YearValue) {
-          const isInRange = isYearInRange(WorkStartDate0YearValue);
-          if (!isInRange) {
-            const ErrorInput = document.getElementById('WorkStartDate0-AlertText');
-            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
-            ErrorInput.style.display = 'flex';
-            WorkStartDate0Year.style.borderColor = "#c70000";
-            work3count++;
-          }
-        }
+      //   if (work2count > 0) {
+      //     backTab3.style.pointerEvents = "auto";
+      //     Saving.style.display = 'none';
+      //     ToBeSaved.style.display = 'flex';
+      //     return;
+      //   }
+      // } else if (WorkExperience1.style.display === 'none' && WorkExperience2.style.display === 'block') {
+      //   let work3count = 0;
+      //   if (WorkStartDate0YearValue) {
+      //     const isInRange = isYearInRange(WorkStartDate0YearValue);
+      //     if (!isInRange) {
+      //       const ErrorInput = document.getElementById('WorkStartDate0-AlertText');
+      //       ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+      //       ErrorInput.style.display = 'flex';
+      //       WorkStartDate0Year.style.borderColor = "#c70000";
+      //       work3count++;
+      //     }
+      //   }
 
-        if (WorkEndDate0YearValue) {
-          const isInRange = isYearInRange(WorkEndDate0YearValue);
-          if (!isInRange) {
-            const ErrorInput = document.getElementById('WorkEndDate0-AlertText');
-            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
-            ErrorInput.style.display = 'flex';
-            WorkEndDate0Year.style.borderColor = "#c70000";
-            work3count++;
-          }
-        }
+      //   if (WorkEndDate0YearValue) {
+      //     const isInRange = isYearInRange(WorkEndDate0YearValue);
+      //     if (!isInRange) {
+      //       const ErrorInput = document.getElementById('WorkEndDate0-AlertText');
+      //       ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+      //       ErrorInput.style.display = 'flex';
+      //       WorkEndDate0Year.style.borderColor = "#c70000";
+      //       work3count++;
+      //     }
+      //   }
 
-        if (WorkStartDate2YearValue) {
-          const isInRange = isYearInRange(WorkStartDate2YearValue);
-          if (!isInRange) {
-            const ErrorInput = document.getElementById('WorkStartDate2-AlertText');
-            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
-            ErrorInput.style.display = 'flex';
-            WorkStartDate2Year.style.borderColor = "#c70000";
-            work3count++;
-          }
-        }
+      //   if (WorkStartDate2YearValue) {
+      //     const isInRange = isYearInRange(WorkStartDate2YearValue);
+      //     if (!isInRange) {
+      //       const ErrorInput = document.getElementById('WorkStartDate2-AlertText');
+      //       ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+      //       ErrorInput.style.display = 'flex';
+      //       WorkStartDate2Year.style.borderColor = "#c70000";
+      //       work3count++;
+      //     }
+      //   }
 
-        if (WorkEndDate2YearValue) {
-          const isInRange = isYearInRange(WorkEndDate2YearValue);
-          if (!isInRange) {
-            const ErrorInput = document.getElementById('WorkEndDate2-AlertText');
-            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
-            ErrorInput.style.display = 'flex';
-            WorkEndDate2Year.style.borderColor = "#c70000";
-            work3count++;
-          }
-        }
+      //   if (WorkEndDate2YearValue) {
+      //     const isInRange = isYearInRange(WorkEndDate2YearValue);
+      //     if (!isInRange) {
+      //       const ErrorInput = document.getElementById('WorkEndDate2-AlertText');
+      //       ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+      //       ErrorInput.style.display = 'flex';
+      //       WorkEndDate2Year.style.borderColor = "#c70000";
+      //       work3count++;
+      //     }
+      //   }
 
-        if (work3count > 0) {
-          backTab3.style.pointerEvents = "auto";
-          Saving.style.display = 'none';
-          ToBeSaved.style.display = 'flex';
-          return;
-        }
-      } else if (WorkExperience1.style.display === 'none' && WorkExperience2.style.display === 'none') {
-        let work4count = 0;
-        if (WorkStartDate0YearValue) {
-          const isInRange = isYearInRange(WorkStartDate0YearValue);
-          if (!isInRange) {
-            const ErrorInput = document.getElementById('WorkStartDate0-AlertText');
-            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
-            ErrorInput.style.display = 'flex';
-            WorkStartDate0Year.style.borderColor = "#c70000";
-            work4count++;
-          }
-        }
+      //   if (work3count > 0) {
+      //     backTab3.style.pointerEvents = "auto";
+      //     Saving.style.display = 'none';
+      //     ToBeSaved.style.display = 'flex';
+      //     return;
+      //   }
+      // } else if (WorkExperience1.style.display === 'none' && WorkExperience2.style.display === 'none') {
+      //   let work4count = 0;
+      //   if (WorkStartDate0YearValue) {
+      //     const isInRange = isYearInRange(WorkStartDate0YearValue);
+      //     if (!isInRange) {
+      //       const ErrorInput = document.getElementById('WorkStartDate0-AlertText');
+      //       ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+      //       ErrorInput.style.display = 'flex';
+      //       WorkStartDate0Year.style.borderColor = "#c70000";
+      //       work4count++;
+      //     }
+      //   }
 
-        if (WorkEndDate0YearValue) {
-          const isInRange = isYearInRange(WorkEndDate0YearValue);
-          if (!isInRange) {
-            const ErrorInput = document.getElementById('WorkEndDate0-AlertText');
-            ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
-            ErrorInput.style.display = 'flex';
-            WorkEndDate0Year.style.borderColor = "#c70000";
-            work4count++;
-          }
-        }
+      //   if (WorkEndDate0YearValue) {
+      //     const isInRange = isYearInRange(WorkEndDate0YearValue);
+      //     if (!isInRange) {
+      //       const ErrorInput = document.getElementById('WorkEndDate0-AlertText');
+      //       ErrorInput.innerText = 'Please enter a year between 1900 and 2100.';
+      //       ErrorInput.style.display = 'flex';
+      //       WorkEndDate0Year.style.borderColor = "#c70000";
+      //       work4count++;
+      //     }
+      //   }
 
-        if (work4count > 0) {
-          backTab3.style.pointerEvents = "auto";
-          Saving.style.display = 'none';
-          ToBeSaved.style.display = 'flex';
-          return;
-        }
-      }
+      //   if (work4count > 0) {
+      //     backTab3.style.pointerEvents = "auto";
+      //     Saving.style.display = 'none';
+      //     ToBeSaved.style.display = 'flex';
+      //     return;
+      //   }
+      // }
 
       var data = {
         "job_infos": job_infos
