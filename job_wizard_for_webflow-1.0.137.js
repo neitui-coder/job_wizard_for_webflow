@@ -109,8 +109,8 @@ var DeleteEducation2 = document.getElementById('DeleteEducation2');
 
 
 // tab3
-var WorkExperience1 = document.getElementById('w-node-_4eed910d-1e1e-56af-1c38-33abb164bc53-0f45508c');
-var WorkExperience2 = document.getElementById('w-node-_7675749a-2c62-424f-641e-ad12fb4f9990-0f45508c');
+var WorkExperience1 = document.getElementById('Work1');
+var WorkExperience2 = document.getElementById('Work2');
 var WorkExperience3 = document.getElementById('Work3');
 var WorkExperience4 = document.getElementById('Work4');
 WorkExperience1.style.display = 'none';
