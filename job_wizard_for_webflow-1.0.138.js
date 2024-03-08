@@ -649,6 +649,8 @@ function dofillUserInfo(userInfo) {
   // selectMonthSelect.style.color = "black";
   // yearInput.value = dateArr[0];
   locationInput.value = userInfo.basic_info?.location;
+  fullNameInput.value = userInfo.basic_info?.full_name;
+  AddressInput.value = userInfo.basic_info?.address;
 
 
   //tab2
