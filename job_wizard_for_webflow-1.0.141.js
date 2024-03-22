@@ -1034,6 +1034,7 @@ async function fetchData() {
       // 执行其他步骤
       dofillUserInfo(userInfo);
       doSomethingElse();
+      displayFileList();
     } else {
       throw new Error('请求失败');
     }
