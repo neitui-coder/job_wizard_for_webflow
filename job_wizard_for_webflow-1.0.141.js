@@ -52,6 +52,7 @@ var phoneNumberInput2 = document.getElementById('PhoneNumber-Input2');
 var phoneNumberInput1 = document.getElementById('PhoneNumber-Input1');
 var phonegrid = document.querySelector('.phonegrid');
 var AddressInput = document.getElementById('Address-Input');
+var expected_salaryInput = document.getElementById('ExpectedSalary-Input');
 phonegrid.style.alignItems = 'center';
 var iti = window.intlTelInput(phoneNumberInput1, {
   initialCountry: "auto",
@@ -651,6 +652,7 @@ function dofillUserInfo(userInfo) {
   locationInput.value = userInfo.basic_info?.location;
   fullNameInput.value = userInfo.basic_info?.full_name;
   AddressInput.value = userInfo.basic_info?.address;
+  expected_salaryInput.value = userInfo.basic_info?.expected_salary;
 
 
   //tab2
@@ -1118,6 +1120,7 @@ function doSomethingElse() {
       var locationValue = locationInput.value;
       var fullNameValue = fullNameInput.value;
       var addressValue = AddressInput.value;
+      var expected_salaryValue = expected_salaryInput.value
       // var birthday = yearValue + " " + selectMonthValue + " " + dateValue;
 
       const boolean = !firstNameValue || !lastNameValue || !phoneNumberValue2 || !emailValue || !locationValue
@@ -1179,7 +1182,8 @@ function doSomethingElse() {
           "phone_number": phoneNumber,
           "location": locationValue,
           "full_name": fullNameValue,
-          "address": addressValue
+          "address": addressValue,
+          "expected_salary": expected_salaryValue
         }
       };
       var options = {
