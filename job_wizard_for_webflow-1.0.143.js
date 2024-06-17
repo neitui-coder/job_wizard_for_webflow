@@ -3,6 +3,10 @@ let cookie_ms_token = null;
 var userInfo = null;
 cookie_ms_token = window.$memberstackDom.getMemberCookie();
 
+document.querySelectorAll(".tabstyle").forEach(function(element) {
+  element.style.cursor = "pointer";
+});
+
 // all
 var AddInfoDiv = document.getElementById('Add-Info');
 var step2Div = document.getElementById('HintCard');
