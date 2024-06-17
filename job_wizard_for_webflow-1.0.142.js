@@ -239,12 +239,6 @@ var SelfDescriptionTextArea = document.getElementById('SelfDescription-TextArea'
 // var DeleteAward2 = document.getElementById('DeleteAward2');
 
 
-MenuTab2.style.pointerEvents = "none";
-MenuTab3.style.pointerEvents = "none";
-MenuTab4.style.pointerEvents = "none";
-MenuTab5.style.pointerEvents = "none";
-MenuTab6.style.pointerEvents = "none";
-
 var startButton = document.getElementById('Start-Add-Info');
 
 if (startButton) {
@@ -263,14 +257,12 @@ if (startButton) {
 if (skipTab1) {
   skipTab1.addEventListener('click', function () {
     MenuTab2.style.pointerEvents = "auto";
-    MenuTab1.style.pointerEvents = "none";
     MenuTab2.click();
   })
 }
 if (skipTab2) {
   skipTab2.addEventListener('click', function () {
     MenuTab3.style.pointerEvents = "auto";
-    MenuTab2.style.pointerEvents = "none";
     MenuTab3.click();
   })
 }
@@ -278,7 +270,6 @@ if (skipTab2) {
 if (skipTab3) {
   skipTab3.addEventListener('click', function () {
     MenuTab4.style.pointerEvents = "auto";
-    MenuTab3.style.pointerEvents = "none";
     MenuTab4.click();
   })
 }
@@ -286,7 +277,6 @@ if (skipTab3) {
 if (skipTab4) {
   skipTab4.addEventListener('click', function () {
     MenuTab5.style.pointerEvents = "auto";
-    MenuTab4.style.pointerEvents = "none";
     MenuTab5.click();
   })
 }
@@ -294,7 +284,6 @@ if (skipTab4) {
 if (skipTab5) {
   skipTab5.addEventListener('click', function () {
     MenuTab6.style.pointerEvents = "auto";
-    MenuTab5.style.pointerEvents = "none";
     MenuTab6.click();
   })
 }
@@ -324,7 +313,6 @@ if (backTab1) {
 if (backTab2) {
   backTab2.addEventListener('click', function () {
     MenuTab1.style.pointerEvents = "auto";
-    MenuTab2.style.pointerEvents = "none";
     MenuTab1.click();
   })
 }
@@ -332,7 +320,6 @@ if (backTab2) {
 if (backTab3) {
   backTab3.addEventListener('click', function () {
     MenuTab2.style.pointerEvents = "auto";
-    MenuTab3.style.pointerEvents = "none";
     MenuTab2.click();
   })
 }
@@ -340,7 +327,6 @@ if (backTab3) {
 if (backTab4) {
   backTab4.addEventListener('click', function () {
     MenuTab3.style.pointerEvents = "auto";
-    MenuTab4.style.pointerEvents = "none";
     MenuTab3.click();
   })
 }
@@ -348,7 +334,6 @@ if (backTab4) {
 if (backTab5) {
   backTab5.addEventListener('click', function () {
     MenuTab4.style.pointerEvents = "auto";
-    MenuTab5.style.pointerEvents = "none";
     MenuTab4.click();
   })
 }
@@ -356,7 +341,6 @@ if (backTab5) {
 if (backTab6) {
   backTab6.addEventListener('click', function () {
     MenuTab5.style.pointerEvents = "auto";
-    MenuTab6.style.pointerEvents = "none";
     MenuTab5.click();
   })
 }
@@ -1209,7 +1193,6 @@ function doSomethingElse() {
             ToBeSaved.style.display = 'flex';
             MenuTab2.style.pointerEvents = "auto";
             MenuTab2.click();
-            MenuTab1.style.pointerEvents = "none";
           }
           return response.json();
         }).catch(error => {
@@ -1704,7 +1687,6 @@ function doSomethingElse() {
             ToBeSaved.style.display = 'flex';
             MenuTab3.style.pointerEvents = "auto";
             MenuTab3.click();
-            MenuTab2.style.pointerEvents = "none";
           }
 
           return response.json();
@@ -2337,7 +2319,6 @@ function doSomethingElse() {
             ToBeSaved.style.display = 'flex';
             MenuTab4.style.pointerEvents = "auto";
             MenuTab4.click();
-            MenuTab3.style.pointerEvents = "none";
           }
 
           return response.json();
@@ -2411,7 +2392,6 @@ function doSomethingElse() {
             ToBeSaved.style.display = 'flex';
             MenuTab5.style.pointerEvents = "auto";
             MenuTab5.click();
-            MenuTab4.style.pointerEvents = "none";
           }
 
           return response.json();
@@ -2493,7 +2473,6 @@ function doSomethingElse() {
             ToBeSaved.style.display = 'flex';
             MenuTab6.style.pointerEvents = "auto";
             MenuTab6.click();
-            MenuTab5.style.pointerEvents = "none";
           }
 
           return response.json();
