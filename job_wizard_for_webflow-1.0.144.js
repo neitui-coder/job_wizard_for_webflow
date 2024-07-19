@@ -1042,8 +1042,7 @@ function extractString(str) {
   }
 }
 function isTrueEmail(value) {
-  const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-
+  const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,})+$/;
   // 验证文本内容是否为邮箱
   const isEmail = emailRegex.test(value);
 
