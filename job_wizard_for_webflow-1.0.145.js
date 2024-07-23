@@ -15,33 +15,33 @@ AddInfoDiv.style.display = 'none';
 var saveTab1Button = document.getElementById('Save-Tab1');
 var saveTab2Button = document.getElementById('Save-Tab2');
 var saveTab3Button = document.getElementById('Save-Tab3');
-var saveTab4Button = document.getElementById('Save-Tab4');
+// var saveTab4Button = document.getElementById('Save-Tab4');
 var saveTab5Button = document.getElementById('Save-Tab5');
 var saveTab6Button = document.getElementById('Save-Tab6');
 var Tab1 = document.getElementById('Tab1');
 var Tab2 = document.getElementById('Tab2');
 var Tab3 = document.getElementById('Tab3');
-var Tab4 = document.getElementById('Tab4');
+// var Tab4 = document.getElementById('Tab4');
 var Tab5 = document.getElementById('Tab5');
 var Tab6 = document.getElementById('Tab6');
 var MenuTab1 = document.getElementById('Menu-Tab1');
 var MenuTab2 = document.getElementById('Menu-Tab2');
 var MenuTab3 = document.getElementById('Menu-Tab3');
-var MenuTab4 = document.getElementById('Menu-Tab4');
+// var MenuTab4 = document.getElementById('Menu-Tab4');
 var MenuTab5 = document.getElementById('Menu-Tab5');
 var MenuTab6 = document.getElementById('Menu-Tab6');
 
 var backTab1 = document.getElementById('BackButton-Tab1');
 var backTab2 = document.getElementById('BackButton-Tab2');
 var backTab3 = document.getElementById('BackButton-Tab3');
-var backTab4 = document.getElementById('BackButton-Tab4');
+// var backTab4 = document.getElementById('BackButton-Tab4');
 var backTab5 = document.getElementById('BackButton-Tab5');
 var backTab6 = document.getElementById('BackButton-Tab6');
 
 var skipTab1 = document.getElementById('Skip-Tab1');
 var skipTab2 = document.getElementById('Skip-Tab2');
 var skipTab3 = document.getElementById('Skip-Tab3');
-var skipTab4 = document.getElementById('Skip-Tab4');
+// var skipTab4 = document.getElementById('Skip-Tab4');
 var skipTab5 = document.getElementById('Skip-Tab5');
 var skipTab6 = document.getElementById('Skip-Tab6');
 var doItLater = document.getElementById('DoItLater');
@@ -183,12 +183,12 @@ var DeleteWork4 = document.getElementById('DeleteWork4');
 
 
 //tab4
-var Citizenship = document.getElementById('Citizenship');
-var USVisaTyoeSelect = document.getElementById('USVisaTyoe');
-// var permanentResident = document.getElementById('self-identification-6');
-var needSponsorship = document.getElementById('self-identification-4');
-var hasCriminalRecord = document.getElementById('self-identification-7');
-var pendingCriminalCase = document.getElementById('self-identification-5');
+// var Citizenship = document.getElementById('Citizenship');
+// var USVisaTyoeSelect = document.getElementById('USVisaTyoe');
+// // var permanentResident = document.getElementById('self-identification-6');
+// var needSponsorship = document.getElementById('self-identification-4');
+// var hasCriminalRecord = document.getElementById('self-identification-7');
+// var pendingCriminalCase = document.getElementById('self-identification-5');
 
 //tab5
 var identificationInput = document.getElementById('self-identification-11');
@@ -273,17 +273,17 @@ if (skipTab2) {
 
 if (skipTab3) {
   skipTab3.addEventListener('click', function () {
-    MenuTab4.style.pointerEvents = "auto";
-    MenuTab4.click();
-  })
-}
-
-if (skipTab4) {
-  skipTab4.addEventListener('click', function () {
     MenuTab5.style.pointerEvents = "auto";
     MenuTab5.click();
   })
 }
+
+// if (skipTab4) {
+//   skipTab4.addEventListener('click', function () {
+//     MenuTab5.style.pointerEvents = "auto";
+//     MenuTab5.click();
+//   })
+// }
 
 if (skipTab5) {
   skipTab5.addEventListener('click', function () {
@@ -328,17 +328,17 @@ if (backTab3) {
   })
 }
 
-if (backTab4) {
-  backTab4.addEventListener('click', function () {
-    MenuTab3.style.pointerEvents = "auto";
-    MenuTab3.click();
-  })
-}
+// if (backTab4) {
+//   backTab4.addEventListener('click', function () {
+//     MenuTab3.style.pointerEvents = "auto";
+//     MenuTab3.click();
+//   })
+// }
 
 if (backTab5) {
   backTab5.addEventListener('click', function () {
-    MenuTab4.style.pointerEvents = "auto";
-    MenuTab4.click();
+    MenuTab3.style.pointerEvents = "auto";
+    MenuTab3.click();
   })
 }
 
@@ -916,34 +916,34 @@ if (isExistJobInfo3) {
   }
   
 
-  // tab4
-  Citizenship.value = userInfo.legal_info?.citizenship;
-  USVisaTyoeSelect.value = userInfo.legal_info?.work_visa_type;
-  USVisaTyoeSelect.style.color = "black";
+  // // tab4
+  // Citizenship.value = userInfo.legal_info?.citizenship;
+  // USVisaTyoeSelect.value = userInfo.legal_info?.work_visa_type;
+  // USVisaTyoeSelect.style.color = "black";
 
-  // permanentResident.checked = userInfo.legal_info?.permanent_resident;
-  // let permanentResidentPrev = permanentResident.previousElementSibling;
-  // if (userInfo.legal_info.permanent_resident) {
-  //   permanentResidentPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent w--redirected-checked';
+  // // permanentResident.checked = userInfo.legal_info?.permanent_resident;
+  // // let permanentResidentPrev = permanentResident.previousElementSibling;
+  // // if (userInfo.legal_info.permanent_resident) {
+  // //   permanentResidentPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent w--redirected-checked';
+  // // }
+
+  // needSponsorship.checked = userInfo.legal_info?.need_sponsorship;
+  // let needSponsorshipPrev = needSponsorship.previousElementSibling;
+  // if (userInfo.legal_info.need_sponsorship) {
+  //   needSponsorshipPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent w--redirected-checked';
   // }
 
-  needSponsorship.checked = userInfo.legal_info?.need_sponsorship;
-  let needSponsorshipPrev = needSponsorship.previousElementSibling;
-  if (userInfo.legal_info.need_sponsorship) {
-    needSponsorshipPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent w--redirected-checked';
-  }
+  // hasCriminalRecord.checked = userInfo.legal_info?.has_criminal_record;
+  // let hasCriminalRecordPrev = hasCriminalRecord.previousElementSibling;
+  // if (userInfo.legal_info.has_criminal_record) {
+  //   hasCriminalRecordPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent w--redirected-checked';
+  // }
 
-  hasCriminalRecord.checked = userInfo.legal_info?.has_criminal_record;
-  let hasCriminalRecordPrev = hasCriminalRecord.previousElementSibling;
-  if (userInfo.legal_info.has_criminal_record) {
-    hasCriminalRecordPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent w--redirected-checked';
-  }
-
-  pendingCriminalCase.checked = userInfo.legal_info?.pending_criminal_case;
-  let pendingCriminalCasePrev = pendingCriminalCase.previousElementSibling;
-  if (userInfo.legal_info.pending_criminal_case) {
-    pendingCriminalCasePrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent w--redirected-checked';
-  }
+  // pendingCriminalCase.checked = userInfo.legal_info?.pending_criminal_case;
+  // let pendingCriminalCasePrev = pendingCriminalCase.previousElementSibling;
+  // if (userInfo.legal_info.pending_criminal_case) {
+  //   pendingCriminalCasePrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent w--redirected-checked';
+  // }
 
   // tab5
   identificationInput.checked = userInfo.dei_info?.agree_to_provide_dei;
@@ -2320,79 +2320,6 @@ function doSomethingElse() {
             backTab3.style.pointerEvents = "auto";
             Saving.style.display = 'none';
             ToBeSaved.style.display = 'flex';
-            MenuTab4.style.pointerEvents = "auto";
-            MenuTab4.click();
-          }
-
-          return response.json();
-        }).catch(error => {
-        });
-    });
-  }
-  if (saveTab4Button) {
-    saveTab4Button.addEventListener('click', function () {
-      let Saving = document.getElementById('Saving-5');
-      let ToBeSaved = document.getElementById('ToBeSaved-5');
-      backTab4.style.pointerEvents = "none";
-      Saving.style.display = 'flex';
-      ToBeSaved.style.display = 'none';
-      var CitizenshipValue = Citizenship.value;
-      var USVisaTypeOption = USVisaTyoeSelect.options[USVisaTyoeSelect.selectedIndex]?.value;
-
-      const boolean = !CitizenshipValue || !USVisaTypeOption
-
-      cleanErrorText([
-        {
-          textId: 'Citizenship-AlertText',
-          element: Citizenship,
-        },
-        {
-          textId: 'USVisaType-AlertText',
-          element: USVisaTyoeSelect,
-        }
-      ])
-
-      if (boolean) {
-        isRequired(CitizenshipValue, Citizenship, 'Citizenship-AlertText');
-        isRequired(USVisaTypeOption, USVisaTyoeSelect, 'USVisaType-AlertText');
-
-        backTab4.style.pointerEvents = "auto";
-        Saving.style.display = 'none';
-        ToBeSaved.style.display = 'flex';
-        return;
-      }
-
-      var url = `https://api.jobwizard.ai/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
-      var data = {
-        "legal_info": {
-          "citizenship": CitizenshipValue,
-          "work_visa_type": USVisaTypeOption,
-          "need_sponsorship": needSponsorship.checked,
-          "has_criminal_record": hasCriminalRecord.checked,
-          "pending_criminal_case": pendingCriminalCase.checked
-        }
-      };
-      var options = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      };
-
-      if (!cookie_ms_token) {
-        return;
-      }
-
-
-      fetch(url, options)
-        .then(response => {
-          if (response.status == 200) {
-            backTab4.style.pointerEvents = "auto";
-            let Saving = document.getElementById('Saving-5');
-            let ToBeSaved = document.getElementById('ToBeSaved-5');
-            Saving.style.display = 'none';
-            ToBeSaved.style.display = 'flex';
             MenuTab5.style.pointerEvents = "auto";
             MenuTab5.click();
           }
@@ -2402,12 +2329,85 @@ function doSomethingElse() {
         });
     });
   }
+  // if (saveTab4Button) {
+  //   saveTab4Button.addEventListener('click', function () {
+  //     let Saving = document.getElementById('Saving-5');
+  //     let ToBeSaved = document.getElementById('ToBeSaved-5');
+  //     backTab4.style.pointerEvents = "none";
+  //     Saving.style.display = 'flex';
+  //     ToBeSaved.style.display = 'none';
+  //     var CitizenshipValue = Citizenship.value;
+  //     var USVisaTypeOption = USVisaTyoeSelect.options[USVisaTyoeSelect.selectedIndex]?.value;
+
+  //     const boolean = !CitizenshipValue || !USVisaTypeOption
+
+  //     cleanErrorText([
+  //       {
+  //         textId: 'Citizenship-AlertText',
+  //         element: Citizenship,
+  //       },
+  //       {
+  //         textId: 'USVisaType-AlertText',
+  //         element: USVisaTyoeSelect,
+  //       }
+  //     ])
+
+  //     if (boolean) {
+  //       isRequired(CitizenshipValue, Citizenship, 'Citizenship-AlertText');
+  //       isRequired(USVisaTypeOption, USVisaTyoeSelect, 'USVisaType-AlertText');
+
+  //       backTab4.style.pointerEvents = "auto";
+  //       Saving.style.display = 'none';
+  //       ToBeSaved.style.display = 'flex';
+  //       return;
+  //     }
+
+  //     var url = `https://api.jobwizard.ai/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
+  //     var data = {
+  //       "legal_info": {
+  //         "citizenship": CitizenshipValue,
+  //         "work_visa_type": USVisaTypeOption,
+  //         "need_sponsorship": needSponsorship.checked,
+  //         "has_criminal_record": hasCriminalRecord.checked,
+  //         "pending_criminal_case": pendingCriminalCase.checked
+  //       }
+  //     };
+  //     var options = {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json'
+  //       },
+  //       body: JSON.stringify(data)
+  //     };
+
+  //     if (!cookie_ms_token) {
+  //       return;
+  //     }
+
+
+  //     fetch(url, options)
+  //       .then(response => {
+  //         if (response.status == 200) {
+  //           backTab4.style.pointerEvents = "auto";
+  //           let Saving = document.getElementById('Saving-5');
+  //           let ToBeSaved = document.getElementById('ToBeSaved-5');
+  //           Saving.style.display = 'none';
+  //           ToBeSaved.style.display = 'flex';
+  //           MenuTab5.style.pointerEvents = "auto";
+  //           MenuTab5.click();
+  //         }
+
+  //         return response.json();
+  //       }).catch(error => {
+  //       });
+  //   });
+  // }
 
   if (saveTab5Button) {
     saveTab5Button.addEventListener('click', function () {
       let Saving = document.getElementById('Saving-4');
       let ToBeSaved = document.getElementById('ToBeSaved-4');
-      backTab4.style.pointerEvents = "none";
+      backTab5.style.pointerEvents = "none";
       Saving.style.display = 'flex';
       ToBeSaved.style.display = 'none';
       var raceOption = raceSelect.options[raceSelect.selectedIndex]?.value;
