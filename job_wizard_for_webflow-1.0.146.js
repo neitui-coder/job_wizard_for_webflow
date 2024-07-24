@@ -1056,14 +1056,15 @@ function isYearInRange(yearString) {
 
 
 function isRequired(value, element, textId) {
-  if (!value) {
-    const ErrorInput = document.getElementById(textId);
-    ErrorInput.innerText = 'Required.';
-    ErrorInput.style.display = 'flex';
-    if ((element.tagName === 'INPUT' && (element.type === 'text' || element.type === 'number' || element.type === 'email')) || (element.tagName === 'SELECT') || (element.tagName === 'TEXTAREA')) {
-      element.style.borderColor = "#c70000";
-    }
-  }
+  // Remove all the required actions temporarily
+  // if (!value) {
+  //   const ErrorInput = document.getElementById(textId);
+  //   ErrorInput.innerText = 'Required.';
+  //   ErrorInput.style.display = 'flex';
+  //   if ((element.tagName === 'INPUT' && (element.type === 'text' || element.type === 'number' || element.type === 'email')) || (element.tagName === 'SELECT') || (element.tagName === 'TEXTAREA')) {
+  //     element.style.borderColor = "#c70000";
+  //   }
+  // }
 }
 
 function optMonth(month) {
