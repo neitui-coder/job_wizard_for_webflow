@@ -1135,18 +1135,18 @@ function doSomethingElse() {
           element: locationInput,
         }])
 
-      if (boolean) {
-        isRequired(firstNameValue, firstNameInput, 'FirstName-AlertText');
-        isRequired(lastNameValue, lastNameInput, 'LastName-AlertText');
-        // isRequired(phoneNumberValue1, phoneNumberInput1, 'Phone-AlertText');
-        isRequired(phoneNumberValue2, phoneNumberInput2, 'Phone-AlertText');
-        isRequired(emailValue, emailInput, 'Email-AlertText');
-        isRequired(locationValue, locationInput, 'Location-AlertText');
-        backTab1.style.pointerEvents = "auto";
-        Saving.style.display = 'none';
-        ToBeSaved.style.display = 'flex';
-        return;
-      }
+      // if (boolean) {
+      //   isRequired(firstNameValue, firstNameInput, 'FirstName-AlertText');
+      //   isRequired(lastNameValue, lastNameInput, 'LastName-AlertText');
+      //   // isRequired(phoneNumberValue1, phoneNumberInput1, 'Phone-AlertText');
+      //   isRequired(phoneNumberValue2, phoneNumberInput2, 'Phone-AlertText');
+      //   isRequired(emailValue, emailInput, 'Email-AlertText');
+      //   isRequired(locationValue, locationInput, 'Location-AlertText');
+      //   backTab1.style.pointerEvents = "auto";
+      //   Saving.style.display = 'none';
+      //   ToBeSaved.style.display = 'flex';
+      //   return;
+      // }
 
       if (emailValue) {
         if (!isTrueEmail(emailValue)) {
