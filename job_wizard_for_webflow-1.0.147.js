@@ -1385,76 +1385,76 @@ function doSomethingElse() {
       ]);
 
 
-      if (boolean) {
-        if (Education1.style.display === 'block' && Education2.style.display === 'block') {
-          isRequired(SchoolName0InputValue, SchoolName0Input, 'SchoolName0-AlertText');
-          isRequired(SchoolName1InputValue, SchoolName1Input, 'SchoolName1-AlertText');
-          isRequired(SchoolName2InputValue, SchoolName2Input, 'SchoolName2-AlertText');
-          isRequired(Major0InputValue, Major0Input, 'Major0-AlertText');
-          isRequired(Major1InputtValue, Major1Input, 'Major1-AlertText');
-          isRequired(Major2InputValue, Major2Input, 'Major2-AlertText');
-          isRequired(DegreeType0InputValue, DegreeType0Input, 'DegreeType0-AlertText');
-          isRequired(DegreeType1InputValue, DegreeType1Input, 'DegreeType1-AlertText');
-          isRequired(DegreeType2InputValue, DegreeType2Input, 'DegreeType2-AlertText');
-          isRequired(StartDate0Input0Value, StartDate0Input0, 'EduStartDate0-AlertText');
-          isRequired(StartDate1Input0Value, StartDate1Input0, 'EduStartDate1-AlertText');
-          isRequired(StartDate2Input0Value, StartDate2Input0, 'EduStartDate2-AlertText');
-          isRequired(StartDate0Input1Value, StartDate0Input1, 'EduStartDate0-AlertText');
-          isRequired(StartDate1Input1Value, StartDate1Input1, 'EduStartDate1-AlertText');
-          isRequired(StartDate2Input1Value, StartDate2Input1, 'EduStartDate2-AlertText');
-          isRequired(EndDate0Input0Value, EndDate0Input0, 'EduEndDate0-AlertText');
-          isRequired(EndDate1Input0Value, EndDate1Input0, 'EduEndDate1-AlertText');
-          isRequired(EndDate2Input0Value, EndDate2Input0, 'EduEndDate2-AlertText');
-          isRequired(EndDate0Input1Value, EndDate0Input1, 'EduEndDate0-AlertText');
-          isRequired(EndDate1Input1Value, EndDate1Input1, 'EduEndDate1-AlertText');
-          isRequired(EndDate2Input1Value, EndDate2Input1, 'EduEndDate2-AlertText');
+      // if (boolean) {
+      //   if (Education1.style.display === 'block' && Education2.style.display === 'block') {
+      //     isRequired(SchoolName0InputValue, SchoolName0Input, 'SchoolName0-AlertText');
+      //     isRequired(SchoolName1InputValue, SchoolName1Input, 'SchoolName1-AlertText');
+      //     isRequired(SchoolName2InputValue, SchoolName2Input, 'SchoolName2-AlertText');
+      //     isRequired(Major0InputValue, Major0Input, 'Major0-AlertText');
+      //     isRequired(Major1InputtValue, Major1Input, 'Major1-AlertText');
+      //     isRequired(Major2InputValue, Major2Input, 'Major2-AlertText');
+      //     isRequired(DegreeType0InputValue, DegreeType0Input, 'DegreeType0-AlertText');
+      //     isRequired(DegreeType1InputValue, DegreeType1Input, 'DegreeType1-AlertText');
+      //     isRequired(DegreeType2InputValue, DegreeType2Input, 'DegreeType2-AlertText');
+      //     isRequired(StartDate0Input0Value, StartDate0Input0, 'EduStartDate0-AlertText');
+      //     isRequired(StartDate1Input0Value, StartDate1Input0, 'EduStartDate1-AlertText');
+      //     isRequired(StartDate2Input0Value, StartDate2Input0, 'EduStartDate2-AlertText');
+      //     isRequired(StartDate0Input1Value, StartDate0Input1, 'EduStartDate0-AlertText');
+      //     isRequired(StartDate1Input1Value, StartDate1Input1, 'EduStartDate1-AlertText');
+      //     isRequired(StartDate2Input1Value, StartDate2Input1, 'EduStartDate2-AlertText');
+      //     isRequired(EndDate0Input0Value, EndDate0Input0, 'EduEndDate0-AlertText');
+      //     isRequired(EndDate1Input0Value, EndDate1Input0, 'EduEndDate1-AlertText');
+      //     isRequired(EndDate2Input0Value, EndDate2Input0, 'EduEndDate2-AlertText');
+      //     isRequired(EndDate0Input1Value, EndDate0Input1, 'EduEndDate0-AlertText');
+      //     isRequired(EndDate1Input1Value, EndDate1Input1, 'EduEndDate1-AlertText');
+      //     isRequired(EndDate2Input1Value, EndDate2Input1, 'EduEndDate2-AlertText');
 
-        } else if (Education1.style.display === 'block' && Education2.style.display === 'none') {
-          isRequired(SchoolName0InputValue, SchoolName0Input, 'SchoolName0-AlertText');
-          isRequired(SchoolName1InputValue, SchoolName1Input, 'SchoolName1-AlertText');
-          isRequired(Major0InputValue, Major0Input, 'Major0-AlertText');
-          isRequired(Major1InputtValue, Major1Input, 'Major1-AlertText');
-          isRequired(DegreeType0InputValue, DegreeType0Input, 'DegreeType0-AlertText');
-          isRequired(DegreeType1InputValue, DegreeType1Input, 'DegreeType1-AlertText');
-          isRequired(StartDate0Input0Value, StartDate0Input0, 'EduStartDate0-AlertText');
-          isRequired(StartDate1Input0Value, StartDate1Input0, 'EduStartDate1-AlertText');
-          isRequired(StartDate0Input1Value, StartDate0Input1, 'EduStartDate0-AlertText');
-          isRequired(StartDate1Input1Value, StartDate1Input1, 'EduStartDate1-AlertText');
-          isRequired(EndDate0Input0Value, EndDate0Input0, 'EduEndDate0-AlertText');
-          isRequired(EndDate1Input0Value, EndDate1Input0, 'EduEndDate1-AlertText');
-          isRequired(EndDate0Input1Value, EndDate0Input1, 'EduEndDate0-AlertText');
-          isRequired(EndDate1Input1Value, EndDate1Input1, 'EduEndDate1-AlertText');
+      //   } else if (Education1.style.display === 'block' && Education2.style.display === 'none') {
+      //     isRequired(SchoolName0InputValue, SchoolName0Input, 'SchoolName0-AlertText');
+      //     isRequired(SchoolName1InputValue, SchoolName1Input, 'SchoolName1-AlertText');
+      //     isRequired(Major0InputValue, Major0Input, 'Major0-AlertText');
+      //     isRequired(Major1InputtValue, Major1Input, 'Major1-AlertText');
+      //     isRequired(DegreeType0InputValue, DegreeType0Input, 'DegreeType0-AlertText');
+      //     isRequired(DegreeType1InputValue, DegreeType1Input, 'DegreeType1-AlertText');
+      //     isRequired(StartDate0Input0Value, StartDate0Input0, 'EduStartDate0-AlertText');
+      //     isRequired(StartDate1Input0Value, StartDate1Input0, 'EduStartDate1-AlertText');
+      //     isRequired(StartDate0Input1Value, StartDate0Input1, 'EduStartDate0-AlertText');
+      //     isRequired(StartDate1Input1Value, StartDate1Input1, 'EduStartDate1-AlertText');
+      //     isRequired(EndDate0Input0Value, EndDate0Input0, 'EduEndDate0-AlertText');
+      //     isRequired(EndDate1Input0Value, EndDate1Input0, 'EduEndDate1-AlertText');
+      //     isRequired(EndDate0Input1Value, EndDate0Input1, 'EduEndDate0-AlertText');
+      //     isRequired(EndDate1Input1Value, EndDate1Input1, 'EduEndDate1-AlertText');
 
-        } else if (Education1.style.display === 'none' && Education2.style.display === 'block') {
-          isRequired(SchoolName0InputValue, SchoolName0Input, 'SchoolName0-AlertText');
-          isRequired(SchoolName2InputValue, SchoolName2Input, 'SchoolName2-AlertText');
-          isRequired(Major0InputValue, Major0Input, 'Major0-AlertText');
-          isRequired(Major2InputValue, Major2Input, 'Major2-AlertText');
-          isRequired(DegreeType0InputValue, DegreeType0Input, 'DegreeType0-AlertText');
-          isRequired(DegreeType2InputValue, DegreeType2Input, 'DegreeType2-AlertText');
-          isRequired(StartDate0Input0Value, StartDate0Input0, 'EduStartDate0-AlertText');
-          isRequired(StartDate2Input0Value, StartDate2Input0, 'EduStartDate2-AlertText');
-          isRequired(StartDate0Input1Value, StartDate0Input1, 'EduStartDate0-AlertText');
-          isRequired(StartDate2Input1Value, StartDate2Input1, 'EduStartDate2-AlertText');
-          isRequired(EndDate0Input0Value, EndDate0Input0, 'EduEndDate0-AlertText');
-          isRequired(EndDate2Input0Value, EndDate2Input0, 'EduEndDate2-AlertText');
-          isRequired(EndDate0Input1Value, EndDate0Input1, 'EduEndDate0-AlertText');
-          isRequired(EndDate2Input1Value, EndDate2Input1, 'EduEndDate2-AlertText');
+      //   } else if (Education1.style.display === 'none' && Education2.style.display === 'block') {
+      //     isRequired(SchoolName0InputValue, SchoolName0Input, 'SchoolName0-AlertText');
+      //     isRequired(SchoolName2InputValue, SchoolName2Input, 'SchoolName2-AlertText');
+      //     isRequired(Major0InputValue, Major0Input, 'Major0-AlertText');
+      //     isRequired(Major2InputValue, Major2Input, 'Major2-AlertText');
+      //     isRequired(DegreeType0InputValue, DegreeType0Input, 'DegreeType0-AlertText');
+      //     isRequired(DegreeType2InputValue, DegreeType2Input, 'DegreeType2-AlertText');
+      //     isRequired(StartDate0Input0Value, StartDate0Input0, 'EduStartDate0-AlertText');
+      //     isRequired(StartDate2Input0Value, StartDate2Input0, 'EduStartDate2-AlertText');
+      //     isRequired(StartDate0Input1Value, StartDate0Input1, 'EduStartDate0-AlertText');
+      //     isRequired(StartDate2Input1Value, StartDate2Input1, 'EduStartDate2-AlertText');
+      //     isRequired(EndDate0Input0Value, EndDate0Input0, 'EduEndDate0-AlertText');
+      //     isRequired(EndDate2Input0Value, EndDate2Input0, 'EduEndDate2-AlertText');
+      //     isRequired(EndDate0Input1Value, EndDate0Input1, 'EduEndDate0-AlertText');
+      //     isRequired(EndDate2Input1Value, EndDate2Input1, 'EduEndDate2-AlertText');
 
-        } else if (Education1.style.display === 'none' && Education2.style.display === 'none') {
-          isRequired(SchoolName0InputValue, SchoolName0Input, 'SchoolName0-AlertText');
-          isRequired(Major0InputValue, Major0Input, 'Major0-AlertText');
-          isRequired(DegreeType0InputValue, DegreeType0Input, 'DegreeType0-AlertText');
-          isRequired(StartDate0Input0Value, StartDate0Input0, 'EduStartDate0-AlertText');
-          isRequired(StartDate0Input1Value, StartDate0Input1, 'EduStartDate0-AlertText');
-          isRequired(EndDate0Input0Value, EndDate0Input0, 'EduEndDate0-AlertText');
-          isRequired(EndDate0Input1Value, EndDate0Input1, 'EduEndDate0-AlertText');
-        }
-        backTab2.style.pointerEvents = "auto";
-        Saving.style.display = 'none';
-        ToBeSaved.style.display = 'flex';
-        return;
-      }
+      //   } else if (Education1.style.display === 'none' && Education2.style.display === 'none') {
+      //     isRequired(SchoolName0InputValue, SchoolName0Input, 'SchoolName0-AlertText');
+      //     isRequired(Major0InputValue, Major0Input, 'Major0-AlertText');
+      //     isRequired(DegreeType0InputValue, DegreeType0Input, 'DegreeType0-AlertText');
+      //     isRequired(StartDate0Input0Value, StartDate0Input0, 'EduStartDate0-AlertText');
+      //     isRequired(StartDate0Input1Value, StartDate0Input1, 'EduStartDate0-AlertText');
+      //     isRequired(EndDate0Input0Value, EndDate0Input0, 'EduEndDate0-AlertText');
+      //     isRequired(EndDate0Input1Value, EndDate0Input1, 'EduEndDate0-AlertText');
+      //   }
+      //   backTab2.style.pointerEvents = "auto";
+      //   Saving.style.display = 'none';
+      //   ToBeSaved.style.display = 'flex';
+      //   return;
+      // }
 
       if (Education1.style.display === 'block' && Education2.style.display === 'block') {
         let Education1count = 0;
@@ -2432,16 +2432,16 @@ function doSomethingElse() {
         }
       ])
 
-      if (boolean) {
-        isRequired(raceOption, raceSelect, 'Race-AlertText');
-        isRequired(genderOption, genderSelect, 'Gender-AlertText');
-        isRequired(ReligionOption, ReligionSelect, 'Religion-AlertText');
+      // if (boolean) {
+      //   isRequired(raceOption, raceSelect, 'Race-AlertText');
+      //   isRequired(genderOption, genderSelect, 'Gender-AlertText');
+      //   isRequired(ReligionOption, ReligionSelect, 'Religion-AlertText');
 
-        backTab5.style.pointerEvents = "auto";
-        Saving.style.display = 'none';
-        ToBeSaved.style.display = 'flex';
-        return;
-      }
+      //   backTab5.style.pointerEvents = "auto";
+      //   Saving.style.display = 'none';
+      //   ToBeSaved.style.display = 'flex';
+      //   return;
+      // }
 
       var url = `https://api.jobwizard.ai/profile/update_profile?` + '&ms_token=' + cookie_ms_token;
       var data = {
