@@ -296,14 +296,14 @@ if (skipTab6) {
   skipTab6.addEventListener('click', function () {
     // 打开一个特定岗位页面来给用户测试
     // window.open('https://airtable.com/appQynbTNIRoTOt6Q/shrWbHxenXI3aPitF/tbllTF0zzhbMMHYGm/viw7SOFwlmbdIeSzm?blocks=hide', '_blank');
-    window.location.href = "https://www.jobwizard.ai/onboarding/registration-complete"
+    window.location.href = "https://www.jobwizard.ai/onboarding/registration-complete?resource=add-info"
   })
 }
 if (doItLater) {
   doItLater.addEventListener('click', function () {
     // 打开一个特定岗位页面来给用户测试
     // window.open('https://airtable.com/appQynbTNIRoTOt6Q/shrWbHxenXI3aPitF/tbllTF0zzhbMMHYGm/viw7SOFwlmbdIeSzm?blocks=hide', '_blank');
-    window.location.href = "https://www.jobwizard.ai/onboarding/registration-complete"
+    window.location.href = "https://www.jobwizard.ai/onboarding/registration-complete?resource=add-info"
   })
 }
 if (backTab1) {
@@ -2589,7 +2589,7 @@ function doSomethingElse() {
           if (response.status == 200) {
             // 打开一个特定岗位页面来给用户测试
             // window.open('https://airtable.com/appQynbTNIRoTOt6Q/shrWbHxenXI3aPitF/tbllTF0zzhbMMHYGm/viw7SOFwlmbdIeSzm?blocks=hide', '_blank');
-            window.location.href = "https://www.jobwizard.ai/onboarding/registration-complete"
+            window.location.href = "https://www.jobwizard.ai/onboarding/registration-complete?resource=add-info"
             backTab6.style.pointerEvents = "auto";
             // const Saving = document.getElementById('Saving-6');
             // const ToBeSaved = document.getElementById('ToBeSaved-6');
