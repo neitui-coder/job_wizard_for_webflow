@@ -9,6 +9,7 @@ document.querySelectorAll(".tabstyle").forEach(function(element) {
 
 // all
 var AddInfoDiv = document.getElementById('Add-Info');
+var AddInfo_FormTabs = document.getElementById('AddInfo-FormTabs');
 var step2Div = document.getElementById('HintCard');
 var bodyDiv = document.querySelector('.div-block-45');
 AddInfoDiv.style.display = 'none';
@@ -45,6 +46,9 @@ var skipTab3 = document.getElementById('Skip-Tab3');
 var skipTab5 = document.getElementById('Skip-Tab5');
 var skipTab6 = document.getElementById('Skip-Tab6');
 var doItLater = document.getElementById('DoItLater');
+
+//Hide AddInfo-FormTabs until get_profile has returned
+AddInfo_FormTabs.style.opacity = 0;
 
 // tab1
 var firstNameInput = document.getElementById('First-Name');
@@ -1018,6 +1022,7 @@ async function fetchData() {
   try {
     const response = await fetch(`https://api.jobwizard.ai/profile/get_profile?ms_token=${cookie_ms_token}`);
     if (response.ok) {
+      AddInfo_FormTabs.style.opacity = 1;
       const data = await response.json();
       // 在这里处理响应数据
       userInfo = data.data;
