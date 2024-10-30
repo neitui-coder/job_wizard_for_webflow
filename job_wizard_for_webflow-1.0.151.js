@@ -828,7 +828,7 @@ function dofillUserInfo(userInfo) {
     if (userInfo.job_infos[2]?.start_date?.length == 4) {
       WorkStartDate2Year.value = userInfo.job_infos[2]?.start_date || '';
     } else {
-      const StartDateInput2JobArr = userInfo.job_infos[0].start_date?.replace(/ /g, "-")?.split("-");
+      const StartDateInput2JobArr = userInfo.job_infos[2]?.start_date?.replace(/ /g, "-")?.split("-");
       if (StartDateInput2JobArr) {
         WorkStartDate2Month.value = StartDateInput2JobArr[0] || '';
         WorkStartDate2Year.value = StartDateInput2JobArr[1] || '';
@@ -864,7 +864,7 @@ if (isExistJobInfo3) {
   if (userInfo.job_infos[3]?.start_date?.length == 4) {
     WorkStartDate3Year.value = userInfo.job_infos[3]?.start_date || '';
   } else {
-    const StartDateInput3JobArr = userInfo.job_infos[0].start_date?.replace(/ /g, "-")?.split("-");
+    const StartDateInput3JobArr = userInfo.job_infos[3]?.start_date?.replace(/ /g, "-")?.split("-");
     if (StartDateInput3JobArr) {
       WorkStartDate3Month.value = StartDateInput3JobArr[0] || '';
       WorkStartDate3Year.value = StartDateInput3JobArr[1] || '';
@@ -900,7 +900,7 @@ if (isExistJobInfo3) {
     if (userInfo.job_infos[4]?.start_date?.length == 4) {
       WorkStartDate4Year.value = userInfo.job_infos[4]?.start_date || '';
     } else {
-      const StartDateInput4JobArr = userInfo.job_infos[0].start_date?.replace(/ /g, "-")?.split("-");
+      const StartDateInput4JobArr = userInfo.job_infos[4]?.start_date?.replace(/ /g, "-")?.split("-");
       if (StartDateInput4JobArr) {
         WorkStartDate4Month.value = StartDateInput4JobArr[0] || '';
         WorkStartDate4Year.value = StartDateInput4JobArr[1] || '';
