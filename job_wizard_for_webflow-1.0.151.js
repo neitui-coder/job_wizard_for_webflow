@@ -656,19 +656,50 @@ function dofillUserInfo(userInfo) {
   const StartDateInput0Arr = userInfo.school_infos[0]?.start_date?.replace(/ /g, "-")?.split("-");
   if (userInfo.school_infos[0]?.start_date?.length == 4) {
     StartDate0Input1.value = userInfo.school_infos[0]?.start_date;
+    StartDate0Input0.value = "";
   } else {
     if (StartDateInput0Arr) {
-      StartDate0Input0.value = StartDateInput0Arr[0];
-      StartDate0Input1.value = StartDateInput0Arr[1];
+      // 找出年份位置
+      const yearIndex = StartDateInput0Arr.findIndex(part => part.length === 4);
+      if (yearIndex !== -1) {
+        StartDate0Input1.value = StartDateInput0Arr[yearIndex];
+        
+        // 检查年份相邻的数字
+        const beforeYear = yearIndex > 0 ? parseInt(StartDateInput0Arr[yearIndex - 1]) : null;
+        const afterYear = yearIndex < StartDateInput0Arr.length - 1 ? parseInt(StartDateInput0Arr[yearIndex + 1]) : null;
+        
+        StartDate0Input0.value = "";  // 默认为空
+        if (beforeYear && beforeYear > 0 && beforeYear <= 12) {
+          StartDate0Input0.value = StartDateInput0Arr[yearIndex - 1];
+        } else if (afterYear && afterYear > 0 && afterYear <= 12) {
+          StartDate0Input0.value = StartDateInput0Arr[yearIndex + 1];
+        }
+      }
     }
   }
+  
   const EndDateInput0Arr = userInfo.school_infos[0]?.end_date?.replace(/ /g, "-")?.split("-");
   if (userInfo.school_infos[0]?.end_date?.length == 4) {
     EndDate0Input1.value = userInfo.school_infos[0]?.end_date;
+    EndDate0Input0.value = "";
   } else {
     if (EndDateInput0Arr) {
-      EndDate0Input0.value = EndDateInput0Arr[0];
-      EndDate0Input1.value = EndDateInput0Arr[1];
+      // 找出年份位置
+      const yearIndex = EndDateInput0Arr.findIndex(part => part.length === 4);
+      if (yearIndex !== -1) {
+        EndDate0Input1.value = EndDateInput0Arr[yearIndex];
+        
+        // 检查年份相邻的数字
+        const beforeYear = yearIndex > 0 ? parseInt(EndDateInput0Arr[yearIndex - 1]) : null;
+        const afterYear = yearIndex < EndDateInput0Arr.length - 1 ? parseInt(EndDateInput0Arr[yearIndex + 1]) : null;
+        
+        EndDate0Input0.value = "";  // 默认为空
+        if (beforeYear && beforeYear > 0 && beforeYear <= 12) {
+          EndDate0Input0.value = EndDateInput0Arr[yearIndex - 1];
+        } else if (afterYear && afterYear > 0 && afterYear <= 12) {
+          EndDate0Input0.value = EndDateInput0Arr[yearIndex + 1];
+        }
+      }
     }
   }
 
@@ -688,21 +719,51 @@ function dofillUserInfo(userInfo) {
 
     if (userInfo.school_infos[1]?.start_date?.length == 4) {
       StartDate1Input1.value = userInfo.school_infos[1]?.start_date;
+      StartDate1Input0.value = "";
     } else {
       const StartDateInput1Arr = userInfo.school_infos[1]?.start_date?.replace(/ /g, "-")?.split("-");
       if (StartDateInput1Arr) {
-        StartDate1Input0.value = StartDateInput1Arr[0];
-        StartDate1Input1.value = StartDateInput1Arr[1];
+        // 找出年份位置
+        const yearIndex = StartDateInput1Arr.findIndex(part => part.length === 4);
+        if (yearIndex !== -1) {
+          StartDate1Input1.value = StartDateInput1Arr[yearIndex];
+          
+          // 检查年份相邻的数字
+          const beforeYear = yearIndex > 0 ? parseInt(StartDateInput1Arr[yearIndex - 1]) : null;
+          const afterYear = yearIndex < StartDateInput1Arr.length - 1 ? parseInt(StartDateInput1Arr[yearIndex + 1]) : null;
+          
+          StartDate1Input0.value = "";  // 默认为空
+          if (beforeYear && beforeYear > 0 && beforeYear <= 12) {
+            StartDate1Input0.value = StartDateInput1Arr[yearIndex - 1];
+          } else if (afterYear && afterYear > 0 && afterYear <= 12) {
+            StartDate1Input0.value = StartDateInput1Arr[yearIndex + 1];
+          }
+        }
       }
     }
-
+    
     if (userInfo.school_infos[1]?.end_date?.length == 4) {
       EndDate1Input1.value = userInfo.school_infos[1]?.end_date;
+      EndDate1Input0.value = "";
     } else {
       const EndDateInput1Arr = userInfo.school_infos[1]?.end_date?.replace(/ /g, "-")?.split("-");
       if (EndDateInput1Arr) {
-        EndDate1Input0.value = EndDateInput1Arr[0];
-        EndDate1Input1.value = EndDateInput1Arr[1];
+        // 找出年份位置
+        const yearIndex = EndDateInput1Arr.findIndex(part => part.length === 4);
+        if (yearIndex !== -1) {
+          EndDate1Input1.value = EndDateInput1Arr[yearIndex];
+          
+          // 检查年份相邻的数字
+          const beforeYear = yearIndex > 0 ? parseInt(EndDateInput1Arr[yearIndex - 1]) : null;
+          const afterYear = yearIndex < EndDateInput1Arr.length - 1 ? parseInt(EndDateInput1Arr[yearIndex + 1]) : null;
+          
+          EndDate1Input0.value = "";  // 默认为空
+          if (beforeYear && beforeYear > 0 && beforeYear <= 12) {
+            EndDate1Input0.value = EndDateInput1Arr[yearIndex - 1];
+          } else if (afterYear && afterYear > 0 && afterYear <= 12) {
+            EndDate1Input0.value = EndDateInput1Arr[yearIndex + 1];
+          }
+        }
       }
     }
     Education1.style.display = 'block';
@@ -722,20 +783,51 @@ function dofillUserInfo(userInfo) {
     DegreeType2Input.style.color = "black";
     if (userInfo.school_infos[2]?.start_date?.length == 4) {
       StartDate2Input1.value = userInfo.school_infos[2]?.start_date;
+      StartDate2Input0.value = "";
     } else {
       const StartDateInput2Arr = userInfo.school_infos[2]?.start_date?.replace(/ /g, "-")?.split("-");
       if (StartDateInput2Arr) {
-        StartDate2Input0.value = StartDateInput2Arr[0];
-        StartDate2Input1.value = StartDateInput2Arr[1];
+        // 找出年份位置
+        const yearIndex = StartDateInput2Arr.findIndex(part => part.length === 4);
+        if (yearIndex !== -1) {
+          StartDate2Input1.value = StartDateInput2Arr[yearIndex];
+          
+          // 检查年份相邻的数字
+          const beforeYear = yearIndex > 0 ? parseInt(StartDateInput2Arr[yearIndex - 1]) : null;
+          const afterYear = yearIndex < StartDateInput2Arr.length - 1 ? parseInt(StartDateInput2Arr[yearIndex + 1]) : null;
+          
+          StartDate2Input0.value = "";  // 默认为空
+          if (beforeYear && beforeYear > 0 && beforeYear <= 12) {
+            StartDate2Input0.value = StartDateInput2Arr[yearIndex - 1];
+          } else if (afterYear && afterYear > 0 && afterYear <= 12) {
+            StartDate2Input0.value = StartDateInput2Arr[yearIndex + 1];
+          }
+        }
       }
     }
+    
     if (userInfo.school_infos[2]?.end_date?.length == 4) {
       EndDate2Input1.value = userInfo.school_infos[2]?.end_date;
+      EndDate2Input0.value = "";
     } else {
       const EndDateInput2Arr = userInfo.school_infos[2]?.end_date?.replace(/ /g, "-")?.split("-");
       if (EndDateInput2Arr) {
-        EndDate2Input0.value = EndDateInput2Arr[0];
-        EndDate2Input1.value = EndDateInput2Arr[1];
+        // 找出年份位置
+        const yearIndex = EndDateInput2Arr.findIndex(part => part.length === 4);
+        if (yearIndex !== -1) {
+          EndDate2Input1.value = EndDateInput2Arr[yearIndex];
+          
+          // 检查年份相邻的数字
+          const beforeYear = yearIndex > 0 ? parseInt(EndDateInput2Arr[yearIndex - 1]) : null;
+          const afterYear = yearIndex < EndDateInput2Arr.length - 1 ? parseInt(EndDateInput2Arr[yearIndex + 1]) : null;
+          
+          EndDate2Input0.value = "";  // 默认为空
+          if (beforeYear && beforeYear > 0 && beforeYear <= 12) {
+            EndDate2Input0.value = EndDateInput2Arr[yearIndex - 1];
+          } else if (afterYear && afterYear > 0 && afterYear <= 12) {
+            EndDate2Input0.value = EndDateInput2Arr[yearIndex + 1];
+          }
+        }
       }
     }
     Education2.style.display = 'block';
@@ -751,11 +843,26 @@ function dofillUserInfo(userInfo) {
   } else {
     if (userInfo.job_infos[0]?.end_date?.length == 4) {
       WorkEndDate0Year.value = userInfo.job_infos[0]?.end_date || '';
+      WorkEndDate0Month.value = '';
     } else {
       const EndDateInput0JobArr = userInfo.job_infos[0]?.end_date?.replace(/ /g, "-")?.split("-");
       if (EndDateInput0JobArr) {
-        WorkEndDate0Month.value = EndDateInput0JobArr[0] || '';
-        WorkEndDate0Year.value = EndDateInput0JobArr[1] || '';
+        // 找出年份位置
+        const yearIndex = EndDateInput0JobArr.findIndex(part => part.length === 4);
+        if (yearIndex !== -1) {
+          WorkEndDate0Year.value = EndDateInput0JobArr[yearIndex] || '';
+          
+          // 检查年份相邻的数字
+          const beforeYear = yearIndex > 0 ? parseInt(EndDateInput0JobArr[yearIndex - 1]) : null;
+          const afterYear = yearIndex < EndDateInput0JobArr.length - 1 ? parseInt(EndDateInput0JobArr[yearIndex + 1]) : null;
+          
+          WorkEndDate0Month.value = '';  // 默认为空
+          if (beforeYear && beforeYear > 0 && beforeYear <= 12) {
+            WorkEndDate0Month.value = EndDateInput0JobArr[yearIndex - 1] || '';
+          } else if (afterYear && afterYear > 0 && afterYear <= 12) {
+            WorkEndDate0Month.value = EndDateInput0JobArr[yearIndex + 1] || '';
+          }
+        }
       }
     }
   }
@@ -767,11 +874,26 @@ function dofillUserInfo(userInfo) {
   WorkDescription0textarea.value = userInfo.job_infos[0]?.description;
   if (userInfo.job_infos[0]?.start_date?.length == 4) {
     WorkStartDate0Year.value = userInfo.job_infos[0]?.start_date || '';
+    WorkStartDate0Month.value = '';
   } else {
     const StartDateInput0JobArr = userInfo.job_infos[0]?.start_date?.replace(/ /g, "-")?.split("-");
     if (StartDateInput0JobArr) {
-      WorkStartDate0Month.value = StartDateInput0JobArr[0] || '';
-      WorkStartDate0Year.value = StartDateInput0JobArr[1] || '';
+      // 找出年份位置
+      const yearIndex = StartDateInput0JobArr.findIndex(part => part.length === 4);
+      if (yearIndex !== -1) {
+        WorkStartDate0Year.value = StartDateInput0JobArr[yearIndex] || '';
+        
+        // 检查年份相邻的数字
+        const beforeYear = yearIndex > 0 ? parseInt(StartDateInput0JobArr[yearIndex - 1]) : null;
+        const afterYear = yearIndex < StartDateInput0JobArr.length - 1 ? parseInt(StartDateInput0JobArr[yearIndex + 1]) : null;
+        
+        WorkStartDate0Month.value = '';  // 默认为空
+        if (beforeYear && beforeYear > 0 && beforeYear <= 12) {
+          WorkStartDate0Month.value = StartDateInput0JobArr[yearIndex - 1] || '';
+        } else if (afterYear && afterYear > 0 && afterYear <= 12) {
+          WorkStartDate0Month.value = StartDateInput0JobArr[yearIndex + 1] || '';
+        }
+      }
     }
   }
 
@@ -791,20 +913,51 @@ function dofillUserInfo(userInfo) {
     WorkDescription1textarea.value = userInfo.job_infos[1]?.description;
     if (userInfo.job_infos[1]?.start_date?.length == 4) {
       WorkStartDate1Year.value = userInfo.job_infos[1]?.start_date || '';
+      WorkStartDate1Month.value = '';
     } else {
       const StartDateInput1JobArr = userInfo.job_infos[1]?.start_date?.replace(/ /g, "-")?.split("-");
       if (StartDateInput1JobArr) {
-        WorkStartDate1Month.value = StartDateInput1JobArr[0] || '';
-        WorkStartDate1Year.value = StartDateInput1JobArr[1] || '';
+        // 找出年份位置
+        const yearIndex = StartDateInput1JobArr.findIndex(part => part.length === 4);
+        if (yearIndex !== -1) {
+          WorkStartDate1Year.value = StartDateInput1JobArr[yearIndex] || '';
+          
+          // 检查年份相邻的数字
+          const beforeYear = yearIndex > 0 ? parseInt(StartDateInput1JobArr[yearIndex - 1]) : null;
+          const afterYear = yearIndex < StartDateInput1JobArr.length - 1 ? parseInt(StartDateInput1JobArr[yearIndex + 1]) : null;
+          
+          WorkStartDate1Month.value = '';  // 默认为空
+          if (beforeYear && beforeYear > 0 && beforeYear <= 12) {
+            WorkStartDate1Month.value = StartDateInput1JobArr[yearIndex - 1] || '';
+          } else if (afterYear && afterYear > 0 && afterYear <= 12) {
+            WorkStartDate1Month.value = StartDateInput1JobArr[yearIndex + 1] || '';
+          }
+        }
       }
     }
+    
     if (userInfo.job_infos[1]?.end_date?.length == 4) {
-      WorkEndDate1Year.value = userInfo.job_infos[1]?.end_date;
+      WorkEndDate1Year.value = userInfo.job_infos[1]?.end_date || '';
+      WorkEndDate1Month.value = '';
     } else {
       const EndDateInput1JobArr = userInfo.job_infos[1]?.end_date?.replace(/ /g, "-")?.split("-");
       if (EndDateInput1JobArr) {
-        WorkEndDate1Month.value = EndDateInput1JobArr[0] || '';
-        WorkEndDate1Year.value = EndDateInput1JobArr[1] || '';
+        // 找出年份位置
+        const yearIndex = EndDateInput1JobArr.findIndex(part => part.length === 4);
+        if (yearIndex !== -1) {
+          WorkEndDate1Year.value = EndDateInput1JobArr[yearIndex] || '';
+          
+          // 检查年份相邻的数字
+          const beforeYear = yearIndex > 0 ? parseInt(EndDateInput1JobArr[yearIndex - 1]) : null;
+          const afterYear = yearIndex < EndDateInput1JobArr.length - 1 ? parseInt(EndDateInput1JobArr[yearIndex + 1]) : null;
+          
+          WorkEndDate1Month.value = '';  // 默认为空
+          if (beforeYear && beforeYear > 0 && beforeYear <= 12) {
+            WorkEndDate1Month.value = EndDateInput1JobArr[yearIndex - 1] || '';
+          } else if (afterYear && afterYear > 0 && afterYear <= 12) {
+            WorkEndDate1Month.value = EndDateInput1JobArr[yearIndex + 1] || '';
+          }
+        }
       }
     }
     WorkExperience1.style.display = 'block';
@@ -827,21 +980,51 @@ function dofillUserInfo(userInfo) {
     WorkDescription2textarea.value = userInfo.job_infos[2]?.description;
     if (userInfo.job_infos[2]?.start_date?.length == 4) {
       WorkStartDate2Year.value = userInfo.job_infos[2]?.start_date || '';
+      WorkStartDate2Month.value = '';
     } else {
       const StartDateInput2JobArr = userInfo.job_infos[2]?.start_date?.replace(/ /g, "-")?.split("-");
       if (StartDateInput2JobArr) {
-        WorkStartDate2Month.value = StartDateInput2JobArr[0] || '';
-        WorkStartDate2Year.value = StartDateInput2JobArr[1] || '';
+        // 找出年份位置
+        const yearIndex = StartDateInput2JobArr.findIndex(part => part.length === 4);
+        if (yearIndex !== -1) {
+          WorkStartDate2Year.value = StartDateInput2JobArr[yearIndex] || '';
+          
+          // 检查年份相邻的数字
+          const beforeYear = yearIndex > 0 ? parseInt(StartDateInput2JobArr[yearIndex - 1]) : null;
+          const afterYear = yearIndex < StartDateInput2JobArr.length - 1 ? parseInt(StartDateInput2JobArr[yearIndex + 1]) : null;
+          
+          WorkStartDate2Month.value = '';  // 默认为空
+          if (beforeYear && beforeYear > 0 && beforeYear <= 12) {
+            WorkStartDate2Month.value = StartDateInput2JobArr[yearIndex - 1] || '';
+          } else if (afterYear && afterYear > 0 && afterYear <= 12) {
+            WorkStartDate2Month.value = StartDateInput2JobArr[yearIndex + 1] || '';
+          }
+        }
       }
     }
-
+    
     if (userInfo.job_infos[2]?.end_date?.length == 4) {
       WorkEndDate2Year.value = userInfo.job_infos[2]?.end_date || '';
+      WorkEndDate2Month.value = '';
     } else {
       const EndDateInput2JobArr = userInfo.job_infos[2]?.end_date?.replace(/ /g, "-")?.split("-");
       if (EndDateInput2JobArr) {
-        WorkEndDate2Month.value = EndDateInput2JobArr[0] || '';
-        WorkEndDate2Year.value = EndDateInput2JobArr[1] || '';
+        // 找出年份位置
+        const yearIndex = EndDateInput2JobArr.findIndex(part => part.length === 4);
+        if (yearIndex !== -1) {
+          WorkEndDate2Year.value = EndDateInput2JobArr[yearIndex] || '';
+          
+          // 检查年份相邻的数字
+          const beforeYear = yearIndex > 0 ? parseInt(EndDateInput2JobArr[yearIndex - 1]) : null;
+          const afterYear = yearIndex < EndDateInput2JobArr.length - 1 ? parseInt(EndDateInput2JobArr[yearIndex + 1]) : null;
+          
+          WorkEndDate2Month.value = '';  // 默认为空
+          if (beforeYear && beforeYear > 0 && beforeYear <= 12) {
+            WorkEndDate2Month.value = EndDateInput2JobArr[yearIndex - 1] || '';
+          } else if (afterYear && afterYear > 0 && afterYear <= 12) {
+            WorkEndDate2Month.value = EndDateInput2JobArr[yearIndex + 1] || '';
+          }
+        }
       }
     }
     WorkExperience2.style.display = 'block';
@@ -863,21 +1046,51 @@ if (isExistJobInfo3) {
   WorkDescription3textarea.value = userInfo.job_infos[3]?.description;
   if (userInfo.job_infos[3]?.start_date?.length == 4) {
     WorkStartDate3Year.value = userInfo.job_infos[3]?.start_date || '';
+    WorkStartDate3Month.value = '';
   } else {
     const StartDateInput3JobArr = userInfo.job_infos[3]?.start_date?.replace(/ /g, "-")?.split("-");
     if (StartDateInput3JobArr) {
-      WorkStartDate3Month.value = StartDateInput3JobArr[0] || '';
-      WorkStartDate3Year.value = StartDateInput3JobArr[1] || '';
+      // 找出年份位置
+      const yearIndex = StartDateInput3JobArr.findIndex(part => part.length === 4);
+      if (yearIndex !== -1) {
+        WorkStartDate3Year.value = StartDateInput3JobArr[yearIndex] || '';
+        
+        // 检查年份相邻的数字
+        const beforeYear = yearIndex > 0 ? parseInt(StartDateInput3JobArr[yearIndex - 1]) : null;
+        const afterYear = yearIndex < StartDateInput3JobArr.length - 1 ? parseInt(StartDateInput3JobArr[yearIndex + 1]) : null;
+        
+        WorkStartDate3Month.value = '';  // 默认为空
+        if (beforeYear && beforeYear > 0 && beforeYear <= 12) {
+          WorkStartDate3Month.value = StartDateInput3JobArr[yearIndex - 1] || '';
+        } else if (afterYear && afterYear > 0 && afterYear <= 12) {
+          WorkStartDate3Month.value = StartDateInput3JobArr[yearIndex + 1] || '';
+        }
+      }
     }
   }
-
+  
   if (userInfo.job_infos[3]?.end_date?.length == 4) {
     WorkEndDate3Year.value = userInfo.job_infos[3]?.end_date || '';
+    WorkEndDate3Month.value = '';
   } else {
     const EndDateInput3JobArr = userInfo.job_infos[3]?.end_date?.replace(/ /g, "-")?.split("-");
     if (EndDateInput3JobArr) {
-      WorkEndDate3Month.value = EndDateInput3JobArr[0] || '';
-      WorkEndDate3Year.value = EndDateInput3JobArr[1] || '';
+      // 找出年份位置
+      const yearIndex = EndDateInput3JobArr.findIndex(part => part.length === 4);
+      if (yearIndex !== -1) {
+        WorkEndDate3Year.value = EndDateInput3JobArr[yearIndex] || '';
+        
+        // 检查年份相邻的数字
+        const beforeYear = yearIndex > 0 ? parseInt(EndDateInput3JobArr[yearIndex - 1]) : null;
+        const afterYear = yearIndex < EndDateInput3JobArr.length - 1 ? parseInt(EndDateInput3JobArr[yearIndex + 1]) : null;
+        
+        WorkEndDate3Month.value = '';  // 默认为空
+        if (beforeYear && beforeYear > 0 && beforeYear <= 12) {
+          WorkEndDate3Month.value = EndDateInput3JobArr[yearIndex - 1] || '';
+        } else if (afterYear && afterYear > 0 && afterYear <= 12) {
+          WorkEndDate3Month.value = EndDateInput3JobArr[yearIndex + 1] || '';
+        }
+      }
     }
   }
   WorkExperience3.style.display = 'block';
@@ -899,21 +1112,51 @@ if (isExistJobInfo3) {
     WorkDescription4textarea.value = userInfo.job_infos[4]?.description;
     if (userInfo.job_infos[4]?.start_date?.length == 4) {
       WorkStartDate4Year.value = userInfo.job_infos[4]?.start_date || '';
+      WorkStartDate4Month.value = '';
     } else {
       const StartDateInput4JobArr = userInfo.job_infos[4]?.start_date?.replace(/ /g, "-")?.split("-");
       if (StartDateInput4JobArr) {
-        WorkStartDate4Month.value = StartDateInput4JobArr[0] || '';
-        WorkStartDate4Year.value = StartDateInput4JobArr[1] || '';
+        // 找出年份位置
+        const yearIndex = StartDateInput4JobArr.findIndex(part => part.length === 4);
+        if (yearIndex !== -1) {
+          WorkStartDate4Year.value = StartDateInput4JobArr[yearIndex] || '';
+          
+          // 检查年份相邻的数字
+          const beforeYear = yearIndex > 0 ? parseInt(StartDateInput4JobArr[yearIndex - 1]) : null;
+          const afterYear = yearIndex < StartDateInput4JobArr.length - 1 ? parseInt(StartDateInput4JobArr[yearIndex + 1]) : null;
+          
+          WorkStartDate4Month.value = '';  // 默认为空
+          if (beforeYear && beforeYear > 0 && beforeYear <= 12) {
+            WorkStartDate4Month.value = StartDateInput4JobArr[yearIndex - 1] || '';
+          } else if (afterYear && afterYear > 0 && afterYear <= 12) {
+            WorkStartDate4Month.value = StartDateInput4JobArr[yearIndex + 1] || '';
+          }
+        }
       }
     }
-
+    
     if (userInfo.job_infos[4]?.end_date?.length == 4) {
       WorkEndDate4Year.value = userInfo.job_infos[4]?.end_date || '';
+      WorkEndDate4Month.value = '';
     } else {
       const EndDateInput4JobArr = userInfo.job_infos[4]?.end_date?.replace(/ /g, "-")?.split("-");
       if (EndDateInput4JobArr) {
-        WorkEndDate4Month.value = EndDateInput4JobArr[0] || '';
-        WorkEndDate4Year.value = EndDateInput4JobArr[1] || '';
+        // 找出年份位置
+        const yearIndex = EndDateInput4JobArr.findIndex(part => part.length === 4);
+        if (yearIndex !== -1) {
+          WorkEndDate4Year.value = EndDateInput4JobArr[yearIndex] || '';
+          
+          // 检查年份相邻的数字
+          const beforeYear = yearIndex > 0 ? parseInt(EndDateInput4JobArr[yearIndex - 1]) : null;
+          const afterYear = yearIndex < EndDateInput4JobArr.length - 1 ? parseInt(EndDateInput4JobArr[yearIndex + 1]) : null;
+          
+          WorkEndDate4Month.value = '';  // 默认为空
+          if (beforeYear && beforeYear > 0 && beforeYear <= 12) {
+            WorkEndDate4Month.value = EndDateInput4JobArr[yearIndex - 1] || '';
+          } else if (afterYear && afterYear > 0 && afterYear <= 12) {
+            WorkEndDate4Month.value = EndDateInput4JobArr[yearIndex + 1] || '';
+          }
+        }
       }
     }
     WorkExperience4.style.display = 'block';
