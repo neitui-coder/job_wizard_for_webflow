@@ -611,7 +611,7 @@ function dofillUserInfo(userInfo) {
   // tab1
   firstNameInput.value = userInfo.basic_info?.first_name;
   lastNameInput.value = userInfo.basic_info?.last_name;
-  let phoneGroup = userInfo.basic_info?.phone?.split(" ")
+  let phoneGroup = userInfo.basic_info?.phone_number?.split(" ")
 
   if (phoneGroup.length > 1) {
     // 设置默认值
@@ -632,7 +632,7 @@ function dofillUserInfo(userInfo) {
     }
     phoneNumberInput2.value = phoneGroup[1];
   } else {
-    phoneNumberInput2.value = userInfo.basic_info?.phone;
+    phoneNumberInput2.value = userInfo.basic_info?.phone_number;
   }
 
   emailInput.value = userInfo.basic_info?.email;
