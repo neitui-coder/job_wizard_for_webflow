@@ -612,10 +612,13 @@ function dofillUserInfo(userInfo) {
   firstNameInput.value = userInfo.basic_info?.first_name;
   lastNameInput.value = userInfo.basic_info?.last_name;
   const phoneNumber = userInfo.basic_info?.phone_number || '';
+  console.log(userInfo.basic_info);
+  console.log(phoneNumber);
 
   if (phoneNumber.startsWith('+') && phoneNumber.includes(' ')) {
     // 找到第一个空格的位置，然后取其后的所有内容
     const firstSpaceIndex = phoneNumber.indexOf(' ');
+    console.log(phoneNumber.substring(firstSpaceIndex + 1));
     phoneNumberInput2.value = phoneNumber.substring(firstSpaceIndex + 1);
   } else {
     phoneNumberInput2.value = phoneNumber;
