@@ -611,14 +611,28 @@ function dofillUserInfo(userInfo) {
   // tab1
   firstNameInput.value = userInfo.basic_info?.first_name;
   lastNameInput.value = userInfo.basic_info?.last_name;
-  const phoneNumber = userInfo.basic_info?.phone || '';
+  let phoneGroup = userInfo.basic_info?.phone_number?.split(" ")
 
-  if (phoneNumber.startsWith('+') && phoneNumber.includes(' ')) {
-    // 找到第一个空格的位置，然后取其后的所有内容
-    const firstSpaceIndex = phoneNumber.indexOf(' ');
-    phoneNumberInput2.value = phoneNumber.substring(firstSpaceIndex + 1);
+  if (phoneGroup.length > 1) {
+    // 设置默认值
+    // var phonegrid = document.querySelector('.phonegrid');
+    // phonegrid.style.alignItems = 'center';
+    // var iti = window.intlTelInput(phoneNumberInput1, {
+    //   initialCountry: "auto",
+    //   separateDialCode: true,
+    //   customPlaceholder: function (selectedCountryPlaceholder, selectedCountryData) {
+    //     return selectedCountryPlaceholder + " " + selectedCountryData.dialCode;
+    //   }
+    // });
+
+    // 设置默认值
+    if (phoneGroup[0]) {
+      iti.setNumber(phoneGroup[0]);
+      phoneNumberInput1.value = phoneGroup[0];
+    }
+    phoneNumberInput2.value = phoneGroup[1];
   } else {
-    phoneNumberInput2.value = phoneNumber;
+    phoneNumberInput2.value = userInfo.basic_info?.phone_number;
   }
 
   emailInput.value = userInfo.basic_info?.email;
