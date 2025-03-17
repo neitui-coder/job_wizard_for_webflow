@@ -611,7 +611,7 @@ function dofillUserInfo(userInfo) {
   // tab1
   firstNameInput.value = userInfo.basic_info?.first_name;
   lastNameInput.value = userInfo.basic_info?.last_name;
-  const phoneNumber = userInfo.basic_info?.phone || '';
+  const phoneNumber = userInfo.basic_info?.phone_number || '';
 
   if (phoneNumber.startsWith('+') && phoneNumber.includes(' ')) {
     // 找到第一个空格的位置，然后取其后的所有内容
