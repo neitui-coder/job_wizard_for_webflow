@@ -197,11 +197,12 @@ var DeleteWork4 = document.getElementById('DeleteWork4');
 //tab5
 var identificationInput = document.getElementById('self-identification-11');
 var disabilityInput = document.getElementById('self-identification-2');
-var veteranInput = document.getElementById('self-identification-3');
+// var veteranInput = document.getElementById('self-identification-3');
 
 var raceSelect = document.getElementById('Race');
 var genderSelect = document.getElementById('Gender');
-var ReligionSelect = document.getElementById('Religion');
+// var ReligionSelect = document.getElementById('Religion');
+var VeteranSelect = document.getElementById('veteran_select');
 var InfoofDEI = document.getElementById('Info-of-DEI');
 // var True1Selected = document.getElementById('True');
 // var False1Selected = document.getElementById('False');
@@ -592,13 +593,14 @@ if (identificationInput) {
       disabilityInput.checked = 'false';
       disabilityInputPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent';
 
-      let veteranInputPrev = veteranInput.previousElementSibling;
-      veteranInput.checked = 'false';
-      veteranInputPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent';
+      // let veteranInputPrev = veteranInput.previousElementSibling;
+      // veteranInput.checked = 'false';
+      // veteranInputPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent';
 
       raceSelect.value = 'I prefer not to say';
-      genderSelect.value = '';
-      ReligionSelect.value = 'I prefer not to say';
+      genderSelect.value = 'I prefer not to say';
+      // ReligionSelect.value = 'I prefer not to say';
+      VeteranSelect.value = 'I do not wish to self-identify';
     }
   })
 }
@@ -1099,18 +1101,20 @@ if (isExistJobInfo3) {
     disabilityInputPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent w--redirected-checked';
   }
 
-  veteranInput.checked = userInfo.dei_info?.veteran;
-  let veteranInputPrev = veteranInput.previousElementSibling;
-  if (userInfo.dei_info?.veteran) {
-    veteranInputPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent w--redirected-checked';
-  }
+  // veteranInput.checked = userInfo.dei_info?.veteran;
+  // let veteranInputPrev = veteranInput.previousElementSibling;
+  // if (userInfo.dei_info?.veteran) {
+  //   veteranInputPrev.className = 'w-checkbox-input w-checkbox-input--inputType-custom checkbox independent w--redirected-checked';
+  // }
 
   raceSelect.value = userInfo.dei_info?.race;
   raceSelect.style.color = "black";
   genderSelect.value = userInfo.dei_info?.gender;
   genderSelect.style.color = "black";
-  ReligionSelect.value = userInfo.dei_info?.religion;
-  ReligionSelect.style.color = "black";
+  VeteranSelect.value = userInfo.dei_info?.veteran || 'I do not wish to self-identify';
+  VeteranSelect.style.color = "black";
+  // ReligionSelect.value = userInfo.dei_info?.religion;
+  // ReligionSelect.style.color = "black";
 
   // tab6
   LinkedinURL.value = userInfo.additional_info.linkedin_url || '';
@@ -2555,9 +2559,10 @@ function doSomethingElse() {
       ToBeSaved.style.display = 'none';
       var raceOption = raceSelect.options[raceSelect.selectedIndex]?.value;
       var genderOption = genderSelect.options[genderSelect.selectedIndex]?.value;
-      var ReligionOption = ReligionSelect.options[ReligionSelect.selectedIndex]?.value;
+      var VeteranOption = VeteranSelect.options[VeteranSelect.selectedIndex]?.value;
+      // var ReligionOption = ReligionSelect.options[ReligionSelect.selectedIndex]?.value;
 
-      const boolean = !raceOption || !genderOption || !ReligionOption
+      const boolean = !raceOption || !genderOption || !VeteranOption // || !ReligionOption
 
       cleanErrorText([
         {
@@ -2567,10 +2572,6 @@ function doSomethingElse() {
         {
           textId: 'Gender-AlertText',
           element: genderSelect,
-        },
-        {
-          textId: 'Religion-AlertText',
-          element: ReligionSelect,
         }
       ])
 
@@ -2593,7 +2594,7 @@ function doSomethingElse() {
           "gender": genderOption,
           "religion": ReligionOption,
           "disability": disabilityInput.checked,
-          "veteran": veteranInput.checked
+          "veteran": VeteranOption
         }
       };
       var options = {
