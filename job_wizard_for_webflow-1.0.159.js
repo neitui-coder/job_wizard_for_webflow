@@ -1111,7 +1111,7 @@ if (isExistJobInfo3) {
   raceSelect.style.color = "black";
   genderSelect.value = userInfo.dei_info?.gender;
   genderSelect.style.color = "black";
-  VeteranSelect.value = userInfo.dei_info?.veteran || 'I do not wish to self-identify';
+  VeteranSelect.value = userInfo.dei_info?.veteran_type || 'I do not wish to self-identify';
   VeteranSelect.style.color = "black";
   // ReligionSelect.value = userInfo.dei_info?.religion;
   // ReligionSelect.style.color = "black";
@@ -2594,7 +2594,7 @@ function doSomethingElse() {
           "gender": genderOption,
           "religion": ReligionOption,
           "disability": disabilityInput.checked,
-          "veteran": VeteranOption
+          "veteran_type": VeteranOption
         }
       };
       var options = {
