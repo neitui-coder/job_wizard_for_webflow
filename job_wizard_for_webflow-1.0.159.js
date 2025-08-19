@@ -201,7 +201,7 @@ var disabilityInput = document.getElementById('self-identification-2');
 
 var raceSelect = document.getElementById('Race');
 var genderSelect = document.getElementById('Gender');
-// var ReligionSelect = document.getElementById('Religion');
+var ReligionSelect = document.getElementById('Religion');
 var VeteranSelect = document.getElementById('veteran_select');
 var InfoofDEI = document.getElementById('Info-of-DEI');
 // var True1Selected = document.getElementById('True');
@@ -599,7 +599,7 @@ if (identificationInput) {
 
       raceSelect.value = 'I prefer not to say';
       genderSelect.value = 'I prefer not to say';
-      // ReligionSelect.value = 'I prefer not to say';
+      ReligionSelect.value = 'I prefer not to say';
       VeteranSelect.value = 'I do not wish to self-identify';
     }
   })
@@ -1113,8 +1113,8 @@ if (isExistJobInfo3) {
   genderSelect.style.color = "black";
   VeteranSelect.value = userInfo.dei_info?.veteran_type || 'I do not wish to self-identify';
   VeteranSelect.style.color = "black";
-  // ReligionSelect.value = userInfo.dei_info?.religion;
-  // ReligionSelect.style.color = "black";
+  ReligionSelect.value = userInfo.dei_info?.religion || 'I prefer not to say';
+  ReligionSelect.style.color = "black";
 
   // tab6
   LinkedinURL.value = userInfo.additional_info.linkedin_url || '';
@@ -2560,9 +2560,9 @@ function doSomethingElse() {
       var raceOption = raceSelect.options[raceSelect.selectedIndex]?.value;
       var genderOption = genderSelect.options[genderSelect.selectedIndex]?.value;
       var VeteranOption = VeteranSelect.options[VeteranSelect.selectedIndex]?.value;
-      // var ReligionOption = ReligionSelect.options[ReligionSelect.selectedIndex]?.value;
+      var ReligionOption = ReligionSelect.options[ReligionSelect.selectedIndex]?.value;
 
-      const boolean = !raceOption || !genderOption || !VeteranOption // || !ReligionOption
+      const boolean = !raceOption || !genderOption || !VeteranOption || !ReligionOption
 
       cleanErrorText([
         {
